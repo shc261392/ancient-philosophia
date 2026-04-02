@@ -2,7 +2,7 @@
 title: "Oriental Institute Museum (Chicago)"
 description: "A world-class museum of ancient Near Eastern civilizations, with major collections from Mesopotamia, Egypt, Persia, and the Levant — and home to the Chicago Assyrian Dictionary."
 category: "museum"
-url: "https://oi.uchicago.edu/museum"
+url: "https://isac.uchicago.edu/museum-exhibits"
 location: "Chicago, USA"
 highlights:
   - "40-ton Lamassu from Dur-Sharrukin (Khorsabad)"

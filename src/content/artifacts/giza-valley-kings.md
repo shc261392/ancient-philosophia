@@ -37,4 +37,4 @@ The **Valley of the Kings** (c. 1539–1075 BCE) in West Thebes contains 63+ tom
 
 - **[Theban Mapping Project](https://thebanmappingproject.com/)** — Detailed digital maps of the Valley of the Kings
 - **[Matterport/Google Street View](https://artsandculture.google.com/)** — Virtual tours of several tombs
-- **[Digital Giza (Harvard)](http://giza.fas.harvard.edu/)** — 3D reconstructions and archival data from the Giza plateau
+- **[Digital Giza (Harvard)](https://giza.fas.harvard.edu/)** — 3D reconstructions and archival data from the Giza plateau

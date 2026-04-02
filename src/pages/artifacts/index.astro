@@ -40,8 +40,9 @@ const categoryLabels: Record<string, string> = {
                   <img
                     src={item.data.image}
                     alt={item.data.imageCaption || item.data.title}
-                    class="w-full h-48 object-cover"
+                    class="w-full h-48 object-contain bg-[var(--color-bg-primary)] p-2"
                     loading="lazy"
+                    data-lightbox
                   />
                   {item.data.imageCaption && (
                     <figcaption class="absolute bottom-0 left-0 right-0 bg-[var(--color-bg-primary)]/80 backdrop-blur-sm px-3 py-1.5 text-xs text-[var(--color-fg-muted)]">
@@ -108,56 +109,56 @@ const categoryLabels: Record<string, string> = {
     </p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/attic-krater.jpg" alt="Geometric Attic Krater" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/attic-krater.jpg" alt="Geometric Attic Krater" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Geometric Krater, c. 750–735 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/greek-calyx-krater.jpg" alt="Red-figure Calyx-Krater" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/greek-calyx-krater.jpg" alt="Red-figure Calyx-Krater" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Red-Figure Calyx-Krater, c. 460–450 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/egyptian-stela.jpg" alt="Egyptian Stela of Mentuwoser" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/egyptian-stela.jpg" alt="Egyptian Stela of Mentuwoser" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Stela of Mentuwoser, c. 1944 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/temple-dendur.jpg" alt="Temple of Dendur" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/temple-dendur.jpg" alt="Temple of Dendur" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Temple of Dendur, c. 10 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/greek-kylix.jpg" alt="Attic Black-figure Kylix Fragment" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/greek-kylix.jpg" alt="Attic Black-figure Kylix Fragment" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Kylix Fragment, c. 520–510 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/egyptian-statue.jpg" alt="Standing Statue of Kaemsenu" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/egyptian-statue.jpg" alt="Standing Statue of Kaemsenu" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Statue of Kaemsenu, c. 2420–2389 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/roman-boy-bronze.jpg" alt="Roman Bronze Statue" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/roman-boy-bronze.jpg" alt="Roman Bronze Statue" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Bronze Aristocratic Boy, 27 BCE–14 CE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/roman-wall-painting.jpg" alt="Roman Wall Painting" class="w-full h-40 object-cover" loading="lazy" />
+        <img src="/images/artifacts/roman-wall-painting.jpg" alt="Roman Wall Painting" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Roman Wall Painting, c. 50–40 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>

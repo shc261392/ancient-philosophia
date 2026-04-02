@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+---
+
+<BaseLayout
+  title="Writing Systems of the Ancient World"
+  description="A visual comparison of ancient writing systems — from Sumerian cuneiform and Egyptian hieroglyphs to Greek alphabets and Phoenician abjad."
+>
+  <Hero
+    title="Writing Systems"
+    subtitle="From pictographs to alphabets"
+    description="A comparative chart of the major writing systems used across the ancient world, their types, directions, and sample characters."
+  />
+
+  <section class="mb-12 overflow-x-auto">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="border-b-2 border-[var(--color-bg-tertiary)]">
+          <th class="text-left py-3 px-4 text-[var(--color-gold-leaf)] font-serif">Writing System</th>
+          <th class="text-left py-3 px-4 text-[var(--color-gold-leaf)] font-serif">Type</th>
+          <th class="text-left py-3 px-4 text-[var(--color-gold-leaf)] font-serif">Direction</th>
+          <th class="text-left py-3 px-4 text-[var(--color-gold-leaf)] font-serif">Period</th>
+          <th class="text-left py-3 px-4 text-[var(--color-gold-leaf)] font-serif">Sample Characters</th>
+          <th class="text-left py-3 px-4 text-[var(--color-gold-leaf)] font-serif">Languages</th>
+        </tr>
+      </thead>
+      <tbody class="text-[var(--color-fg-secondary)]">
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/sumerian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Sumerian Cuneiform</a>
+          </td>
+          <td class="py-3 px-4">Logosyllabic</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 3400–75 CE</td>
+          <td class="py-3 px-4 text-2xl">𒀭 𒂍 𒈗 𒌷 𒊕 𒆳</td>
+          <td class="py-3 px-4">Sumerian, Akkadian, Hittite, Elamite, Urartian</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/middle-egyptian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Egyptian Hieroglyphs</a>
+          </td>
+          <td class="py-3 px-4">Logosyllabic</td>
+          <td class="py-3 px-4">Right → Left (or L→R, vertical)</td>
+          <td class="py-3 px-4">c. 3200 BCE – 400 CE</td>
+          <td class="py-3 px-4 text-2xl">𓂀 𓇋 𓈖 𓊪 𓏏 𓅱 𓇳</td>
+          <td class="py-3 px-4">Old/Middle/Late Egyptian, Demotic</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/linear-a/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Linear A</a>
+          </td>
+          <td class="py-3 px-4">Syllabic (undeciphered)</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 1800–1450 BCE</td>
+          <td class="py-3 px-4 text-2xl">𐘀 𐘁 𐘂 𐘃 𐘄 𐘅</td>
+          <td class="py-3 px-4">Minoan (unknown)</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/linear-b/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Linear B</a>
+          </td>
+          <td class="py-3 px-4">Syllabic</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 1450–1200 BCE</td>
+          <td class="py-3 px-4 text-2xl">𐀀 𐀁 𐀂 𐀃 𐀄 𐀅</td>
+          <td class="py-3 px-4">Mycenaean Greek</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/phoenician/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Phoenician Alphabet</a>
+          </td>
+          <td class="py-3 px-4">Abjad (consonantal)</td>
+          <td class="py-3 px-4">Right → Left</td>
+          <td class="py-3 px-4">c. 1050–150 BCE</td>
+          <td class="py-3 px-4 text-2xl">𐤀 𐤁 𐤂 𐤃 𐤄 𐤅 𐤆 𐤇</td>
+          <td class="py-3 px-4">Phoenician, Punic</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/aramaic/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Aramaic Script</a>
+          </td>
+          <td class="py-3 px-4">Abjad (consonantal)</td>
+          <td class="py-3 px-4">Right → Left</td>
+          <td class="py-3 px-4">c. 800 BCE – present</td>
+          <td class="py-3 px-4 text-2xl">𐡀 𐡁 𐡂 𐡃 𐡄 𐡅 𐡆 𐡇</td>
+          <td class="py-3 px-4">Aramaic, Hebrew (derived), Arabic (derived)</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/old-persian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Old Persian Cuneiform</a>
+          </td>
+          <td class="py-3 px-4">Semi-alphabetic</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 525–330 BCE</td>
+          <td class="py-3 px-4 text-2xl">𐎠 𐎡 𐎢 𐎣 𐎤 𐎥 𐎦</td>
+          <td class="py-3 px-4">Old Persian</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/attic-greek/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Greek Alphabet</a>
+          </td>
+          <td class="py-3 px-4">Alphabet (full)</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 800 BCE – present</td>
+          <td class="py-3 px-4 text-2xl">Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ</td>
+          <td class="py-3 px-4">All Greek dialects, Coptic (adapted)</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/etruscan/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Etruscan Alphabet</a>
+          </td>
+          <td class="py-3 px-4">Alphabet (adapted Greek)</td>
+          <td class="py-3 px-4">Right → Left</td>
+          <td class="py-3 px-4">c. 700–100 BCE</td>
+          <td class="py-3 px-4 text-2xl">𐌀 𐌁 𐌂 𐌃 𐌄 𐌅 𐌆 𐌇</td>
+          <td class="py-3 px-4">Etruscan</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/classical-latin/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Latin Alphabet</a>
+          </td>
+          <td class="py-3 px-4">Alphabet (full, via Etruscan)</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 600 BCE – present</td>
+          <td class="py-3 px-4 text-2xl">A B C D E F G H I K L M</td>
+          <td class="py-3 px-4">Latin, Romance languages, global use</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/coptic/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Coptic Alphabet</a>
+          </td>
+          <td class="py-3 px-4">Alphabet (Greek + Demotic)</td>
+          <td class="py-3 px-4">Left → Right</td>
+          <td class="py-3 px-4">c. 200 CE – present (liturgical)</td>
+          <td class="py-3 px-4 text-2xl">Ⲁ Ⲃ Ⲅ Ⲇ Ⲉ Ⲋ Ⲍ Ⲏ Ⲑ Ⲓ</td>
+          <td class="py-3 px-4">Coptic (last stage of Egyptian)</td>
+        </tr>
+        <tr class="border-b border-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)]">
+          <td class="py-3 px-4 font-semibold text-[var(--color-fg-primary)]">
+            <a href="/languages/luwian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Anatolian Hieroglyphs</a>
+          </td>
+          <td class="py-3 px-4">Logosyllabic</td>
+          <td class="py-3 px-4">Boustrophedon</td>
+          <td class="py-3 px-4">c. 1400–700 BCE</td>
+          <td class="py-3 px-4 text-2xl">𔐀 𔐁 𔐂 𔐃 𔐄 𔐅</td>
+          <td class="py-3 px-4">Luwian</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Writing System Evolution -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">The Evolution of Writing</h2>
+    <div class="bg-[var(--color-bg-card)] rounded-xl p-8 border border-[var(--color-bg-tertiary)]">
+      <div class="prose max-w-none">
+        <p>Writing emerged independently in at least three locations: <strong>Mesopotamia</strong> (c. 3400 BCE), <strong>Egypt</strong> (c. 3200 BCE), and <strong>China</strong> (c. 1200 BCE). The relationship between the first two remains debated — they appear near-simultaneously but use fundamentally different sign systems.</p>
+
+        <h3>The Great Chain: From Cuneiform to Alphabet</h3>
+        <p>The most consequential transmission in the history of writing runs from the Eastern Mediterranean:</p>
+        <ol>
+          <li><strong>Egyptian hieroglyphs</strong> → inspired the <strong>Proto-Sinaitic script</strong> (c. 1800 BCE, acrophonic principle — ʾaleph from the ox head, bet from the house)</li>
+          <li>Proto-Sinaitic → <strong>Phoenician alphabet</strong> (c. 1050 BCE, 22 consonantal letters)</li>
+          <li>Phoenician → <strong>Greek alphabet</strong> (c. 800 BCE, added vowels — a revolutionary innovation)</li>
+          <li>Greek → <strong>Etruscan</strong> → <strong>Latin alphabet</strong> (the script you are reading now)</li>
+          <li>Phoenician → <strong>Aramaic</strong> → Hebrew, Arabic, Syriac, and many Central/South Asian scripts</li>
+        </ol>
+
+        <h3>Types of Writing Systems</h3>
+        <ul>
+          <li><strong>Logographic</strong> — Each sign represents a word or morpheme (Chinese)</li>
+          <li><strong>Logosyllabic</strong> — Signs represent words AND syllables (cuneiform, hieroglyphs)</li>
+          <li><strong>Syllabic</strong> — Each sign represents a syllable (Linear B, Japanese kana)</li>
+          <li><strong>Abjad</strong> — Only consonants are written (Phoenician, Aramaic, Hebrew, Arabic)</li>
+          <li><strong>Alphabet</strong> — Both consonants and vowels (Greek, Latin, Coptic, Cyrillic)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const myths = (await getCollection('myths')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const categoryOrder = ['pantheon', 'religion', 'epic', 'myth', 'hero', 'deity'] as const;
+const categoryLabels: Record<string, { label: string; icon: string }> = {
+  'pantheon': { label: 'Pantheons & Divine Orders', icon: '🏛' },
+  'religion': { label: 'Religious Traditions', icon: '🔥' },
+  'epic': { label: 'Epics & Great Literature', icon: '📜' },
+  'myth': { label: 'Myths & Sacred Narratives', icon: '🌊' },
+  'hero': { label: 'Heroes & Legendary Figures', icon: '⚔' },
+  'deity': { label: 'Major Deities', icon: '✨' },
+};
+
+const traditionColors: Record<string, string> = {
+  'Mesopotamian': 'bg-[var(--color-gold-leaf)]/20 text-[var(--color-gold-light)]',
+  'Egyptian': 'bg-[var(--color-terracotta)]/20 text-[var(--color-terracotta-light)]',
+  'Greek': 'bg-[var(--color-aegean)]/20 text-[var(--color-aegean-light)]',
+  'Roman': 'bg-[var(--color-attic-red)]/20 text-[var(--color-attic-red-light)]',
+  'Zoroastrian': 'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]',
+  'Canaanite/Phoenician': 'bg-[var(--color-gold-leaf)]/20 text-[var(--color-gold-light)]',
+  'Hittite': 'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]',
+};
+---
+
+<BaseLayout
+  title="Myths & Religions"
+  description="Explore the gods, epics, and sacred narratives of the ancient world — from the Mesopotamian pantheon and the Epic of Gilgamesh to Greek mythology and Zoroastrianism."
+>
+  <Hero
+    title="Myths & Religions"
+    subtitle="The gods and stories that shaped civilizations"
+    description="Pantheons, creation myths, heroic epics, and religious traditions from Sumer to Rome — the sacred narratives through which ancient peoples understood their world."
+  />
+
+  {categoryOrder.map(cat => {
+    const items = myths.filter(m => m.data.category === cat);
+    if (items.length === 0) return null;
+    const { label, icon } = categoryLabels[cat];
+    return (
+      <section class="mb-16">
+        <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8 border-b border-[var(--color-bg-tertiary)] pb-2">
+          {icon} {label}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map(item => (
+            <a href={`/myths/${item.id}/`} class="group block bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-all hover:glow-accent overflow-hidden">
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class:list={['text-xs px-2 py-0.5 rounded-full', traditionColors[item.data.tradition] || 'bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)]']}>
+                    {item.data.tradition}
+                  </span>
+                  {item.data.period && (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-bg-tertiary)] text-[var(--color-fg-muted)]">
+                      {item.data.period}
+                    </span>
+                  )}
+                </div>
+                <h3 class="font-serif text-lg text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors mb-2">
+                  {item.data.title}
+                </h3>
+                <p class="text-sm text-[var(--color-fg-secondary)] leading-relaxed line-clamp-3">
+                  {item.data.description}
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-3">
+                  {item.data.tags.slice(0, 4).map(tag => (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-attic-red)]/15 text-[var(--color-attic-red-light)]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

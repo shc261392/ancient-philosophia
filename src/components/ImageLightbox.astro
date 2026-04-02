@@ -1,0 +1,98 @@
+---
+/**
+ * ImageLightbox — click-to-expand image overlay.
+ * Uses a <dialog> element for accessibility. No JS framework needed.
+ */
+---
+
+<style>
+  .lightbox-dialog {
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow: visible;
+  }
+  .lightbox-dialog::backdrop {
+    background: rgba(15, 15, 20, 0.92);
+    backdrop-filter: blur(8px);
+  }
+  .lightbox-dialog img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    display: block;
+  }
+  .lightbox-dialog figcaption {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    color: var(--color-fg-secondary);
+    font-size: 0.875rem;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -2rem;
+    right: -0.5rem;
+    background: none;
+    border: none;
+    color: var(--color-fg-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .lightbox-close:hover {
+    color: var(--color-fg-primary);
+  }
+</style>
+
+<dialog id="image-lightbox" class="lightbox-dialog">
+  <div style="position: relative;">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <figure>
+      <img id="lightbox-img" src="" alt="" />
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+</dialog>
+
+<script>
+  function initLightbox() {
+    const dialog = document.getElementById('image-lightbox') as HTMLDialogElement;
+    const img = document.getElementById('lightbox-img') as HTMLImageElement;
+    const caption = document.getElementById('lightbox-caption') as HTMLElement;
+    const closeBtn = dialog.querySelector('.lightbox-close') as HTMLButtonElement;
+
+    if (!dialog || !img || !caption) return;
+
+    // Make all images with data-lightbox clickable
+    document.querySelectorAll('[data-lightbox]').forEach(el => {
+      const imgEl = el as HTMLImageElement;
+      imgEl.style.cursor = 'zoom-in';
+      imgEl.addEventListener('click', () => {
+        img.src = imgEl.src;
+        img.alt = imgEl.alt;
+        const figcaption = imgEl.closest('figure')?.querySelector('figcaption');
+        caption.textContent = figcaption?.textContent || imgEl.alt || '';
+        dialog.showModal();
+      });
+    });
+
+    // Close on backdrop click
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    // Close button
+    closeBtn?.addEventListener('click', () => dialog.close());
+
+    // Close on Escape (built into dialog)
+  }
+
+  // Run on page load and on Astro view transitions
+  initLightbox();
+  document.addEventListener('astro:after-swap', initLightbox);
+</script>

@@ -26,21 +26,23 @@ This site offers scholarly but accessible content for self-directed adult learne
 
 ## Getting Started
 
+**Requirements:** Node 24+, pnpm 10+
+
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start dev server at localhost:4321
-npm run dev
+pnpm dev
 
 # Build for production
-npm run build
+pnpm build
 
 # Preview production build locally
-npm run preview
+pnpm preview
 
 # Deploy to Cloudflare Pages
-npm run deploy
+pnpm deploy
 ```
 
 ## Project Structure

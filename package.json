@@ -5,7 +5,8 @@
   "description": "Ancient History & Language Learning – a comprehensive open-source resource for studying civilizations from Sumer to Rome",
   "license": "GPL-3.0-or-later",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
   },
   "scripts": {
     "dev": "astro dev",

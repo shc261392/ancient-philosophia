@@ -27,7 +27,7 @@ const { title, description, href, period, region, tags = [] } = Astro.props;
   {tags.length > 0 && (
     <div class="flex flex-wrap gap-1.5 mt-3">
       {tags.slice(0, 4).map(tag => (
-        <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-tyrian)]/20 text-[var(--color-tyrian-light)]">
+        <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-attic-red)]/20 text-[var(--color-attic-red-light)]">
           {tag}
         </span>
       ))}

@@ -25,6 +25,8 @@ const languages = defineCollection({
     script: z.string(),
     period: z.string(),
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']).default('intermediate'),
+    materialRichness: z.enum(['rich', 'moderate', 'scarce', 'fragmentary', 'undeciphered']).default('moderate'),
+    pronunciation: z.enum(['consensus', 'reconstructed', 'controversial', 'unknown']).default('reconstructed'),
     tags: z.array(z.string()).default([]),
     sortOrder: z.number().default(0),
   }),
@@ -42,4 +44,23 @@ const resources = defineCollection({
   }),
 });
 
-export const collections = { civilizations, languages, resources };
+const artifacts = defineCollection({
+  loader: glob({ base: './src/content/artifacts', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.enum(['museum', 'digital-collection', 'archaeological-site', 'virtual-tour']),
+    url: z.string().url().optional(),
+    location: z.string().optional(),
+    image: z.string().optional(),
+    imageCaption: z.string().optional(),
+    imageLicense: z.string().optional(),
+    imageSource: z.string().optional(),
+    highlights: z.array(z.string()).default([]),
+    regions: z.array(z.string()).default([]),
+    free: z.boolean().default(true),
+    sortOrder: z.number().default(0),
+  }),
+});
+
+export const collections = { civilizations, languages, resources, artifacts };

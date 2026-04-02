@@ -23,8 +23,8 @@
   --color-terracotta-light: #d9806e;
   --color-gold-leaf: #c9a84c;
   --color-gold-light: #e0c878;
-  --color-tyrian: #7b2d5f;
-  --color-tyrian-light: #a8467e;
+  --color-attic-red: #8B3A2A;
+  --color-attic-red-light: #B85442;
   --color-aegean: #2a6478;
   --color-aegean-light: #3d8da6;
   --color-bronze: #6d7c3e;
@@ -35,7 +35,7 @@
   --color-link: var(--color-aegean-light);
   --color-link-hover: var(--color-gold-light);
   --color-accent: var(--color-terracotta);
-  --color-accent-secondary: var(--color-tyrian-light);
+  --color-accent-secondary: var(--color-attic-red-light);
   --color-heading: var(--color-gold-leaf);
 
   /* --- Font families --- */
@@ -108,6 +108,6 @@ a:hover {
 
 /* --- Selection --- */
 ::selection {
-  background-color: var(--color-tyrian);
+  background-color: var(--color-attic-red);
   color: var(--color-fg-primary);
 }

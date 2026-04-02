@@ -33,7 +33,19 @@ const families = [...new Set(langs.map(l => l.data.family))];
               description={lang.data.description}
               href={`/languages/${lang.id}/`}
               period={lang.data.period}
-              tags={[lang.data.script, lang.data.difficulty, ...lang.data.tags]}
+              tags={[
+                lang.data.script,
+                lang.data.materialRichness === 'rich' ? '📚 Rich' :
+                  lang.data.materialRichness === 'undeciphered' ? '❓ Undeciphered' :
+                  lang.data.materialRichness === 'scarce' ? '📜 Scarce' :
+                  lang.data.materialRichness === 'fragmentary' ? '🧩 Fragmentary' :
+                  '📖 Moderate',
+                lang.data.pronunciation === 'consensus' ? '🔊 Consensus' :
+                  lang.data.pronunciation === 'controversial' ? '⚠️ Controversial' :
+                  lang.data.pronunciation === 'unknown' ? '🔇 Unknown' :
+                  '🔉 Reconstructed',
+                lang.data.difficulty,
+              ]}
             />
           ))}
         </div>

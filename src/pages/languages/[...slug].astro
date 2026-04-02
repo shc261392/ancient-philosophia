@@ -28,6 +28,30 @@ const { Content, headings } = await render(lang);
         <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">{lang.data.script}</span>
         <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">{lang.data.period}</span>
         <span class="bg-[var(--color-aegean)]/20 px-3 py-1 rounded text-[var(--color-aegean-light)]">{lang.data.difficulty}</span>
+        <span class:list={[
+          'px-3 py-1 rounded',
+          lang.data.materialRichness === 'rich' ? 'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]' :
+          lang.data.materialRichness === 'undeciphered' ? 'bg-[var(--color-attic-red)]/20 text-[var(--color-attic-red-light)]' :
+          lang.data.materialRichness === 'scarce' ? 'bg-[var(--color-gold-leaf)]/20 text-[var(--color-gold-light)]' :
+          'bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)]'
+        ]}>
+          {lang.data.materialRichness === 'rich' ? '📚 Rich corpus' :
+           lang.data.materialRichness === 'moderate' ? '📖 Moderate corpus' :
+           lang.data.materialRichness === 'scarce' ? '📜 Scarce corpus' :
+           lang.data.materialRichness === 'fragmentary' ? '🧩 Fragmentary' :
+           '❓ Undeciphered'}
+        </span>
+        <span class:list={[
+          'px-3 py-1 rounded',
+          lang.data.pronunciation === 'consensus' ? 'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]' :
+          lang.data.pronunciation === 'controversial' ? 'bg-[var(--color-attic-red)]/20 text-[var(--color-attic-red-light)]' :
+          'bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)]'
+        ]}>
+          {lang.data.pronunciation === 'consensus' ? '🔊 Consensus pronunciation' :
+           lang.data.pronunciation === 'reconstructed' ? '🔉 Reconstructed pronunciation' :
+           lang.data.pronunciation === 'controversial' ? '⚠️ Controversial pronunciation' :
+           '🔇 Pronunciation unknown'}
+        </span>
       </div>
       <h1 class="text-4xl sm:text-5xl font-serif font-bold text-[var(--color-gold-leaf)] tracking-tight mb-4">
         {lang.data.title}

@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const artifacts = (await getCollection('artifacts')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const categories = ['museum', 'digital-collection', 'archaeological-site', 'virtual-tour'] as const;
+const categoryLabels: Record<string, string> = {
+  'museum': '🏛 Museums',
+  'digital-collection': '💻 Digital Collections & Archives',
+  'archaeological-site': '⛏ Archaeological Sites',
+  'virtual-tour': '🌐 Virtual Tours & Online Resources',
+};
+---
+
+<BaseLayout
+  title="Artifacts & Archaeological Collections"
+  description="Explore ancient artifacts, museums, archaeological sites, and digital collections — from Mesopotamian cuneiform tablets to Greek pottery to Egyptian tombs."
+>
+  <Hero
+    title="Artifacts & Collections"
+    subtitle="Touch the ancient world"
+    description="Museums, archaeological sites, and digital archives where you can explore the material culture of ancient civilizations — pottery, sculpture, inscriptions, jewelry, weapons, and more."
+  />
+
+  {categories.map(cat => {
+    const items = artifacts.filter(a => a.data.category === cat);
+    if (items.length === 0) return null;
+    return (
+      <section class="mb-16">
+        <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8 border-b border-[var(--color-bg-tertiary)] pb-2">
+          {categoryLabels[cat]}
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {items.map(item => (
+            <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+              {item.data.image && (
+                <figure class="relative">
+                  <img
+                    src={item.data.image}
+                    alt={item.data.imageCaption || item.data.title}
+                    class="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                  {item.data.imageCaption && (
+                    <figcaption class="absolute bottom-0 left-0 right-0 bg-[var(--color-bg-primary)]/80 backdrop-blur-sm px-3 py-1.5 text-xs text-[var(--color-fg-muted)]">
+                      {item.data.imageCaption}
+                      {item.data.imageLicense && (
+                        <span class="ml-1 text-[var(--color-fg-muted)]">
+                          ({item.data.imageLicense}{item.data.imageSource ? ` — ${item.data.imageSource}` : ''})
+                        </span>
+                      )}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+              <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                  <h3 class="font-serif text-lg text-[var(--color-gold-leaf)]">{item.data.title}</h3>
+                  <div class="flex gap-2 shrink-0 ml-2">
+                    {item.data.free && (
+                      <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]">Free</span>
+                    )}
+                  </div>
+                </div>
+                {item.data.location && (
+                  <p class="text-xs text-[var(--color-fg-muted)] mb-2">📍 {item.data.location}</p>
+                )}
+                <p class="text-sm text-[var(--color-fg-secondary)] leading-relaxed mb-3">{item.data.description}</p>
+                {item.data.highlights.length > 0 && (
+                  <ul class="text-xs text-[var(--color-fg-secondary)] space-y-1 mb-3">
+                    {item.data.highlights.slice(0, 5).map(h => (
+                      <li class="flex items-start gap-1.5">
+                        <span class="text-[var(--color-terracotta)] mt-0.5">•</span>
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div class="flex flex-wrap gap-1.5 mb-3">
+                  {item.data.regions.map(region => (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-attic-red)]/20 text-[var(--color-attic-red-light)]">
+                      {region}
+                    </span>
+                  ))}
+                </div>
+                {item.data.url && (
+                  <a href={item.data.url} class="text-sm text-[var(--color-link)] hover:text-[var(--color-link-hover)]" target="_blank" rel="noopener noreferrer">
+                    Visit collection →
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Gallery section with downloaded images -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8 border-b border-[var(--color-bg-tertiary)] pb-2">
+      📸 Gallery — Public Domain Highlights
+    </h2>
+    <p class="text-sm text-[var(--color-fg-secondary)] mb-6">
+      All images below are <strong>CC0 Public Domain</strong> from The Metropolitan Museum of Art Open Access Initiative. Click to visit the Met's collection.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/attic-krater.jpg" alt="Geometric Attic Krater" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Geometric Krater, c. 750–735 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/greek-calyx-krater.jpg" alt="Red-figure Calyx-Krater" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Red-Figure Calyx-Krater, c. 460–450 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/egyptian-stela.jpg" alt="Egyptian Stela of Mentuwoser" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Stela of Mentuwoser, c. 1944 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/temple-dendur.jpg" alt="Temple of Dendur" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Temple of Dendur, c. 10 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/greek-kylix.jpg" alt="Attic Black-figure Kylix Fragment" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Kylix Fragment, c. 520–510 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/egyptian-statue.jpg" alt="Standing Statue of Kaemsenu" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Statue of Kaemsenu, c. 2420–2389 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/roman-boy-bronze.jpg" alt="Roman Bronze Statue" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Bronze Aristocratic Boy, 27 BCE–14 CE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+      <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
+        <img src="/images/artifacts/roman-wall-painting.jpg" alt="Roman Wall Painting" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
+          Roman Wall Painting, c. 50–40 BCE<br/>
+          <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</BaseLayout>

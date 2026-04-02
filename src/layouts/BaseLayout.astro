@@ -1,0 +1,38 @@
+---
+import SEOHead from '../components/SEOHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+}
+
+const { title, description, image, type, publishedTime, modifiedTime } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Nav />
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

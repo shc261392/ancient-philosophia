@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aristeia-and-philotimia.pages.dev/sitemap-index.xml

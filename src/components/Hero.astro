@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+}
+
+const { title, subtitle, description } = Astro.props;
+---
+
+<section class="text-center py-12 sm:py-16 lg:py-20">
+  <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[var(--color-gold-leaf)] tracking-tight mb-4">
+    {title}
+  </h1>
+  {subtitle && (
+    <p class="text-xl sm:text-2xl text-[var(--color-terracotta-light)] font-serif italic mb-6">
+      {subtitle}
+    </p>
+  )}
+  {description && (
+    <p class="max-w-2xl mx-auto text-[var(--color-fg-secondary)] text-lg leading-relaxed">
+      {description}
+    </p>
+  )}
+  <div class="mt-8 border-meander max-w-xs mx-auto"></div>
+</section>

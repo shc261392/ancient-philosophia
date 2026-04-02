@@ -1,0 +1,346 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+---
+
+<BaseLayout
+  title="Learning Mindmap"
+  description="A visual guide to studying ancient history and languages — from Sumer to Rome, with recommended study paths and connections between civilizations."
+>
+  <Hero
+    title="Learning Mindmap"
+    subtitle="Navigate the ancient world"
+    description="A structured overview of how ancient civilizations and languages connect to each other, with recommended study paths for self-directed learners."
+  />
+
+  <!-- Interactive tree mindmap rendered as nested HTML -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8">Ancient History & Language Study Map</h2>
+    
+    <div class="space-y-8">
+      <!-- MESOPOTAMIA -->
+      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+        <div class="bg-[var(--color-terracotta)]/20 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
+          <h3 class="text-xl font-serif text-[var(--color-terracotta-light)] flex items-center gap-3">
+            <span class="text-2xl">𒀭</span> Mesopotamia
+          </h3>
+          <p class="text-sm text-[var(--color-fg-muted)] mt-1">The cradle of civilization — writing, cities, empires</p>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Civilizations (chronological)</h4>
+            <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+              <li><a href="/civilizations/sumer/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Sumer</a> — First cities & writing (c. 4500–1900 BCE)</li>
+              <li><a href="/civilizations/akkad/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Akkadian Empire</a> — First empire (c. 2334–2154 BCE)</li>
+              <li><a href="/civilizations/assyria/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Assyria</a> — Military superpower (c. 2500–609 BCE)</li>
+              <li><a href="/civilizations/babylonia/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Babylonia</a> — Law, astronomy, Hammurabi (c. 1894–539 BCE)</li>
+            </ol>
+          </div>
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Languages to Study</h4>
+            <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+              <li>→ <a href="/languages/sumerian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Sumerian</a> — Language isolate, agglutinative, advanced</li>
+              <li>→ <a href="/languages/akkadian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Akkadian</a> — Semitic, cuneiform, advanced (recommended focus)</li>
+            </ul>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mt-4 mb-3">Key Connections</h4>
+            <ul class="space-y-1 text-sm text-[var(--color-fg-muted)]">
+              <li>• Cuneiform adopted by Hittites, Elamites, Ugarit, and Persians</li>
+              <li>• Akkadian was the diplomatic language of the Bronze Age (Amarna Letters)</li>
+              <li>• Mesopotamian myths influenced Hesiod's Theogony via Hurrian transmission</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- EGYPT -->
+      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+        <div class="bg-[var(--color-gold-leaf)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
+          <h3 class="text-xl font-serif text-[var(--color-gold-light)] flex items-center gap-3">
+            <span class="text-2xl">𓂀</span> Egypt
+          </h3>
+          <p class="text-sm text-[var(--color-fg-muted)] mt-1">Three thousand years of pharaonic civilization along the Nile</p>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Civilizations (chronological)</h4>
+            <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+              <li><a href="/civilizations/egypt-old-kingdom/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Old Kingdom</a> — Pyramids (c. 2686–2181 BCE)</li>
+              <li><a href="/civilizations/egypt-middle-kingdom/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Middle Kingdom</a> — Classical literature (c. 2055–1650 BCE)</li>
+              <li><a href="/civilizations/egypt-new-kingdom/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">New Kingdom</a> — Empire & Amarna (c. 1550–1069 BCE)</li>
+            </ol>
+          </div>
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Language to Study</h4>
+            <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+              <li>→ <a href="/languages/middle-egyptian/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Middle Egyptian</a> — Classical stage, hieroglyphs (recommended focus)</li>
+            </ul>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mt-4 mb-3">Key Connections</h4>
+            <ul class="space-y-1 text-sm text-[var(--color-fg-muted)]">
+              <li>• Amarna Letters: Egypt corresponded with Babylon, Mitanni, Hatti in Akkadian</li>
+              <li>• Battle of Kadesh: Egypt vs. Hittites — oldest known peace treaty</li>
+              <li>• Ptolemaic Egypt: Greek-speaking dynasty after Alexander's conquest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVANT & IRAN -->
+      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+        <div class="bg-[var(--color-aegean)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
+          <h3 class="text-xl font-serif text-[var(--color-aegean-light)] flex items-center gap-3">
+            <span class="text-2xl">🏛</span> Levant, Iran & Anatolia
+          </h3>
+          <p class="text-sm text-[var(--color-fg-muted)] mt-1">Crossroads civilizations connecting East and West</p>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Civilizations</h4>
+            <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+              <li><a href="/civilizations/levant/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Ancient Levant</a> — Canaan, Phoenicia, Israel, alphabet</li>
+              <li><a href="/civilizations/elam/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Elam</a> — Southwestern Iran, Susa</li>
+              <li><a href="/civilizations/hurrians/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Hurrians & Mitanni</a> — Upper Mesopotamia, Hurro-Urartian language</li>
+              <li><a href="/civilizations/hittites/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Hittite Empire</a> — Anatolia, oldest Indo-European language</li>
+              <li><a href="/civilizations/troy-wilusa/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Troy (Wilusa)</a> — Where archaeology meets Homer</li>
+              <li><a href="/civilizations/persia-achaemenid/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Achaemenid Persia</a> — The first world empire</li>
+            </ol>
+          </div>
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Language to Study</h4>
+            <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+              <li>→ <a href="/languages/hittite/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Hittite</a> — Oldest Indo-European, cuneiform, advanced</li>
+            </ul>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mt-4 mb-3">Key Connections</h4>
+            <ul class="space-y-1 text-sm text-[var(--color-fg-muted)]">
+              <li>• Phoenician alphabet → Greek alphabet → Latin alphabet</li>
+              <li>• Hurrian myths transmitted to Hittites, then to Greek Hesiod</li>
+              <li>• Hittite Wilusa ↔ Homeric Troy / Ahhiyawa ↔ Achaean Greeks</li>
+              <li>• Achaemenid Empire used Elamite, Babylonian, and Old Persian</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- AEGEAN & GREECE -->
+      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+        <div class="bg-[var(--color-tyrian)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
+          <h3 class="text-xl font-serif text-[var(--color-tyrian-light)] flex items-center gap-3">
+            <span class="text-2xl">🏺</span> Aegean & Greece
+          </h3>
+          <p class="text-sm text-[var(--color-fg-muted)] mt-1">From Minoan palaces through the golden age of Athens</p>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Civilizations (chronological)</h4>
+            <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+              <li><a href="/civilizations/cycladic/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Cycladic</a> — Island culture, marble figurines (c. 3200–2000 BCE)</li>
+              <li><a href="/civilizations/minoan-crete/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Minoan Crete</a> — Palaces, Linear A (c. 2700–1450 BCE)</li>
+              <li><a href="/civilizations/mycenaean/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Mycenaean</a> — First Greeks, Linear B (c. 1600–1100 BCE)</li>
+              <li><a href="/civilizations/geometric-greece/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Geometric Greece</a> — Dark Age recovery, Homer (c. 900–700 BCE)</li>
+              <li><a href="/civilizations/archaic-greece/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Archaic Greece</a> — Colonization, tyranny, philosophy (c. 700–480 BCE)</li>
+              <li><a href="/civilizations/classical-greece/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Classical Greece</a> — Democracy, Parthenon, Plato (c. 480–323 BCE)</li>
+              <li><a href="/civilizations/alexander-successors/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Alexander & Successors</a> — Hellenistic world (336–30 BCE)</li>
+            </ol>
+          </div>
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Language to Study</h4>
+            <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+              <li>→ <a href="/languages/attic-greek/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Attic Greek</a> — The gold standard, intermediate (recommended focus)</li>
+            </ul>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mt-4 mb-3">Key Connections</h4>
+            <ul class="space-y-1 text-sm text-[var(--color-fg-muted)]">
+              <li>• Linear B is earliest Greek → Attic Greek is classical literary form</li>
+              <li>• Greek alphabet derived from Phoenician → ancestor of Latin, Cyrillic</li>
+              <li>• Greco-Persian Wars: defining conflict of Classical period</li>
+              <li>• Alexander's conquests spread Koine Greek across the Near East</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROME -->
+      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+        <div class="bg-[var(--color-bronze)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
+          <h3 class="text-xl font-serif text-[var(--color-bronze-light)] flex items-center gap-3">
+            <span class="text-2xl">🏛</span> Italy & Rome
+          </h3>
+          <p class="text-sm text-[var(--color-fg-muted)] mt-1">From Etruscan city-states to the Roman Empire</p>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Civilizations (chronological)</h4>
+            <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+              <li><a href="/civilizations/etruscan-rome-kings/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Etruscans & Regal Rome</a> — Pre-Republican Italy (c. 900–509 BCE)</li>
+              <li><a href="/civilizations/roman-republic/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Roman Republic</a> — SPQR, Punic Wars, Caesar (509–27 BCE)</li>
+              <li><a href="/civilizations/roman-empire/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Roman Empire</a> — Augustus to the fall (27 BCE–476 CE)</li>
+            </ol>
+          </div>
+          <div>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mb-3">Language to Study</h4>
+            <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+              <li>→ <a href="/languages/classical-latin/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)]">Classical Latin</a> — Cicero, Virgil, intermediate (recommended focus)</li>
+            </ul>
+            <h4 class="text-[var(--color-gold-leaf)] font-serif mt-4 mb-3">Key Connections</h4>
+            <ul class="space-y-1 text-sm text-[var(--color-fg-muted)]">
+              <li>• Etruscan influence on Roman religion, architecture, and symbols</li>
+              <li>• Rome conquered Greece but was culturally conquered by it ("Graecia capta...")</li>
+              <li>• Latin alphabet derived from Greek via Etruscan</li>
+              <li>• Educated Romans were bilingual in Latin and Greek</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Study Paths -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8">Recommended Study Paths</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-lg text-[var(--color-terracotta-light)] mb-4">🔰 Beginner: Start Here</h3>
+        <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+          <li>Read Van De Mieroop, <em>A History of the Ancient Near East</em> for a broad overview</li>
+          <li>Read Mary Beard, <em>SPQR</em> for Rome</li>
+          <li>Read Cline, <em>1177 B.C.</em> for the Bronze Age world</li>
+          <li>Pick one language to begin: <strong>Latin</strong> (most accessible) or <strong>Attic Greek</strong></li>
+          <li>Use Khan Academy, Crash Course, or The History of Rome podcast for background</li>
+        </ol>
+      </div>
+
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-lg text-[var(--color-terracotta-light)] mb-4">📜 Near Eastern Track</h3>
+        <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+          <li>Begin with Akkadian (Huehnergard textbook)</li>
+          <li>Study Sumer → Akkad → Assyria → Babylonia chronologically</li>
+          <li>Read the Epic of Gilgamesh (Andrew George translation)</li>
+          <li>Add Middle Egyptian after gaining some Akkadian fluency</li>
+          <li>Use ORACC, CDLI, and ETCSL as primary digital resources</li>
+        </ol>
+      </div>
+
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-lg text-[var(--color-terracotta-light)] mb-4">🏺 Classics Track (Greek & Latin)</h3>
+        <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+          <li>Begin with Attic Greek (Mastronarde) or Latin (LLPSI/Wheelock's)</li>
+          <li>Read Xenophon's <em>Anabasis</em> or Caesar's <em>De Bello Gallico</em> first</li>
+          <li>Study Greek history: Geometric → Archaic → Classical → Hellenistic</li>
+          <li>Study Roman history: Kings → Republic → Empire</li>
+          <li>Use Perseus Digital Library and Logeion as primary digital tools</li>
+        </ol>
+      </div>
+
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-lg text-[var(--color-terracotta-light)] mb-4">𓂀 Egyptology Track</h3>
+        <ol class="space-y-2 text-sm text-[var(--color-fg-secondary)] list-decimal list-inside">
+          <li>Begin with Middle Egyptian (Allen textbook)</li>
+          <li>Study Old → Middle → New Kingdom chronologically</li>
+          <li>Read The Story of Sinuhe as your first literary text</li>
+          <li>Use TLA and JSesh as primary digital tools</li>
+          <li>Expand to Late Egyptian and Demotic for more advanced study</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline overview -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8">Chronological Overview</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--color-bg-tertiary)]">
+            <th class="text-left py-3 px-4 text-[var(--color-fg-muted)] font-semibold">Period</th>
+            <th class="text-left py-3 px-4 text-[var(--color-fg-muted)] font-semibold">Mesopotamia</th>
+            <th class="text-left py-3 px-4 text-[var(--color-fg-muted)] font-semibold">Egypt</th>
+            <th class="text-left py-3 px-4 text-[var(--color-fg-muted)] font-semibold">Anatolia / Levant</th>
+            <th class="text-left py-3 px-4 text-[var(--color-fg-muted)] font-semibold">Aegean / Greece</th>
+            <th class="text-left py-3 px-4 text-[var(--color-fg-muted)] font-semibold">Italy / Rome</th>
+          </tr>
+        </thead>
+        <tbody class="text-[var(--color-fg-secondary)]">
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">3500–3000</td>
+            <td class="py-3 px-4">Uruk period, writing</td>
+            <td class="py-3 px-4">Predynastic / Early Dynastic</td>
+            <td class="py-3 px-4">Proto-Elamite</td>
+            <td class="py-3 px-4">Early Cycladic</td>
+            <td class="py-3 px-4">—</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">3000–2500</td>
+            <td class="py-3 px-4">Early Dynastic Sumer</td>
+            <td class="py-3 px-4">Old Kingdom, Pyramids</td>
+            <td class="py-3 px-4">Early Bronze Age Levant</td>
+            <td class="py-3 px-4">Cycladic peak</td>
+            <td class="py-3 px-4">—</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">2500–2000</td>
+            <td class="py-3 px-4">Akkad, Ur III</td>
+            <td class="py-3 px-4">1st Intermediate Period</td>
+            <td class="py-3 px-4">Elam, early Troy</td>
+            <td class="py-3 px-4">Early Minoan</td>
+            <td class="py-3 px-4">—</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">2000–1500</td>
+            <td class="py-3 px-4">Old Babylonian (Hammurabi)</td>
+            <td class="py-3 px-4">Middle Kingdom</td>
+            <td class="py-3 px-4">Old Hittite, Mitanni</td>
+            <td class="py-3 px-4">Minoan palaces</td>
+            <td class="py-3 px-4">—</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">1500–1200</td>
+            <td class="py-3 px-4">Kassite Babylon, Middle Assyrian</td>
+            <td class="py-3 px-4">New Kingdom (Amarna)</td>
+            <td class="py-3 px-4">Hittite Empire, Troy VI</td>
+            <td class="py-3 px-4">Mycenaean</td>
+            <td class="py-3 px-4">—</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">1200–800</td>
+            <td class="py-3 px-4">Dark Age, Neo-Assyrian rising</td>
+            <td class="py-3 px-4">Third Intermediate</td>
+            <td class="py-3 px-4">Neo-Hittite, Phoenicia, Israel</td>
+            <td class="py-3 px-4">Greek Dark Age</td>
+            <td class="py-3 px-4">Villanovan / early Etruscan</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">800–500</td>
+            <td class="py-3 px-4">Neo-Assyrian, Neo-Babylonian</td>
+            <td class="py-3 px-4">Late Period, Saite</td>
+            <td class="py-3 px-4">Achaemenid Persia</td>
+            <td class="py-3 px-4">Archaic Greece</td>
+            <td class="py-3 px-4">Etruscan peak, Roman kings</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">500–323</td>
+            <td class="py-3 px-4">Persian rule</td>
+            <td class="py-3 px-4">Persian / late pharaohs</td>
+            <td class="py-3 px-4">Achaemenid Empire</td>
+            <td class="py-3 px-4">Classical Greece, Alexander</td>
+            <td class="py-3 px-4">Early Roman Republic</td>
+          </tr>
+          <tr class="border-b border-[var(--color-bg-tertiary)]/50">
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">323–30</td>
+            <td class="py-3 px-4">Seleucid rule</td>
+            <td class="py-3 px-4">Ptolemaic Egypt</td>
+            <td class="py-3 px-4">Hellenistic, Parthia rising</td>
+            <td class="py-3 px-4">Hellenistic kingdoms</td>
+            <td class="py-3 px-4">Roman Republic expansion</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 text-[var(--color-fg-muted)]">30 BCE–476 CE</td>
+            <td class="py-3 px-4">Roman / Parthian</td>
+            <td class="py-3 px-4">Roman province</td>
+            <td class="py-3 px-4">Roman provinces</td>
+            <td class="py-3 px-4">Roman province</td>
+            <td class="py-3 px-4">Roman Empire</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

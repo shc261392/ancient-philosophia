@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const civs = (await getCollection('civilizations')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+const langs = (await getCollection('languages')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const sections = [
+  { title: 'Mesopotamia', icon: '𒀭', civs: civs.filter(c => c.data.region === 'Mesopotamia') },
+  { title: 'Egypt', icon: '𓂀', civs: civs.filter(c => c.data.region === 'Egypt') },
+  { title: 'Levant & Iran', icon: '🏛', civs: civs.filter(c => ['Levant','Iran','Anatolia & Iran'].includes(c.data.region)) },
+  { title: 'Anatolia', icon: '⚔', civs: civs.filter(c => c.data.region === 'Anatolia') },
+  { title: 'Aegean & Greece', icon: '🏺', civs: civs.filter(c => ['Aegean','Greece'].includes(c.data.region)) },
+  { title: 'Hellenistic World', icon: '🌍', civs: civs.filter(c => c.data.region === 'Hellenistic') },
+  { title: 'Italy & Rome', icon: '🏛', civs: civs.filter(c => c.data.region === 'Italy') },
+];
+---
+
+<BaseLayout
+  title="Aristeia & Philotimia"
+  description="An open educational resource for exploring ancient history and learning the languages of civilizations from Sumer to Rome."
+>
+  <Hero
+    title="Aristeia & Philotimia"
+    subtitle="ἀριστεία καὶ φιλοτιμία"
+    description="An open educational resource for exploring the ancient world — from the first cities of Sumer to the fall of Rome. Study civilizations, learn ancient languages, and follow curated learning paths."
+  />
+
+  <!-- Quick navigation cards -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+    <a href="/civilizations/" class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-all hover:glow-accent text-center">
+      <div class="text-3xl mb-2">🏛</div>
+      <h3 class="font-serif text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors">Civilizations</h3>
+      <p class="text-sm text-[var(--color-fg-muted)] mt-1">{civs.length} ancient peoples</p>
+    </a>
+    <a href="/languages/" class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-aegean)]/40 transition-all hover:glow-accent text-center">
+      <div class="text-3xl mb-2">𒀭</div>
+      <h3 class="font-serif text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors">Languages</h3>
+      <p class="text-sm text-[var(--color-fg-muted)] mt-1">{langs.length} ancient tongues</p>
+    </a>
+    <a href="/mindmap/" class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-tyrian)]/40 transition-all hover:glow-accent text-center">
+      <div class="text-3xl mb-2">🗺</div>
+      <h3 class="font-serif text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors">Learning Mindmap</h3>
+      <p class="text-sm text-[var(--color-fg-muted)] mt-1">Visual study guide</p>
+    </a>
+    <a href="/resources/" class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-bronze)]/40 transition-all hover:glow-accent text-center">
+      <div class="text-3xl mb-2">📚</div>
+      <h3 class="font-serif text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors">Resources</h3>
+      <p class="text-sm text-[var(--color-fg-muted)] mt-1">Books, courses & tools</p>
+    </a>
+  </section>
+
+  <!-- Civilization sections by region -->
+  {sections.filter(s => s.civs.length > 0).map(section => (
+    <section class="mb-12">
+      <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6 flex items-center gap-3">
+        <span class="text-3xl">{section.icon}</span>
+        {section.title}
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {section.civs.map(civ => (
+          <Card
+            title={civ.data.title}
+            description={civ.data.description}
+            href={`/civilizations/${civ.id}/`}
+            period={civ.data.dateRange}
+            region={civ.data.region}
+            tags={civ.data.tags}
+          />
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <!-- Languages section -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6 flex items-center gap-3">
+      <span class="text-3xl">📜</span>
+      Ancient Languages
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {langs.map(lang => (
+        <Card
+          title={lang.data.title}
+          description={lang.data.description}
+          href={`/languages/${lang.id}/`}
+          period={lang.data.period}
+          tags={lang.data.tags}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section class="mt-16 bg-[var(--color-bg-card)] rounded-xl p-8 border border-[var(--color-bg-tertiary)]">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-4">About This Project</h2>
+    <div class="prose max-w-none">
+      <p>
+        <strong>Aristeia & Philotimia</strong> (ἀριστεία — "excellence, valor" and φιλοτιμία — "love of honor") is a free, open-source educational resource dedicated to the study of ancient civilizations and their languages. Our goal is to collect consensus scholarly descriptions, curate the best learning resources, and provide structured study paths for anyone interested in the ancient world.
+      </p>
+      <p>
+        All site code and original materials are released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener noreferrer" target="_blank">GPL-3.0 license</a>. Content sourced from external references retains its original licensing — see individual pages for attribution.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

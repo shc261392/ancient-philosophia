@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const langs = await getCollection('languages');
+  return langs.map((lang) => ({
+    params: { slug: lang.id },
+    props: { lang },
+  }));
+}
+
+type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props'];
+
+const { lang } = Astro.props;
+const { Content, headings } = await render(lang);
+---
+
+<BaseLayout
+  title={lang.data.title}
+  description={lang.data.description}
+  type="article"
+>
+  <article class="max-w-4xl mx-auto">
+    <header class="mb-8">
+      <div class="flex flex-wrap gap-2 mb-4 text-sm">
+        <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">{lang.data.family}</span>
+        <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">{lang.data.script}</span>
+        <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">{lang.data.period}</span>
+        <span class="bg-[var(--color-aegean)]/20 px-3 py-1 rounded text-[var(--color-aegean-light)]">{lang.data.difficulty}</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif font-bold text-[var(--color-gold-leaf)] tracking-tight mb-4">
+        {lang.data.title}
+      </h1>
+      <p class="text-lg text-[var(--color-fg-secondary)] leading-relaxed">
+        {lang.data.description}
+      </p>
+      <div class="mt-4 border-meander max-w-xs"></div>
+    </header>
+
+    {headings.length > 0 && (
+      <nav class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] mb-8">
+        <h2 class="text-sm font-semibold text-[var(--color-fg-muted)] uppercase tracking-wide mb-3">Contents</h2>
+        <ul class="space-y-1">
+          {headings.map((h) => (
+            <li style={`margin-left: ${(h.depth - 2) * 1}rem`}>
+              <a href={`#${h.slug}`} class="text-sm text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">
+                {h.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-[var(--color-bg-tertiary)]">
+      <a href="/languages/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)] text-sm">
+        ← Back to all languages
+      </a>
+    </div>
+  </article>
+</BaseLayout>

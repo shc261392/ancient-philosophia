@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  period?: string;
+  region?: string;
+  tags?: string[];
+}
+
+const { title, description, href, period, region, tags = [] } = Astro.props;
+---
+
+<a href={href} class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-all hover:glow-accent">
+  <h3 class="font-serif text-lg text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors mb-2">
+    {title}
+  </h3>
+  {(period || region) && (
+    <div class="flex flex-wrap gap-2 mb-3 text-xs text-[var(--color-fg-muted)]">
+      {period && <span class="bg-[var(--color-bg-tertiary)] px-2 py-0.5 rounded">{period}</span>}
+      {region && <span class="bg-[var(--color-bg-tertiary)] px-2 py-0.5 rounded">{region}</span>}
+    </div>
+  )}
+  <p class="text-sm text-[var(--color-fg-secondary)] leading-relaxed line-clamp-3">
+    {description}
+  </p>
+  {tags.length > 0 && (
+    <div class="flex flex-wrap gap-1.5 mt-3">
+      {tags.slice(0, 4).map(tag => (
+        <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-tyrian)]/20 text-[var(--color-tyrian-light)]">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )}
+</a>

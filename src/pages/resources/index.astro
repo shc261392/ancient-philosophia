@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const resources = await getCollection('resources');
+
+const categories = ['book', 'website', 'course', 'tool', 'database', 'video'] as const;
+const categoryLabels: Record<string, string> = {
+  book: '📖 Books & Textbooks',
+  website: '🌐 Websites & Databases',
+  course: '🎓 Courses & Lectures',
+  tool: '🔧 Tools & Software',
+  database: '🗄 Digital Archives',
+  video: '🎬 Video & Multimedia',
+};
+const categoryIcons: Record<string, string> = {
+  book: '📖', website: '🌐', course: '🎓', tool: '🔧', database: '🗄', video: '🎬'
+};
+---
+
+<BaseLayout
+  title="Learning Resources"
+  description="Curated collection of books, websites, courses, tools, and databases for studying the ancient world."
+>
+  <Hero
+    title="Learning Resources"
+    subtitle="Curated tools for the student of antiquity"
+    description="A hand-picked collection of the best resources for studying ancient history and languages — from textbooks and grammars to digital archives and online courses."
+  />
+
+  {categories.map(cat => {
+    const items = resources.filter(r => r.data.category === cat);
+    if (items.length === 0) return null;
+    return (
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6 border-b border-[var(--color-bg-tertiary)] pb-2">
+          {categoryLabels[cat]}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {items.map(res => (
+            <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-serif text-lg text-[var(--color-gold-leaf)]">{res.data.title}</h3>
+                {res.data.free && (
+                  <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)] shrink-0 ml-2">Free</span>
+                )}
+              </div>
+              <p class="text-sm text-[var(--color-fg-secondary)] leading-relaxed mb-3">{res.data.description}</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                {res.data.topics.slice(0, 4).map(topic => (
+                  <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-tyrian)]/20 text-[var(--color-tyrian-light)]">{topic}</span>
+                ))}
+              </div>
+              {res.data.url && (
+                <a href={res.data.url} class="text-sm text-[var(--color-link)] hover:text-[var(--color-link-hover)]" target="_blank" rel="noopener noreferrer">
+                  Visit resource →
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

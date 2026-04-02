@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+---
+
+<BaseLayout
+  title="Product Roadmap"
+  description="Development roadmap for Aristeia & Philotimia — planned features, milestones, and long-term vision for this open-source ancient history learning platform."
+>
+  <Hero
+    title="Product Roadmap"
+    subtitle="Building from foundations to φιλοτιμία"
+    description="This is an open-source, non-monetized project. All contributions are welcome. Here's where we're headed."
+  />
+
+  <!-- Current Status -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">Current Status: v0.1 — Foundation</h2>
+    <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-3 h-3 rounded-full bg-[var(--color-bronze-light)] animate-pulse"></div>
+        <span class="text-[var(--color-bronze-light)] font-semibold">In Progress</span>
+      </div>
+      <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> Static site on Cloudflare Workers/Pages with Astro</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> Dark mode design with ancient Greek color palette</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> 23 civilization pages with consensus descriptions</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> 6 ancient language learning pages</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> Interactive learning mindmap with study paths</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> Curated resource directory</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> Full SEO/GEO with structured data on every page</li>
+        <li class="flex items-center gap-2"><span class="text-[var(--color-bronze-light)]">✓</span> Mobile-responsive design</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Phase 1 -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">Phase 1: Content Expansion</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">📝 Deeper Content</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Expand each civilization page with detailed sub-sections</li>
+          <li>• Add primary source excerpts (in translation) to each page</li>
+          <li>• Create timeline visualizations for each period</li>
+          <li>• Add image galleries (public domain archaeological photos)</li>
+          <li>• Separate pages for major rulers and figures (e.g., Hammurabi, Ramesses II, Alexander)</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">📚 Language Learning Expansion</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Structured lesson sequences for each focus language</li>
+          <li>• Sign/letter recognition practice pages (hieroglyphs, cuneiform, Greek, Latin)</li>
+          <li>• Grammar reference tables for each language</li>
+          <li>• Vocabulary lists by frequency</li>
+          <li>• Annotated reading passages with glossaries</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">🗺️ Maps & Visualization</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Interactive maps showing territorial extent of each civilization</li>
+          <li>• Trade route visualizations</li>
+          <li>• Language family trees (interactive SVG)</li>
+          <li>• Writing system comparison charts</li>
+          <li>• Chronological timeline with zoom and filter</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">🔗 Cross-References</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• "Related civilizations" sidebar on each page</li>
+          <li>• Tag-based navigation (e.g., "Bronze Age" across all regions)</li>
+          <li>• "Contemporary with..." comparison widgets</li>
+          <li>• Cross-links between language and civilization pages</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 2 -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">Phase 2: Interactive Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">💡 Study Tools</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Flashcard system for vocabulary (spaced repetition)</li>
+          <li>• Cuneiform sign quiz / hieroglyph recognition quiz</li>
+          <li>• Greek and Latin morphology drill</li>
+          <li>• Progress tracking (local storage, no accounts needed)</li>
+          <li>• Printable grammar reference sheets (PDF generation)</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">🔍 Search & Discovery</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Full-text search across all content (client-side using Pagefind or Fuse.js)</li>
+          <li>• Glossary of terms (searchable ancient terms with definitions)</li>
+          <li>• "This day in ancient history" feature</li>
+          <li>• Random article / "Explore" button</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">🌐 Internationalization</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• i18n support for site chrome (navigation, UI elements)</li>
+          <li>• Community-contributed translations of content</li>
+          <li>• RTL support for potential Arabic/Hebrew translations</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">♿ Accessibility</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• WCAG 2.1 AA compliance audit and fixes</li>
+          <li>• Screen reader optimization for all interactive elements</li>
+          <li>• Keyboard navigation for all features</li>
+          <li>• Alt text for all images and visualizations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 3 -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">Phase 3: Community & Advanced Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">👥 Community</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• GitHub Discussions enabled for community Q&A</li>
+          <li>• Content contribution guide (how to submit corrections/additions via PR)</li>
+          <li>• "Suggest an edit" button on every page</li>
+          <li>• Academic advisor board / expert review for accuracy</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">🤖 AI-Powered Features</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• AI tutor for language practice (with citations to authoritative sources)</li>
+          <li>• Auto-generated summaries for long articles</li>
+          <li>• Intelligent cross-referencing and related content suggestions</li>
+          <li>• Text analysis tools for student readings</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">📊 Advanced Visualization</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Interactive 3D models of archaeological sites (public domain)</li>
+          <li>• Network graph of cultural connections</li>
+          <li>• Animated timeline of territorial changes</li>
+          <li>• Writing system evolution visualizations</li>
+        </ul>
+      </div>
+      <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+        <h3 class="font-serif text-[var(--color-terracotta-light)] mb-3">📱 Progressive Web App</h3>
+        <ul class="space-y-2 text-sm text-[var(--color-fg-secondary)]">
+          <li>• Offline reading mode (service worker caching)</li>
+          <li>• Installable as a PWA on mobile devices</li>
+          <li>• Push notifications for new content</li>
+          <li>• Offline flashcard study mode</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Long-term Vision -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">Long-Term Vision</h2>
+    <div class="bg-[var(--color-bg-card)] rounded-xl p-8 border border-[var(--color-bg-tertiary)]">
+      <div class="prose max-w-none">
+        <p>
+          <strong>Aristeia & Philotimia</strong> aspires to become the go-to open-source platform for anyone interested in learning about the ancient world. Not a replacement for academic study, but a <em>gateway</em> — curating the best resources, providing structured study paths, and making ancient history and languages accessible to self-directed learners worldwide.
+        </p>
+        <p>
+          We want to be the resource we wished we had when we started studying antiquity: one that connects civilizations across space and time, explains how languages work, and points you to the best books, digital tools, and scholarly resources.
+        </p>
+        <p>
+          All contributions — corrections, new content, translations, design improvements, and code — are warmly welcomed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contributing -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6">Contributing</h2>
+    <div class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)]">
+      <div class="prose max-w-none">
+        <p>This project is open-source under the <strong>GPL-3.0 license</strong>. Content sourced from other projects retains its original license.</p>
+        <p>To contribute:</p>
+        <ol>
+          <li>Fork the repository at <a href="https://github.com/shc261392/aristeia-and-philotimia" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li>Create a feature branch (<code>git checkout -b feature/your-feature</code>)</li>
+          <li>Make your changes and commit (<code>git commit -m "feat: add Persian empire timeline"</code>)</li>
+          <li>Push to your fork and open a Pull Request</li>
+        </ol>
+        <p>We especially welcome:</p>
+        <ul>
+          <li>Corrections to historical content from subject matter experts</li>
+          <li>New or improved learning resources links</li>
+          <li>Translations into other languages</li>
+          <li>Design and accessibility improvements</li>
+          <li>Interactive features and visualization components</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

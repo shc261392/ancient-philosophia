@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const langs = (await getCollection('languages')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const families = [...new Set(langs.map(l => l.data.family))];
+---
+
+<BaseLayout
+  title="Ancient Languages"
+  description="Learn the languages of the ancient world: Middle Egyptian, Akkadian, Attic Greek, Classical Latin, and more."
+>
+  <Hero
+    title="Ancient Languages"
+    subtitle="Speak with the ancients"
+    description="Resources and guides for learning the major languages of the ancient world. Focus areas include Middle Egyptian, Akkadian, Attic Greek, and Classical Latin."
+  />
+
+  {families.map(family => {
+    const familyLangs = langs.filter(l => l.data.family === family);
+    return (
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6 border-b border-[var(--color-bg-tertiary)] pb-2">
+          {family}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {familyLangs.map(lang => (
+            <Card
+              title={lang.data.title}
+              description={lang.data.description}
+              href={`/languages/${lang.id}/`}
+              period={lang.data.period}
+              tags={[lang.data.script, lang.data.difficulty, ...lang.data.tags]}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

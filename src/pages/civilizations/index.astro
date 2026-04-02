@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const civs = (await getCollection('civilizations')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const regions = [...new Set(civs.map(c => c.data.region))];
+---
+
+<BaseLayout
+  title="Ancient Civilizations"
+  description="Explore the great civilizations of the ancient world, from the Sumerians and Egyptians to the Greeks and Romans."
+>
+  <Hero
+    title="Ancient Civilizations"
+    subtitle="From the first cities to the fall of empires"
+    description="A chronological survey of the peoples who shaped the ancient world. Each page collects consensus descriptions and curated learning resources."
+  />
+
+  {regions.map(region => {
+    const regionCivs = civs.filter(c => c.data.region === region);
+    return (
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-6 border-b border-[var(--color-bg-tertiary)] pb-2">
+          {region}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {regionCivs.map(civ => (
+            <Card
+              title={civ.data.title}
+              description={civ.data.description}
+              href={`/civilizations/${civ.id}/`}
+              period={civ.data.dateRange}
+              region={civ.data.region}
+              tags={civ.data.tags}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

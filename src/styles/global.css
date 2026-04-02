@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+ * Ancient Greek Iconic Color Palette — Flat Dark Mode
+ * Inspired by: black-figure pottery, terracotta, Tyrian purple,
+ * Aegean sea tones, oxidised bronze, marble white, and gold leaf.
+ */
+@theme inline {
+  /* --- Background tones (dark) --- */
+  --color-bg-primary: #0f0f14;
+  --color-bg-secondary: #1a1a24;
+  --color-bg-tertiary: #24243a;
+  --color-bg-card: #1e1e2e;
+
+  /* --- Foreground / text --- */
+  --color-fg-primary: #e8e0d4;
+  --color-fg-secondary: #b8b0a4;
+  --color-fg-muted: #7a7268;
+
+  /* --- Accent palette --- */
+  --color-terracotta: #c1604e;
+  --color-terracotta-light: #d9806e;
+  --color-gold-leaf: #c9a84c;
+  --color-gold-light: #e0c878;
+  --color-tyrian: #7b2d5f;
+  --color-tyrian-light: #a8467e;
+  --color-aegean: #2a6478;
+  --color-aegean-light: #3d8da6;
+  --color-bronze: #6d7c3e;
+  --color-bronze-light: #8fa052;
+  --color-marble: #d4cfc6;
+
+  /* --- Semantic --- */
+  --color-link: var(--color-aegean-light);
+  --color-link-hover: var(--color-gold-light);
+  --color-accent: var(--color-terracotta);
+  --color-accent-secondary: var(--color-tyrian-light);
+  --color-heading: var(--color-gold-leaf);
+
+  /* --- Font families --- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif", "Georgia", ui-serif, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ---- Base reset & global styles ---- */
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-fg-primary);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+
+/* --- Prose overrides for dark mode --- */
+.prose {
+  --tw-prose-body: var(--color-fg-primary);
+  --tw-prose-headings: var(--color-heading);
+  --tw-prose-links: var(--color-link);
+  --tw-prose-bold: var(--color-fg-primary);
+  --tw-prose-code: var(--color-terracotta-light);
+  --tw-prose-quotes: var(--color-fg-secondary);
+  --tw-prose-quote-borders: var(--color-terracotta);
+  --tw-prose-hr: var(--color-bg-tertiary);
+}
+
+/* --- Utility: Greek meander border --- */
+.border-meander {
+  border-image: repeating-linear-gradient(
+    90deg,
+    var(--color-gold-leaf) 0 8px,
+    transparent 8px 12px,
+    var(--color-terracotta) 12px 20px,
+    transparent 20px 24px
+  ) 4;
+  border-width: 3px;
+  border-style: solid;
+}
+
+/* --- Utility: Glow accent --- */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(193, 96, 78, 0.15), 0 0 40px rgba(42, 100, 120, 0.1);
+}
+
+/* --- Selection --- */
+::selection {
+  background-color: var(--color-tyrian);
+  color: var(--color-fg-primary);
+}

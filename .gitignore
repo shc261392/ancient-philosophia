@@ -20,10 +20,6 @@ pnpm-debug.log*
 # .env (local plaintext) is never committed
 .env
 # .env.production is committed ONLY after dotenvx encryption
-# (run: pnpm dotenvx encrypt -f .env.production)
-# Until then, keep it ignored so plaintext secrets aren't accidentally staged.
-# Remove this line after encrypting and add to git with: git add .env.production
-.env.production
 # dotenvx local private-key files — never commit these
 .env.keys
 .env.*.keys

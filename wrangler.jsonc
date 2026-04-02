@@ -6,7 +6,13 @@
     "directory": "./dist"
   },
   "routes": [
-    { "pattern": "ancient-philosophia.org/*", "zone_name": "ancient-philosophia.org" },
-    { "pattern": "www.ancient-philosophia.org/*", "zone_name": "ancient-philosophia.org" }
+    {
+      "pattern": "ancient-philosophia.org/*",
+      "zone_name": "ancient-philosophia.org"
+    },
+    {
+      "pattern": "www.ancient-philosophia.org/*",
+      "zone_name": "ancient-philosophia.org"
+    }
   ]
 }

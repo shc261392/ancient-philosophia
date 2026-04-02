@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    id: 'missing-civilization',
+    question: "Why isn't a particular civilization or language included?",
+    answer: `We are constantly improving our coverage. The ancient world is vast — thousands of years, hundreds of civilizations, and dozens of languages across multiple continents — and comprehensive coverage takes time to research and write responsibly. Many subjects not yet covered are already on our <a href="/roadmap/" class="text-[var(--color-link)] hover:underline">future roadmap</a>, and we add new content regularly. If you'd like to see a particular civilization, language, or topic covered sooner, feel free to open an issue or pull request on <a href="https://github.com/shc261392/ancient-philosophia" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GitHub</a>.`,
+  },
+  {
+    id: 'report-error',
+    question: 'I found an error or misleading information. How do I report it?',
+    answer: `We take accuracy very seriously. Ancient history is a living field — scholarship evolves, translations are revised, and archaeological discoveries change the picture. We understand that misleading information can be genuinely harmful to learners, so we want to hear about any mistakes as quickly as possible. Please email us at <a href="mailto:support@ancient-philosophia.org" class="text-[var(--color-link)] hover:underline">support@ancient-philosophia.org</a> with the specific page, a clear description of what appears to be incorrect, and, where possible, a reference to a reliable academic source or primary text. We aim to review and correct reported errors promptly.`,
+  },
+  {
+    id: 'free-to-use',
+    question: 'Is the content free to use?',
+    answer: `Yes. The site code is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GPL-3.0 license</a>. Original editorial content written for this project is freely available for educational and non-commercial use with attribution. Where we cite or summarize third-party works (academic books, journal articles, digital corpora), those works retain their original copyright. We always include source attributions in our articles so you can trace information back to primary and secondary scholarship.`,
+  },
+  {
+    id: 'sources',
+    question: 'What sources do you use?',
+    answer: `We draw on peer-reviewed scholarship and major digital humanities projects in the field. For Mesopotamia this means ORACC, CDLI, and ETCSL alongside standard works by scholars such as Thorkild Jacobsen, Marc Van De Mieroop, and Benjamin Foster. For Egypt we consult the Thesaurus Linguae Aegyptiae and UCLA &rsquo;s Encyclopedia of Egyptology. For Greece and Rome we use the Perseus Digital Library, Logeion, and the standard corpus of classical texts. Each article includes a learning resources section listing its key sources. If you believe we have misrepresented a scholarly consensus, please <a href="mailto:support@ancient-philosophia.org" class="text-[var(--color-link)] hover:underline">let us know</a>.`,
+  },
+  {
+    id: 'contribute',
+    question: 'How can I contribute?',
+    answer: `Ancient Philosophia is open source and welcomes contributions. You can help by writing or improving civilization and language articles, adding learning resources, fixing typos, or reporting broken links. Visit the <a href="https://github.com/shc261392/ancient-philosophia" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GitHub repository</a> to browse open issues or submit a pull request. For larger contributions &mdash; such as adding a new section or significantly revising existing content &mdash; please open an issue first so we can coordinate.`,
+  },
+  {
+    id: 'scripts-fonts',
+    question: 'Some ancient script characters appear as boxes or question marks. Why?',
+    answer: `Ancient scripts like Sumerian cuneiform (𒀭), Egyptian hieroglyphs, Linear B (𐀀), and others require Unicode-supporting fonts that may not be installed by default on all devices. We recommend installing <a href="https://fonts.google.com/noto" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">Noto Sans</a> (which includes extensive ancient script coverage) or <a href="https://unifoundry.com/unifont/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GNU Unifont</a>. Most modern operating systems will display these characters correctly once appropriate font support is installed.`,
+  },
+];
+---
+
+<BaseLayout
+  title="Frequently Asked Questions"
+  description="Answers to common questions about Ancient Philosophia — missing civilizations, reporting errors, sources, contributing, and more."
+>
+  <div class="max-w-3xl mx-auto">
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl font-serif font-bold text-[var(--color-fg-primary)] mb-3">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-[var(--color-fg-secondary)] text-lg leading-relaxed">
+        Everything you need to know about using, improving, and contributing to Ancient Philosophia.
+        Don't see your question here? Email us at{' '}
+        <a href="mailto:support@ancient-philosophia.org" class="text-[var(--color-link)] hover:underline">
+          support@ancient-philosophia.org
+        </a>.
+      </p>
+    </div>
+
+    <!-- FAQ list -->
+    <dl class="space-y-0 divide-y divide-[var(--color-bg-tertiary)]">
+      {faqs.map((faq) => (
+        <div id={faq.id} class="py-7 scroll-mt-20">
+          <dt class="text-lg font-semibold text-[var(--color-fg-primary)] mb-3 leading-snug">
+            {faq.question}
+          </dt>
+          <dd
+            class="text-[var(--color-fg-secondary)] leading-relaxed [&_a]:text-[var(--color-link)] [&_a:hover]:underline"
+            set:html={faq.answer}
+          />
+        </div>
+      ))}
+    </dl>
+
+    <!-- Contact CTA -->
+    <div class="mt-12 p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)]">
+      <h2 class="text-lg font-semibold text-[var(--color-gold-leaf)] mb-2">Still have a question?</h2>
+      <p class="text-[var(--color-fg-secondary)] text-sm leading-relaxed">
+        Reach out directly at{' '}
+        <a href="mailto:support@ancient-philosophia.org" class="text-[var(--color-link)] hover:underline font-medium">
+          support@ancient-philosophia.org
+        </a>.
+        For bug reports and content corrections you can also open an issue on{' '}
+        <a
+          href="https://github.com/shc261392/ancient-philosophia"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[var(--color-link)] hover:underline font-medium"
+        >
+          GitHub
+        </a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

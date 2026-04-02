@@ -1,8 +1,8 @@
 {
-  "name": "aristeia-and-philotimia",
+  "name": "ancient-philosophia",
   "type": "module",
   "version": "0.0.1",
-  "description": "Ancient History & Language Learning – a comprehensive open-source resource for studying civilizations from Sumer to Rome",
+  "description": "Ancient Philosophia — an open-source educational resource for ancient history and languages, covering civilizations from Sumer to Rome",
   "license": "GPL-3.0-or-later",
   "engines": {
     "node": ">=24.0.0",
@@ -12,6 +12,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "deploy": "astro build && npx wrangler deploy",
     "astro": "astro"
   },

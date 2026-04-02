@@ -1,7 +1,7 @@
-# Aristeia & Philotimia — Copilot Instructions
+# Ancient Philosophia — Copilot Instructions
 
 ## Project Overview
-An open-source educational website for learning ancient history and languages, covering civilizations from Sumer to Rome. Built with Astro (v5+), Tailwind CSS v4, deployed to Cloudflare Workers/Pages.
+An open-source educational website for learning ancient history and languages, covering civilizations from Sumer to Rome. Built with Astro (v5+), Tailwind CSS v4, deployed to Cloudflare Workers/Pages at **ancient-philosophia.org**.
 
 ## Tech Stack
 - **Framework:** Astro 6+ (static-first, content collections with glob loaders)

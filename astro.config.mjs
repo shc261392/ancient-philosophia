@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aristeia-and-philotimia.pages.dev',
+  site: 'https://ancient-philosophia.org',
   output: 'static',
   adapter: cloudflare({
     imageService: 'passthrough',

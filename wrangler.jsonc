@@ -4,15 +4,5 @@
   "compatibility_date": "2026-04-01",
   "assets": {
     "directory": "./dist"
-  },
-  "routes": [
-    {
-      "pattern": "ancient-philosophia.org/*",
-      "zone_name": "ancient-philosophia.org"
-    },
-    {
-      "pattern": "www.ancient-philosophia.org/*",
-      "zone_name": "ancient-philosophia.org"
-    }
-  ]
+  }
 }

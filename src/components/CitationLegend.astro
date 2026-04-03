@@ -1,0 +1,33 @@
+---
+/**
+ * Displays a compact citation-quality legend explaining the green/yellow/red system.
+ * Include on article pages or in the FAQ.
+ */
+---
+
+<aside class="citation-legend" aria-label="Citation quality legend">
+  <h3 class="text-sm font-semibold text-[var(--color-fg-muted)] uppercase tracking-wide mb-3">Citation Quality</h3>
+  <ul class="space-y-2 text-sm">
+    <li class="flex items-start gap-2">
+      <span class="inline-block w-3 h-3 mt-1 rounded-full shrink-0 bg-emerald-500" aria-hidden="true"></span>
+      <span class="text-[var(--color-fg-secondary)]">
+        <strong class="text-[var(--color-fg-primary)]">Well-cited</strong> — Directly citing credible academic works; over 80% source-verified with only phrasing changes, no semantic difference.
+      </span>
+    </li>
+    <li class="flex items-start gap-2">
+      <span class="inline-block w-3 h-3 mt-1 rounded-full shrink-0 bg-amber-400" aria-hidden="true"></span>
+      <span class="text-[var(--color-fg-secondary)]">
+        <strong class="text-[var(--color-fg-primary)]">Derived from sources</strong> — Has citations but meaning and descriptions are interpreted or synthesized from sources; may not be fully accurate.
+      </span>
+    </li>
+    <li class="flex items-start gap-2">
+      <span class="inline-block w-3 h-3 mt-1 rounded-full shrink-0 bg-red-500" aria-hidden="true"></span>
+      <span class="text-[var(--color-fg-secondary)]">
+        <strong class="text-[var(--color-fg-primary)]">Needs citation</strong> — Poor citation or lacks citation entirely. Treat with caution and consider contributing improved sources.
+      </span>
+    </li>
+  </ul>
+  <p class="mt-3 text-xs text-[var(--color-fg-muted)]">
+    See <a href="/faq/#citation-quality" class="text-[var(--color-link)] hover:underline">FAQ: Citation Quality</a> for full details.
+  </p>
+</aside>

@@ -201,3 +201,71 @@ p a {
   padding: 0.5rem 0.5rem 0.5rem 2.5rem;
   margin-left: -0.5rem;
 }
+
+/* --- Citation quality status indicators --- */
+.cited-block {
+  position: relative;
+  border-left: 3px solid transparent;
+  padding-left: 0.75rem;
+  margin-left: -0.75rem;
+  margin-bottom: 0.25rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cited-block::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 0.45rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.cited-block:hover::before {
+  opacity: 1;
+}
+
+.cited-green {
+  border-left-color: #22c55e;
+}
+.cited-green::before {
+  background-color: #22c55e;
+}
+
+.cited-yellow {
+  border-left-color: #eab308;
+}
+.cited-yellow::before {
+  background-color: #eab308;
+}
+
+.cited-red {
+  border-left-color: #ef4444;
+}
+.cited-red::before {
+  background-color: #ef4444;
+}
+
+/* Subtle background tint on hover */
+.cited-green:hover { background-color: rgba(34, 197, 94, 0.04); }
+.cited-yellow:hover { background-color: rgba(234, 179, 8, 0.04); }
+.cited-red:hover { background-color: rgba(239, 68, 68, 0.04); }
+
+/* --- Citation legend sidebar --- */
+.citation-legend {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-bg-tertiary);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Contribute / Edit bar --- */
+.contribute-bar {
+  border-top: 1px solid var(--color-bg-tertiary);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}

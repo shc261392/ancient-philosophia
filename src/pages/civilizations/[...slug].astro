@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import EditOnGitHub from '../../components/EditOnGitHub.astro';
+import CitationLegend from '../../components/CitationLegend.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -54,6 +56,9 @@ const { Content, headings } = await render(civ);
       </nav>
     )}
 
+    <!-- Citation Legend -->
+    <CitationLegend />
+
     <!-- Content -->
     <div class="prose prose-lg max-w-none">
       <Content />
@@ -69,6 +74,9 @@ const { Content, headings } = await render(civ);
         ))}
       </div>
     )}
+
+    <!-- Collaboration -->
+    <EditOnGitHub filePath={`src/content/civilizations/${civ.id}.mdx`} collection="civilizations" />
 
     <!-- Back link -->
     <div class="mt-12 pt-8 border-t border-[var(--color-bg-tertiary)]">

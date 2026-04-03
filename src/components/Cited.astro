@@ -1,0 +1,25 @@
+---
+/**
+ * Wraps a content block (paragraph, list, etc.) with a citation-quality indicator.
+ *
+ * Status levels:
+ *   green  — Directly cited from credible academic sources (>80% sourced, phrasing changes only)
+ *   yellow — Has citations but meaning is derived/interpreted from sources (may not be fully accurate)
+ *   red    — Poor citation or lacks citation entirely
+ */
+interface Props {
+  status: 'green' | 'yellow' | 'red';
+}
+
+const { status } = Astro.props;
+
+const labels: Record<string, string> = {
+  green: 'Well-cited',
+  yellow: 'Derived from sources',
+  red: 'Needs citation',
+};
+---
+
+<div class={`cited-block cited-${status}`} data-citation-status={status} title={labels[status]}>
+  <slot />
+</div>

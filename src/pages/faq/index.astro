@@ -3,6 +3,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const faqs = [
   {
+    id: 'citation-quality',
+    question: 'What do the green, yellow, and red citation indicators mean?',
+    answer: `<p class="mb-4">Every content paragraph on this site displays a colored left-border indicating <strong>citation quality</strong> — how closely the text is grounded in credible academic sources. This system exists so readers always know how much trust to place in what they're reading.</p>
+
+<div class="space-y-4 mb-4">
+  <div class="flex items-start gap-3">
+    <span class="inline-block w-4 h-4 mt-0.5 rounded-full shrink-0" style="background-color: #22c55e"></span>
+    <div>
+      <strong class="text-[var(--color-fg-primary)]">Green — Well-cited</strong><br/>
+      The paragraph directly cites credible academic works. Over 80% of the content is source-verified — only phrasing has been changed for readability, with no semantic difference from the original scholarly sources. You can treat green paragraphs as reliable summaries of established scholarship.
+    </div>
+  </div>
+  <div class="flex items-start gap-3">
+    <span class="inline-block w-4 h-4 mt-0.5 rounded-full shrink-0" style="background-color: #eab308"></span>
+    <div>
+      <strong class="text-[var(--color-fg-primary)]">Yellow — Derived from sources</strong><br/>
+      The paragraph has citations, but the meaning and description are <em>interpreted</em> or <em>synthesized</em> from those sources rather than directly quoted. The information is broadly supported by scholarship but may include editorial interpretation. Check the cited sources for precision.
+    </div>
+  </div>
+  <div class="flex items-start gap-3">
+    <span class="inline-block w-4 h-4 mt-0.5 rounded-full shrink-0" style="background-color: #ef4444"></span>
+    <div>
+      <strong class="text-[var(--color-fg-primary)]">Red — Needs citation</strong><br/>
+      The paragraph has poor citation or lacks citation entirely. The information may still be accurate, but it hasn't been verified against specific academic sources. <strong>Treat red paragraphs with caution.</strong> We welcome contributions that add proper citations — see <a href="#contribute" class="text-[var(--color-link)] hover:underline">How can I contribute?</a>.
+    </div>
+  </div>
+</div>
+
+<p>Our goal is to move all content toward green over time. The color system is deliberately transparent: we would rather honestly show you where citations are weak than pretend everything is equally well-sourced. If you spot a red or yellow paragraph and know the relevant scholarship, please <a href="https://github.com/shc261392/ancient-philosophia/edit/main/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">edit the page on GitHub</a> — your change will automatically open a pull request for review.</p>`,
+  },
+  {
     id: 'missing-civilization',
     question: "Why isn't a particular civilization or language included?",
     answer: `We are constantly improving our coverage. The ancient world is vast — thousands of years, hundreds of civilizations, and dozens of languages across multiple continents — and comprehensive coverage takes time to research and write responsibly. Many subjects not yet covered are already on our <a href="/roadmap/" class="text-[var(--color-link)] hover:underline">future roadmap</a>, and we add new content regularly. If you'd like to see a particular civilization, language, or topic covered sooner, feel free to open an issue or pull request on <a href="https://github.com/shc261392/ancient-philosophia" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GitHub</a>.`,
@@ -15,7 +46,7 @@ const faqs = [
   {
     id: 'free-to-use',
     question: 'Is the content free to use?',
-    answer: `Yes. The site code is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GPL-3.0 license</a>. Original editorial content written for this project is freely available for educational and non-commercial use with attribution. Where we cite or summarize third-party works (academic books, journal articles, digital corpora), those works retain their original copyright. We always include source attributions in our articles so you can trace information back to primary and secondary scholarship.`,
+    answer: `Yes. The site code is released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GPL-3.0 license</a>. Original editorial content (articles, descriptions, and commentary written for this project) is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. You are free to share and adapt the content for non-commercial purposes, provided you give appropriate credit and distribute any derivative works under the same license. Where we cite or summarize third-party works (academic books, journal articles, digital corpora), those works retain their original copyright. We always include source attributions in our articles so you can trace information back to primary and secondary scholarship.`,
   },
   {
     id: 'sources',
@@ -25,7 +56,17 @@ const faqs = [
   {
     id: 'contribute',
     question: 'How can I contribute?',
-    answer: `Ancient Philosophia is open source and welcomes contributions. You can help by writing or improving civilization and language articles, adding learning resources, fixing typos, or reporting broken links. Visit the <a href="https://github.com/shc261392/ancient-philosophia" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GitHub repository</a> to browse open issues or submit a pull request. For larger contributions &mdash; such as adding a new section or significantly revising existing content &mdash; please open an issue first so we can coordinate.`,
+    answer: `Ancient Philosophia is open source and welcomes contributions. Every article page has an <strong>"Edit this page"</strong> link that takes you directly to the source file on GitHub. Clicking it will automatically create a fork of the repository where you can make changes, and when you're done, submit a <strong>pull request</strong> for review — no special setup needed beyond a GitHub account.<br/><br/>
+
+You can help by:
+<ul class="list-disc pl-5 mt-2 mb-2 space-y-1">
+  <li>Improving <span style="color: #ef4444">red</span> or <span style="color: #eab308">yellow</span> paragraphs with proper academic citations</li>
+  <li>Writing or expanding civilization, language, and mythology articles</li>
+  <li>Adding learning resources and fixing broken links</li>
+  <li>Correcting factual errors or improving clarity</li>
+</ul>
+
+For larger contributions — such as adding a new section or significantly revising existing content — please <a href="https://github.com/shc261392/ancient-philosophia/issues/new" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">open an issue first</a> so we can coordinate. All content contributions are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">CC BY-NC-SA 4.0</a>.`,
   },
   {
     id: 'support',

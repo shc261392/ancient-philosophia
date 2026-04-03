@@ -1,0 +1,51 @@
+---
+/**
+ * "Edit on GitHub" and "Suggest Changes" bar for content pages.
+ * Links to the source file on GitHub so visitors can fork, edit, and open a PR.
+ */
+interface Props {
+  /** Path relative to repo root, e.g. "src/content/myths/amun.mdx" */
+  filePath: string;
+  /** Collection type for the back-link context */
+  collection?: string;
+}
+
+const { filePath, collection } = Astro.props;
+const repoBase = 'https://github.com/shc261392/ancient-philosophia';
+const editUrl = repoBase + '/edit/main/' + filePath;
+const issueTitle = 'Content issue: ' + filePath;
+const issueBody = '## Page\n' + filePath + '\n\n## Issue\n\n(Describe the problem — factual error, missing citation, unclear phrasing, etc.)\n\n## Suggested correction\n\n(If applicable, provide corrected text with sources.)';
+const issueUrl = repoBase + '/issues/new?title=' + encodeURIComponent(issueTitle) + '&body=' + encodeURIComponent(issueBody);---
+
+<div class="contribute-bar">
+  <div class="flex flex-wrap items-center gap-4 text-sm">
+    <a
+      href={editUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-1.5 text-[var(--color-link)] hover:text-[var(--color-link-hover)] transition-colors"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 20h9"></path>
+        <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"></path>
+      </svg>
+      Edit this page
+    </a>
+    <a
+      href={issueUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-1.5 text-[var(--color-fg-muted)] hover:text-[var(--color-link)] transition-colors"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 8v4"/>
+        <path d="M12 16h.01"/>
+      </svg>
+      Report an issue
+    </a>
+    <span class="text-[var(--color-fg-muted)] text-xs hidden sm:inline">
+      Edits open a GitHub pull request — no account setup needed beyond GitHub
+    </span>
+  </div>
+</div>

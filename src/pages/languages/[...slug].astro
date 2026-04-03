@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import EditOnGitHub from '../../components/EditOnGitHub.astro';
+import CitationLegend from '../../components/CitationLegend.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -77,9 +79,15 @@ const { Content, headings } = await render(lang);
       </nav>
     )}
 
+    <!-- Citation Legend -->
+    <CitationLegend />
+
     <div class="prose prose-lg max-w-none">
       <Content />
     </div>
+
+    <!-- Collaboration -->
+    <EditOnGitHub filePath={`src/content/languages/${lang.id}.mdx`} collection="languages" />
 
     <div class="mt-12 pt-8 border-t border-[var(--color-bg-tertiary)]">
       <a href="/languages/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)] text-sm">

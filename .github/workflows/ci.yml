@@ -104,5 +104,3 @@ jobs:
               env:
                   DOTENV_PRIVATE_KEY_PRODUCTION: ${{ secrets.DOTENV_PRIVATE_KEY_PRODUCTION }}
               run: pnpm dotenvx run -f .env.production -- pnpm wrangler deploy
-                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

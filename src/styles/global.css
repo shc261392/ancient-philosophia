@@ -16,7 +16,7 @@
   /* --- Foreground / text --- */
   --color-fg-primary: #e8e0d4;
   --color-fg-secondary: #b8b0a4;
-  --color-fg-muted: #7a7268;
+  --color-fg-muted: #a49a90;
 
   /* --- Accent palette --- */
   --color-terracotta: #c1604e;
@@ -26,7 +26,7 @@
   --color-attic-red: #8B3A2A;
   --color-attic-red-light: #B85442;
   --color-aegean: #2a6478;
-  --color-aegean-light: #3d8da6;
+  --color-aegean-light: #4aadca;
   --color-bronze: #6d7c3e;
   --color-bronze-light: #8fa052;
   --color-marble: #d4cfc6;
@@ -110,4 +110,10 @@ a:hover {
 ::selection {
   background-color: var(--color-attic-red);
   color: var(--color-fg-primary);
+}
+
+/* Inline links inside paragraphs must be underlined (WCAG link-in-text-block) */
+p a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

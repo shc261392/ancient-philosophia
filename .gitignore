@@ -24,6 +24,10 @@ pnpm-debug.log*
 .env.keys
 .env.*.keys
 
+# Lighthouse CI — reports and temp Chrome profiles
+.lighthouseci/
+C:\Users\*/
+
 # macOS-specific files
 .DS_Store
 

@@ -81,7 +81,7 @@ const categoryLabels: Record<string, string> = {
                 )}
                 <div class="flex flex-wrap gap-1.5 mb-3">
                   {item.data.regions.map(region => (
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-attic-red)]/20 text-[var(--color-attic-red-light)]">
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-attic-red)]/20 text-[var(--color-fg-secondary)]">
                       {region}
                     </span>
                   ))}
@@ -130,7 +130,10 @@ const categoryLabels: Record<string, string> = {
         </figcaption>
       </figure>
       <figure class="bg-[var(--color-bg-card)] rounded-lg overflow-hidden border border-[var(--color-bg-tertiary)]">
-        <img src="/images/artifacts/temple-dendur.jpg" alt="Temple of Dendur" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" data-lightbox />
+<picture>
+          <source srcset="/images/artifacts/temple-dendur.webp" type="image/webp" />
+          <img src="/images/artifacts/temple-dendur.jpg" alt="Temple of Dendur" class="w-full h-40 object-contain bg-[var(--color-bg-primary)] p-1" loading="lazy" width="467" height="624" data-lightbox />
+        </picture>
         <figcaption class="p-2 text-xs text-[var(--color-fg-muted)]">
           Temple of Dendur, c. 10 BCE<br/>
           <span class="text-[var(--color-fg-muted)]">Met, CC0 Public Domain</span>

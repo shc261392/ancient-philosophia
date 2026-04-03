@@ -15,7 +15,8 @@
     "check": "astro check",
     "deploy": "astro build && dotenvx run -f .env.production -- wrangler deploy",
     "encrypt": "dotenvx encrypt -f .env.production",
-    "astro": "astro"
+    "astro": "astro",
+    "lhci": "CHROME_PATH=/usr/bin/google-chrome lhci autorun"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.7",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@dotenvx/dotenvx": "^1.59.1",
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2",

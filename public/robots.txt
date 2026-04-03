@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aristeia-and-philotimia.pages.dev/sitemap-index.xml
+Sitemap: https://ancient-philosophia.org/sitemap-index.xml

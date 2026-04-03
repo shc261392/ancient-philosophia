@@ -1,9 +1,9 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "ancient-philosophia",
-	"compatibility_date": "2026-04-01",
-	"assets": {
-		"directory": "./dist/client",
-		"not_found_handling": "404-page"
-	}
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ancient-philosophia",
+  "compatibility_date": "2026-04-01",
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "404-page"
+  }
 }

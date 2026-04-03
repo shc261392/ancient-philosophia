@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Support Ancient Philosophia"
+  description="Ancient Philosophia is a free, open-source educational website. If you find it useful, you can help keep it running by buying a coffee — it's entirely voluntary and deeply appreciated."
+>
+  <div class="max-w-2xl mx-auto">
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl font-serif font-bold text-[var(--color-fg-primary)] mb-3">
+        Support This Project
+      </h1>
+      <p class="text-[var(--color-fg-secondary)] text-lg leading-relaxed">
+        Ancient Philosophia is and will always be free to use.
+      </p>
+    </div>
+
+    <!-- Main card -->
+    <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] p-8 mb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl" aria-hidden="true">☕</span>
+        <h2 class="text-xl font-serif font-semibold text-[var(--color-gold-leaf)]">
+          Buy me a coffee
+        </h2>
+      </div>
+
+      <div class="space-y-4 text-[var(--color-fg-secondary)] leading-relaxed">
+        <p>
+          Running a website has modest but real costs: domain registration, DNS, CDN hosting, and
+          the occasional database or compute resource as the site grows. Every euro or dollar goes
+          directly toward keeping the lights on and the content improving.
+        </p>
+        <p>
+          This site is a solo passion project &mdash; researched, written, and maintained by one
+          person who believes that ancient history and language learning should be freely accessible
+          to everyone, not locked behind paywalls.
+        </p>
+        <p>
+          If you've found Ancient Philosophia genuinely useful &mdash; whether you used it to study
+          for a course, satisfy a curiosity, or just fell down an enjoyable rabbit hole of ancient
+          civilizations &mdash; a small contribution is a wonderful way to say thank you.
+        </p>
+        <p class="text-[var(--color-fg-muted)] text-sm">
+          Contributions are entirely voluntary. There are no premium features, no membership tiers,
+          and no expectation of payment. The site will remain open and free regardless.
+        </p>
+      </div>
+
+      <!-- Ko-fi button -->
+      <div class="mt-8">
+        <a
+          href="https://ko-fi.com/jameschien"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white transition-opacity hover:opacity-90"
+          style="background-color: #f45d22;"
+        >
+          <span>☕</span>
+          Support on Ko-fi
+        </a>
+      </div>
+    </div>
+
+    <!-- Other ways to help -->
+    <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] p-6">
+      <h2 class="text-lg font-semibold text-[var(--color-gold-leaf)] mb-4">
+        Other ways to help
+      </h2>
+      <ul class="space-y-3 text-[var(--color-fg-secondary)] text-sm leading-relaxed">
+        <li class="flex items-start gap-2">
+          <span class="text-[var(--color-bronze-light)] mt-0.5 shrink-0">→</span>
+          <span>
+            <strong class="text-[var(--color-fg-primary)]">Contribute content</strong> &mdash;
+            open a pull request on{' '}
+            <a
+              href="https://github.com/shc261392/ancient-philosophia"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[var(--color-link)] hover:underline"
+            >
+              GitHub
+            </a>{' '}
+            to add or improve civilizations, languages, or resources.
+          </span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-[var(--color-bronze-light)] mt-0.5 shrink-0">→</span>
+          <span>
+            <strong class="text-[var(--color-fg-primary)]">Spread the word</strong> &mdash; share
+            a page with a student, a colleague, or anyone curious about ancient history.
+          </span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-[var(--color-bronze-light)] mt-0.5 shrink-0">→</span>
+          <span>
+            <strong class="text-[var(--color-fg-primary)]">Report errors</strong> &mdash; if you
+            spot something inaccurate, please{' '}
+            <a
+              href="mailto:support@ancient-philosophia.org"
+              class="text-[var(--color-link)] hover:underline"
+            >
+              let us know
+            </a>. Good scholarship matters.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
+
+<!-- Ko-fi floating widget (support page only) -->
+<script is:inline src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script is:inline>
+  kofiWidgetOverlay.draw('jameschien', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#f45d22',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>

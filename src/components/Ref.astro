@@ -1,0 +1,9 @@
+---
+export interface Props {
+  id: number;
+}
+
+const { id } = Astro.props;
+---
+
+<a href={`#ref-${id}`} id={`cite-${id}`} class="citation-ref" role="doc-noteref" aria-label={`Reference ${id}`}>[{id}]</a>

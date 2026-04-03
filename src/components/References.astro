@@ -1,0 +1,32 @@
+---
+export interface ReferenceItem {
+  id: number;
+  text: string;
+  url?: string;
+}
+
+export interface Props {
+  references: ReferenceItem[];
+}
+
+const { references } = Astro.props;
+---
+
+<section class="references-section" aria-label="References">
+  <h2 class="text-xl font-serif text-[var(--color-gold-leaf)] mb-4">References</h2>
+  <ol>
+    {references.map((ref) => (
+      <li id={`ref-${ref.id}`}>
+        <a href={`#cite-${ref.id}`} class="citation-ref mr-1" aria-label={`Back to citation ${ref.id}`}>↑</a>
+        {ref.url ? (
+          <Fragment>
+            {ref.text}{' '}
+            <a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.url}</a>
+          </Fragment>
+        ) : (
+          <Fragment>{ref.text}</Fragment>
+        )}
+      </li>
+    ))}
+  </ol>
+</section>

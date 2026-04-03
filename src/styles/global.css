@@ -39,9 +39,33 @@
   --color-heading: var(--color-gold-leaf);
 
   /* --- Font families --- */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Noto Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Noto Serif", "Georgia", ui-serif, serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "Noto Sans Mono", "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* --- Ancient script font stack (web font fallback chain) --- */
+.ancient-text,
+.prose td {
+  font-family:
+    "Noto Sans Egyptian Hieroglyphs",
+    "Noto Sans Cuneiform",
+    "Noto Sans Linear A",
+    "Noto Sans Linear B",
+    "Noto Sans Cypriot",
+    "Noto Sans Phoenician",
+    "Noto Sans Old Persian",
+    "Noto Sans Imperial Aramaic",
+    "Noto Sans Coptic",
+    "Noto Sans Old Italic",
+    "Noto Sans Anatolian Hieroglyphs",
+    "Noto Sans Lycian",
+    "Noto Sans Lydian",
+    "Noto Sans Carian",
+    "Noto Sans",
+    system-ui,
+    sans-serif;
+  font-style: normal;
 }
 
 /* ---- Base reset & global styles ---- */
@@ -116,4 +140,64 @@ a:hover {
 p a {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* --- Citation / footnote styles --- */
+.citation-ref {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--color-aegean-light);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0 1px;
+  transition: color 0.15s ease;
+}
+.citation-ref:hover {
+  color: var(--color-gold-light);
+  text-decoration: none;
+}
+
+.references-section {
+  border-top: 2px solid var(--color-bg-tertiary);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+.references-section ol {
+  list-style: none;
+  counter-reset: ref-counter;
+  padding-left: 0;
+}
+
+.references-section li {
+  counter-increment: ref-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-fg-secondary);
+  line-height: 1.5;
+}
+
+.references-section li::before {
+  content: counter(ref-counter) ".";
+  position: absolute;
+  left: 0;
+  color: var(--color-aegean-light);
+  font-weight: 600;
+  min-width: 2rem;
+}
+
+.references-section li a {
+  color: var(--color-link);
+  word-break: break-all;
+}
+
+.references-section li:target {
+  background-color: var(--color-bg-tertiary);
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  margin-left: -0.5rem;
 }

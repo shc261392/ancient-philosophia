@@ -35,6 +35,14 @@ const imageUrl = new URL(image, Astro.site).href;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
+<!-- Google Fonts: Noto families for ancient scripts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans+Cuneiform&family=Noto+Sans+Cypriot&family=Noto+Sans+Linear+A&family=Noto+Sans+Linear+B&family=Noto+Sans+Phoenician&family=Noto+Sans+Old+Persian&family=Noto+Sans+Imperial+Aramaic&family=Noto+Sans+Coptic&family=Noto+Sans+Old+Italic&family=Noto+Sans+Anatolian+Hieroglyphs&family=Noto+Sans+Lycian&family=Noto+Sans+Lydian&family=Noto+Sans+Carian&display=swap"
+  rel="stylesheet"
+/>
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />

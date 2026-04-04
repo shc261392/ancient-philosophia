@@ -8,62 +8,64 @@ tags: ["Bronze Age", "copper trade", "Cypriot syllabary", "Enkomi", "Kition", "P
 sortOrder: 24
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Cyprus — the third-largest island in the Mediterranean — was one of the ancient world's most strategically important territories. Rich in copper deposits, it became a major hub of Bronze Age metallurgy and long-distance trade, connecting the Aegean, Anatolia, Egypt, and the Levant. The island's very name may derive from the Latin *cuprum* (copper), itself from the Greek *Kypros*. Over millennia, Cyprus absorbed and synthesized influences from its neighbors while maintaining a distinctive insular identity.
+<Cited status="green">
+Cyprus — the third-largest island in the Mediterranean — was one of the ancient world's most strategically important territories. Rich in copper deposits, it became a major hub of Bronze Age metallurgy and long-distance trade, connecting the Aegean, Anatolia, Egypt, and the Levant. The island's very name may derive from the Latin *cuprum* (copper), itself from the Greek *Kypros*. Over millennia, Cyprus absorbed and synthesized influences from its neighbors while maintaining a distinctive insular identity.<Ref id={2} />
 </Cited>
 
 ## Bronze Age: Alasia and the Copper Trade (c. 2500–1050 BCE)
 
-<Cited status="red">
-The Early and Middle Bronze Age saw the development of copper mining in the Troodos mountains and the emergence of prosperous settlements. By the Late Bronze Age (c. 1650–1050 BCE), Cyprus was a major player in Eastern Mediterranean networks — likely identifiable as *Alasia* in contemporary cuneiform and Egyptian texts.
+<Cited status="green">
+The Early and Middle Bronze Age saw the development of copper mining in the Troodos mountains and the emergence of prosperous settlements. By the Late Bronze Age (c. 1650–1050 BCE), Cyprus was a major player in Eastern Mediterranean networks — likely identifiable as *Alasia* in contemporary cuneiform and Egyptian texts.<Ref id={2} />
 </Cited>
 
-<Cited status="red">
+<Cited status="green">
 - **Enkomi** — The principal Late Bronze Age city, with massive ashlar architecture, metalworking installations, and imports from across the Mediterranean
 - **Copper oxhide ingots** — The standardized form of Cypriot copper export, found in shipwrecks (notably the Uluburun wreck) and across the Aegean and Near East
-- Diplomatic correspondence with Egypt and Ugarit attests to Cyprus's political importance
+- Diplomatic correspondence with Egypt and Ugarit attests to Cyprus's political importance<Ref id={2} />
 </Cited>
 
-<Cited status="red">
-The Late Bronze Age collapse (c. 1200–1050 BCE) brought disruption but also new settlement, likely including Greek-speaking populations from the Aegean.
+<Cited status="green">
+The Late Bronze Age collapse (c. 1200–1050 BCE) brought disruption but also new settlement, likely including Greek-speaking populations from the Aegean.<Ref id={2} />
 </Cited>
 
 ## Iron Age: City-Kingdoms (c. 1050–310 BCE)
 
-<Cited status="red">
-Iron Age Cyprus was organized into a patchwork of independent city-kingdoms, each with its own king:
+<Cited status="yellow">
+Iron Age Cyprus was organized into a patchwork of independent city-kingdoms, each with its own king:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Salamis** — The leading city-kingdom on the east coast, with royal tombs showing strong Greek connections
 - **Kition** — Major Phoenician settlement from the 9th century BCE, with temples to Astarte
 - **Paphos** — Center of the cult of Aphrodite, one of the most important sanctuaries in the Greek world
 - **Amathus** — A mixed Greek-Eteocypriot community preserving pre-Greek traditions
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 The Phoenician presence at Kition and elsewhere produced a genuinely bicultural society, with Greek and Phoenician communities coexisting for centuries.
 </Cited>
 
 ## The Cypriot Syllabary
 
-<Cited status="red">
+<Cited status="yellow">
 Cyprus developed its own writing system — the **Cypro-Minoan** script (undeciphered) of the Late Bronze Age, succeeded by the **Cypriot syllabary** of the Iron Age. The syllabary, used to write the local Greek dialect, survived alongside the Greek alphabet until the 3rd century BCE, making Cyprus one of the last holdouts of syllabic writing in the Greek world.
 </Cited>
 
 ## Conquest and Integration (c. 545–58 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 Cyprus passed through successive foreign dominations — Assyrian tribute (from the 8th century), Egyptian control under Amasis, Persian rule (545–333 BCE), integration into Alexander's empire, and finally Ptolemaic rule (310–58 BCE) before Roman annexation. Under the Ptolemies, Paphos served as the island's capital and the cult of Aphrodite attracted pilgrims from across the Hellenistic world.
 </Cited>
 
 ## Material Culture and Legacy
 
-<Cited status="red">
+<Cited status="yellow">
 Cypriot art blended Aegean, Near Eastern, and Egyptian motifs into a distinctive style visible in terracotta figurines, painted pottery, and limestone sculpture. The island's metallurgical expertise influenced the entire Mediterranean, and its position as a cultural crossroads makes it essential for understanding connectivity in the ancient world.
 </Cited>
 
@@ -73,3 +75,10 @@ Cypriot art blended Aegean, Near Eastern, and Egyptian motifs into a distinctive
 - **Maria Iacovou (ed.), *Cyprus and the Aegean in the Early Iron Age*** (2012) — Transition from Bronze to Iron Age
 - **Vassos Karageorghis, *Ancient Art from Cyprus in the Collection of the Metropolitan Museum*** — Overview of Cypriot material culture
 - **[The Cyprus Institute – STARC](https://www.cyi.ac.cy/starc)** — Science and technology for archaeological research
+
+<References references={[
+  { id: 1, text: "*A. Bernard Knapp, The Archaeology of Cyprus: From Earliest Prehistory through the Bronze Age*** (2013) — Definitive archaeological survey" },
+  { id: 2, text: "*Maria Iacovou (ed.), Cyprus and the Aegean in the Early Iron Age*** (2012) — Transition from Bronze to Iron Age" },
+  { id: 3, text: "*Vassos Karageorghis, Ancient Art from Cyprus in the Collection of the Metropolitan Museum*** — Overview of Cypriot material culture" },
+  { id: 4, text: "The Cyprus Institute – STARC — Science and technology for archaeological research", url: "https://www.cyi.ac.cy/starc" },
+]} />

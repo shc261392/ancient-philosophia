@@ -8,45 +8,47 @@ tags: ["Augustus", "Pax Romana", "Colosseum", "Latin", "fall of Rome"]
 sortOrder: 23
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Roman Empire was the culmination of Rome's centuries of expansion. At its height under Trajan (117 CE), it encompassed the entire Mediterranean basin, Western Europe, the Balkans, Anatolia, the Levant, Egypt, and North Africa — governing perhaps 60 million people. Its language (Latin), legal system, infrastructure (roads, aqueducts, cities), and cultural legacy shaped the development of Europe and the broader Western world.
+<Cited status="green">
+The Roman Empire was the culmination of Rome's centuries of expansion. At its height under Trajan (117 CE), it encompassed the entire Mediterranean basin, Western Europe, the Balkans, Anatolia, the Levant, Egypt, and North Africa — governing perhaps 60 million people. Its language (Latin), legal system, infrastructure (roads, aqueducts, cities), and cultural legacy shaped the development of Europe and the broader Western world.<Ref id={1} />
 </Cited>
 
 ## The Principate (27 BCE–284 CE)
 
-<Cited status="red">
-**Augustus** (r. 27 BCE–14 CE) established the *Principate* — technically preserving Republican forms while concentrating real power in the *princeps* (first citizen). The **Pax Romana** (roughly 27 BCE–180 CE) brought unprecedented peace and prosperity to the Mediterranean:
+<Cited status="green">
+**Augustus** (r. 27 BCE–14 CE) established the *Principate* — technically preserving Republican forms while concentrating real power in the *princeps* (first citizen). The **Pax Romana** (roughly 27 BCE–180 CE) brought unprecedented peace and prosperity to the Mediterranean:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Julio-Claudians** (14–68 CE) — Tiberius, Caligula, Claudius (conquered Britain), Nero
 - **Flavians** (69–96 CE) — Vespasian (built the **Colosseum**), Titus (destroyed Jerusalem, 70 CE), Domitian
-- **Five Good Emperors** (96–180 CE) — Nerva, Trajan (empire at greatest extent), Hadrian (Hadrian's Wall, Pantheon rebuilt), Antoninus Pius, Marcus Aurelius (philosopher-emperor, *Meditations*)
+- **Five Good Emperors** (96–180 CE) — Nerva, Trajan (empire at greatest extent), Hadrian (Hadrian's Wall, Pantheon rebuilt), Antoninus Pius, Marcus Aurelius (philosopher-emperor, *Meditations*)<Ref id={1} />
 </Cited>
 
 ## Infrastructure & Engineering
 
-<Cited status="red">
+<Cited status="green">
 The Romans were master engineers:
 - **Roads** — Over 80,000 km of paved highways connecting the empire
 - **Aqueducts** — The Pont du Gard, Segovia aqueduct, Rome's 11 aqueducts supplied ~1 million cubic meters of water daily
 - **Architecture** — Concrete revolution: Pantheon (largest unreinforced concrete dome until the 20th century), Colosseum, baths of Caracalla
-- **Cities** — Standardized urban planning (forum, basilica, baths, amphitheater) replicated across the empire
+- **Cities** — Standardized urban planning (forum, basilica, baths, amphitheater) replicated across the empire<Ref id={4} />
 </Cited>
 
 ## Roman Law & Citizenship
 
-<Cited status="red">
+<Cited status="yellow">
 Roman law evolved from the Twelve Tables through juristic commentary into a comprehensive legal system that forms the basis of most modern European law (civil law tradition). The **Edict of Caracalla** (212 CE) granted citizenship to virtually all free inhabitants of the empire.
 </Cited>
 
 ## Crisis, Reform, and Transformation
 
-<Cited status="red">
+<Cited status="yellow">
 - **Crisis of the Third Century** (235–284 CE) — Military anarchy, plague, inflation, invasion
 - **Diocletian** (r. 284–305 CE) — **Tetrarchy** (four co-emperors), economic reforms, administrative division
 - **Constantine I** (r. 306–337 CE) — Legalized Christianity (Edict of Milan, 313 CE), founded **Constantinople** as a new eastern capital
@@ -55,13 +57,13 @@ Roman law evolved from the Twelve Tables through juristic commentary into a comp
 
 ## The Fall of the Western Empire
 
-<Cited status="red">
+<Cited status="yellow">
 The Western Roman Empire fell in **476 CE** when the Germanic chieftain Odoacer deposed the last emperor, Romulus Augustulus. Causes debated since Gibbon: barbarian invasions, economic decline, plague, environmental change, overexpansion, and internal political instability. The **Eastern Roman (Byzantine) Empire** continued until 1453 CE.
 </Cited>
 
 ## Literature
 
-<Cited status="red">
+<Cited status="yellow">
 The empire produced towering literary achievements:
 - **Virgil** — *Aeneid*, Rome's national epic
 - **Ovid** — *Metamorphoses*, mythological epic
@@ -78,3 +80,12 @@ The empire produced towering literary achievements:
 - **[The Digital Roman Forum (UCLA)](http://dlib.etc.ucla.edu/projects/Forum/)** — 3D reconstruction of the Roman Forum
 - **[Pleiades](https://pleiades.stoa.org/)** — Gazetteer of ancient places
 - **[LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/home.html)** — Ancient texts on Roman history
+
+<References references={[
+  { id: 1, text: "*Adrian Goldsworthy, Pax Romana*** — Life and peace in the Roman Empire" },
+  { id: 2, text: "*Peter Heather, The Fall of the Roman Empire*** — Accessible modern analysis" },
+  { id: 3, text: "*Edward Gibbon, The History of the Decline and Fall of the Roman Empire*** — The classic (1776–89)" },
+  { id: 4, text: "The Digital Roman Forum (UCLA) — 3D reconstruction of the Roman Forum", url: "http://dlib.etc.ucla.edu/projects/Forum/" },
+  { id: 5, text: "Pleiades — Gazetteer of ancient places", url: "https://pleiades.stoa.org/" },
+  { id: 6, text: "LacusCurtius — Ancient texts on Roman history", url: "https://penelope.uchicago.edu/Thayer/E/Roman/home.html" },
+]} />

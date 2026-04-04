@@ -8,41 +8,43 @@ tags: ["Kerma", "25th Dynasty", "Meroë", "Napata", "Meroitic script", "Nubian p
 sortOrder: 29
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Nubia — the land along the Nile south of the first cataract, spanning modern southern Egypt and Sudan — was home to one of Africa's most enduring civilizations. For nearly three millennia, Nubian kingdoms rivaled, traded with, and at times ruled Egypt itself. The Kingdom of Kush produced the Nubian pharaohs of the 25th Dynasty, built more pyramids than Egypt, developed its own writing system, and maintained a powerful state centered at Meroë until the 4th century CE.
+<Cited status="yellow">
+Nubia — the land along the Nile south of the first cataract, spanning modern southern Egypt and Sudan — was home to one of Africa's most enduring civilizations. For nearly three millennia, Nubian kingdoms rivaled, traded with, and at times ruled Egypt itself. The Kingdom of Kush produced the Nubian pharaohs of the 25th Dynasty, built more pyramids than Egypt, developed its own writing system, and maintained a powerful state centered at Meroë until the 4th century CE.<Ref id={2} />
 </Cited>
 
 ## The Kerma Culture (c. 2500–1500 BCE)
 
-<Cited status="red">
-The earliest Nubian state, centered at **Kerma** near the third cataract of the Nile, was one of the first urbanized societies in sub-Saharan Africa. Key features include:
+<Cited status="yellow">
+The earliest Nubian state, centered at **Kerma** near the third cataract of the Nile, was one of the first urbanized societies in sub-Saharan Africa. Key features include:<Ref id={4} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **The Western Deffufa** — A massive mud-brick temple-tower, one of the oldest surviving structures in Africa
 - **Royal tumuli** — Enormous burial mounds containing hundreds of sacrificed retainers, rivaling contemporary Egyptian royal tombs in scale
-- Kerma was a major trading power, controlling the flow of gold, ivory, ebony, and incense northward to Egypt
+- Kerma was a major trading power, controlling the flow of gold, ivory, ebony, and incense northward to Egypt<Ref id={2} />
 </Cited>
 
-<Cited status="red">
-Egypt conquered Kerma during the New Kingdom (c. 1500 BCE), imposing direct colonial rule over Nubia for nearly 500 years.
+<Cited status="yellow">
+Egypt conquered Kerma during the New Kingdom (c. 1500 BCE), imposing direct colonial rule over Nubia for nearly 500 years.<Ref id={1} />
 </Cited>
 
 ## The Kingdom of Kush: Napatan Period (c. 900–300 BCE)
 
-<Cited status="red">
-After Egyptian withdrawal, an indigenous Nubian kingdom re-emerged at **Napata**, near the fourth cataract and the sacred mountain of Jebel Barkal. The Napatan kings adopted Egyptian religious practices, building temples to Amun and using hieroglyphic writing.
+<Cited status="green">
+After Egyptian withdrawal, an indigenous Nubian kingdom re-emerged at **Napata**, near the fourth cataract and the sacred mountain of Jebel Barkal. The Napatan kings adopted Egyptian religious practices, building temples to Amun and using hieroglyphic writing.<Ref id={3} />
 </Cited>
 
-<Cited status="red">
-The apex came with the **25th Dynasty** (c. 747–656 BCE), when Nubian kings conquered and ruled all of Egypt:
+<Cited status="yellow">
+The apex came with the **25th Dynasty** (c. 747–656 BCE), when Nubian kings conquered and ruled all of Egypt:<Ref id={2} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Piye** (Piankhy) — Conquered Egypt in a brilliantly documented military campaign (the Victory Stele)
 - **Shabaqo** — Consolidated Nubian control and patronized Egyptian temples
 - **Taharqa** — The most powerful 25th Dynasty pharaoh, a great builder who is mentioned in the Hebrew Bible (2 Kings 19:9). Driven from Egypt by the Assyrian invasions of Esarhaddon and Ashurbanipal
@@ -50,11 +52,11 @@ The apex came with the **25th Dynasty** (c. 747–656 BCE), when Nubian kings co
 
 ## Meroë and the Meroitic Period (c. 300 BCE – 350 CE)
 
-<Cited status="red">
+<Cited status="yellow">
 The political center shifted south to **Meroë**, between the fifth and sixth cataracts, inaugurating Kush's longest and most distinctive phase:
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Pyramids of Meroë** — Over 200 steep-sided pyramids, more than in all of Egypt, served as royal tombs. Their distinctive narrow, pointed profile is immediately recognizable
 - **Iron working** — Meroë was a major iron-production center; massive slag heaps surround the city
 - **Meroitic script** — Developed around the 2nd century BCE, it is alphabetic (derived from Egyptian) and can be read phonetically, but the **Meroitic language remains only partially understood** — one of the great undeciphered problems of ancient studies
@@ -63,13 +65,13 @@ The political center shifted south to **Meroë**, between the fifth and sixth ca
 
 ## Material Culture
 
-<Cited status="red">
+<Cited status="yellow">
 Nubian art blended Egyptian, African, and later Hellenistic and Roman influences into a distinctive visual tradition. Meroitic pottery — particularly fine painted wares — is technically outstanding. Royal regalia, temple reliefs, and jewelry display a fusion of pharaonic iconography with indigenous African motifs, including the lion-god Apedemak.
 </Cited>
 
 ## Decline
 
-<Cited status="red">
+<Cited status="yellow">
 The Kingdom of Kush declined in the 3rd–4th centuries CE, pressured by the Noba peoples from the west and the rising kingdom of **Aksum** in Ethiopia. The Aksumite king Ezana's inscription (c. 350 CE) records a campaign against Meroë, traditionally marking the end of the Kushite state.
 </Cited>
 
@@ -80,3 +82,11 @@ The Kingdom of Kush declined in the 3rd–4th centuries CE, pressured by the Nob
 - **Timothy Kendall, *Jebel Barkal: History and Archaeology of Ancient Napata*** — Excavation reports from the sacred mountain
 - **[The Nubian Museum, Aswan](https://www.numibia.net/nubia/museum.htm)** — Dedicated to Nubian heritage
 - **[UNESCO: Archaeological Sites of the Island of Meroe](https://whc.unesco.org/en/list/1336)** — World Heritage listing for the pyramids and royal city
+
+<References references={[
+  { id: 1, text: "*Derek Welsby, The Kingdom of Kush: The Napatan and Meroitic Empires*** (1996) — Standard archaeological overview" },
+  { id: 2, text: "*Robert Morkot, The Black Pharaohs: Egypt's Nubian Rulers*** (2000) — The 25th Dynasty in context" },
+  { id: 3, text: "*Timothy Kendall, Jebel Barkal: History and Archaeology of Ancient Napata*** — Excavation reports from the sacred mountain" },
+  { id: 4, text: "The Nubian Museum, Aswan — Dedicated to Nubian heritage", url: "https://www.numibia.net/nubia/museum.htm" },
+  { id: 5, text: "UNESCO: Archaeological Sites of the Island of Meroe — World Heritage listing for the pyramids and royal city", url: "https://whc.unesco.org/en/list/1336" },
+]} />

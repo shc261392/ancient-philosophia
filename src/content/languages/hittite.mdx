@@ -11,31 +11,33 @@ materialRichness: "moderate"
 pronunciation: "reconstructed"
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Hittite (*Nesili*, "language of Nesa") is the oldest attested **Indo-European language**, known from over 30,000 cuneiform tablets found in the archives of **Hattusa** (Boğazköy, Turkey). Deciphered by Bedřich Hrozný in 1915, Hittite revolutionized comparative linguistics and our understanding of Indo-European prehistory. It belongs to the **Anatolian branch**, which some linguists consider the first to split from Proto-Indo-European.
+<Cited status="green">
+Hittite (*Nesili*, "language of Nesa") is the oldest attested **Indo-European language**, known from over 30,000 cuneiform tablets found in the archives of **Hattusa** (Boğazköy, Turkey). Deciphered by Bedřich Hrozný in 1915, Hittite revolutionized comparative linguistics and our understanding of Indo-European prehistory. It belongs to the **Anatolian branch**, which some linguists consider the first to split from Proto-Indo-European.<Ref id={6} />
 </Cited>
 
 ## Key Features
 
-<Cited status="red">
+<Cited status="yellow">
 - **Cuneiform script** — Borrowed from Mesopotamia, adapted for the Hittite language; includes Sumerograms and Akkadograms
 - **Two genders** — Common and neuter (not the three-gender system of most Indo-European languages)
 - **Laryngeals** — Hittite preserves reflexes of the Proto-Indo-European laryngeal consonants (ḫ), confirming a hypothesis made decades before their discovery
 - **Relatively simple morphology** compared to later Indo-European languages
-- **-mi and -ḫi conjugations** — Two main verb classes
+- **-mi and -ḫi conjugations** — Two main verb classes<Ref id={2} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-From the Hittite Laws (§1):
+<Cited status="green">
+From the Hittite Laws (§1):<Ref id={5} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > <span class="text-2xl leading-relaxed">𒌝𒈠 𒀭𒌓𒌓 𒄩𒀜𒌅𒅆𒇷 𒇻𒃶𒀀𒇷</span>
 >
 > *takku LÚ-an našma MUNUS-an šuwaizzi nu-an-kan kuenzi nāwi šer 4 SAG.DU pāi*
@@ -43,7 +45,7 @@ From the Hittite Laws (§1):
 > "If anyone kills a man or a woman in a quarrel, he shall bring him (for burial) and give 4 persons (as replacement)."
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 The Hittite Laws are among the most important legal texts of the ancient Near East, notable for their emphasis on restitution rather than retribution — a striking contrast with the Mesopotamian tradition of *lex talionis*.
 </Cited>
 
@@ -58,3 +60,12 @@ The Hittite Laws are among the most important legal texts of the ancient Near Ea
 - **[Hethitologie Portal Mainz](https://www.hethport.uni-wuerzburg.de/)** — Central digital portal for Hittite studies
 - **[Chicago Hittite Dictionary (CHD)](https://hittitedictionary.uchicago.edu/)** — The authoritative Hittite lexicon
 - **[CHDS Catalog](https://catalog.hethiter.net/)** — Catalogue of cuneiform tablets from Hattusa
+
+<References references={[
+  { id: 1, text: "*Theo van den Hout, The Elements of Hittite*** — The standard introductory textbook" },
+  { id: 2, text: "*Harry Hoffner & H. Craig Melchert, A Grammar of the Hittite Language*** — Comprehensive reference (2 vols.)" },
+  { id: 3, text: "*Silvia Luraghi, Old Hittite Sentence Structure*** — For advanced linguistic study" },
+  { id: 4, text: "Hethitologie Portal Mainz — Central digital portal for Hittite studies", url: "https://www.hethport.uni-wuerzburg.de/" },
+  { id: 5, text: "Chicago Hittite Dictionary (CHD) — The authoritative Hittite lexicon", url: "https://hittitedictionary.uchicago.edu/" },
+  { id: 6, text: "CHDS Catalog — Catalogue of cuneiform tablets from Hattusa", url: "https://catalog.hethiter.net/" },
+]} />

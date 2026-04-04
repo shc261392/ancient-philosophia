@@ -8,23 +8,25 @@ tags: ["Susa", "Proto-Elamite", "Iran", "Anshan"]
 sortOrder: 9
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Elam was one of the oldest civilizations of the ancient Near East, located in southwestern Iran (modern Khuzestan and Fars provinces). Centered on the great cities of **Susa** and **Anshan**, Elam maintained a complex and often antagonistic relationship with Mesopotamia over three millennia. It developed its own writing systems and a distinctive culture that blended Mesopotamian and indigenous Iranian elements.
+<Cited status="green">
+Elam was one of the oldest civilizations of the ancient Near East, located in southwestern Iran (modern Khuzestan and Fars provinces). Centered on the great cities of **Susa** and **Anshan**, Elam maintained a complex and often antagonistic relationship with Mesopotamia over three millennia. It developed its own writing systems and a distinctive culture that blended Mesopotamian and indigenous Iranian elements.<Ref id={1} />
 </Cited>
 
 ## Writing Systems
 
-<Cited status="red">
-Elam produced two indigenous scripts: **Proto-Elamite** (c. 3100–2900 BCE), which remains largely undeciphered, and **Linear Elamite** (c. 2300–1900 BCE), which has seen significant recent progress in decipherment (Desset 2022). Elamite scribes also used Mesopotamian cuneiform to write the Elamite language — itself a language isolate with no known relatives.
+<Cited status="green">
+Elam produced two indigenous scripts: **Proto-Elamite** (c. 3100–2900 BCE), which remains largely undeciphered, and **Linear Elamite** (c. 2300–1900 BCE), which has seen significant recent progress in decipherment (Desset 2022). Elamite scribes also used Mesopotamian cuneiform to write the Elamite language — itself a language isolate with no known relatives.<Ref id={4} />
 </Cited>
 
 ## Historical Periods
 
-<Cited status="red">
+<Cited status="yellow">
 - **Proto-Elamite** (c. 3200–2700 BCE) — Early state formation, Proto-Elamite script spread to sites across the Iranian plateau
 - **Old Elamite** (c. 2700–1500 BCE) — Awan and Shimashki dynasties; frequent conflicts with Mesopotamian powers
 - **Middle Elamite** (c. 1500–1100 BCE) — The apex of Elamite power. King **Untash-Napirisha** built the magnificent ziggurat at Chogha Zanbil (UNESCO World Heritage Site). King **Shutruk-Nahhunte** raided Babylon and carried off the Code of Hammurabi stele and the Victory Stele of Naram-Sin to Susa (where they were later found by French archaeologists)
@@ -33,7 +35,7 @@ Elam produced two indigenous scripts: **Proto-Elamite** (c. 3100–2900 BCE), wh
 
 ## Legacy
 
-<Cited status="red">
+<Cited status="yellow">
 Elam's influence on the Achaemenid Persian Empire was profound — Susa became a Persian capital, and Elamite was one of the three official languages inscribed at Persepolis and Behistun.
 </Cited>
 
@@ -43,3 +45,10 @@ Elam's influence on the Achaemenid Persian Empire was profound — Susa became a
 - **Javier Álvarez-Mon et al. (eds.), *The Elamite World*** — Comprehensive modern survey
 - **Louvre Museum, Susa collections** — Home to many key Elamite artifacts
 - **François Desset's publications on Linear Elamite decipherment** — Groundbreaking recent work
+
+<References references={[
+  { id: 1, text: "*D.T. Potts, The Archaeology of Elam: Formation and Transformation of an Ancient Iranian State*** — The definitive archaeological study" },
+  { id: 2, text: "*Javier Álvarez-Mon et al. (eds.), The Elamite World*** — Comprehensive modern survey" },
+  { id: 3, text: "Louvre Museum, Susa collections — Home to many key Elamite artifacts" },
+  { id: 4, text: "François Desset's publications on Linear Elamite decipherment — Groundbreaking recent work" },
+]} />

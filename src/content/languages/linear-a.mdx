@@ -11,40 +11,42 @@ tags: ["Minoan", "Crete", "undeciphered", "palace script"]
 sortOrder: 14
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Linear A is an **undeciphered** writing system used on Minoan Crete and some Aegean islands during the Middle and Late Bronze Age (c. 1800–1450 BCE). It consists of several hundred signs — a mix of syllabic signs (similar to the later Linear B) and ideographic/logographic signs. Despite the identification of many sign values by analogy with Linear B, the **underlying language remains unknown** because the script cannot be fully read and no bilingual inscription has been discovered. Linear A is one of the great unsolved mysteries of ancient writing.
+<Cited status="green">
+Linear A is an **undeciphered** writing system used on Minoan Crete and some Aegean islands during the Middle and Late Bronze Age (c. 1800–1450 BCE). It consists of several hundred signs — a mix of syllabic signs (similar to the later Linear B) and ideographic/logographic signs. Despite the identification of many sign values by analogy with Linear B, the **underlying language remains unknown** because the script cannot be fully read and no bilingual inscription has been discovered. Linear A is one of the great unsolved mysteries of ancient writing.<Ref id={3} />
 </Cited>
 
 ## What We Know
 
-<Cited status="red">
+<Cited status="green">
 - **~1,500 inscriptions** survive, mostly on clay tablets, but also on pottery, stone, metal, and seal stones
 - **Context:** Most inscriptions appear to be administrative — inventories, offerings, and accounting records from palace complexes
 - **Distribution:** Found primarily at Hagia Triada, Knossos, Phaistos, Malia, and Zakros on Crete, with outliers on Thera, Kea, and Miletos
 - **Sign inventory:** ~75 syllabic signs, ~100 ideographic/logographic signs, and a decimal number system
-- **Relation to Linear B:** Linear B was adapted from Linear A, so many signs share similar shapes — but the underlying languages are different
+- **Relation to Linear B:** Linear B was adapted from Linear A, so many signs share similar shapes — but the underlying languages are different<Ref id={3} />
 </Cited>
 
 ## The Decipherment Problem
 
-<Cited status="red">
+<Cited status="green">
 - **Linear B** (deciphered by Michael Ventris in 1952) writes an early form of Greek
 - **Linear A** writes an **unknown, non-Greek language** — applying Linear B sound values to Linear A signs produces words that do not match any known language
 - The language has been tentatively compared to Semitic, Anatolian, and pre-Indo-European substrate languages, but no proposal has gained consensus
-- The corpus is small and primarily administrative, limiting contextual clues
+- The corpus is small and primarily administrative, limiting contextual clues<Ref id={1} />
 </Cited>
 
 ## Sample Inscription
 
-<Cited status="red">
-From a libation table at the peak sanctuary of Psychro (GORILA transcription):
+<Cited status="green">
+From a libation table at the peak sanctuary of Psychro (GORILA transcription):<Ref id={2} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > <span class="text-2xl leading-relaxed">𐘀𐘁𐘂𐘃𐘄𐘅</span>
 >
 > *a-ta-i-*301-wa-ja | ja-sa-sa-ra-me*
@@ -52,7 +54,7 @@ From a libation table at the peak sanctuary of Psychro (GORILA transcription):
 > These sequences, read using Linear B phonetic values, yield words with no known etymology. The term **ja-sa-sa-ra-me** appears on many ritual vessels and may be a divine name or religious formula.
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 Note: Linear A has limited Unicode support. The characters above represent Linear A sign values (U+10600 block). The **Phaistos Disc**, often associated with Linear A, actually uses a distinct script with its own Unicode block:
 </Cited>
 
@@ -62,7 +64,7 @@ Note: Linear A has limited Unicode support. The characters above represent Linea
 
 ## The Phaistos Disc
 
-<Cited status="red">
+<Cited status="yellow">
 The **Phaistos Disc** (c. 1700 BCE) is a unique clay disc impressed with pictographic signs in a spiral pattern. While often associated with Linear A, its sign system is distinct. It remains undeciphered and intensely debated.
 </Cited>
 
@@ -73,3 +75,11 @@ The **Phaistos Disc** (c. 1700 BCE) is a unique clay disc impressed with pictogr
 - **Brent Davis, *Minoan Stone Vessels with Linear A Inscriptions*** — Recent scholarly study
 - **[DĀMOS](https://damos.hf.uio.no/)** — Database of Mycenaean at Oslo (includes Linear A data)
 - **Andrew Robinson, *Lost Languages*** — Accessible introduction to undeciphered scripts
+
+<References references={[
+  { id: 1, text: "John Younger, Linear A Texts — The most comprehensive online catalogue", url: "https://people.ku.edu/~jyounger/LinearA/" },
+  { id: 2, text: "GORILA corpus — Recueil des inscriptions en linéaire A by Godart & Olivier (the standard publication)" },
+  { id: 3, text: "*Brent Davis, Minoan Stone Vessels with Linear A Inscriptions*** — Recent scholarly study" },
+  { id: 4, text: "DĀMOS — Database of Mycenaean at Oslo (includes Linear A data)", url: "https://damos.hf.uio.no/" },
+  { id: 5, text: "*Andrew Robinson, Lost Languages*** — Accessible introduction to undeciphered scripts" },
+]} />

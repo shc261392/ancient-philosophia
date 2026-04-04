@@ -8,43 +8,45 @@ tags: ["Athens", "Sparta", "Parthenon", "philosophy", "democracy"]
 sortOrder: 19
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Classical period — from the Persian Wars to the death of Alexander the Great — represents the apex of ancient Greek civilization. Athens became the center of an unprecedented intellectual and artistic flowering, producing achievements in philosophy, drama, historiography, architecture, and democratic governance that continue to shape the modern world.
+<Cited status="yellow">
+The Classical period — from the Persian Wars to the death of Alexander the Great — represents the apex of ancient Greek civilization. Athens became the center of an unprecedented intellectual and artistic flowering, producing achievements in philosophy, drama, historiography, architecture, and democratic governance that continue to shape the modern world.<Ref id={1} />
 </Cited>
 
 ## The Persian Wars (490–479 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 The great conflict against the Achaemenid Empire defined the era:
 - **Marathon** (490 BCE) — Athenian hoplites defeated Darius I's invasion force
 - **Thermopylae** (480 BCE) — Leonidas and 300 Spartans made their legendary last stand against Xerxes
 - **Salamis** (480 BCE) — Themistocles' Athenian fleet destroyed the Persian navy in the straits
-- **Plataea** (479 BCE) — A united Greek army decisively defeated the Persian land forces
+- **Plataea** (479 BCE) — A united Greek army decisively defeated the Persian land forces<Ref id={5} />
 </Cited>
 
 ## Athenian Democracy & Empire
 
-<Cited status="red">
-After the Persian Wars, Athens built the **Delian League** into an empire. Under **Pericles** (c. 495–429 BCE), Athenian democracy reached its fullest development — the *ekklesia* (assembly) of all male citizens held sovereign power, with offices filled largely by lottery. Pericles used League tribute to fund the magnificent building program on the **Acropolis**, including the **Parthenon** (447–432 BCE), designed by Ictinus and adorned with sculptures by **Phidias**.
+<Cited status="green">
+After the Persian Wars, Athens built the **Delian League** into an empire. Under **Pericles** (c. 495–429 BCE), Athenian democracy reached its fullest development — the *ekklesia* (assembly) of all male citizens held sovereign power, with offices filled largely by lottery. Pericles used League tribute to fund the magnificent building program on the **Acropolis**, including the **Parthenon** (447–432 BCE), designed by Ictinus and adorned with sculptures by **Phidias**.<Ref id={5} />
 </Cited>
 
 ## Drama
 
-<Cited status="red">
+<Cited status="yellow">
 Athenian tragedy and comedy were performed at the festival of **Dionysus**:
 - **Aeschylus** — *Oresteia*, *Persians* — founder of tragedy, introduced the second actor
 - **Sophocles** — *Oedipus Rex*, *Antigone* — psychological depth and dramatic irony
 - **Euripides** — *Medea*, *Bacchae* — provocative, questioning traditional values
-- **Aristophanes** — *Clouds*, *Lysistrata*, *Frogs* — biting political comedy
+- **Aristophanes** — *Clouds*, *Lysistrata*, *Frogs* — biting political comedy<Ref id={5} />
 </Cited>
 
 ## Philosophy
 
-<Cited status="red">
+<Cited status="yellow">
 Athens became "the school of Greece":
 - **Socrates** (469–399 BCE) — Developed dialectical inquiry; executed for "corrupting the youth"
 - **Plato** (428–348 BCE) — Founded the Academy; wrote the dialogues (*Republic*, *Symposium*, *Phaedo*)
@@ -53,7 +55,7 @@ Athens became "the school of Greece":
 
 ## Historiography
 
-<Cited status="red">
+<Cited status="yellow">
 - **Herodotus** — "Father of History," wrote the *Histories* of the Persian Wars
 - **Thucydides** — *History of the Peloponnesian War*, a model of analytical, evidence-based historiography
 - **Xenophon** — *Anabasis*, *Hellenica*, memoirs of Socrates
@@ -61,7 +63,7 @@ Athens became "the school of Greece":
 
 ## The Peloponnesian War (431–404 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 The great conflict between Athens and Sparta, chronicled by Thucydides, devastated Greece. Athens' defeat in 404 BCE ended its empire but not its cultural pre-eminence. The 4th century saw the rise of **Thebes** under Epaminondas and ultimately the conquest of Greece by **Philip II of Macedon** (Battle of Chaeronea, 338 BCE).
 </Cited>
 
@@ -72,3 +74,11 @@ The great conflict between Athens and Sparta, chronicled by Thucydides, devastat
 - **Robin Waterfield, *Athens: A History*** — Readable narrative of the city's golden age
 - **[Perseus Digital Library](https://www.perseus.tufts.edu/)** — Full Greek texts with translations
 - **[Athenian Agora Excavations (ASCSA)](https://www.agathe.gr/)** — American School excavations in the heart of Athens
+
+<References references={[
+  { id: 1, text: "*Paul Cartledge, The Cambridge Illustrated History of Ancient Greece*** — Beautiful survey" },
+  { id: 2, text: "*Thucydides, History of the Peloponnesian War*** (Landmark edition, ed. Strassler) — Essential primary source" },
+  { id: 3, text: "*Robin Waterfield, Athens: A History*** — Readable narrative of the city's golden age" },
+  { id: 4, text: "Perseus Digital Library — Full Greek texts with translations", url: "https://www.perseus.tufts.edu/" },
+  { id: 5, text: "Athenian Agora Excavations (ASCSA) — American School excavations in the heart of Athens", url: "https://www.agathe.gr/" },
+]} />

@@ -11,36 +11,38 @@ tags: ["Achaemenid", "Behistun", "Persepolis", "cuneiform"]
 sortOrder: 16
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Old Persian is the earliest attested Iranian language, known primarily from the royal inscriptions of the **Achaemenid Empire** (c. 550–330 BCE). Unlike the complex Mesopotamian cuneiform inherited by Akkadian, Old Persian uses a relatively simple **semi-alphabetic** cuneiform script with only ~36 signs — likely invented specifically for royal monuments. The most famous inscription is the **Behistun (Bisitun) inscription** of Darius I, which was crucial for the decipherment of Mesopotamian cuneiform.
+<Cited status="green">
+Old Persian is the earliest attested Iranian language, known primarily from the royal inscriptions of the **Achaemenid Empire** (c. 550–330 BCE). Unlike the complex Mesopotamian cuneiform inherited by Akkadian, Old Persian uses a relatively simple **semi-alphabetic** cuneiform script with only ~36 signs — likely invented specifically for royal monuments. The most famous inscription is the **Behistun (Bisitun) inscription** of Darius I, which was crucial for the decipherment of Mesopotamian cuneiform.<Ref id={3} />
 </Cited>
 
 ## The Writing System
 
-<Cited status="red">
+<Cited status="yellow">
 - **~36 syllabic signs** — Much simpler than Akkadian cuneiform; mostly CV signs plus a few vowels
 - **8 logograms** — For common words like "king", "land", "god Ahuramazda"
 - **Word dividers** — An oblique wedge separates words (unusual for cuneiform)
-- **Direction** — Left to right (like English, unlike many cuneiform traditions)
+- **Direction** — Left to right (like English, unlike many cuneiform traditions)<Ref id={1} />
 </Cited>
 
 ## Key Texts
 
-<Cited status="red">
+<Cited status="green">
 - **Behistun Inscription** — Darius I's trilingual monument (Old Persian, Babylonian, Elamite) narrating his triumph over rebels; the Rosetta Stone of cuneiform
 - **Persepolis inscriptions** — Monumental texts at the ceremonial capital
 - **Naqsh-e Rostam** — Royal tomb inscriptions
-- **Susa inscriptions** — Foundation inscriptions from the administrative capital
+- **Susa inscriptions** — Foundation inscriptions from the administrative capital<Ref id={3} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-From the Behistun Inscription of Darius I (DB §1):
+<Cited status="green">
+From the Behistun Inscription of Darius I (DB §1):<Ref id={5} />
 </Cited>
 
 <Cited status="red">
@@ -62,3 +64,11 @@ From the Behistun Inscription of Darius I (DB §1):
 - **Rüdiger Schmitt, *The Old Persian Inscriptions of Naqsh-i Rustam and Persepolis*** — Scholarly edition
 - **[TITUS (Thesaurus Indogermanischer Text- und Sprachmaterialien)](https://titus.fkidg1.uni-frankfurt.de/)** — Digital texts
 - **[Livius.org — Behistun](https://www.livius.org/articles/place/behistun/)** — Text and translation
+
+<References references={[
+  { id: 1, text: "*Roland Kent, Old Persian: Grammar, Texts, Lexicon*** — The standard reference" },
+  { id: 2, text: "*Prods Oktor Skjærvø, An Introduction to Old Persian*** (Harvard) — Free online teaching grammar" },
+  { id: 3, text: "*Rüdiger Schmitt, The Old Persian Inscriptions of Naqsh-i Rustam and Persepolis*** — Scholarly edition" },
+  { id: 4, text: "TITUS (Thesaurus Indogermanischer Text- und Sprachmaterialien) — Digital texts", url: "https://titus.fkidg1.uni-frankfurt.de/" },
+  { id: 5, text: "Livius.org — Behistun — Text and translation", url: "https://www.livius.org/articles/place/behistun/" },
+]} />

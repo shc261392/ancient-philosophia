@@ -8,34 +8,36 @@ tags: ["Alexander", "Ptolemaic", "Seleucid", "Hellenism", "diadochi"]
 sortOrder: 20
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Alexander III of Macedon (356–323 BCE) conquered the entire Achaemenid Persian Empire in little more than a decade, creating the largest empire yet seen and inaugurating the **Hellenistic Age** — a period of Greek cultural diffusion across the Near East, Egypt, and Central Asia. After his death, his generals (the *Diadochi*) carved up the empire into rival kingdoms that endured until Rome absorbed them one by one.
+<Cited status="green">
+Alexander III of Macedon (356–323 BCE) conquered the entire Achaemenid Persian Empire in little more than a decade, creating the largest empire yet seen and inaugurating the **Hellenistic Age** — a period of Greek cultural diffusion across the Near East, Egypt, and Central Asia. After his death, his generals (the *Diadochi*) carved up the empire into rival kingdoms that endured until Rome absorbed them one by one.<Ref id={2} />
 </Cited>
 
 ## Alexander's Conquests
 
-<Cited status="red">
+<Cited status="green">
 Tutored by Aristotle and inheriting Philip II's superb Macedonian army, Alexander launched his invasion of Persia in 334 BCE:
 - **Granicus** (334 BCE) — First victory, opening Anatolia
 - **Issus** (333 BCE) — Defeated Darius III in person
 - Conquest of **Egypt** — Founded **Alexandria**, consulted the oracle of Amun at Siwa
 - **Gaugamela** (331 BCE) — Decisive defeat of the Persian army, collapse of the Achaemenid Empire
 - Campaigns into **Central Asia** and the **Indus Valley**
-- Death in Babylon, June 323 BCE, aged 32
+- Death in Babylon, June 323 BCE, aged 32<Ref id={1} />
 </Cited>
 
 ## The Successor Kingdoms (Diadochi)
 
-<Cited status="red">
+<Cited status="yellow">
 The Wars of the Diadochi (322–281 BCE) produced three major kingdoms:
 - **Ptolemaic Egypt** (305–30 BCE) — Founded by Ptolemy I. Built the **Library and Museum of Alexandria**, made Egypt the intellectual center of the Mediterranean. The **Rosetta Stone** (196 BCE) and Cleopatra VII (the last Ptolemaic ruler) are its most famous legacies
 - **Seleucid Empire** (312–63 BCE) — The largest successor state, spanning from Syria to Iran. Promoted Hellenization but ruled diverse populations
 - **Antigonid Macedonia** (306–168 BCE) — Controlled Greece and Macedonia
-- **Attalid Pergamon** (282–133 BCE) — Brilliant cultural center in western Anatolia, famous for the Great Altar of Pergamon
+- **Attalid Pergamon** (282–133 BCE) — Brilliant cultural center in western Anatolia, famous for the Great Altar of Pergamon<Ref id={1} />
 </Cited>
 
 ## Hellenistic Culture
@@ -50,7 +52,7 @@ The Wars of the Diadochi (322–281 BCE) produced three major kingdoms:
 
 ## Legacy
 
-<Cited status="red">
+<Cited status="yellow">
 The Hellenistic world was gradually absorbed by Rome (Corinth destroyed 146 BCE, Ptolemaic Egypt annexed 30 BCE), but Greek language and culture remained dominant in the eastern Mediterranean throughout the Roman period and into the Byzantine era.
 </Cited>
 
@@ -61,3 +63,11 @@ The Hellenistic world was gradually absorbed by Rome (Corinth destroyed 146 BCE,
 - **Waldemar Heckel, *Who's Who in the Age of Alexander the Great*** — Comprehensive prosopography
 - **[Livius.org](https://www.livius.org/)** — Extensive articles on Alexander and the Hellenistic world
 - **[Pleiades](https://pleiades.stoa.org/)** — Gazetteer of ancient places
+
+<References references={[
+  { id: 1, text: "*Robin Lane Fox, Alexander the Great*** — Vivid biography" },
+  { id: 2, text: "*Peter Green, Alexander to Actium: The Historical Evolution of the Hellenistic Age*** — Magisterial survey" },
+  { id: 3, text: "*Waldemar Heckel, Who's Who in the Age of Alexander the Great*** — Comprehensive prosopography" },
+  { id: 4, text: "Livius.org — Extensive articles on Alexander and the Hellenistic world", url: "https://www.livius.org/" },
+  { id: 5, text: "Pleiades — Gazetteer of ancient places", url: "https://pleiades.stoa.org/" },
+]} />

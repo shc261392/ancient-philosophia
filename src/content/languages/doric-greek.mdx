@@ -11,42 +11,44 @@ tags: ["Sparta", "Pindar", "Syracuse", "choral lyric"]
 sortOrder: 9
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Doric Greek was spoken across a wide area: the Peloponnese (including Sparta and Corinth), Crete, Rhodes, parts of the western coast of Asia Minor, and the western colonies (Syracuse, Tarentum). It is associated with **Pindar's** choral odes, Spartan inscriptions, and the pastoral poetry of **Theocritus**. Doric retained archaic features that Attic and Ionic had lost, making it valuable for comparative Greek linguistics.
+<Cited status="green">
+Doric Greek was spoken across a wide area: the Peloponnese (including Sparta and Corinth), Crete, Rhodes, parts of the western coast of Asia Minor, and the western colonies (Syracuse, Tarentum). It is associated with **Pindar's** choral odes, Spartan inscriptions, and the pastoral poetry of **Theocritus**. Doric retained archaic features that Attic and Ionic had lost, making it valuable for comparative Greek linguistics.<Ref id={1} />
 </Cited>
 
 ## Key Differences from Attic
 
-<Cited status="red">
+<Cited status="green">
 - **Long ᾱ preserved** — Where Attic-Ionic shifted long alpha to eta, Doric keeps ᾱ: μᾱτηρ (not μήτηρ)
 - **ω for ου** — Doric sometimes shows ω where Attic has ου
 - **First person plural -μες** — Instead of Attic -μεν
 - **Future in -σέω** — Instead of Attic contracted futures
 - **τύ for σύ** — "You" in some Doric varieties
-- **Vocabulary** — Distinctive words like σιός (Attic θεός, "god")
+- **Vocabulary** — Distinctive words like σιός (Attic θεός, "god")<Ref id={1} />
 </Cited>
 
 ## Key Texts
 
-<Cited status="red">
+<Cited status="green">
 - **Pindar, *Olympian*, *Pythian*, *Nemean*, *Isthmian Odes*** — Victory odes in literary Doric
 - **Theocritus, *Idylls*** — Pastoral poetry from Hellenistic Syracuse
 - **Alcman** — Choral lyric from Sparta
 - **Archimedes** — Mathematical treatises (Syracuse, technical Doric)
-- **Spartan inscriptions and decrees**
+- **Spartan inscriptions and decrees**<Ref id={3} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 Opening of Pindar's First Olympian Ode (Olympian 1.1–3):
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > ἄριστον μὲν ὕδωρ, ὁ δὲ χρυσὸς αἰθόμενον πῦρ  
 > ἅτε διαπρέπει νυκτὶ μεγάνορος ἔξοχα πλούτου·
 </Cited>
@@ -61,3 +63,10 @@ Opening of Pindar's First Olympian Ode (Olympian 1.1–3):
 - **W. Buck, *The Greek Dialects*** — The standard reference for all Greek dialect features
 - **Race (ed.), *Pindar: Olympian and Pythian Odes*** — Loeb edition with translation
 - **[Perseus Digital Library](https://www.perseus.tufts.edu/)** — Pindar texts with parsing tools
+
+<References references={[
+  { id: 1, text: "*Smyth, Greek Grammar*** — Chapter on Doric dialect features" },
+  { id: 2, text: "*W. Buck, The Greek Dialects*** — The standard reference for all Greek dialect features" },
+  { id: 3, text: "*Race (ed.), Pindar: Olympian and Pythian Odes*** — Loeb edition with translation" },
+  { id: 4, text: "Perseus Digital Library — Pindar texts with parsing tools", url: "https://www.perseus.tufts.edu/" },
+]} />

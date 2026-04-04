@@ -1,0 +1,8 @@
+[project]
+name = "ancient-philosophia-tools"
+version = "0.1.0"
+description = "Citation health evaluation tools for Ancient Philosophia"
+requires-python = ">=3.12"
+dependencies = [
+  "sentence-transformers>=5.0",
+]

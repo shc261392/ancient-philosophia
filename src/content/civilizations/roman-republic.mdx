@@ -8,34 +8,36 @@ tags: ["SPQR", "Senate", "Punic Wars", "Caesar", "republic"]
 sortOrder: 22
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Roman Republic (509–27 BCE) was one of history's most consequential political experiments. From a small city-state on the Tiber, Rome expanded through a combination of military prowess, adaptable alliances, strategic road-building, and a flexible constitution to dominate the entire Mediterranean world. Its internal tensions — between patricians and plebeians, between Senate and popular assemblies, between Republican tradition and military strongmen — ultimately produced the civil wars that ended the Republic.
+<Cited status="green">
+The Roman Republic (509–27 BCE) was one of history's most consequential political experiments. From a small city-state on the Tiber, Rome expanded through a combination of military prowess, adaptable alliances, strategic road-building, and a flexible constitution to dominate the entire Mediterranean world. Its internal tensions — between patricians and plebeians, between Senate and popular assemblies, between Republican tradition and military strongmen — ultimately produced the civil wars that ended the Republic.<Ref id={2} />
 </Cited>
 
 ## Institutions
 
-<Cited status="red">
+<Cited status="yellow">
 The Republican constitution was unwritten and evolved over centuries:
 - **Consuls** — Two annually elected chief magistrates with military command (*imperium*)
 - **Senate** — Advisory body of ex-magistrates; dominated policy through *auctoritas*
 - **Tribunes of the Plebs** — Protected plebeian rights; could veto any magistrate's action
 - **Assemblies** — The *comitia centuriata* (military assembly) and *concilium plebis* (plebeian assembly) passed laws and elected officials
-- **Twelve Tables** (c. 450 BCE) — Rome's first written law code
+- **Twelve Tables** (c. 450 BCE) — Rome's first written law code<Ref id={2} />
 </Cited>
 
 ## The Conflict of the Orders (494–287 BCE)
 
-<Cited status="red">
-The long struggle between patricians (hereditary aristocracy) and plebeians (common citizens) resulted in the progressive opening of political offices to plebeians, the creation of the tribunate, and the establishment of written law.
+<Cited status="yellow">
+The long struggle between patricians (hereditary aristocracy) and plebeians (common citizens) resulted in the progressive opening of political offices to plebeians, the creation of the tribunate, and the establishment of written law.<Ref id={1} />
 </Cited>
 
 ## Expansion & the Punic Wars
 
-<Cited status="red">
+<Cited status="yellow">
 - **Italian conquest** (5th–3rd c. BCE) — Latin War, Samnite Wars, war with Pyrrhus of Epirus
 - **First Punic War** (264–241 BCE) — Rome defeated Carthage and gained Sicily
 - **Second Punic War** (218–201 BCE) — **Hannibal** crossed the Alps and devastated Italy for 15 years. **Scipio Africanus** defeated him at **Zama** (202 BCE)
@@ -63,3 +65,11 @@ The conquest of a Mediterranean empire strained Republican institutions beyond b
 - **Mike Duncan, *The Storm Before the Storm*** — The crisis that ended the Republic
 - **[LacusCurtius (Bill Thayer)](https://penelope.uchicago.edu/Thayer/E/Roman/home.html)** — Digitized ancient texts on Roman history
 - **[Perseus Digital Library](https://www.perseus.tufts.edu/)** — Latin texts with translations
+
+<References references={[
+  { id: 1, text: "*Mary Beard, SPQR: A History of Ancient Rome*** — Brilliant modern survey" },
+  { id: 2, text: "*Harriet Flower (ed.), The Cambridge Companion to the Roman Republic*** — Academic essays" },
+  { id: 3, text: "*Mike Duncan, The Storm Before the Storm*** — The crisis that ended the Republic" },
+  { id: 4, text: "LacusCurtius (Bill Thayer) — Digitized ancient texts on Roman history", url: "https://penelope.uchicago.edu/Thayer/E/Roman/home.html" },
+  { id: 5, text: "Perseus Digital Library — Latin texts with translations", url: "https://www.perseus.tufts.edu/" },
+]} />

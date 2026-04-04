@@ -8,31 +8,33 @@ tags: ["Etruscans", "Rome", "kings", "Romulus", "Tarquin"]
 sortOrder: 21
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Before Rome became a republic and then an empire, central Italy was dominated by the sophisticated **Etruscan** civilization, while Rome itself was ruled by a succession of kings. The Etruscans profoundly influenced Roman religion, architecture, art, and political symbols — from the toga to the triumph to the fasces.
+<Cited status="green">
+Before Rome became a republic and then an empire, central Italy was dominated by the sophisticated **Etruscan** civilization, while Rome itself was ruled by a succession of kings. The Etruscans profoundly influenced Roman religion, architecture, art, and political symbols — from the toga to the triumph to the fasces.<Ref id={5} />
 </Cited>
 
 ## The Etruscans
 
-<Cited status="red">
-Etruscan civilization emerged from the **Villanovan culture** (c. 900–700 BCE) in central Italy (modern Tuscany, Umbria, and Lazio). The Etruscans built wealthy city-states including **Veii**, **Cerveteri**, **Tarquinia**, **Vulci**, and **Volterra**, forming a loose confederation known as the Etruscan League.
+<Cited status="green">
+Etruscan civilization emerged from the **Villanovan culture** (c. 900–700 BCE) in central Italy (modern Tuscany, Umbria, and Lazio). The Etruscans built wealthy city-states including **Veii**, **Cerveteri**, **Tarquinia**, **Vulci**, and **Volterra**, forming a loose confederation known as the Etruscan League.<Ref id={4} />
 </Cited>
 
-<Cited status="red">
-**Language**: The Etruscan language remains only partially understood. It was **not Indo-European** — a rarity in ancient Italy. Key evidence includes the **Pyrgi Tablets** (bilingual Etruscan-Phoenician), the **Liber Linteus** (a linen book preserved as mummy wrappings in Zagreb), and thousands of tomb inscriptions. Recent genetic studies confirm a largely indigenous Italian origin, contradicting Herodotus's claim of Lydian migration.
+<Cited status="green">
+**Language**: The Etruscan language remains only partially understood. It was **not Indo-European** — a rarity in ancient Italy. Key evidence includes the **Pyrgi Tablets** (bilingual Etruscan-Phoenician), the **Liber Linteus** (a linen book preserved as mummy wrappings in Zagreb), and thousands of tomb inscriptions. Recent genetic studies confirm a largely indigenous Italian origin, contradicting Herodotus's claim of Lydian migration.<Ref id={5} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 **Art**: Etruscan tombs at Tarquinia contain spectacular painted frescoes depicting banquets, musicians, dancers, and athletic contests. The **Apollo of Veii** (c. 510 BCE) is a masterpiece of Etruscan terracotta sculpture. Etruscan metalwork (especially bronzes like the Chimera of Arezzo) was prized throughout the Mediterranean.
 </Cited>
 
 ## Regal Rome (753–509 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 Roman tradition recorded seven kings:
 1. **Romulus** — Legendary founder (753 BCE), established the Senate and the *asylum* for refugees
 2. **Numa Pompilius** — Established religious institutions (calendar, Vestal Virgins, *pontifex maximus*)
@@ -45,7 +47,7 @@ Roman tradition recorded seven kings:
 
 ## Etruscan Influence on Rome
 
-<Cited status="red">
+<Cited status="yellow">
 The Romans adopted extensively from their Etruscan neighbors: temples on high podia, the triumphal procession, divination by inspection of entrails (*haruspicy*), the fasces (bundle of rods), gladiatorial combat (originally Etruscan funerary ritual), and hydraulic engineering.
 </Cited>
 
@@ -56,3 +58,11 @@ The Romans adopted extensively from their Etruscan neighbors: temples on high po
 - **Lucy Shipley, *The Etruscans: Lost Civilizations*** — Accessible recent introduction
 - **[Villa Giulia Museum (Rome)](http://www.museoetru.it/)** — National Etruscan Museum
 - **[Digital Corpus of Etruscan Texts](http://tle.humnet.unipi.it/)** — Etruscan inscriptions online
+
+<References references={[
+  { id: 1, text: "*Graeme Barker & Tom Rasmussen, The Etruscans*** — Standard archaeological introduction" },
+  { id: 2, text: "*Tim Cornell, The Beginnings of Rome*** — Critical assessment of early Roman history" },
+  { id: 3, text: "*Lucy Shipley, The Etruscans: Lost Civilizations*** — Accessible recent introduction" },
+  { id: 4, text: "Villa Giulia Museum (Rome) — National Etruscan Museum", url: "http://www.museoetru.it/" },
+  { id: 5, text: "Digital Corpus of Etruscan Texts — Etruscan inscriptions online", url: "http://tle.humnet.unipi.it/" },
+]} />

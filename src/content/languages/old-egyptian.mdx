@@ -11,39 +11,41 @@ tags: ["Pyramid Texts", "Old Kingdom", "archaic", "Unas"]
 sortOrder: 12
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Old Egyptian is the earliest extensively attested stage of the Egyptian language, known primarily from the **Pyramid Texts** of the late Old Kingdom (5th–6th Dynasties, c. 2350–2150 BCE) and royal inscriptions, autobiographical tomb texts, and administrative documents. It is distinguished from later Middle Egyptian by archaic grammatical features and vocabulary. Some Archaic Egyptian inscriptions from the Early Dynastic Period (c. 3100–2600 BCE) survive but are too brief for comprehensive linguistic analysis.
+<Cited status="green">
+Old Egyptian is the earliest extensively attested stage of the Egyptian language, known primarily from the **Pyramid Texts** of the late Old Kingdom (5th–6th Dynasties, c. 2350–2150 BCE) and royal inscriptions, autobiographical tomb texts, and administrative documents. It is distinguished from later Middle Egyptian by archaic grammatical features and vocabulary. Some Archaic Egyptian inscriptions from the Early Dynastic Period (c. 3100–2600 BCE) survive but are too brief for comprehensive linguistic analysis.<Ref id={2} />
 </Cited>
 
 ## Key Differences from Middle Egyptian
 
-<Cited status="red">
+<Cited status="yellow">
 - **Passive sḏm.w.f** — A distinct passive verb form lost in Middle Egyptian
 - **Older demonstratives** — *pn* / *tn* / *nn* used more broadly
 - **Archaic vocabulary** — Many words replaced or changed meaning by the Middle Kingdom
 - **Simpler syntax** — Sentences tend to be shorter and more paratactic
-- **Spelling conventions** — Less standardized than Middle Egyptian
+- **Spelling conventions** — Less standardized than Middle Egyptian<Ref id={2} />
 </Cited>
 
 ## Key Texts
 
-<Cited status="red">
+<Cited status="green">
 - **Pyramid Texts** — The world's oldest corpus of religious texts, carved inside pyramids at Saqqara (Unas, Teti, Pepi I, Merenre, Pepi II)
 - **Autobiographical inscriptions** — Tomb texts of Old Kingdom officials (Weni, Harkhuf)
-- **Palermo Stone** — Royal annals from Dynasties 1–5
+- **Palermo Stone** — Royal annals from Dynasties 1–5<Ref id={4} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 Pyramid Texts, Utterance 273–274 ("Cannibal Hymn", from the Pyramid of Unas):
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > <span class="text-2xl leading-relaxed">𓅱𓈖𓇋𓋴 𓊪𓏏 𓇳𓏤 𓅓 𓊪𓏏 𓇯</span>
 >
 > *ḏd mdw: wnis pw wnm rmṯ ꜥnḫ m nṯrw*
@@ -51,7 +53,7 @@ Pyramid Texts, Utterance 273–274 ("Cannibal Hymn", from the Pyramid of Unas):
 > "Words spoken: It is Unas who eats men and lives on the gods."
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 This extraordinary text describes the king consuming the gods to absorb their power — unique to the earliest Pyramid Texts.
 </Cited>
 
@@ -61,3 +63,10 @@ This extraordinary text describes the king consuming the gods to absorb their po
 - **Allen, *Middle Egyptian*** — Chapter 1 covers the stages of the Egyptian language
 - **Edel, *Altägyptische Grammatik*** — The definitive Old Egyptian grammar (in German)
 - **[Thesaurus Linguae Aegyptiae (TLA)](https://thesaurus-linguae-aegyptiae.de/)** — Digital corpus including Pyramid Texts
+
+<References references={[
+  { id: 1, text: "*James P. Allen, The Ancient Egyptian Pyramid Texts*** — Standard translation with commentary" },
+  { id: 2, text: "*Allen, Middle Egyptian*** — Chapter 1 covers the stages of the Egyptian language" },
+  { id: 3, text: "*Edel, Altägyptische Grammatik*** — The definitive Old Egyptian grammar (in German)" },
+  { id: 4, text: "Thesaurus Linguae Aegyptiae (TLA) — Digital corpus including Pyramid Texts", url: "https://thesaurus-linguae-aegyptiae.de/" },
+]} />

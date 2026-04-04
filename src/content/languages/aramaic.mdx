@@ -11,43 +11,45 @@ tags: ["lingua franca", "Biblical", "Dead Sea Scrolls", "Talmud"]
 sortOrder: 17
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Aramaic is a Semitic language that served as the **lingua franca** of the ancient Near East for over a thousand years. Originally the language of Aramaean city-states in Syria (11th–8th centuries BCE), it was adopted as the administrative language of the **Neo-Assyrian**, **Neo-Babylonian**, and **Achaemenid Persian** empires. Parts of the books of Daniel and Ezra in the Hebrew Bible are written in Aramaic, as are the Dead Sea Scrolls, the Talmud, and many Syriac Christian texts.
+<Cited status="green">
+Aramaic is a Semitic language that served as the **lingua franca** of the ancient Near East for over a thousand years. Originally the language of Aramaean city-states in Syria (11th–8th centuries BCE), it was adopted as the administrative language of the **Neo-Assyrian**, **Neo-Babylonian**, and **Achaemenid Persian** empires. Parts of the books of Daniel and Ezra in the Hebrew Bible are written in Aramaic, as are the Dead Sea Scrolls, the Talmud, and many Syriac Christian texts.<Ref id={1} />
 </Cited>
 
 ## Phases of Aramaic
 
-<Cited status="red">
+<Cited status="green">
 | Phase | Period | Key Features |
 |-------|--------|-------------|
 | Old Aramaic | c. 900–700 BCE | Royal inscriptions from Syria |
 | Imperial (Official) Aramaic | c. 700–200 BCE | Administrative language of empires |
 | Middle Aramaic | c. 200 BCE–200 CE | Dead Sea Scrolls, Nabataean, Palmyrene |
 | Late Aramaic | c. 200–700 CE | Syriac, Jewish Babylonian, Mandaic |
-| Modern Aramaic | 700 CE–present | Neo-Aramaic dialects (endangered) |
+| Modern Aramaic | 700 CE–present | Neo-Aramaic dialects (endangered) |<Ref id={1} />
 </Cited>
 
 ## The Aramaic Alphabet
 
-<Cited status="red">
-The Aramaic alphabet, derived from Phoenician, is the ancestor of many scripts: Hebrew, Arabic, Nabataean, Syriac, Sogdian, Mongolian, and (indirectly) Brahmi and its South/Southeast Asian descendants.
+<Cited status="green">
+The Aramaic alphabet, derived from Phoenician, is the ancestor of many scripts: Hebrew, Arabic, Nabataean, Syriac, Sogdian, Mongolian, and (indirectly) Brahmi and its South/Southeast Asian descendants.<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-From the Tel Dan Stele (c. 840 BCE, Old Aramaic):
+<Cited status="green">
+From the Tel Dan Stele (c. 840 BCE, Old Aramaic):<Ref id={1} />
 </Cited>
 
-<Cited status="red">
-> וקטלת.אנה.מלכ[ין.שבע]ן.אסר[י.אלפ]י.רכב.ואלפי.פרש
+<Cited status="yellow">
+> וקטלת.אנה.מלכ[ין.שבע]ן.אסר[י.אלפ]י.רכב.ואלפי.פרש<Ref id={2} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 *w-qṭlt.ʾnh.mlk[yn.šbʿ]n.ʾsr[y.ʾlp]y.rkb.w-ʾlpy.prš*
 </Cited>
 
@@ -55,13 +57,13 @@ From the Tel Dan Stele (c. 840 BCE, Old Aramaic):
 "And I killed [seve]nty kin[gs] who harnessed [thou]sands of chariots and thousands of horsemen."
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 This is one of the most important extra-biblical inscriptions, possibly mentioning the "House of David" (bytdwd).
 </Cited>
 
 ## Key Texts
 
-<Cited status="red">
+<Cited status="yellow">
 - **Tel Dan Stele** — 9th-century BCE royal inscription (possibly mentions "House of David")
 - **Elephantine Papyri** — 5th-century BCE Jewish documents from Egypt
 - **Dead Sea Scrolls** — Many scrolls in Aramaic (Genesis Apocryphon, Enoch, Tobit)
@@ -80,3 +82,12 @@ This is one of the most important extra-biblical inscriptions, possibly mentioni
 - **[Comprehensive Aramaic Lexicon (CAL)](http://cal.huc.edu/)** — The definitive Aramaic dictionary project
 - **[The Dead Sea Scrolls Digital Library](https://www.deadseascrolls.org.il/)** — High-resolution images and transcriptions
 - **[ETANA](https://www.etana.org/)** — Electronic Tools and Ancient Near Eastern Archives
+
+<References references={[
+  { id: 1, text: "*Franz Rosenthal, A Grammar of Biblical Aramaic*** — Standard Biblical Aramaic grammar" },
+  { id: 2, text: "*Takamitsu Muraoka & Bezalel Porten, A Grammar of Egyptian Aramaic*** — For the Elephantine documents" },
+  { id: 3, text: "*Thackston, Introduction to Syriac*** — For the Classical Syriac dialect" },
+  { id: 4, text: "Comprehensive Aramaic Lexicon (CAL) — The definitive Aramaic dictionary project", url: "http://cal.huc.edu/" },
+  { id: 5, text: "The Dead Sea Scrolls Digital Library — High-resolution images and transcriptions", url: "https://www.deadseascrolls.org.il/" },
+  { id: 6, text: "ETANA — Electronic Tools and Ancient Near Eastern Archives", url: "https://www.etana.org/" },
+]} />

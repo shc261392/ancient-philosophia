@@ -11,53 +11,55 @@ materialRichness: "rich"
 pronunciation: "reconstructed"
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Akkadian is the earliest attested Semitic language, written in **cuneiform** (wedge-shaped) script on clay tablets. It was the lingua franca of the ancient Near East from the late third millennium through the first millennium BCE, used for international diplomacy (the Amarna Letters), literature (the Epic of Gilgamesh), law (Code of Hammurabi), medicine, astronomy, and administration. The two main dialects are **Babylonian** (southern) and **Assyrian** (northern).
+<Cited status="green">
+Akkadian is the earliest attested Semitic language, written in **cuneiform** (wedge-shaped) script on clay tablets. It was the lingua franca of the ancient Near East from the late third millennium through the first millennium BCE, used for international diplomacy (the Amarna Letters), literature (the Epic of Gilgamesh), law (Code of Hammurabi), medicine, astronomy, and administration. The two main dialects are **Babylonian** (southern) and **Assyrian** (northern).<Ref id={1} />
 </Cited>
 
 ## Writing System
 
-<Cited status="red">
+<Cited status="yellow">
 Akkadian adopted the cuneiform script from the Sumerians and adapted it for a very different kind of language:
 - **Syllabic signs** — Most signs represent syllables (CV, VC, or CVC): *ba, ab, bab*
 - **Logograms (Sumerograms)** — Many Sumerian word-signs were retained for their meaning: LUGAL for "king" (*šarrum*)
 - **Determinatives** — Semantic classifiers (similar to Egyptian determinatives): DINGIR for divinities, KUR for lands
-- The sign inventory runs to several hundred commonly used signs
+- The sign inventory runs to several hundred commonly used signs<Ref id={1} />
 </Cited>
 
 ## Grammar Highlights
 
-<Cited status="red">
+<Cited status="green">
 As a Semitic language, Akkadian shares features with Arabic and Hebrew:
 - **Triconsonantal root system** — e.g., the root Š-P-R yields *šipru* (message), *šāpiru* (governor), *šapāru* (to send)
 - **Case system** — Nominative (-*um*), accusative (-*am*), genitive (-*im*) in earlier periods
 - **Verb system** — G-stem (basic), D-stem (intensive), Š-stem (causative), N-stem (passive); preterite, durative, perfect, stative
 - **Mimation and nunation** — Case endings with *-m* or *-n* that gradually disappeared over time
-- **Ventive** — A special verbal suffix (-*am*, -*nim*) indicating motion toward the speaker
+- **Ventive** — A special verbal suffix (-*am*, -*nim*) indicating motion toward the speaker<Ref id={1} />
 </Cited>
 
 ## Dialects & Periods
 
-<Cited status="red">
+<Cited status="green">
 | Period | Babylonian | Assyrian |
 |--------|-----------|----------|
 | Old | c. 2000–1500 BCE | c. 2000–1500 BCE |
 | Middle | c. 1500–1000 BCE | c. 1500–1000 BCE |
 | Neo | c. 1000–600 BCE | c. 1000–600 BCE |
-| Late | c. 600–100 CE | — |
+| Late | c. 600–100 CE | — |<Ref id={8} />
 </Cited>
 
-<Cited status="red">
-**Standard Babylonian** — A literary dialect used across Mesopotamia for prestigious texts (e.g., the standard version of Gilgamesh)
+<Cited status="yellow">
+**Standard Babylonian** — A literary dialect used across Mesopotamia for prestigious texts (e.g., the standard version of Gilgamesh)<Ref id={8} />
 </Cited>
 
 ## Key Texts for Students
 
-<Cited status="red">
+<Cited status="yellow">
 - **Code of Hammurabi** — Well-edited and well-studied; excellent for learning Old Babylonian
 - **Epic of Gilgamesh** — The masterpiece of Akkadian literature (Standard Babylonian)
 - **Enuma Elish** — The Babylonian creation epic
@@ -67,7 +69,7 @@ As a Semitic language, Akkadian shares features with Arabic and Hebrew:
 
 ## Recommended Learning Path
 
-<Cited status="red">
+<Cited status="yellow">
 1. **Learn the cuneiform sign inventory** (start with ~100 most common signs)
 2. **Work through a grammar** (Huehnergard — see below)
 3. **Practice reading edited texts** in normalized transcription before attempting cuneiform directly
@@ -77,11 +79,11 @@ As a Semitic language, Akkadian shares features with Arabic and Hebrew:
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 Opening of the *Epic of Gilgamesh* (Standard Babylonian, Tablet I):
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > <span class="text-2xl leading-relaxed">𒊭 𒈾𒀝𒁀 𒄿𒈬𒊒 𒅗𒁲 𒈠𒋾</span>
 >
 > *ša nagba īmuru išdi māti*
@@ -112,3 +114,14 @@ This famous incipit introduces Gilgamesh as a figure of supreme wisdom — one w
 - Many Assyriology programs offer Akkadian: Chicago, Yale, Penn, Harvard, SOAS London, Leiden, Heidelberg
 - **[MOOC: "Deciphering Secrets" (Coursera)](https://www.coursera.org/)** — Occasional courses on cuneiform
 - **r/Cuneiform** — Reddit community for learners
+
+<References references={[
+  { id: 1, text: "*John Huehnergard, A Grammar of Akkadian*** (3rd ed., Harvard Semitic Studies) — The standard English-language textbook; used at most American and many European universities" },
+  { id: 2, text: "*John Huehnergard, An Introduction to Akkadian*** — Companion reader" },
+  { id: 3, text: "*Wolfram von Soden, Grundriss der Akkadischen Grammatik*** — The definitive reference grammar (in German)" },
+  { id: 4, text: "*Jeremy Black, Andrew George & Nicholas Postgate (eds.), A Concise Dictionary of Akkadian*** (CDA) — Essential student dictionary" },
+  { id: 5, text: "ORACC — Open Richly Annotated Cuneiform Corpus; many text editions with glossaries", url: "https://oracc.museum.upenn.edu/" },
+  { id: 6, text: "CDLI — Cuneiform Digital Library Initiative", url: "https://cdli.mpiwg-berlin.mpg.de/" },
+  { id: 7, text: "ePSD2 — Electronic Pennsylvania Sumerian/Akkadian Dictionary", url: "https://oracc.museum.upenn.edu/epsd2/" },
+  { id: 8, text: "RINAP — Royal Inscriptions of the Neo-Assyrian Period", url: "https://oracc.museum.upenn.edu/rinap/" },
+]} />

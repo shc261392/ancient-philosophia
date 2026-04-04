@@ -9,40 +9,42 @@ tags: ["Theseus", "Minotaur", "labyrinth", "Athens", "Ariadne", "synoecism"]
 sortOrder: 31
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
-<Cited status="red">
-Theseus was the great Athenian counterpart to the pan-Hellenic Heracles. While Heracles belonged to everyone, Theseus was *Athens's own hero* — a figure systematically promoted from the 6th century BCE onward to embody Athenian identity, civic virtue, and democratic ideals.
+<Cited status="green">
+Theseus was the great Athenian counterpart to the pan-Hellenic Heracles. While Heracles belonged to everyone, Theseus was *Athens's own hero* — a figure systematically promoted from the 6th century BCE onward to embody Athenian identity, civic virtue, and democratic ideals.<Ref id={1} />
 </Cited>
 
 ## Birth and Youth
 
-<Cited status="red">
-Theseus had a dual parentage: his mother Aethra lay with both King Aegeus of Athens and the god Poseidon on the same night, giving Theseus both mortal legitimacy and divine power. Raised in Troezen, the young Theseus retrieved his father's sword and sandals from beneath a great rock (his recognition tokens) and traveled to Athens by the dangerous overland road.
+<Cited status="green">
+Theseus had a dual parentage: his mother Aethra lay with both King Aegeus of Athens and the god Poseidon on the same night, giving Theseus both mortal legitimacy and divine power. Raised in Troezen, the young Theseus retrieved his father's sword and sandals from beneath a great rock (his recognition tokens) and traveled to Athens by the dangerous overland road.<Ref id={1} />
 </Cited>
 
 ## The Six Labours on the Road to Athens
 
-<Cited status="red">
-Emulating Heracles, Theseus cleared the road of bandits and monsters:
+<Cited status="yellow">
+Emulating Heracles, Theseus cleared the road of bandits and monsters:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 1. **Periphetes** (the Club-Bearer) — at Epidaurus
 2. **Sinis** (the Pine-Bender) — at the Isthmus
 3. **Crommyonian Sow** — a monstrous pig at Crommyon
 4. **Sciron** — kicked travelers off a cliff; Theseus did the same to him
 5. **Cercyon** — defeated in wrestling at Eleusis
-6. **Procrustes** — the "Stretcher" who made guests fit his bed; Theseus gave him the same treatment
+6. **Procrustes** — the "Stretcher" who made guests fit his bed; Theseus gave him the same treatment<Ref id={1} />
 </Cited>
 
 ## The Minotaur and the Labyrinth
 
-<Cited status="red">
-The central myth. Athens owed a tribute of seven youths and seven maidens to King Minos of Crete, to feed the Minotaur (the bull-headed offspring of Pasiphaë). Theseus volunteered as one of the victims:
+<Cited status="yellow">
+The central myth. Athens owed a tribute of seven youths and seven maidens to King Minos of Crete, to feed the Minotaur (the bull-headed offspring of Pasiphaë). Theseus volunteered as one of the victims:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Ariadne**, daughter of Minos, fell in love with Theseus and gave him a ball of thread to navigate the Labyrinth
 - Theseus slew the Minotaur and followed the thread back out
 - He sailed away with Ariadne but abandoned her on Naxos (where Dionysus found and married her)
@@ -51,11 +53,11 @@ The central myth. Athens owed a tribute of seven youths and seven maidens to Kin
 
 ## Theseus as King
 
-<Cited status="red">
+<Cited status="yellow">
 The political Theseus was an Athenian invention of the 6th–5th centuries BCE:
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Synoecism** (*synoikismos*) — Theseus was credited with unifying the scattered communities of Attica into a single state centered on Athens
 - **Democratic founder** — Later tradition (especially Euripides) cast Theseus as a proto-democrat who voluntarily gave up royal power
 - **Amazonmachy** — Theseus fought the Amazons when they invaded Attica (depicted on the Athenian treasury at Delphi and the Hephaisteion)
@@ -82,3 +84,14 @@ After the Persian Wars, the Athenian general Cimon (c. 476 BCE) claimed to find 
 - Gantz, Timothy. *Early Greek Myth*. Johns Hopkins University Press, 1993. Ch. 9.
 
 See also: [Greek Pantheon](/myths/greek-pantheon/) · [Heracles](/myths/heracles/)
+
+<References references={[
+  { id: 1, text: "Walker, Henry J. Theseus and Athens. Oxford University Press, 1995." },
+  { id: 2, text: "Mills, Sophie. Theseus, Tragedy, and the Athenian Empire. Oxford University Press, 1997." },
+  { id: 3, text: "Gantz, Timothy. Early Greek Myth. Johns Hopkins University Press, 1993. Ch. 9." },
+  { id: 4, text: "Plutarch, Life of Theseus (most complete narrative)" },
+  { id: 5, text: "Apollodorus, Bibliotheca 3.15–16, Epitome 1.1–1.24" },
+  { id: 6, text: "Euripides, Hippolytus and The Suppliants" },
+  { id: 7, text: "Bacchylides, Ode 17 (Theseus's dive into the sea)" },
+  { id: 8, text: "Ovid, Metamorphoses 7–8 (Roman retelling)" },
+]} />

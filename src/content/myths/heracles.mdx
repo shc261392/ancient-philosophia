@@ -9,25 +9,27 @@ tags: ["Heracles", "Hercules", "Twelve Labours", "apotheosis", "hero cult", "pan
 sortOrder: 30
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
-<Cited status="red">
-Heracles (Roman: Hercules) was the quintessential Greek hero — a figure of superhuman strength, extreme suffering, and ultimate divine reward. His cult was pan-Hellenic and crossed into Roman, Etruscan, and Near Eastern traditions. He was worshipped both as a hero (with chthonic rites) and as a god (with Olympian offerings).
+<Cited status="green">
+Heracles (Roman: Hercules) was the quintessential Greek hero — a figure of superhuman strength, extreme suffering, and ultimate divine reward. His cult was pan-Hellenic and crossed into Roman, Etruscan, and Near Eastern traditions. He was worshipped both as a hero (with chthonic rites) and as a god (with Olympian offerings).<Ref id={2} />
 </Cited>
 
 ## Birth and Divine Parentage
 
-<Cited status="red">
-Heracles was the son of Zeus and the mortal woman Alcmene of Thebes. Hera, jealous of Zeus's infidelity, became his lifelong enemy. She sent serpents to kill him in his cradle (he strangled them) and later drove him mad, causing him to kill his own wife Megara and their children — the crime that led to his servitude and the Twelve Labours.
+<Cited status="yellow">
+Heracles was the son of Zeus and the mortal woman Alcmene of Thebes. Hera, jealous of Zeus's infidelity, became his lifelong enemy. She sent serpents to kill him in his cradle (he strangled them) and later drove him mad, causing him to kill his own wife Megara and their children — the crime that led to his servitude and the Twelve Labours.<Ref id={4} />
 </Cited>
 
 ## The Twelve Labours
 
-<Cited status="red">
-Assigned by King Eurystheus of Mycenae (at Hera's instigation) as penance:
+<Cited status="yellow">
+Assigned by King Eurystheus of Mycenae (at Hera's instigation) as penance:<Ref id={4} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 1. **Nemean Lion** — Strangled the invulnerable beast; wore its skin as armor
 2. **Lernaean Hydra** — Slew the multi-headed serpent (with Iolaus's help)
 3. **Ceryneian Hind** — Captured the sacred deer of Artemis alive
@@ -44,13 +46,13 @@ Assigned by King Eurystheus of Mycenae (at Hera's instigation) as penance:
 
 ## Later Adventures and Death
 
-<Cited status="red">
+<Cited status="yellow">
 After the Labours, Heracles participated in numerous adventures: the Argonautic expedition, the sack of Troy (under Laomedon), war against the centaurs, and the freeing of Prometheus. His death came from the poisoned robe of Nessus — a trap set by the dying centaur. In agony, Heracles mounted his own funeral pyre on Mount Oeta. His mortal part burned away, and he ascended to Olympus as a god, marrying Hebe (goddess of youth).
 </Cited>
 
 ## Cult and Worship
 
-<Cited status="red">
+<Cited status="yellow">
 Heracles was exceptional in receiving worship both as a **hero** (with offerings at tombs and chthonic altars) and as a **god** (with standard Olympian sacrifice). Major cult sites included:
 - **Thebes** (birthplace)
 - **Marathon** (Attic hero cult)
@@ -73,3 +75,14 @@ Heracles was exceptional in receiving worship both as a **hero** (with offerings
 - Padilla, Mark W., ed. *Rites of Passage in Ancient Greece*. Bucknell University Press, 1999.
 
 See also: [Greek Pantheon](/myths/greek-pantheon/) · [Trojan War Cycle](/myths/trojan-war-cycle/)
+
+<References references={[
+  { id: 1, text: "Stafford, Emma. Herakles. Routledge, 2012." },
+  { id: 2, text: "Gantz, Timothy. Early Greek Myth. Johns Hopkins University Press, 1993. Ch. 13–15." },
+  { id: 3, text: "Padilla, Mark W., ed. Rites of Passage in Ancient Greece. Bucknell University Press, 1999." },
+  { id: 4, text: "Apollodorus, Bibliotheca 2.4–2.7 (fullest account of the Labours)" },
+  { id: 5, text: "Euripides, Heracles (the madness)" },
+  { id: 6, text: "Sophocles, Trachiniae (death)" },
+  { id: 7, text: "Pindar, Olympian 3, Nemean 1 (praise poetry)" },
+  { id: 8, text: "Diodorus Siculus, Library 4.9–4.39" },
+]} />

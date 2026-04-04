@@ -11,44 +11,46 @@ tags: ["Herodotus", "Hippocrates", "Ionia", "elegiac poetry"]
 sortOrder: 8
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Ionic Greek was the dialect of the Greek settlements along the western coast of Asia Minor (modern Turkey) and the central Aegean islands. As the language of **Herodotus** (the "Father of History"), the early philosophers of Miletus (Thales, Anaximander, Heraclitus), the Hippocratic medical writings, and the elegiac poets, Ionic is one of the most important literary dialects of ancient Greece. It is closely related to Attic — both belong to the Attic-Ionic dialect group.
+<Cited status="green">
+Ionic Greek was the dialect of the Greek settlements along the western coast of Asia Minor (modern Turkey) and the central Aegean islands. As the language of **Herodotus** (the "Father of History"), the early philosophers of Miletus (Thales, Anaximander, Heraclitus), the Hippocratic medical writings, and the elegiac poets, Ionic is one of the most important literary dialects of ancient Greece. It is closely related to Attic — both belong to the Attic-Ionic dialect group.<Ref id={1} />
 </Cited>
 
 ## Key Differences from Attic
 
-<Cited status="red">
+<Cited status="green">
 - **ᾱ → η** — Where Attic has long alpha (ᾱ), Ionic typically has eta (η): Attic χώρα → Ionic χώρη
 - **κ not ττ** — Attic doubled tau (ττ) appears as sigma-sigma (σσ) in Ionic: θάλαττα → θάλασσα
 - **Lack of crasis** — Ionic tends to keep vowels uncontracted more than Attic
 - **Aspiration** — Ionic often lacks rough breathing: οὔνομα for ὄνομα
-- **Vocabulary differences** — Some characteristic Ionic words (e.g., κως for πως)
+- **Vocabulary differences** — Some characteristic Ionic words (e.g., κως for πως)<Ref id={1} />
 </Cited>
 
 ## Key Texts
 
-<Cited status="red">
+<Cited status="yellow">
 - **Herodotus, *Histories*** — The foundational work of Western historiography, written in Ionic prose
 - **Hippocratic Corpus** — Medical writings in Ionic
 - **Archilochus** — Iambic and elegiac poetry
-- **Heraclitus** — Philosophical fragments
+- **Heraclitus** — Philosophical fragments<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 Opening of Herodotus's *Histories* (1.1):
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > Ἡροδότου Ἁλικαρνησσέος ἱστορίης ἀπόδεξις ἥδε, ὡς μήτε τὰ γενόμενα ἐξ ἀνθρώπων τῷ χρόνῳ ἐξίτηλα γένηται, μήτε ἔργα μεγάλα τε καὶ θωμαστά, τὰ μὲν Ἕλλησι τὰ δὲ βαρβάροισι ἀποδεχθέντα, ἀκλεᾶ γένηται.
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 "This is the display of the inquiry of Herodotus of Halicarnassus, so that neither the deeds of men may be forgotten with time, nor the great and marvelous works — some brought forth by Greeks, others by barbarians — may lose their renown."
 </Cited>
 
@@ -58,3 +60,10 @@ Opening of Herodotus's *Histories* (1.1):
 - **Smyth, *Greek Grammar*** — Contains thorough treatment of dialects
 - **Pharr's *Homeric Greek*** — Useful for related epic dialect
 - **[Perseus Digital Library](https://www.perseus.tufts.edu/)** — Full text of Herodotus with morphological analysis
+
+<References references={[
+  { id: 1, text: "Students typically learn Attic Greek first, then study Ionic dialect features" },
+  { id: 2, text: "*Smyth, Greek Grammar*** — Contains thorough treatment of dialects" },
+  { id: 3, text: "*Pharr's Homeric Greek*** — Useful for related epic dialect" },
+  { id: 4, text: "Perseus Digital Library — Full text of Herodotus with morphological analysis", url: "https://www.perseus.tufts.edu/" },
+]} />

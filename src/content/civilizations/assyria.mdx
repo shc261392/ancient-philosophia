@@ -8,29 +8,31 @@ tags: ["military power", "Nineveh", "Ashurbanipal", "Neo-Assyrian Empire"]
 sortOrder: 3
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Assyria was one of the great civilizations of ancient Mesopotamia, centered in the Upper Tigris region of northern Iraq around the cities of Ashur, Nineveh, Nimrud (Kalhu), and Dur-Sharrukin. Over more than two millennia, Assyria evolved from a small city-state into the largest empire the world had yet seen, renowned for its military prowess, administrative sophistication, and monumental art.
+<Cited status="green">
+Assyria was one of the great civilizations of ancient Mesopotamia, centered in the Upper Tigris region of northern Iraq around the cities of Ashur, Nineveh, Nimrud (Kalhu), and Dur-Sharrukin. Over more than two millennia, Assyria evolved from a small city-state into the largest empire the world had yet seen, renowned for its military prowess, administrative sophistication, and monumental art.<Ref id={3} />
 </Cited>
 
 ## Old Assyrian Period (c. 2000–1750 BCE)
 
-<Cited status="red">
-The earliest well-documented phase saw Assyrian merchants establish trading colonies (*kārum*) in Anatolia, most notably at Kanesh (modern Kültepe, Turkey). Thousands of cuneiform tablets from this period document a sophisticated long-distance trade network dealing in tin and textiles — providing invaluable evidence for Bronze Age commerce.
+<Cited status="green">
+The earliest well-documented phase saw Assyrian merchants establish trading colonies (*kārum*) in Anatolia, most notably at Kanesh (modern Kültepe, Turkey). Thousands of cuneiform tablets from this period document a sophisticated long-distance trade network dealing in tin and textiles — providing invaluable evidence for Bronze Age commerce.<Ref id={4} />
 </Cited>
 
 ## Middle Assyrian Period (c. 1400–1050 BCE)
 
-<Cited status="red">
-Under kings like **Ashur-uballit I** and **Tukulti-Ninurta I**, Assyria grew into a significant territorial power, rivaling Babylon, the Hittites, and Egypt. The Middle Assyrian Laws provide one of the most important legal collections from ancient Mesopotamia.
+<Cited status="yellow">
+Under kings like **Ashur-uballit I** and **Tukulti-Ninurta I**, Assyria grew into a significant territorial power, rivaling Babylon, the Hittites, and Egypt. The Middle Assyrian Laws provide one of the most important legal collections from ancient Mesopotamia.<Ref id={5} />
 </Cited>
 
 ## Neo-Assyrian Empire (c. 911–609 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 The Neo-Assyrian Empire represents Assyria's apex. Key rulers include:
 - **Ashurnasirpal II** — Built the magnificent Northwest Palace at Nimrud with its famous carved reliefs
 - **Tiglath-Pileser III** — Transformed Assyria into a true empire through administrative reform and mass deportation policies
@@ -41,7 +43,7 @@ The Neo-Assyrian Empire represents Assyria's apex. Key rulers include:
 
 ## Art & Architecture
 
-<Cited status="red">
+<Cited status="yellow">
 Assyrian palace reliefs are among the masterpieces of ancient art — vast narrative programs depicting royal hunts, military campaigns, and ritual scenes. The lion-hunt reliefs of Ashurbanipal (now in the British Museum) are widely considered the finest achievements of Mesopotamian sculpture.
 </Cited>
 
@@ -58,3 +60,11 @@ An alliance of Babylonians and Medes sacked Nineveh in 612 BCE and destroyed the
 - **[State Archives of Assyria Online (SAA)](https://oracc.museum.upenn.edu/saao/)** — Digitized royal correspondence and administrative texts
 - **[ORACC / RINAP](https://oracc.museum.upenn.edu/rinap/)** — Royal Inscriptions of the Neo-Assyrian Period
 - **British Museum, Assyrian galleries** — Home to the finest collection of Assyrian reliefs
+
+<References references={[
+  { id: 1, text: "*Karen Radner, Ancient Assyria: A Very Short Introduction*** — Excellent concise overview" },
+  { id: 2, text: "*Eckart Frahm, Assyria: The Rise and Fall of the World's First Empire*** — Comprehensive recent history" },
+  { id: 3, text: "State Archives of Assyria Online (SAA) — Digitized royal correspondence and administrative texts", url: "https://oracc.museum.upenn.edu/saao/" },
+  { id: 4, text: "ORACC / RINAP — Royal Inscriptions of the Neo-Assyrian Period", url: "https://oracc.museum.upenn.edu/rinap/" },
+  { id: 5, text: "British Museum, Assyrian galleries — Home to the finest collection of Assyrian reliefs" },
+]} />

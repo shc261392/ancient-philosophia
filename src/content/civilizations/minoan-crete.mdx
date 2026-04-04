@@ -8,33 +8,35 @@ tags: ["Knossos", "Linear A", "palatial", "bull-leaping", "Thera"]
 sortOrder: 15
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Minoan civilization, named by Sir Arthur Evans after the legendary King Minos, was Europe's first advanced civilization. Centered on the island of Crete in the southern Aegean, the Minoans built elaborate palatial complexes, created vibrant frescoes, developed extensive trade networks across the Mediterranean, and employed at least two writing systems — of which **Linear A** remains undeciphered.
+<Cited status="yellow">
+The Minoan civilization, named by Sir Arthur Evans after the legendary King Minos, was Europe's first advanced civilization. Centered on the island of Crete in the southern Aegean, the Minoans built elaborate palatial complexes, created vibrant frescoes, developed extensive trade networks across the Mediterranean, and employed at least two writing systems — of which **Linear A** remains undeciphered.<Ref id={5} />
 </Cited>
 
 ## Palatial Complexes
 
-<Cited status="red">
+<Cited status="yellow">
 The great Minoan palaces were not merely royal residences but served as administrative, economic, religious, and ceremonial centers:
 - **Knossos** — The largest, excavated and controversially reconstructed by Evans; contained over 1,300 rooms
 - **Phaistos** — Southern Crete; site of the mysterious **Phaistos Disc**, a unique stamped clay disc with undeciphered symbols
 - **Malia** — Eastern Crete; notable for the gold "bee pendant"
-- **Zakros** — Easternmost palace; discovered largely undisturbed by looters
+- **Zakros** — Easternmost palace; discovered largely undisturbed by looters<Ref id={3} />
 </Cited>
 
 ## Art & Culture
 
-<Cited status="red">
-Minoan art is distinctive for its naturalism, vivid colors, and themes: **bull-leaping** frescoes, marine motifs (octopuses, dolphins), goddesses with snakes, and elaborate ritual scenes. The absence of fortification walls at Minoan palaces has led (controversially) to characterizations of the Minoans as a peaceful, maritime civilization — the "Pax Minoica."
+<Cited status="yellow">
+Minoan art is distinctive for its naturalism, vivid colors, and themes: **bull-leaping** frescoes, marine motifs (octopuses, dolphins), goddesses with snakes, and elaborate ritual scenes. The absence of fortification walls at Minoan palaces has led (controversially) to characterizations of the Minoans as a peaceful, maritime civilization — the "Pax Minoica."<Ref id={3} />
 </Cited>
 
 ## Writing Systems
 
-<Cited status="red">
+<Cited status="yellow">
 - **Cretan Hieroglyphic** — The earliest writing on Crete (c. 2100–1700 BCE), still undeciphered
 - **Linear A** — The main Minoan script (c. 1800–1450 BCE), used for administrative records; undeciphered, and the underlying language is unknown (not Greek)
 - **Linear B** — Adopted by Mycenaean Greeks after they took control of Knossos (~1450 BCE); deciphered by Michael Ventris in 1952 as an early form of Greek
@@ -42,13 +44,13 @@ Minoan art is distinctive for its naturalism, vivid colors, and themes: **bull-l
 
 ## Religion
 
-<Cited status="red">
+<Cited status="yellow">
 Minoan religion featured prominent female deities (snake goddesses, mountain mothers), bull symbolism, peak sanctuaries, and cave sanctuaries (Diktaian Cave, Kamares Cave). The "sacred horns" (*horns of consecration*) and double axe (*labrys*) were ubiquitous religious symbols. The labyrinth of myth may echo the complex palatial architecture.
 </Cited>
 
 ## Collapse
 
-<Cited status="red">
+<Cited status="yellow">
 The catastrophic eruption of **Thera** (Santorini, c. 1628 or 1530 BCE — dating debated) devastated Minoan settlements. By ~1450 BCE, most Cretan palaces were destroyed, and Mycenaean Greeks took control of Knossos. The Minoan civilization was absorbed into the Mycenaean world.
 </Cited>
 
@@ -59,3 +61,11 @@ The catastrophic eruption of **Thera** (Santorini, c. 1628 or 1530 BCE — datin
 - **Nanno Marinatos, *Minoan Kingship and the Solar Goddess*** — Religious interpretation
 - **[Heraklion Archaeological Museum](https://heraklionmuseum.gr/)** — Houses the world's finest Minoan collection
 - **[INSTAP (Institute for Aegean Prehistory)](https://www.instap.org/)** — Funds Aegean Bronze Age research
+
+<References references={[
+  { id: 1, text: "*J. Lesley Fitton, Minoans*** — Excellent British Museum introduction" },
+  { id: 2, text: "*John Chadwick, The Decipherment of Linear B*** — Classic account of Ventris's breakthrough" },
+  { id: 3, text: "*Nanno Marinatos, Minoan Kingship and the Solar Goddess*** — Religious interpretation" },
+  { id: 4, text: "Heraklion Archaeological Museum — Houses the world's finest Minoan collection", url: "https://heraklionmuseum.gr/" },
+  { id: 5, text: "INSTAP (Institute for Aegean Prehistory) — Funds Aegean Bronze Age research", url: "https://www.instap.org/" },
+]} />

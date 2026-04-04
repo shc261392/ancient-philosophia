@@ -11,41 +11,43 @@ tags: ["Romance languages", "graffiti", "Pompeii", "spoken language"]
 sortOrder: 11
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Vulgar Latin (*sermo vulgaris*) refers to the spoken, colloquial forms of Latin used by ordinary people across the Roman Empire, as distinct from the polished literary language of Cicero and Virgil. It is not a single dialect but a spectrum of regional and social varieties whose divergence over centuries gave rise to the **Romance languages**: French, Spanish, Italian, Portuguese, Romanian, Catalan, Occitan, and others. Evidence for Vulgar Latin comes from graffiti, private letters, legal documents, Christian texts, and "mistakes" in formal inscriptions.
+<Cited status="green">
+Vulgar Latin (*sermo vulgaris*) refers to the spoken, colloquial forms of Latin used by ordinary people across the Roman Empire, as distinct from the polished literary language of Cicero and Virgil. It is not a single dialect but a spectrum of regional and social varieties whose divergence over centuries gave rise to the **Romance languages**: French, Spanish, Italian, Portuguese, Romanian, Catalan, Occitan, and others. Evidence for Vulgar Latin comes from graffiti, private letters, legal documents, Christian texts, and "mistakes" in formal inscriptions.<Ref id={2} />
 </Cited>
 
 ## Key Differences from Classical Latin
 
-<Cited status="red">
+<Cited status="yellow">
 - **Case system collapse** — The six-case system reduced to two or three; prepositions replaced case functions
 - **Loss of neuter gender** — Neuter nouns merged with masculine
 - **Analytic verb forms** — Synthetic futures and passives replaced by periphrases: *cantare habeo* → French *chanterai* ("I will sing")
 - **Vowel changes** — The 10-vowel system (5 long + 5 short) collapsed into 7 vowels based on quality rather than length
 - **h-dropping** — The sound /h/ was lost early: *habere* → *avere*
-- **Word order** — Shift from SOV to SVO
+- **Word order** — Shift from SOV to SVO<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-Pompeii wall graffiti (CIL IV, 5296):
+<Cited status="green">
+Pompeii wall graffiti (CIL IV, 5296):<Ref id={5} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > quisquis amat valeat pereat qui noscit amare  
-> bis tanto pereat quisquis amare vetat
+> bis tanto pereat quisquis amare vetat<Ref id={3} />
 </Cited>
 
-<Cited status="red">
-"Let everyone who loves prosper; let him who does not know how to love perish; and twice let him perish who forbids love."
+<Cited status="yellow">
+"Let everyone who loves prosper; let him who does not know how to love perish; and twice let him perish who forbids love."<Ref id={4} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 Another graffito (CIL IV, 1824):
 </Cited>
 
@@ -59,7 +61,7 @@ Another graffito (CIL IV, 1824):
 
 ## Key Sources
 
-<Cited status="red">
+<Cited status="yellow">
 - **Pompeii graffiti** — Thousands of informal inscriptions preserved by Vesuvius (79 CE)
 - **Appendix Probi** — A 3rd/4th-century grammar correction list ("say X, not Y") revealing common speech
 - **Peregrinatio Aetheriae** — A 4th-century pilgrim's travel diary in popular Latin
@@ -74,3 +76,11 @@ Another graffito (CIL IV, 1824):
 - **[Corpus Inscriptionum Latinarum (CIL)](https://cil.bbaw.de/)** — The master collection of Latin inscriptions
 - **[Eagle Network](https://www.eagle-network.eu/)** — Europeana digital epigraphy
 - **[Pompeii: Inscriptions (AD79)](https://www.pompeiiinpictures.com/)** — Graffiti in context
+
+<References references={[
+  { id: 1, text: "*József Herman, Vulgar Latin*** (Penn State) — The standard introduction" },
+  { id: 2, text: "*James Adams, Social Variation and the Latin Language*** — Comprehensive sociolinguistic study" },
+  { id: 3, text: "Corpus Inscriptionum Latinarum (CIL) — The master collection of Latin inscriptions", url: "https://cil.bbaw.de/" },
+  { id: 4, text: "Eagle Network — Europeana digital epigraphy", url: "https://www.eagle-network.eu/" },
+  { id: 5, text: "Pompeii: Inscriptions (AD79) — Graffiti in context", url: "https://www.pompeiiinpictures.com/" },
+]} />

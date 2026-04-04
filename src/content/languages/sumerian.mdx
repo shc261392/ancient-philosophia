@@ -11,27 +11,29 @@ materialRichness: "moderate"
 pronunciation: "controversial"
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Sumerian is the earliest known written language, attested from around 3400 BCE in southern Mesopotamia. It is a **language isolate** with no known relatives. Even after it ceased to be a spoken vernacular (by roughly 2000 BCE), Sumerian continued as a scholarly, literary, and liturgical language for another two millennia — comparable to the role of Latin in medieval Europe.
+<Cited status="green">
+Sumerian is the earliest known written language, attested from around 3400 BCE in southern Mesopotamia. It is a **language isolate** with no known relatives. Even after it ceased to be a spoken vernacular (by roughly 2000 BCE), Sumerian continued as a scholarly, literary, and liturgical language for another two millennia — comparable to the role of Latin in medieval Europe.<Ref id={1} />
 </Cited>
 
 ## Key Features
 
-<Cited status="red">
+<Cited status="green">
 - **Agglutinative** — Words are built by chaining morphemes together (unlike the fusional structure of Semitic or Indo-European languages)
 - **Ergative-absolutive** — The subject of a transitive verb is marked differently from the subject of an intransitive verb
 - **Verb chain** — The Sumerian verbal chain can encode subject, object, indirect object, and various other elements in a single complex form
-- **Emesal** — A special dialect used in literature by female characters and in certain liturgical contexts
+- **Emesal** — A special dialect used in literature by female characters and in certain liturgical contexts<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-Opening of *The Exaltation of Inanna* by Enheduanna (ETCSL 4.07.2):
+<Cited status="green">
+Opening of *The Exaltation of Inanna* by Enheduanna (ETCSL 4.07.2):<Ref id={4} />
 </Cited>
 
 <Cited status="red">
@@ -59,3 +61,13 @@ Enheduanna (c. 2285–2250 BCE), daughter of Sargon of Akkad and high priestess 
 - **[ePSD2](https://oracc.museum.upenn.edu/epsd2/)** — Electronic Pennsylvania Sumerian Dictionary
 - **[CDLI](https://cdli.mpiwg-berlin.mpg.de/)** — Cuneiform Digital Library Initiative
 - **[ORACC](https://oracc.museum.upenn.edu/)** — Annotated cuneiform corpus
+
+<References references={[
+  { id: 1, text: "*Marie-Louise Thomsen, The Sumerian Language*** — Traditional grammar reference" },
+  { id: 2, text: "*Dietz Otto Edzard, Sumerian Grammar*** — Modern concise grammar" },
+  { id: 3, text: "*Bram Jagersma, A Descriptive Grammar of Sumerian*** (PhD thesis, Leiden) — Freely available online, very thorough" },
+  { id: 4, text: "ETCSL — Electronic Text Corpus of Sumerian Literature", url: "https://etcsl.orinst.ox.ac.uk/" },
+  { id: 5, text: "ePSD2 — Electronic Pennsylvania Sumerian Dictionary", url: "https://oracc.museum.upenn.edu/epsd2/" },
+  { id: 6, text: "CDLI — Cuneiform Digital Library Initiative", url: "https://cdli.mpiwg-berlin.mpg.de/" },
+  { id: 7, text: "ORACC — Annotated cuneiform corpus", url: "https://oracc.museum.upenn.edu/" },
+]} />

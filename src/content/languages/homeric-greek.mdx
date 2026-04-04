@@ -11,32 +11,34 @@ tags: ["Homer", "Iliad", "Odyssey", "epic", "dactylic hexameter"]
 sortOrder: 10
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Homeric Greek is the literary dialect of the **Iliad** and the **Odyssey**, the foundational texts of Western literature. It is not a spoken dialect but an artificial literary language forged over centuries of oral composition, blending primarily **Ionic** features with older **Aeolic** and **Mycenaean** elements. The demands of the dactylic hexameter meter preserved many archaic forms that had disappeared from the spoken language by the 8th century BCE.
+<Cited status="green">
+Homeric Greek is the literary dialect of the **Iliad** and the **Odyssey**, the foundational texts of Western literature. It is not a spoken dialect but an artificial literary language forged over centuries of oral composition, blending primarily **Ionic** features with older **Aeolic** and **Mycenaean** elements. The demands of the dactylic hexameter meter preserved many archaic forms that had disappeared from the spoken language by the 8th century BCE.<Ref id={1} />
 </Cited>
 
 ## Key Features
 
-<Cited status="red">
+<Cited status="green">
 - **Augment optional** — The past-tense augment (ε-) can be omitted: βάλε for ἔβαλε
 - **Digamma (ϝ)** — The archaic sound /w/ (lost in Classical Greek) still affects meter: ϝοῖνος "wine"
 - **-φι(ν) case ending** — An archaic instrumental/locative suffix
 - **Dual number** — Used more freely than in Attic
 - **tmesis** — Verbal prefixes can be separated from the verb: κατὰ ... ἔθηκε
-- **Multiple dialect forms** — The same word may appear in Ionic, Aeolic, or archaic forms, chosen to fit the meter
+- **Multiple dialect forms** — The same word may appear in Ionic, Aeolic, or archaic forms, chosen to fit the meter<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-Opening of the Iliad (1.1–7):
+<Cited status="yellow">
+Opening of the Iliad (1.1–7):<Ref id={2} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος  
 > οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε,  
 > πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν  
@@ -46,7 +48,7 @@ Opening of the Iliad (1.1–7):
 > Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 "Sing, goddess, the wrath of Achilles, son of Peleus, the accursed wrath that brought countless sorrows upon the Achaeans, and hurled many mighty souls of heroes to Hades, making them prey for dogs and all manner of birds — and the plan of Zeus was fulfilled — from the time the two first quarrelled and parted: Agamemnon, lord of men, and godlike Achilles."
 </Cited>
 
@@ -63,3 +65,14 @@ Opening of the Iliad (1.1–7):
 - **[The Chicago Homer](https://homer.library.northwestern.edu/)** — Multi-text Homer project
 - **[Dickinson College Commentaries](https://dcc.dickinson.edu/)** — Annotated Iliad selections
 - YouTube: **Pharr's Homer walkthroughs**, **Ancient Greek pronunciation** videos
+
+<References references={[
+  { id: 1, text: "*Clyde Pharr, Homeric Greek: A Book for Beginners*** — Classic beginner's grammar for Homer" },
+  { id: 2, text: "*Geoffrey Steadman, Homer: Iliad 6 and 22*** — Free annotated editions designed for intermediate students" },
+  { id: 3, text: "*Monro, Homeric Grammar*** — The definitive reference grammar for Homer's dialect" },
+  { id: 4, text: "*Cunliffe, A Lexicon of the Homeric Dialect*** — Specialized dictionary" },
+  { id: 5, text: "Perseus Digital Library — Full text with word-by-word parsing and Autenrieth's lexicon", url: "https://www.perseus.tufts.edu/" },
+  { id: 6, text: "The Chicago Homer — Multi-text Homer project", url: "https://homer.library.northwestern.edu/" },
+  { id: 7, text: "Dickinson College Commentaries — Annotated Iliad selections", url: "https://dcc.dickinson.edu/" },
+  { id: 8, text: "YouTube: Pharr's Homer walkthroughs, Ancient Greek pronunciation videos" },
+]} />

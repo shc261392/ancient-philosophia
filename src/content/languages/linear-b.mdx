@@ -11,36 +11,38 @@ tags: ["Mycenaean", "syllabary", "Ventris", "palace archives"]
 sortOrder: 15
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Linear B is a syllabic writing system used to write **Mycenaean Greek**, the earliest known form of Greek. The tablets were found at palatial centers in Crete (Knossos) and mainland Greece (Pylos, Mycenae, Thebes, Tiryns). Michael **Ventris** deciphered Linear B in 1952 with help from John Chadwick, proving that the Mycenaean palaces were Greek-speaking — a revelation that fundamentally changed our understanding of Greek prehistory.
+<Cited status="green">
+Linear B is a syllabic writing system used to write **Mycenaean Greek**, the earliest known form of Greek. The tablets were found at palatial centers in Crete (Knossos) and mainland Greece (Pylos, Mycenae, Thebes, Tiryns). Michael **Ventris** deciphered Linear B in 1952 with help from John Chadwick, proving that the Mycenaean palaces were Greek-speaking — a revelation that fundamentally changed our understanding of Greek prehistory.<Ref id={3} />
 </Cited>
 
 ## The Writing System
 
-<Cited status="red">
+<Cited status="yellow">
 - **~87 syllabic signs** — Each sign represents a consonant-vowel (CV) syllable: *pa, pe, pi, po, pu*, etc.
 - **Logograms/ideograms** — Pictographic signs for commodities (wheat, olive oil, horses, chariots, textiles)
 - **Number system** — Decimal, with signs for 1, 10, 100, 1000
-- **Limitations:** Cannot represent consonant clusters, final consonants, or distinguish /r/ from /l/ — so a single sign can represent multiple sounds
+- **Limitations:** Cannot represent consonant clusters, final consonants, or distinguish /r/ from /l/ — so a single sign can represent multiple sounds<Ref id={1} />
 </Cited>
 
 ## Mycenaean Greek Features
 
-<Cited status="red">
+<Cited status="yellow">
 - **Labiovelars preserved** — *qe* for the labiovelar /kʷ/ that became π, τ, or κ in later Greek
 - **Digamma preserved** — /w/ still present: *wo-i-ko* = οἶκος "house"
 - **Case system** — Preserves the instrumental case lost in later Greek
-- **Vocabulary** — Many familiar Greek words: *wa-na-ka* = ἄναξ "lord", *pa-te* = πατήρ "father"
+- **Vocabulary** — Many familiar Greek words: *wa-na-ka* = ἄναξ "lord", *pa-te* = πατήρ "father"<Ref id={3} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-Pylos tablet PY Eb 297.1 (land allocation record):
+<Cited status="yellow">
+Pylos tablet PY Eb 297.1 (land allocation record):<Ref id={2} />
 </Cited>
 
 <Cited status="red">
@@ -60,7 +62,7 @@ This tablet is one of many economic records documenting land tenure, agricultura
 
 ## Key Discoveries
 
-<Cited status="red">
+<Cited status="yellow">
 - **Knossos tablets** — ~3,000 tablets from Arthur Evans's excavations (written c. 1375 BCE)
 - **Pylos tablets** — ~1,200 tablets from Carl Blegen's excavations (written c. 1200 BCE, just before destruction)
 - **Thebes tablets** — Important finds including ritual texts
@@ -78,3 +80,12 @@ This tablet is one of many economic records documenting land tenure, agricultura
 - **[DĀMOS](https://damos.hf.uio.no/)** — Database of Mycenaean at Oslo; searchable corpus of all Linear B tablets
 - **[Pelagios/Minoan-Mycenaean](https://pelagios.org/)** — Linked ancient world data
 - **[Aegean Scripts](https://aegeanscripts.blogspot.com/)** — Scholarly blog on Linear A and B
+
+<References references={[
+  { id: 1, text: "*John Chadwick, The Decipherment of Linear B*** — Classic account of the decipherment story" },
+  { id: 2, text: "*Anna Morpurgo Davies & Yves Duhoux, A Companion to Linear B*** (3 vols.) — Comprehensive scholarly treatment" },
+  { id: 3, text: "*Ventris & Chadwick, Documents in Mycenaean Greek*** (2nd ed.) — The foundational publication" },
+  { id: 4, text: "DĀMOS — Database of Mycenaean at Oslo; searchable corpus of all Linear B tablets", url: "https://damos.hf.uio.no/" },
+  { id: 5, text: "Pelagios/Minoan-Mycenaean — Linked ancient world data", url: "https://pelagios.org/" },
+  { id: 6, text: "Aegean Scripts — Scholarly blog on Linear A and B", url: "https://aegeanscripts.blogspot.com/" },
+]} />

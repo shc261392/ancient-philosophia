@@ -8,38 +8,40 @@ tags: ["Cyclades", "marble figurines", "Aegean", "island culture"]
 sortOrder: 14
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Cycladic civilization flourished on the Cyclades — a group of islands in the central Aegean Sea including Naxos, Paros, Syros, Keros, and Thera (Santorini). While less politically complex than the later Minoans or Mycenaeans, the Cycladic culture produced some of the most haunting and aesthetically powerful art of the ancient world — the iconic white marble figurines that inspired artists from Brâncuși to Modigliani and Henry Moore.
+<Cited status="green">
+The Cycladic civilization flourished on the Cyclades — a group of islands in the central Aegean Sea including Naxos, Paros, Syros, Keros, and Thera (Santorini). While less politically complex than the later Minoans or Mycenaeans, the Cycladic culture produced some of the most haunting and aesthetically powerful art of the ancient world — the iconic white marble figurines that inspired artists from Brâncuși to Modigliani and Henry Moore.<Ref id={3} />
 </Cited>
 
 ## Marble Figurines
 
-<Cited status="red">
-The **canonical folded-arm figurines** (c. 2800–2300 BCE) are the defining achievement of Cycladic art. These abstracted female forms, carved from the fine white marble of Naxos and Paros, range from a few centimeters to nearly life-size. Originally painted with details (eyes, hair, jewelry) in red, blue, and black pigments, they have survived in their stripped marble state — which paradoxically enhances their modern aesthetic appeal. Their purpose remains debated: funerary offerings, cult images, or representations of a deity.
+<Cited status="yellow">
+The **canonical folded-arm figurines** (c. 2800–2300 BCE) are the defining achievement of Cycladic art. These abstracted female forms, carved from the fine white marble of Naxos and Paros, range from a few centimeters to nearly life-size. Originally painted with details (eyes, hair, jewelry) in red, blue, and black pigments, they have survived in their stripped marble state — which paradoxically enhances their modern aesthetic appeal. Their purpose remains debated: funerary offerings, cult images, or representations of a deity.<Ref id={1} />
 </Cited>
 
 ## Material Culture
 
-<Cited status="red">
+<Cited status="green">
 Beyond figurines, the Cycladics produced:
 - **Marble vessels** — Elegant bowls, cups, and palettes
 - **Metalwork** — Bronze tools and weapons, silver jewelry
-- **"Frying pans"** — Flat ceramic discs with incised decoration, possibly related to maritime symbolism
+- **"Frying pans"** — Flat ceramic discs with incised decoration, possibly related to maritime symbolism<Ref id={3} />
 </Cited>
 
 ## Settlements & Society
 
-<Cited status="red">
+<Cited status="yellow">
 Key sites include **Chalandriani** on Syros (a fortified settlement with over 600 graves), **Keros** (a major ritual deposit site where broken figurines were deliberately gathered), and **Akrotiri** on Thera (which later became a major Minoan colony). The Cycladic islanders were connected by maritime trade routes, exchanging obsidian from Melos and emery from Naxos across the Aegean.
 </Cited>
 
 ## Legacy
 
-<Cited status="red">
+<Cited status="yellow">
 The Cycladic culture formed part of the broader Aegean Bronze Age world that would later give rise to Minoan and Mycenaean civilizations. The figurines remain the most recognized symbol of prehistoric Aegean art.
 </Cited>
 
@@ -49,3 +51,10 @@ The Cycladic culture formed part of the broader Aegean Bronze Age world that wou
 - **Colin Renfrew, *The Cycladic Spirit*** — Classic introduction
 - **[Museum of Cycladic Art (Athens)](https://cycladic.gr/)** — World's finest Cycladic collection
 - **[Metropolitan Museum of Art, Cycladic Art](https://www.metmuseum.org/toah/hd/cycl/hd_cycl.htm)** — Excellent online resources
+
+<References references={[
+  { id: 1, text: "*Pat Getz-Gentle, Personal Styles in Early Cycladic Sculpture*** — Detailed stylistic analysis" },
+  { id: 2, text: "*Colin Renfrew, The Cycladic Spirit*** — Classic introduction" },
+  { id: 3, text: "Museum of Cycladic Art (Athens) — World's finest Cycladic collection", url: "https://cycladic.gr/" },
+  { id: 4, text: "Metropolitan Museum of Art, Cycladic Art — Excellent online resources", url: "https://www.metmuseum.org/toah/hd/cycl/hd_cycl.htm" },
+]} />

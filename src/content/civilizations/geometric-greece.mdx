@@ -8,41 +8,43 @@ tags: ["Dark Age", "geometric pottery", "Homer", "alphabet adoption"]
 sortOrder: 17
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Geometric period marks Greece's slow recovery from the catastrophic Bronze Age collapse. Named for the distinctive geometric designs on pottery, this era witnessed fundamental developments that shaped all subsequent Greek civilization: the adoption of the alphabet, the composition of the Homeric epics, the emergence of the *polis* (city-state), and the renewal of long-distance trade and contact with the Near East.
+<Cited status="green">
+The Geometric period marks Greece's slow recovery from the catastrophic Bronze Age collapse. Named for the distinctive geometric designs on pottery, this era witnessed fundamental developments that shaped all subsequent Greek civilization: the adoption of the alphabet, the composition of the Homeric epics, the emergence of the *polis* (city-state), and the renewal of long-distance trade and contact with the Near East.<Ref id={4} />
 </Cited>
 
 ## The Greek Dark Age (c. 1100–900 BCE)
 
-<Cited status="red">
-The preceding Dark Age saw the collapse of Mycenaean palatial civilization, the loss of writing (Linear B), dramatic population decline, and the disappearance of monumental architecture. Settlements shrank to small villages. Yet this period also saw the spread of iron technology and population movements (the traditional "Dorian invasion"), which reshaped the Greek world.
+<Cited status="yellow">
+The preceding Dark Age saw the collapse of Mycenaean palatial civilization, the loss of writing (Linear B), dramatic population decline, and the disappearance of monumental architecture. Settlements shrank to small villages. Yet this period also saw the spread of iron technology and population movements (the traditional "Dorian invasion"), which reshaped the Greek world.<Ref id={4} />
 </Cited>
 
 ## Geometric Art
 
-<Cited status="red">
-The period takes its name from the **Geometric pottery style** — characterized by abstract patterns of meanders, zigzags, triangles, and concentric circles. The masterpiece is the **Dipylon Amphora** (c. 750 BCE, National Archaeological Museum, Athens), a monumental funerary vase standing over 1.5 meters tall, with scenes of a funeral procession rendered in silhouette figures.
+<Cited status="green">
+The period takes its name from the **Geometric pottery style** — characterized by abstract patterns of meanders, zigzags, triangles, and concentric circles. The masterpiece is the **Dipylon Amphora** (c. 750 BCE, National Archaeological Museum, Athens), a monumental funerary vase standing over 1.5 meters tall, with scenes of a funeral procession rendered in silhouette figures.<Ref id={4} />
 </Cited>
 
 ## The Alphabet & Homer
 
-<Cited status="red">
+<Cited status="yellow">
 Around 800 BCE, Greek-speaking peoples adopted the **Phoenician consonantal alphabet**, crucially adding signs for vowels — creating the first true alphabet. This innovation made literacy far more accessible than syllabic scripts. Shortly after, the **Iliad** and **Odyssey** were composed (traditionally attributed to Homer, c. 750–700 BCE), drawing on centuries of oral epic tradition reaching back to the Mycenaean age.
 </Cited>
 
 ## Emergence of the Polis
 
-<Cited status="red">
+<Cited status="yellow">
 The *polis* — the autonomous city-state — began to crystallize during this period. The community of citizens, centered on an *agora* (marketplace/assembly area) and *acropolis* (fortified high point), became the fundamental unit of Greek political life. Early evidence comes from sites like **Lefkandi** on Euboea, where a remarkable 10th-century "heroön" (hero burial building) attests to elite power in the transition period.
 </Cited>
 
 ## Sanctuaries & Games
 
-<Cited status="red">
+<Cited status="yellow">
 Panhellenic sanctuaries began to develop as shared sacred spaces: **Olympia** (traditional date of the first Olympic Games: 776 BCE), **Delphi** (oracle of Apollo), **Isthmia**, and **Nemea**. Votive offerings at these sites provide key evidence of growing interconnection among Greek communities.
 </Cited>
 
@@ -53,3 +55,11 @@ Panhellenic sanctuaries began to develop as shared sacred spaces: **Olympia** (t
 - **Ian Morris, *Burial and Ancient Society*** — Using funerary evidence to reconstruct social change
 - **[British Museum, Greek collections](https://www.britishmuseum.org/collection/galleries/greece)** — Extensive Geometric pottery
 - **[Perseus Digital Library](https://www.perseus.tufts.edu/)** — Texts and archaeological resources
+
+<References references={[
+  { id: 1, text: "*Robin Osborne, Greece in the Making 1200–479 BC*** — Standard textbook for the period" },
+  { id: 2, text: "*Anthony Snodgrass, The Dark Age of Greece*** — Foundational archaeological study" },
+  { id: 3, text: "*Ian Morris, Burial and Ancient Society*** — Using funerary evidence to reconstruct social change" },
+  { id: 4, text: "British Museum, Greek collections — Extensive Geometric pottery", url: "https://www.britishmuseum.org/collection/galleries/greece" },
+  { id: 5, text: "Perseus Digital Library — Texts and archaeological resources", url: "https://www.perseus.tufts.edu/" },
+]} />

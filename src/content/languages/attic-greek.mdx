@@ -11,21 +11,23 @@ materialRichness: "rich"
 pronunciation: "reconstructed"
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Attic Greek is the dialect of ancient Athens and its surrounding territory of Attica, used during the Classical period (5th–4th centuries BCE). As the language of Athens' golden age, Attic Greek is the medium of an incomparable literary tradition: the tragedies of Sophocles and Euripides, the comedies of Aristophanes, the histories of Thucydides and Xenophon, the philosophy of Plato and Aristotle, and the oratory of Demosthenes. Attic Greek later evolved into **Koine Greek**, the lingua franca of the Hellenistic world and the language of the New Testament.
+<Cited status="green">
+Attic Greek is the dialect of ancient Athens and its surrounding territory of Attica, used during the Classical period (5th–4th centuries BCE). As the language of Athens' golden age, Attic Greek is the medium of an incomparable literary tradition: the tragedies of Sophocles and Euripides, the comedies of Aristophanes, the histories of Thucydides and Xenophon, the philosophy of Plato and Aristotle, and the oratory of Demosthenes. Attic Greek later evolved into **Koine Greek**, the lingua franca of the Hellenistic world and the language of the New Testament.<Ref id={8} />
 </Cited>
 
 ## The Greek Alphabet
 
-<Cited status="red">
-The Greek alphabet, adopted from the Phoenician consonantal script around 800 BCE (with the crucial addition of vowel letters), is the ancestor of the Latin and Cyrillic alphabets:
+<Cited status="yellow">
+The Greek alphabet, adopted from the Phoenician consonantal script around 800 BCE (with the crucial addition of vowel letters), is the ancestor of the Latin and Cyrillic alphabets:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 | Letter | Name | Sound |
 |--------|------|-------|
 | Α α | alpha | a |
@@ -51,27 +53,27 @@ The Greek alphabet, adopted from the Phoenician consonantal script around 800 BC
 | Φ φ | phi | pʰ |
 | Χ χ | chi | kʰ |
 | Ψ ψ | psi | ps |
-| Ω ω | omega | ō (long) |
+| Ω ω | omega | ō (long) |<Ref id={4} />
 </Cited>
 
-<Cited status="red">
-Greek also uses **breathing marks** (rough ʽ = /h/, smooth ʼ = ∅) and **accent marks** (acute, grave, circumflex) indicating pitch accent.
+<Cited status="yellow">
+Greek also uses **breathing marks** (rough ʽ = /h/, smooth ʼ = ∅) and **accent marks** (acute, grave, circumflex) indicating pitch accent.<Ref id={1} />
 </Cited>
 
 ## Grammar Highlights
 
-<Cited status="red">
+<Cited status="green">
 Attic Greek has a rich inflectional system:
 - **Nouns** — Three genders (masculine, feminine, neuter), three numbers (singular, dual, plural), five cases (nominative, genitive, dative, accusative, vocative)
 - **Verbs** — Complex system of tenses (present, imperfect, future, aorist, perfect, pluperfect), moods (indicative, subjunctive, optative, imperative), voices (active, middle, passive), and participles
 - **Articles** — The definite article (ὁ, ἡ, τό) is fully declined and essential for reading Greek
 - **Particles** — Greek uses numerous particles (μέν... δέ, γάρ, οὖν, ἄν, etc.) to add nuance and connection to discourse
-- **Word order** — Relatively free, with emphasis on the first and last positions in a clause
+- **Word order** — Relatively free, with emphasis on the first and last positions in a clause<Ref id={1} />
 </Cited>
 
 ## Key Texts for Students
 
-<Cited status="red">
+<Cited status="yellow">
 - **Xenophon, *Anabasis*** — Clear Attic prose, traditionally the first extended text students read
 - **Plato, *Apology*** — Socrates' trial speech; accessible philosophical prose
 - **Lysias, orations** — Clean, simple oratory, excellent for intermediate reading
@@ -81,7 +83,7 @@ Attic Greek has a rich inflectional system:
 
 ## Recommended Learning Path
 
-<Cited status="red">
+<Cited status="yellow">
 1. **Learn the alphabet and pronunciation** (including accents and breathings)
 2. **Work through a grammar** (Mastronarde or Hansen & Quinn — see below)
 3. **Read adapted texts and exercises**
@@ -92,7 +94,7 @@ Attic Greek has a rich inflectional system:
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 Opening of Homer's *Iliad* (in polytonic Greek):
 </Cited>
 
@@ -103,7 +105,7 @@ Opening of Homer's *Iliad* (in polytonic Greek):
 > "Sing, goddess, the wrath of Achilles, son of Peleus, the accursed wrath that brought countless sorrows upon the Achaeans"
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 While Homer's epics are in the Ionic/Aeolic literary dialect rather than pure Attic, they form the foundation of the Greek literary tradition and are essential reading for all students of Ancient Greek.
 </Cited>
 
@@ -128,3 +130,14 @@ While Homer's epics are in the Ionic/Aeolic literary dialect rather than pure At
 - **[Paideia Institute](https://www.paideiainstitute.org/)** — Living Latin and Greek programs, summer intensives in Rome and Athens
 - **r/AncientGreek** — Active Reddit community for learners
 - YouTube: **Ancient Greek with Athenaze**, **Pharr's Homer** walkthroughs
+
+<References references={[
+  { id: 1, text: "*Donald Mastronarde, Introduction to Attic Greek*** (2nd ed., UC Press) — The most widely adopted textbook in North American universities; thorough and systematic" },
+  { id: 2, text: "*Hansen & Quinn, Greek: An Intensive Course*** — Intensive approach; very popular at universities with accelerated programs" },
+  { id: 3, text: "*Herbert Weir Smyth, Greek Grammar*** — The comprehensive reference grammar (1920, still unsurpassed)" },
+  { id: 4, text: "*Anne Groton, From Alpha to Omega*** — Accessible alternative for self-study" },
+  { id: 5, text: "*Maurice Balme & Gilbert Lawall, Athenaze*** — Popular reading-based textbook that teaches Greek through a continuous narrative set in Classical Athens; excellent for self-study and university courses alike" },
+  { id: 6, text: "Perseus Digital Library — Greek texts with morphological analysis and dictionary lookup", url: "https://www.perseus.tufts.edu/" },
+  { id: 7, text: "Logeion — Fast dictionary lookup (LSJ, Middle Liddell, Autenrieth)", url: "https://logeion.uchicago.edu/" },
+  { id: 8, text: "Ancient Greek Tutorials (Berkeley) — Free online textbook companion", url: "https://ancientgreek.pressbooks.com/" },
+]} />

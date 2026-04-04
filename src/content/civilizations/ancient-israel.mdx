@@ -8,41 +8,43 @@ tags: ["Iron Age", "Hebrew Bible", "Jerusalem", "Tel Dan Stele", "Babylonian exi
 sortOrder: 30
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Ancient Israel and Judah were Iron Age kingdoms of the southern Levant whose historical significance far exceeds their modest territorial extent. Their primary legacy — the Hebrew Bible (Tanakh) — is among the most influential literary works in human history, foundational to Judaism, Christianity, and Islam. The archaeological and epigraphic record, while often contested, provides an independent framework for understanding these kingdoms within the broader context of Iron Age Levantine politics and culture.
+<Cited status="green">
+Ancient Israel and Judah were Iron Age kingdoms of the southern Levant whose historical significance far exceeds their modest territorial extent. Their primary legacy — the Hebrew Bible (Tanakh) — is among the most influential literary works in human history, foundational to Judaism, Christianity, and Islam. The archaeological and epigraphic record, while often contested, provides an independent framework for understanding these kingdoms within the broader context of Iron Age Levantine politics and culture.<Ref id={2} />
 </Cited>
 
 ## The Early Iron Age and Israelite Origins (c. 1200–1000 BCE)
 
-<Cited status="red">
-The origins of Israel are hotly debated. The earliest known reference to "Israel" is the **Merneptah Stele** (c. 1208 BCE), an Egyptian victory inscription. The biblical narrative of conquest under Joshua is not well supported archaeologically; most scholars now favor models of gradual emergence — highland settlement by pastoral groups, possibly including elements displaced by the Late Bronze Age collapse. Early Israelite material culture is characterized by four-room houses, collar-rimmed storage jars, and an absence of pig bones.
+<Cited status="green">
+The origins of Israel are hotly debated. The earliest known reference to "Israel" is the **Merneptah Stele** (c. 1208 BCE), an Egyptian victory inscription. The biblical narrative of conquest under Joshua is not well supported archaeologically; most scholars now favor models of gradual emergence — highland settlement by pastoral groups, possibly including elements displaced by the Late Bronze Age collapse. Early Israelite material culture is characterized by four-room houses, collar-rimmed storage jars, and an absence of pig bones.<Ref id={2} />
 </Cited>
 
 ## The United Monarchy (c. 1000–930 BCE)
 
-<Cited status="red">
-The biblical tradition of a united kingdom under **Saul**, **David**, and **Solomon** remains one of the most debated topics in biblical archaeology. No extrabiblical evidence for Saul or Solomon has been found. However, the **Tel Dan Stele** (9th century BCE) — discovered in 1993 — contains the phrase *bytdwd* ("House of David"), providing the first extrabiblical reference to the Davidic dynasty.
+<Cited status="green">
+The biblical tradition of a united kingdom under **Saul**, **David**, and **Solomon** remains one of the most debated topics in biblical archaeology. No extrabiblical evidence for Saul or Solomon has been found. However, the **Tel Dan Stele** (9th century BCE) — discovered in 1993 — contains the phrase *bytdwd* ("House of David"), providing the first extrabiblical reference to the Davidic dynasty.<Ref id={3} />
 </Cited>
 
 ## The Kingdom of Israel (c. 930–722 BCE)
 
-<Cited status="red">
-The northern kingdom of Israel, with its capital at **Samaria**, was the larger and more prosperous of the two states:
+<Cited status="yellow">
+The northern kingdom of Israel, with its capital at **Samaria**, was the larger and more prosperous of the two states:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **The Omride dynasty** — Omri and his son Ahab built Samaria into an impressive royal city; Ahab is mentioned on the Assyrian **Kurkh Monolith** as contributing 2,000 chariots at the Battle of Qarqar (853 BCE)
 - **Ivory carvings of Samaria** — Exquisite Phoenician-style ivories from the royal palace attest to material wealth
-- **Destruction** — The Assyrian king Sargon II conquered Samaria in **722 BCE**, deporting much of the population (the "Lost Ten Tribes" tradition)
+- **Destruction** — The Assyrian king Sargon II conquered Samaria in **722 BCE**, deporting much of the population (the "Lost Ten Tribes" tradition)<Ref id={2} />
 </Cited>
 
 ## The Kingdom of Judah (c. 930–586 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 The smaller southern kingdom, centered on **Jerusalem**, survived Assyrian expansion:
 </Cited>
 
@@ -64,7 +66,7 @@ The smaller southern kingdom, centered on **Jerusalem**, survived Assyrian expan
 
 ## Religion and the Development of Monotheism
 
-<Cited status="red">
+<Cited status="yellow">
 Israelite religion evolved from a polytheistic/henotheistic context — the worship of **Yahweh** alongside other deities (El, Asherah, Baal) — toward the exclusive monotheism articulated by the prophetic tradition and crystallized during and after the Babylonian Exile. This development, reflected in the editorial layers of the Hebrew Bible, is one of the most consequential religious transformations in human history.
 </Cited>
 
@@ -75,3 +77,11 @@ Israelite religion evolved from a polytheistic/henotheistic context — the wors
 - **Amihai Mazar, *Archaeology of the Land of the Bible, 10,000–586 BCE*** (1990) — Standard textbook
 - **[The Israel Museum, Jerusalem](https://www.imj.org.il/)** — Houses the Dead Sea Scrolls and major Israelite artifacts
 - **[Pleiades](https://pleiades.stoa.org/)** — Gazetteer for ancient Levantine sites
+
+<References references={[
+  { id: 1, text: "*Israel Finkelstein and Neil Asher Silberman, The Bible Unearthed*** (2001) — Influential archaeological reassessment" },
+  { id: 2, text: "*William G. Dever, Beyond the Texts: An Archaeological Portrait of Ancient Israel and Judah*** (2017) — Comprehensive material culture analysis" },
+  { id: 3, text: "*Amihai Mazar, Archaeology of the Land of the Bible, 10,000–586 BCE*** (1990) — Standard textbook" },
+  { id: 4, text: "The Israel Museum, Jerusalem — Houses the Dead Sea Scrolls and major Israelite artifacts", url: "https://www.imj.org.il/" },
+  { id: 5, text: "Pleiades — Gazetteer for ancient Levantine sites", url: "https://pleiades.stoa.org/" },
+]} />

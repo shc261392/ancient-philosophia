@@ -11,37 +11,39 @@ tags: ["Elam", "Susa", "Persepolis", "isolate", "Behistun"]
 sortOrder: 19
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Elamite is a **language isolate** spoken in ancient **Elam** (modern southwestern Iran, centered on Susa). Despite numerous attempts, Elamite has not been convincingly shown to be related to any known language family. It is attested over nearly two millennia, from the earliest Akkadian-Elamite bilinguals (c. 2400 BCE) to the administrative tablets of the Achaemenid period at Persepolis (c. 500–330 BCE). The **Behistun inscription** of Darius I includes an Elamite version alongside Old Persian and Babylonian.
+<Cited status="green">
+Elamite is a **language isolate** spoken in ancient **Elam** (modern southwestern Iran, centered on Susa). Despite numerous attempts, Elamite has not been convincingly shown to be related to any known language family. It is attested over nearly two millennia, from the earliest Akkadian-Elamite bilinguals (c. 2400 BCE) to the administrative tablets of the Achaemenid period at Persepolis (c. 500–330 BCE). The **Behistun inscription** of Darius I includes an Elamite version alongside Old Persian and Babylonian.<Ref id={3} />
 </Cited>
 
 ## Phases
 
-<Cited status="red">
+<Cited status="green">
 | Phase | Period | Sources |
 |-------|--------|---------|
 | Old Elamite | c. 2400–1500 BCE | Royal inscriptions, treaties |
 | Middle Elamite | c. 1500–1000 BCE | Inscriptions of the Shutrukid dynasty |
 | Neo-Elamite | c. 1000–550 BCE | Royal inscriptions |
-| Achaemenid Elamite | c. 550–330 BCE | Persepolis Fortification and Treasury tablets |
+| Achaemenid Elamite | c. 550–330 BCE | Persepolis Fortification and Treasury tablets |<Ref id={2} />
 </Cited>
 
 ## Key Features
 
-<Cited status="red">
+<Cited status="yellow">
 - **Agglutinative** — Like Sumerian, morphemes chain together
 - **Noun classes** — Animate vs. inanimate distinction
 - **SOV word order** — Subject-Object-Verb
-- **No proven relatives** — Various proposals (Dravidian, Afroasiatic) remain undemonstrated
+- **No proven relatives** — Various proposals (Dravidian, Afroasiatic) remain undemonstrated<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 From a Middle Elamite brick inscription of Shilhak-Inshushinak (c. 1150 BCE):
 </Cited>
 
@@ -55,7 +57,7 @@ From a Middle Elamite brick inscription of Shilhak-Inshushinak (c. 1150 BCE):
 
 ## Proto-Elamite
 
-<Cited status="red">
+<Cited status="yellow">
 The **Proto-Elamite** script (c. 3100–2800 BCE) is a still-undeciphered writing system from the same region. It may represent an early form of Elamite or another language entirely. About 1,600 tablets survive, mainly administrative.
 </Cited>
 
@@ -65,3 +67,10 @@ The **Proto-Elamite** script (c. 3100–2800 BCE) is a still-undeciphered writin
 - **Matthew Stolper, *Texts from Tall-i Malyan*** — Achaemenid Elamite texts
 - **Wouter Henkelman, *The Other Gods Who Are*** — Elamite administrative texts from Persepolis
 - **[CDLI](https://cdli.mpiwg-berlin.mpg.de/)** — Proto-Elamite tablets digitized
+
+<References references={[
+  { id: 1, text: "*Florence Malbran-Labat, La méthode de restitution et le cas de l'élamite*** — French-language study" },
+  { id: 2, text: "*Matthew Stolper, Texts from Tall-i Malyan*** — Achaemenid Elamite texts" },
+  { id: 3, text: "*Wouter Henkelman, The Other Gods Who Are*** — Elamite administrative texts from Persepolis" },
+  { id: 4, text: "CDLI — Proto-Elamite tablets digitized", url: "https://cdli.mpiwg-berlin.mpg.de/" },
+]} />

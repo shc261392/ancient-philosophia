@@ -8,29 +8,31 @@ tags: ["Mitanni", "Hurrian", "chariotry", "Kikkuli"]
 sortOrder: 10
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Hurrians were a major ethnic and linguistic group of the ancient Near East who spoke **Hurrian**, a language of the Hurro-Urartian family with no connection to Semitic, Indo-European, or Sumerian. From their heartland in the highlands between Anatolia and Mesopotamia, the Hurrians spread across a vast area, deeply influencing the cultures of the Hittites, Canaanites, and Assyrians.
+<Cited status="green">
+The Hurrians were a major ethnic and linguistic group of the ancient Near East who spoke **Hurrian**, a language of the Hurro-Urartian family with no connection to Semitic, Indo-European, or Sumerian. From their heartland in the highlands between Anatolia and Mesopotamia, the Hurrians spread across a vast area, deeply influencing the cultures of the Hittites, Canaanites, and Assyrians.<Ref id={1} />
 </Cited>
 
 ## The Kingdom of Mitanni
 
-<Cited status="red">
-In the mid-second millennium BCE, the Hurrians established the powerful kingdom of **Mitanni** (also called Hanigalbat) in Upper Mesopotamia (modern northern Syria and southeastern Turkey). At its height, Mitanni controlled territory from the Mediterranean to the Zagros Mountains and was one of the "Great Powers" of the Late Bronze Age, corresponding with Egypt as an equal. Mitanni princesses married Egyptian pharaohs (Amenhotep III, Akhenaten).
+<Cited status="green">
+In the mid-second millennium BCE, the Hurrians established the powerful kingdom of **Mitanni** (also called Hanigalbat) in Upper Mesopotamia (modern northern Syria and southeastern Turkey). At its height, Mitanni controlled territory from the Mediterranean to the Zagros Mountains and was one of the "Great Powers" of the Late Bronze Age, corresponding with Egypt as an equal. Mitanni princesses married Egyptian pharaohs (Amenhotep III, Akhenaten).<Ref id={2} />
 </Cited>
 
 ## Indo-Aryan Connection
 
-<Cited status="red">
-One of the most intriguing aspects of Mitanni is the presence of Indo-Aryan elements among its ruling elite. The horse-training manual of **Kikkuli** (c. 1400 BCE) uses Indo-Aryan numerical terms, and Mitanni treaties invoke Vedic deities (Indra, Mitra, Varuna, Nasatya). This suggests an Indo-Aryan ruling class over a Hurrian-speaking population.
+<Cited status="green">
+One of the most intriguing aspects of Mitanni is the presence of Indo-Aryan elements among its ruling elite. The horse-training manual of **Kikkuli** (c. 1400 BCE) uses Indo-Aryan numerical terms, and Mitanni treaties invoke Vedic deities (Indra, Mitra, Varuna, Nasatya). This suggests an Indo-Aryan ruling class over a Hurrian-speaking population.<Ref id={2} />
 </Cited>
 
 ## Cultural Influence
 
-<Cited status="red">
+<Cited status="yellow">
 Hurrian cultural influence was enormous, particularly on the Hittites:
 - The **Song of Kumarbi** (Hurrian theogony) — A myth about divine kingship that closely parallels Hesiod's *Theogony*, possibly transmitted through Hurrian-Hittite channels
 - **Song of Ullikummi** — A Hurrian myth preserved in Hittite translation
@@ -40,7 +42,7 @@ Hurrian cultural influence was enormous, particularly on the Hittites:
 
 ## Decline
 
-<Cited status="red">
+<Cited status="yellow">
 Mitanni declined under pressure from the rising Hittite and Assyrian empires. The Hittite king Suppiluliuma I sacked the Mitanni capital Washukanni (~1340 BCE), and the kingdom was eventually absorbed by Assyria.
 </Cited>
 
@@ -49,3 +51,9 @@ Mitanni declined under pressure from the rising Hittite and Assyrian empires. Th
 - **Gernot Wilhelm, *The Hurrians*** — The standard introduction
 - **Eva von Dassow, *State and Society in the Late Bronze Age: Alalah under the Mittani Empire*** — Detailed study of Mitanni governance
 - **[ORACC / Amarna Letters](https://oracc.museum.upenn.edu/)** — Including Mitanni diplomatic correspondence
+
+<References references={[
+  { id: 1, text: "*Gernot Wilhelm, The Hurrians*** — The standard introduction" },
+  { id: 2, text: "*Eva von Dassow, State and Society in the Late Bronze Age: Alalah under the Mittani Empire*** — Detailed study of Mitanni governance" },
+  { id: 3, text: "ORACC / Amarna Letters — Including Mitanni diplomatic correspondence", url: "https://oracc.museum.upenn.edu/" },
+]} />

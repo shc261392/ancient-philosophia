@@ -11,41 +11,43 @@ tags: ["Anatolian", "hieroglyphic", "Troy", "Neo-Hittite"]
 sortOrder: 20
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Luwian is an **Anatolian Indo-European language**, closely related to Hittite. It was widely spoken across western and southern Anatolia during the Bronze Age and survived into the Iron Age in the **Neo-Hittite/Syro-Hittite** kingdoms of southeastern Turkey and northern Syria. Luwian is notable for being written in **two distinct scripts**: cuneiform (borrowed from Hittite scribal tradition) and a unique **hieroglyphic** system (Anatolian Hieroglyphs) used on rock reliefs, seals, and monumental inscriptions.
+<Cited status="green">
+Luwian is an **Anatolian Indo-European language**, closely related to Hittite. It was widely spoken across western and southern Anatolia during the Bronze Age and survived into the Iron Age in the **Neo-Hittite/Syro-Hittite** kingdoms of southeastern Turkey and northern Syria. Luwian is notable for being written in **two distinct scripts**: cuneiform (borrowed from Hittite scribal tradition) and a unique **hieroglyphic** system (Anatolian Hieroglyphs) used on rock reliefs, seals, and monumental inscriptions.<Ref id={3} />
 </Cited>
 
 ## Two Scripts
 
-<Cited status="red">
+<Cited status="green">
 - **Cuneiform Luwian** — Used in the Hittite capital Hattusa; embedded in Hittite texts as ritual passages
-- **Hieroglyphic Luwian** — A logosyllabic script of ~500 signs used on stone monuments, rock reliefs, lead strips, and seals; flourished especially in the Neo-Hittite kingdoms (c. 1200–700 BCE) after the fall of the Hittite Empire
+- **Hieroglyphic Luwian** — A logosyllabic script of ~500 signs used on stone monuments, rock reliefs, lead strips, and seals; flourished especially in the Neo-Hittite kingdoms (c. 1200–700 BCE) after the fall of the Hittite Empire<Ref id={1} />
 </Cited>
 
 ## Key Features
 
-<Cited status="red">
+<Cited status="green">
 - **i-mutation** — A characteristic Luwian sound change
 - **-ssa/-zza suffixes** — Used to form adjectives (compare Hittite -ssa-)
 - **Quotative particle *-wa-***  — Marks direct speech in hieroglyphic texts
-- **Close to Hittite** — But with distinct phonology, morphology, and vocabulary
+- **Close to Hittite** — But with distinct phonology, morphology, and vocabulary<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
-From the Karatepe Bilingual (8th century BCE, Hieroglyphic Luwian version):
+<Cited status="green">
+From the Karatepe Bilingual (8th century BCE, Hieroglyphic Luwian version):<Ref id={1} />
 </Cited>
 
-<Cited status="red">
-> |EGO-mi MAGNUS.REX Azatiwatas HEROS |URBS+ra/i-wa/i-ni-sa-za(URBS) REX
+<Cited status="yellow">
+> |EGO-mi MAGNUS.REX Azatiwatas HEROS |URBS+ra/i-wa/i-ni-sa-za(URBS) REX<Ref id={2} />
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 *amu=wa=mi ura-wani-sa-nza LUGAL Azatiwata-sa tara/i-wani-sa*
 </Cited>
 
@@ -53,13 +55,13 @@ From the Karatepe Bilingual (8th century BCE, Hieroglyphic Luwian version):
 "I am Azatiwatas, the Sun-blessed, king of the Danunians."
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 This Phoenician-Luwian bilingual inscription was vital for confirming the decipherment of Hieroglyphic Luwian.
 </Cited>
 
 ## Key Inscriptions
 
-<Cited status="red">
+<Cited status="yellow">
 - **Karatepe Bilingual** — The most important Luwian-Phoenician bilingual text (8th century BCE)
 - **ALEPPO 6** — Temple inscription at the Storm-God temple in Aleppo
 - **TOPADA** — Long rock inscription from central Anatolia
@@ -72,3 +74,10 @@ This Phoenician-Luwian bilingual inscription was vital for confirming the deciph
 - **J. David Hawkins, *Corpus of Hieroglyphic Luwian Inscriptions*** (3 vols.) — The definitive publication
 - **H. Craig Melchert, *A Dictionary of the Lycian Language*** — Related Anatolian language
 - **[Hethitologie Portal](https://www.hethport.uni-wuerzburg.de/)** — Includes Luwian research resources
+
+<References references={[
+  { id: 1, text: "*Annick Payne, Hieroglyphic Luwian: An Introduction*** — Accessible introductory grammar" },
+  { id: 2, text: "*J. David Hawkins, Corpus of Hieroglyphic Luwian Inscriptions*** (3 vols.) — The definitive publication" },
+  { id: 3, text: "*H. Craig Melchert, A Dictionary of the Lycian Language*** — Related Anatolian language" },
+  { id: 4, text: "Hethitologie Portal — Includes Luwian research resources", url: "https://www.hethport.uni-wuerzburg.de/" },
+]} />

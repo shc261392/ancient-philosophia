@@ -8,45 +8,47 @@ tags: ["Berber", "Masinissa", "Jugurtha", "Numidian cavalry", "Thugga", "Libyco-
 sortOrder: 28
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Numidia — the Berber kingdom of what is now Algeria and western Tunisia — played a pivotal role in the power struggles of the late ancient Mediterranean. From its unification under **Masinissa** to its final absorption into the Roman provincial system, Numidia was far more than a peripheral client state: it was a sophisticated kingdom with monumental architecture, a thriving agricultural economy, and a military tradition that made Numidian cavalry the most sought-after light horsemen in the ancient world.
+<Cited status="green">
+Numidia — the Berber kingdom of what is now Algeria and western Tunisia — played a pivotal role in the power struggles of the late ancient Mediterranean. From its unification under **Masinissa** to its final absorption into the Roman provincial system, Numidia was far more than a peripheral client state: it was a sophisticated kingdom with monumental architecture, a thriving agricultural economy, and a military tradition that made Numidian cavalry the most sought-after light horsemen in the ancient world.<Ref id={4} />
 </Cited>
 
 ## The Berber Background
 
-<Cited status="red">
-The indigenous population of North Africa west of Egypt — known to the Greeks as *Libyans* and to the Romans as *Numidae* (nomads) — were Berber-speaking peoples with a semi-nomadic pastoral economy. They developed the **Libyco-Berber script**, an alphabetic writing system that survives in thousands of short inscriptions across North Africa and the Sahara. The modern Tifinagh script of the Tuareg people is its direct descendant.
+<Cited status="green">
+The indigenous population of North Africa west of Egypt — known to the Greeks as *Libyans* and to the Romans as *Numidae* (nomads) — were Berber-speaking peoples with a semi-nomadic pastoral economy. They developed the **Libyco-Berber script**, an alphabetic writing system that survives in thousands of short inscriptions across North Africa and the Sahara. The modern Tifinagh script of the Tuareg people is its direct descendant.<Ref id={3} />
 </Cited>
 
 ## Masinissa and Unification (c. 202–148 BCE)
 
-<Cited status="red">
-**Masinissa** (r. c. 202–148 BCE) was the architect of Numidian power. Initially allied with Carthage, he switched sides to Rome during the Second Punic War and fought alongside Scipio Africanus at the decisive Battle of **Zama** (202 BCE). Rewarded by Rome, Masinissa unified the Massylii and Masaesyli Berber kingdoms into a single Numidian state with its capital at **Cirta** (modern Constantine, Algeria).
+<Cited status="green">
+**Masinissa** (r. c. 202–148 BCE) was the architect of Numidian power. Initially allied with Carthage, he switched sides to Rome during the Second Punic War and fought alongside Scipio Africanus at the decisive Battle of **Zama** (202 BCE). Rewarded by Rome, Masinissa unified the Massylii and Masaesyli Berber kingdoms into a single Numidian state with its capital at **Cirta** (modern Constantine, Algeria).<Ref id={2} />
 </Cited>
 
-<Cited status="red">
-Under Masinissa's long reign, Numidia was transformed:
+<Cited status="yellow">
+Under Masinissa's long reign, Numidia was transformed:<Ref id={1} />
 </Cited>
 
-<Cited status="red">
+<Cited status="green">
 - Sedentary agriculture expanded, and the kingdom became a major grain exporter
 - Greek cultural influence grew, with Numidian elites adopting Hellenistic art, architecture, and coinage
-- Monumental tomb architecture developed, including the **Medracen** and the **Royal Mausoleum of Mauretania** (Tomb of the Christian)
+- Monumental tomb architecture developed, including the **Medracen** and the **Royal Mausoleum of Mauretania** (Tomb of the Christian)<Ref id={5} />
 </Cited>
 
 ## The Jugurthine War (112–106 BCE)
 
-<Cited status="red">
+<Cited status="yellow">
 After Masinissa's death, succession disputes destabilized the kingdom. His grandson **Jugurtha** attempted to seize sole power, massacring Roman and Italian traders at Cirta in 112 BCE. The resulting **Jugurthine War** — chronicled in Sallust's famous monograph — exposed the corruption of the Roman Senate ("a city for sale," Jugurtha reportedly said of Rome) and launched the careers of **Marius** and **Sulla**. Jugurtha was finally captured through betrayal in 106 BCE and executed in Rome.
 </Cited>
 
 ## Key Sites
 
-<Cited status="red">
+<Cited status="yellow">
 - **Cirta** (Constantine) — The Numidian capital, spectacularly sited on a rock plateau
 - **Thugga** (Dougga) — A well-preserved Numidian-Roman town (UNESCO World Heritage Site) with the iconic **Libyco-Punic Mausoleum**, one of the few surviving examples of pre-Roman Numidian monumental architecture
 - **Zama** — Site of the decisive battle between Scipio and Hannibal, fought on Numidian soil
@@ -55,13 +57,13 @@ After Masinissa's death, succession disputes destabilized the kingdom. His grand
 
 ## Numidian Cavalry
 
-<Cited status="red">
+<Cited status="yellow">
 Numidian horsemen were legendary across the ancient world. Riding without saddles or bridles, guiding their small, agile horses by knee and voice, they excelled as skirmishers, scouts, and pursuers. Both Carthage and Rome relied heavily on Numidian cavalry, and their role was decisive at battles from Cannae to Zama.
 </Cited>
 
 ## End of the Kingdom
 
-<Cited status="red">
+<Cited status="yellow">
 After Jugurtha's defeat, Numidia persisted as a diminished Roman client state. During Rome's civil wars, King **Juba I** backed Pompey against Caesar and was defeated at **Thapsus** (46 BCE). Caesar annexed eastern Numidia as the province of *Africa Nova*. The western kingdom survived as Mauretania until its annexation under Caligula in 40 CE.
 </Cited>
 
@@ -72,3 +74,11 @@ After Jugurtha's defeat, Numidia persisted as a diminished Roman client state. D
 - **Gabriel Camps, *Les Berbères: Mémoire et identité*** — Foundational work on Berber history
 - **[UNESCO World Heritage: Dougga / Thugga](https://whc.unesco.org/en/list/794)** — The best-preserved Numidian-Roman site
 - **Eve MacDonald, *Hannibal: A Hellenistic Life*** (2015) — Includes detailed coverage of Numidian-Carthaginian relations
+
+<References references={[
+  { id: 1, text: "*Sallust, The Jugurthine War*** — Essential primary source (Penguin Classics translation by A. J. Woodman)" },
+  { id: 2, text: "*David Cherry (ed.), The Cambridge World History of Slavery, vol. 1* — Context for North African social structures" },
+  { id: 3, text: "*Gabriel Camps, Les Berbères: Mémoire et identité*** — Foundational work on Berber history" },
+  { id: 4, text: "UNESCO World Heritage: Dougga / Thugga — The best-preserved Numidian-Roman site", url: "https://whc.unesco.org/en/list/794" },
+  { id: 5, text: "*Eve MacDonald, Hannibal: A Hellenistic Life*** (2015) — Includes detailed coverage of Numidian-Carthaginian relations" },
+]} />

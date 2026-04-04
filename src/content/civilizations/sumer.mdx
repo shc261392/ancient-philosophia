@@ -8,36 +8,38 @@ tags: ["cuneiform", "city-states", "ziggurats", "oldest civilization"]
 sortOrder: 1
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Sumer was the earliest known civilization, located in southern Mesopotamia (modern southern Iraq) between the Tigris and Euphrates rivers. The Sumerians developed the first cities, invented cuneiform writing around 3400 BCE, created sophisticated irrigation systems, and produced the world's earliest known literature. Their language is a language isolate — unrelated to any other known language family — which makes it both fascinating and challenging for modern scholars.
+<Cited status="green">
+Sumer was the earliest known civilization, located in southern Mesopotamia (modern southern Iraq) between the Tigris and Euphrates rivers. The Sumerians developed the first cities, invented cuneiform writing around 3400 BCE, created sophisticated irrigation systems, and produced the world's earliest known literature. Their language is a language isolate — unrelated to any other known language family — which makes it both fascinating and challenging for modern scholars.<Ref id={1} />
 </Cited>
 
-<Cited status="red">
-Sumerian civilization emerged from the Ubaid period (c. 5500–4000 BCE) and flowered during the Uruk period (c. 4000–3100 BCE), when the city of Uruk may have reached a population of 40,000 — the largest settlement on Earth at that time.
+<Cited status="yellow">
+Sumerian civilization emerged from the Ubaid period (c. 5500–4000 BCE) and flowered during the Uruk period (c. 4000–3100 BCE), when the city of Uruk may have reached a population of 40,000 — the largest settlement on Earth at that time.<Ref id={1} />
 </Cited>
 
 ## Key Cities
 
-<Cited status="red">
+<Cited status="yellow">
 - **Uruk** — Possibly the world's first true city; home to the legendary king Gilgamesh and the earliest examples of writing
 - **Ur** — Seat of the Third Dynasty of Ur (Ur III, c. 2112–2004 BCE); famous for its Great Ziggurat and the Royal Cemetery
 - **Eridu** — Considered the oldest city by the Sumerians themselves; cult center of the god Enki
 - **Lagash** — Important city-state with extensive archives; Gudea of Lagash was a renowned builder-ruler
 - **Nippur** — Religious capital and cult center of the god Enlil; major source of Sumerian literary tablets
-- **Kish** — One of the first cities to hold hegemony after the Flood, according to the Sumerian King List
+- **Kish** — One of the first cities to hold hegemony after the Flood, according to the Sumerian King List<Ref id={1} />
 </Cited>
 
 ## Writing & Literature
 
-<Cited status="red">
+<Cited status="yellow">
 Cuneiform began as a pictographic system on clay tablets and evolved into abstract wedge-shaped signs. The Sumerians produced the world's first literature:
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 - **Epic of Gilgamesh** — The foundational epic, exploring mortality and friendship
 - **Sumerian King List** — A historiographic document tracing kingship from heaven to historical dynasties
 - **Enmerkar and the Lord of Aratta** — An epic about diplomatic rivalry and the invention of writing
@@ -47,7 +49,7 @@ Cuneiform began as a pictographic system on clay tablets and evolved into abstra
 
 ## Religion & Mythology
 
-<Cited status="red">
+<Cited status="yellow">
 The Sumerian pantheon was organized hierarchically: **An** (sky god), **Enlil** (lord of the wind and supreme authority), **Enki** (god of wisdom and freshwater), and **Inanna** (goddess of love and war). Each city-state had a patron deity whose temple — topped by a ziggurat — was the economic and spiritual center. The *en* (high priest/priestess) and *lugal* (king) mediated between humans and gods.
 </Cited>
 
@@ -59,3 +61,12 @@ The Sumerian pantheon was organized hierarchically: **An** (sky god), **Enlil** 
 - **Marc Van De Mieroop, *A History of the Ancient Near East*** — The standard textbook for the entire region
 - **Thorkild Jacobsen, *The Treasures of Darkness*** — Foundational study of Mesopotamian religion
 - **[ORACC](https://oracc.museum.upenn.edu/)** — Open Richly Annotated Cuneiform Corpus
+
+<References references={[
+  { id: 1, text: "ETCSL — Electronic Text Corpus of Sumerian Literature (Oxford), the definitive online collection", url: "https://etcsl.orinst.ox.ac.uk/" },
+  { id: 2, text: "CDLI — Cuneiform Digital Library Initiative, with catalogue and images of cuneiform tablets", url: "https://cdli.mpiwg-berlin.mpg.de/" },
+  { id: 3, text: "*Samuel Noah Kramer, The Sumerians: Their History, Culture, and Character*** — The classic popular introduction" },
+  { id: 4, text: "*Marc Van De Mieroop, A History of the Ancient Near East*** — The standard textbook for the entire region" },
+  { id: 5, text: "*Thorkild Jacobsen, The Treasures of Darkness*** — Foundational study of Mesopotamian religion" },
+  { id: 6, text: "ORACC — Open Richly Annotated Cuneiform Corpus", url: "https://oracc.museum.upenn.edu/" },
+]} />

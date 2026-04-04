@@ -11,42 +11,44 @@ tags: ["pre-Roman Italy", "isolate", "Tuscany", "partially deciphered"]
 sortOrder: 21
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-Etruscan was the language of the **Etruscan civilization** in central Italy (modern Tuscany, Umbria, and Lazio), which flourished from the 8th to 3rd centuries BCE before being absorbed by Rome. Etruscan is a **language isolate** (the Tyrsenian hypothesis linking it to Lemnian and Rhaetic is debated). While we can **read** Etruscan (the alphabet is Greek-derived and well understood) and understand many words and grammatical structures, full comprehension is limited by the lack of any bilingual text of significant length and the absence of related languages for comparison.
+<Cited status="green">
+Etruscan was the language of the **Etruscan civilization** in central Italy (modern Tuscany, Umbria, and Lazio), which flourished from the 8th to 3rd centuries BCE before being absorbed by Rome. Etruscan is a **language isolate** (the Tyrsenian hypothesis linking it to Lemnian and Rhaetic is debated). While we can **read** Etruscan (the alphabet is Greek-derived and well understood) and understand many words and grammatical structures, full comprehension is limited by the lack of any bilingual text of significant length and the absence of related languages for comparison.<Ref id={1} />
 </Cited>
 
 ## The Alphabet
 
-<Cited status="red">
-The Etruscan alphabet was adapted from the Western Greek (Euboean) alphabet around 700 BCE. Ironically, the **Latin alphabet** was in turn adapted from the Etruscan one.
+<Cited status="green">
+The Etruscan alphabet was adapted from the Western Greek (Euboean) alphabet around 700 BCE. Ironically, the **Latin alphabet** was in turn adapted from the Etruscan one.<Ref id={1} />
 </Cited>
 
 ## What We Know
 
-<Cited status="red">
+<Cited status="yellow">
 - **~13,000 inscriptions** survive, but most are short (names on tombs)
 - **Grammar:** Agglutinative, postpositions, case suffixes (-s genitive, -i locative, -al pertinentive)
 - **Numbers:** Partially known (1–6 are *θu, zal, ci, hut, maχ, śa*; order debated)
-- **Vocabulary:** Many words understood from context, bilingual glosses, and Latin/Greek borrowings
+- **Vocabulary:** Many words understood from context, bilingual glosses, and Latin/Greek borrowings<Ref id={3} />
 </Cited>
 
 ## Key Texts
 
-<Cited status="red">
+<Cited status="green">
 - **Liber Linteus Zagrabiensis** — The longest Etruscan text; a linen book reused as mummy wrappings (now in Zagreb); a ritual calendar
 - **Tabula Capuana** — Terracotta tile with a ritual text
 - **Pyrgi Tablets** — Gold tablets with Etruscan-Phoenician bilingual text (c. 500 BCE); the closest thing to a Rosetta Stone for Etruscan
 - **Cippus Perusinus** — A stone boundary marker with a legal text
-- **Thousands of epitaphs** — From tombs at Tarquinia, Cerveteri, Chiusi, Volterra, etc.
+- **Thousands of epitaphs** — From tombs at Tarquinia, Cerveteri, Chiusi, Volterra, etc.<Ref id={1} />
 </Cited>
 
 ## Sample Text
 
-<Cited status="red">
+<Cited status="yellow">
 From the Pyrgi Gold Tablets (Tablet A, Etruscan):
 </Cited>
 
@@ -58,7 +60,7 @@ From the Pyrgi Gold Tablets (Tablet A, Etruscan):
 "This temple and this statue were dedicated to Uni-Astarte, which Thefarie Velianas contributed."
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 The parallel Phoenician tablet confirms this is a dedication by the ruler of Caere to the goddess.
 </Cited>
 
@@ -69,3 +71,11 @@ The parallel Phoenician tablet confirms this is a dedication by the ruler of Cae
 - **Rex Wallace, *Zikh Rasna: A Manual of the Etruscan Language and Inscriptions*** — Teaching grammar
 - **[Thesaurus Linguae Etruscae (TLE)](https://www.cnr.it/en)** — Standard edition of Etruscan inscriptions
 - **[Etruscology at UMass](https://www.umass.edu/classics/etruscan)** — UMass digital epigraphy resource
+
+<References references={[
+  { id: 1, text: "*Giuliano Bonfante & Larissa Bonfante, The Etruscan Language: An Introduction*** — The standard accessible introduction" },
+  { id: 2, text: "*Helmut Rix, Etruskische Texte*** — Scholarly text collection (in German)" },
+  { id: 3, text: "*Rex Wallace, Zikh Rasna: A Manual of the Etruscan Language and Inscriptions*** — Teaching grammar" },
+  { id: 4, text: "Thesaurus Linguae Etruscae (TLE) — Standard edition of Etruscan inscriptions", url: "https://www.cnr.it/en" },
+  { id: 5, text: "Etruscology at UMass — UMass digital epigraphy resource", url: "https://www.umass.edu/classics/etruscan" },
+]} />

@@ -8,46 +8,48 @@ tags: ["Cyrus", "Darius", "Persepolis", "Zoroastrianism", "satrapies"]
 sortOrder: 11
 ---
 
+import Ref from '../../components/Ref.astro';
+import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
 
 ## Overview
 
-<Cited status="red">
-The Achaemenid Empire (c. 550–330 BCE) was the largest empire the world had yet seen, stretching at its peak from Egypt and Libya in the west to the Indus Valley in the east, encompassing over 40 million people. Founded by **Cyrus the Great**, it was a model of imperial administration — governing diverse peoples through the satrapy system, tolerance of local customs and religions, and monumental building projects.
+<Cited status="yellow">
+The Achaemenid Empire (c. 550–330 BCE) was the largest empire the world had yet seen, stretching at its peak from Egypt and Libya in the west to the Indus Valley in the east, encompassing over 40 million people. Founded by **Cyrus the Great**, it was a model of imperial administration — governing diverse peoples through the satrapy system, tolerance of local customs and religions, and monumental building projects.<Ref id={1} />
 </Cited>
 
 ## Cyrus the Great (r. c. 559–530 BCE)
 
-<Cited status="red">
-Cyrus II of Persia overthrew three empires in rapid succession: Media (550 BCE), Lydia (547 BCE), and Babylon (539 BCE). His conquest of Babylon was notably peaceful — the **Cyrus Cylinder**, sometimes called the "first declaration of human rights" (though this is a modern interpretation), records his policy of religious tolerance and the restoration of deported peoples, including the Jews of the Babylonian Exile.
+<Cited status="green">
+Cyrus II of Persia overthrew three empires in rapid succession: Media (550 BCE), Lydia (547 BCE), and Babylon (539 BCE). His conquest of Babylon was notably peaceful — the **Cyrus Cylinder**, sometimes called the "first declaration of human rights" (though this is a modern interpretation), records his policy of religious tolerance and the restoration of deported peoples, including the Jews of the Babylonian Exile.<Ref id={1} />
 </Cited>
 
 ## Darius I (r. 522–486 BCE)
 
-<Cited status="red">
+<Cited status="green">
 Darius was the empire's organizational genius. His achievements include:
 - The **satrapy system** — Dividing the empire into ~20 provinces governed by royally appointed satraps
 - The **Royal Road** — A 2,600 km highway from Susa to Sardis with a relay postal system
 - The **Behistun Inscription** — A trilingual (Old Persian, Elamite, Babylonian) rock relief that was the key to deciphering cuneiform, as the Rosetta Stone was for hieroglyphs
 - **Persepolis** — The ceremonial capital, with its magnificent Apadana reliefs showing delegations from all subject peoples
-- Introduction of **Old Persian cuneiform** — A simplified script likely created for royal inscriptions
+- Introduction of **Old Persian cuneiform** — A simplified script likely created for royal inscriptions<Ref id={5} />
 </Cited>
 
 ## Greco-Persian Wars
 
-<Cited status="red">
+<Cited status="yellow">
 Darius's failed invasion of Greece (Marathon, 490 BCE) and his son **Xerxes'** massive but ultimately unsuccessful campaign (Thermopylae, Salamis, Plataea, 480–479 BCE) are defining events of both Persian and Greek history. The Persian perspective reveals these as minor frontier conflicts in a vast empire.
 </Cited>
 
 ## Religion & Culture
 
-<Cited status="red">
+<Cited status="yellow">
 **Zoroastrianism** — the dualistic religion of Ahura Mazda vs. Angra Mainyu — was the dominant religious tradition, though the Achaemenids practiced tolerant polytheism. The empire fostered cultural exchange on an unprecedented scale, spreading Aramaic as the administrative lingua franca.
 </Cited>
 
 ## Fall
 
-<Cited status="red">
+<Cited status="yellow">
 Alexander the Great defeated the last Achaemenid king **Darius III** at Gaugamela (331 BCE), conquered Persepolis, and absorbed the empire. But Persian administrative traditions profoundly shaped all subsequent Near Eastern empires.
 </Cited>
 
@@ -58,3 +60,11 @@ Alexander the Great defeated the last Achaemenid king **Darius III** at Gaugamel
 - **Matt Waters, *Ancient Persia: A Concise History*** — Excellent accessible overview
 - **[Achemenet](http://www.achemenet.com/)** — Digital project for Achaemenid studies
 - **[Persepolis Fortification Archive Project (Oriental Institute)](https://oi.uchicago.edu/research/projects/persepolis-fortification-archive)** — Ongoing digitization of administrative tablets
+
+<References references={[
+  { id: 1, text: "*Pierre Briant, From Cyrus to Alexander: A History of the Persian Empire*** — The magisterial modern history" },
+  { id: 2, text: "*Amélie Kuhrt, The Persian Empire: A Corpus of Sources from the Achaemenid Period*** — Essential primary sources" },
+  { id: 3, text: "*Matt Waters, Ancient Persia: A Concise History*** — Excellent accessible overview" },
+  { id: 4, text: "Achemenet — Digital project for Achaemenid studies", url: "http://www.achemenet.com/" },
+  { id: 5, text: "Persepolis Fortification Archive Project (Oriental Institute) — Ongoing digitization of administrative tablets", url: "https://oi.uchicago.edu/research/projects/persepolis-fortification-archive" },
+]} />

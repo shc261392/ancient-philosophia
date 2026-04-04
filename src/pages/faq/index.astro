@@ -34,6 +34,37 @@ const faqs = [
 <p>Our goal is to move all content toward green over time. The color system is deliberately transparent: we would rather honestly show you where citations are weak than pretend everything is equally well-sourced. If you spot a red or yellow paragraph and know the relevant scholarship, please <a href="https://github.com/shc261392/ancient-philosophia/edit/main/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">edit the page on GitHub</a> — your change will automatically open a pull request for review.</p>`,
   },
   {
+    id: 'semantic-evaluation',
+    question: 'How do you verify that citations actually match the content?',
+    answer: `<p class="mb-4">We use an automated <strong>semantic similarity evaluation</strong> to objectively check whether each cited reference is genuinely relevant to the paragraph it supports. This is an independent, machine-scored process — no human on the team grades their own work.</p>
+
+<div class="mb-4">
+  <h4 class="font-semibold text-[var(--color-fg-primary)] mb-2">How it works</h4>
+  <ol class="list-decimal pl-5 space-y-2">
+    <li>Each <span style="color: #22c55e">green</span> paragraph is paired with the reference it cites. Each <span style="color: #eab308">yellow</span> paragraph is checked against all references in the file.</li>
+    <li>A <strong>cross-encoder model</strong> (<code>cross-encoder/stsb-roberta-base</code>, from the <a href="https://www.sbert.net/docs/cross_encoder/pretrained_models.html#stsbenchmark" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">Sentence-Transformers</a> project) scores the semantic similarity of each pair on a 0–1 scale.</li>
+    <li>Green paragraphs need a score ≥ 0.25 (moderate topical match) to pass. Yellow paragraphs need any reference ≥ 0.20 to count as covered.</li>
+    <li>Paragraphs that fail are automatically downgraded — green → yellow, yellow → red — so the colored indicators you see always reflect the latest evaluation.</li>
+  </ol>
+</div>
+
+<div class="mb-4">
+  <h4 class="font-semibold text-[var(--color-fg-primary)] mb-2">Transparency</h4>
+  <p>We do <strong>not</strong> claim this is a perfect system. Semantic similarity models compare surface-level meaning between a paragraph and a short bibliographic reference string — they cannot verify factual accuracy, check specific page numbers, or assess whether a scholar's argument is faithfully represented. The current model (<code>stsb-roberta-base</code>, 90.17% accuracy on the STS benchmark) is a reasonable starting point, not a finished solution.</p>
+</div>
+
+<div class="mb-4">
+  <h4 class="font-semibold text-[var(--color-fg-primary)] mb-2">What we're working on</h4>
+  <ul class="list-disc pl-5 space-y-1">
+    <li>Experimenting with newer models and cross-encoder architectures as the field evolves</li>
+    <li>Exploring NLI-based (Natural Language Inference) evaluation alongside STS</li>
+    <li>Investigating retrieval-augmented approaches that compare against full-text source material, not just bibliographic strings</li>
+  </ul>
+</div>
+
+<p>If you have experience with NLP evaluation, citation analysis, or computational scholarship and see ways to improve this process, we genuinely welcome your input — please <a href="https://github.com/shc261392/ancient-philosophia/issues/new" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">open an issue on GitHub</a> or reach out at <a href="mailto:support@ancient-philosophia.org" class="text-[var(--color-link)] hover:underline">support@ancient-philosophia.org</a>. The evaluation tool is fully open-source in our repository.</p>`,
+  },
+  {
     id: 'missing-civilization',
     question: "Why isn't a particular civilization or language included?",
     answer: `We are constantly improving our coverage. The ancient world is vast — thousands of years, hundreds of civilizations, and dozens of languages across multiple continents — and comprehensive coverage takes time to research and write responsibly. Many subjects not yet covered are already on our <a href="/roadmap/" class="text-[var(--color-link)] hover:underline">future roadmap</a>, and we add new content regularly. If you'd like to see a particular civilization, language, or topic covered sooner, feel free to open an issue or pull request on <a href="https://github.com/shc261392/ancient-philosophia" target="_blank" rel="noopener noreferrer" class="text-[var(--color-link)] hover:underline">GitHub</a>.`,

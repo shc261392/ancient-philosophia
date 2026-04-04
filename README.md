@@ -128,6 +128,38 @@ Dark-only theme with an ancient Greek color palette (defined in `src/styles/glob
 
 All colors defined as CSS custom properties (`--color-*`) for easy theming.
 
+## Citation Health Evaluation
+
+We use automated semantic similarity evaluation to verify that citations actually match paragraph content. The tool uses a cross-encoder model (`cross-encoder/stsb-roberta-base`) to score each (paragraph, reference) pair — see [FAQ: How we verify citations](https://ancient-philosophia.org/faq/#semantic-evaluation) for full details.
+
+### Setup (requires [uv](https://docs.astral.sh/uv/getting-started/installation/))
+
+```bash
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Run the evaluator (uv handles the venv and dependencies automatically)
+uv run --project scripts scripts/citation-health-evaluator.py
+```
+
+### Commands
+
+```bash
+# Evaluate only (read-only, prints report)
+uv run --project scripts scripts/citation-health-evaluator.py
+
+# Evaluate and update MDX files (downgrades failing citations)
+uv run --project scripts scripts/citation-health-evaluator.py --write
+```
+
+**`--write` mode** downgrades citation statuses that fail semantic evaluation:
+- Green paragraphs whose cited reference scores below 0.25 → **yellow**
+- Yellow paragraphs where no reference scores above 0.20 → **red**
+
+The JSON report is saved to `scripts/citation-health-report.json` (gitignored).
+
+> **Note:** This evaluation is imperfect — it compares paragraph text against short bibliographic reference strings, not full-text sources. We are constantly improving the method and welcome suggestions. See [FAQ](https://ancient-philosophia.org/faq/#semantic-evaluation) for details.
+
 ## Content Standards
 
 - **Tone**: Scholarly but accessible — for self-directed adult learners

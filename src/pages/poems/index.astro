@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const poems = (await getCollection('poems')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const categoryOrder = ['hymn', 'ode', 'lyric', 'epic', 'elegy', 'love-poem', 'religious', 'epigram'] as const;
+const categoryLabels: Record<string, { label: string; icon: string }> = {
+  'hymn':      { label: 'Hymns & Invocations', icon: '🎵' },
+  'ode':       { label: 'Odes & Epinician Poetry', icon: '🏺' },
+  'lyric':     { label: 'Lyric Poetry', icon: '🎶' },
+  'epic':      { label: 'Epic Passages', icon: '📜' },
+  'elegy':     { label: 'Elegies & Laments', icon: '🕯' },
+  'love-poem': { label: 'Love Poetry', icon: '🌹' },
+  'religious': { label: 'Religious & Ritual Poetry', icon: '🔥' },
+  'epigram':   { label: 'Epigrams', icon: '⚱' },
+};
+
+const traditionColors: Record<string, string> = {
+  'Greek':          'bg-[var(--color-aegean)]/20 text-[var(--color-aegean-light)]',
+  'Roman':          'bg-[var(--color-attic-red)]/20 text-[var(--color-fg-secondary)]',
+  'Mesopotamian':   'bg-[var(--color-gold-leaf)]/20 text-[var(--color-gold-light)]',
+  'Egyptian':       'bg-[var(--color-terracotta)]/20 text-[var(--color-terracotta-light)]',
+  'Hurrian':        'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]',
+};
+
+const conditionBadge: Record<string, { label: string; color: string }> = {
+  'complete':          { label: 'Complete', color: 'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]' },
+  'fragmentary':       { label: 'Fragmentary', color: 'bg-[var(--color-terracotta)]/20 text-[var(--color-terracotta-light)]' },
+  'partial-excerpt':   { label: 'Excerpt', color: 'bg-[var(--color-aegean)]/20 text-[var(--color-aegean-light)]' },
+};
+---
+
+<BaseLayout
+  title="Ancient Poems, Hymns & Songs"
+  description="Primary-text poems, hymns, and songs from the ancient world — Sumerian, Egyptian, Greek, Roman, and Hurrian — with original-language text, public-domain translations, and scholarly citations."
+>
+  <Hero
+    title="Poems, Hymns & Songs"
+    subtitle="Primary texts from the ancient world"
+    description="From the world's oldest named poem (Enheduanna, c. 2300 BCE) to Roman lyric — original-language texts alongside public-domain English translations, with full scholarly citations."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] rounded-xl p-5 text-sm text-[var(--color-fg-secondary)] leading-relaxed">
+      <span class="font-semibold text-[var(--color-gold-leaf)]">About the texts: </span>
+      Each entry provides the original-language text (or transliteration for cuneiform scripts), a public-domain English translation, and full citations with links. Fragmentary texts are clearly labelled. Scholarly reconstructions of damaged passages are noted as such.
+    </div>
+  </div>
+
+  {categoryOrder.map(cat => {
+    const items = poems.filter(p => p.data.category === cat);
+    if (items.length === 0) return null;
+    const { label, icon } = categoryLabels[cat];
+    return (
+      <section class="mb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8 border-b border-[var(--color-bg-tertiary)] pb-2">
+          {icon} {label}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map(item => (
+            <a href={`/poems/${item.id}/`} class="group block bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-all hover:glow-accent overflow-hidden">
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class:list={['text-xs px-2 py-0.5 rounded-full', traditionColors[item.data.tradition] || 'bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)]']}>
+                    {item.data.tradition}
+                  </span>
+                  <span class:list={['text-xs px-2 py-0.5 rounded-full', conditionBadge[item.data.condition].color]}>
+                    {conditionBadge[item.data.condition].label}
+                  </span>
+                  {item.data.period && (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-bg-tertiary)] text-[var(--color-fg-muted)]">
+                      {item.data.period}
+                    </span>
+                  )}
+                </div>
+                <h3 class="font-serif text-lg text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors mb-1">
+                  {item.data.title}
+                </h3>
+                {item.data.author && (
+                  <p class="text-xs text-[var(--color-fg-muted)] mb-2 italic">{item.data.author}</p>
+                )}
+                <p class="text-sm text-[var(--color-fg-secondary)] leading-relaxed line-clamp-3">
+                  {item.data.description}
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-3">
+                  {item.data.tags.slice(0, 4).map(tag => (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-[var(--color-attic-red)]/15 text-[var(--color-fg-secondary)]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EditOnGitHub from '../../components/EditOnGitHub.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const poems = await getCollection('poems');
+  return poems.map((poem) => ({
+    params: { slug: poem.id },
+    props: { poem },
+  }));
+}
+
+type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props'];
+
+const { poem } = Astro.props;
+const { Content, headings } = await render(poem);
+
+const traditionColors: Record<string, string> = {
+  'Greek':        'bg-[var(--color-aegean)]/20 text-[var(--color-aegean-light)]',
+  'Roman':        'bg-[var(--color-attic-red)]/20 text-[var(--color-fg-secondary)]',
+  'Mesopotamian': 'bg-[var(--color-gold-leaf)]/20 text-[var(--color-gold-light)]',
+  'Egyptian':     'bg-[var(--color-terracotta)]/20 text-[var(--color-terracotta-light)]',
+  'Hurrian':      'bg-[var(--color-bronze)]/20 text-[var(--color-bronze-light)]',
+};
+
+const categoryLabels: Record<string, string> = {
+  'hymn':      '🎵 Hymn',
+  'ode':       '🏺 Ode',
+  'lyric':     '🎶 Lyric',
+  'epic':      '📜 Epic',
+  'elegy':     '🕯 Elegy',
+  'love-poem': '🌹 Love Poem',
+  'religious': '🔥 Religious',
+  'epigram':   '⚱ Epigram',
+};
+
+const conditionInfo: Record<string, { label: string; note: string; color: string }> = {
+  'complete':        { label: 'Complete', note: 'This poem survives in its entirety.', color: 'text-[var(--color-bronze-light)]' },
+  'fragmentary':     { label: 'Fragmentary', note: 'Only fragments of this poem survive; gaps and uncertain readings are noted.', color: 'text-[var(--color-terracotta-light)]' },
+  'partial-excerpt': { label: 'Excerpt', note: 'This is a selected excerpt from a larger work.', color: 'text-[var(--color-aegean-light)]' },
+};
+
+const cond = conditionInfo[poem.data.condition];
+---
+
+<BaseLayout
+  title={poem.data.title}
+  description={poem.data.description}
+  type="article"
+>
+  <article class="max-w-4xl mx-auto">
+    <header class="mb-8">
+      <div class="flex flex-wrap gap-2 mb-4 text-sm">
+        <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">
+          {categoryLabels[poem.data.category] || poem.data.category}
+        </span>
+        <span class:list={['px-3 py-1 rounded', traditionColors[poem.data.tradition] || 'bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)]']}>
+          {poem.data.tradition}
+        </span>
+        <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded" title={cond.note}>
+          <span class:list={[cond.color, 'font-medium']}>{cond.label}</span>
+        </span>
+        {poem.data.period && (
+          <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">
+            {poem.data.period}
+          </span>
+        )}
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-serif font-bold text-[var(--color-gold-leaf)] tracking-tight mb-3">
+        {poem.data.title}
+      </h1>
+
+      {poem.data.author && (
+        <p class="text-lg text-[var(--color-fg-muted)] italic mb-3">{poem.data.author}</p>
+      )}
+
+      <p class="text-lg text-[var(--color-fg-secondary)] leading-relaxed mb-3">
+        {poem.data.description}
+      </p>
+
+      {poem.data.condition === 'fragmentary' && (
+        <div class="mt-4 p-3 rounded-lg border border-[var(--color-terracotta)]/30 bg-[var(--color-terracotta)]/10 text-sm text-[var(--color-fg-secondary)]">
+          ⚠ <strong class="text-[var(--color-terracotta-light)]">Fragmentary text:</strong> Only portions of this poem survive from antiquity. Gaps, lacunae, and uncertain readings are noted throughout.
+        </div>
+      )}
+
+      <div class="mt-4 border-meander max-w-xs"></div>
+    </header>
+
+    {headings.length > 0 && (
+      <nav class="bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] mb-8">
+        <h2 class="text-sm font-semibold text-[var(--color-fg-muted)] uppercase tracking-wide mb-3">Contents</h2>
+        <ul class="space-y-1">
+          {headings.map((h) => (
+            <li style={`margin-left: ${(h.depth - 2) * 1}rem`}>
+              <a href={`#${h.slug}`} class="text-sm text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">
+                {h.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+
+    {poem.data.tags.length > 0 && (
+      <div class="mt-8 flex flex-wrap gap-2">
+        {poem.data.tags.map(tag => (
+          <span class="text-xs px-3 py-1 rounded-full bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)]">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+
+    <EditOnGitHub filePath={`src/content/poems/${poem.id}.mdx`} collection="poems" />
+
+    <div class="mt-12 pt-8 border-t border-[var(--color-bg-tertiary)]">
+      <a href="/poems/" class="text-[var(--color-link)] hover:text-[var(--color-link-hover)] text-sm">
+        ← Back to Poems, Hymns & Songs
+      </a>
+    </div>
+  </article>
+</BaseLayout>

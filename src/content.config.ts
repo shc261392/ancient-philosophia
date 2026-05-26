@@ -98,10 +98,39 @@ const artifacts = defineCollection({
 	}),
 });
 
+const poems = defineCollection({
+	loader: glob({ base: "./src/content/poems", pattern: "**/*.{md,mdx}" }),
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		category: z.enum([
+			"hymn",
+			"ode",
+			"lyric",
+			"epic",
+			"elegy",
+			"love-poem",
+			"religious",
+			"epigram",
+		]),
+		tradition: z.string(),
+		language: z.string(),
+		author: z.string().optional(),
+		period: z.string().optional(),
+		condition: z
+			.enum(["complete", "fragmentary", "partial-excerpt"])
+			.default("complete"),
+		relatedCivilizations: z.array(z.string()).default([]),
+		tags: z.array(z.string()).default([]),
+		sortOrder: z.number().default(0),
+	}),
+});
+
 export const collections = {
 	civilizations,
 	languages,
 	resources,
 	artifacts,
 	myths,
+	poems,
 };

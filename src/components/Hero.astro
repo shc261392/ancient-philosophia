@@ -3,12 +3,18 @@ export interface Props {
   title: string;
   subtitle?: string;
   description?: string;
+  eyebrow?: string;
 }
 
-const { title, subtitle, description } = Astro.props;
+const { title, subtitle, description, eyebrow } = Astro.props;
 ---
 
 <section class="text-center py-12 sm:py-16 lg:py-20">
+  {eyebrow && (
+    <p class="text-xs sm:text-sm uppercase tracking-[0.2em] text-[var(--color-fg-muted)] mb-4 font-medium">
+      {eyebrow}
+    </p>
+  )}
   <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[var(--color-gold-leaf)] tracking-tight mb-4">
     {title}
   </h1>

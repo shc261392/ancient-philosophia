@@ -1,5 +1,6 @@
 ---
 const year = new Date().getFullYear();
+const buildDate = new Date().toISOString().slice(0, 10);
 ---
 
 <footer class="border-t border-[var(--color-bg-tertiary)] bg-[var(--color-bg-secondary)] mt-16">
@@ -23,6 +24,7 @@ const year = new Date().getFullYear();
           <li><a href="/mindmap/" class="text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">Learning Mindmap</a></li>
           <li><a href="/resources/" class="text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">Resources</a></li>
           <li><a href="/faq/" class="text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">FAQ</a></li>
+          <li><a href="/support/" class="text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">Support the Project</a></li>
         </ul>
       </div>
 
@@ -40,7 +42,7 @@ const year = new Date().getFullYear();
 
     <div class="border-t border-[var(--color-bg-tertiary)] mt-8 pt-8 text-center text-xs text-[var(--color-fg-muted)]">
       <p>&copy; {year} Ancient Philosophia contributors. Site code licensed under GPL-3.0. Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="hover:text-[var(--color-link)]" rel="noopener noreferrer" target="_blank">CC BY-NC-SA 4.0</a>.</p>
-      <p class="mt-1">Made with <a href="https://astro.build" class="hover:text-[var(--color-link)]" rel="noopener noreferrer" target="_blank">Astro</a> &amp; deployed on <a href="https://workers.cloudflare.com" class="hover:text-[var(--color-link)]" rel="noopener noreferrer" target="_blank">Cloudflare Workers</a>.</p>
+      <p class="mt-1">Made with <a href="https://astro.build" class="hover:text-[var(--color-link)]" rel="noopener noreferrer" target="_blank">Astro</a> &amp; deployed on <a href="https://workers.cloudflare.com" class="hover:text-[var(--color-link)]" rel="noopener noreferrer" target="_blank">Cloudflare Workers</a>. Last built <time datetime={buildDate}>{buildDate}</time>.</p>
     </div>
   </div>
 </footer>

@@ -13,6 +13,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -33,6 +34,20 @@ The Hittites established one of the great powers of the Bronze Age in central An
 
 <Cited status="green">
 **Hittite** (Nesili) was deciphered by Bedřich Hrozný in 1915, who recognized it as Indo-European from the sentence *nu NINDA-an ezzatteni wātar-ma ekutteni* ("now you will eat bread and drink water"). The Hattusa archives preserve texts in at least eight languages: Hittite, Luwian, Palaic, Hattic, Hurrian, Akkadian, Sumerian, and Egyptian — making them an unparalleled multilingual resource.<Ref id={3} />
+</Cited>
+
+## The Egyptian–Hittite Peace Treaty (primary source)
+
+<PrimarySource
+  originalLang="akk"
+  transliteration={`rikilta ša Ḭattušili šarru rabû šar māt Ḭatti qārdu itti Riamāšeša-mai-Amana šarru rabû šar māt Miṣri qārdu`}
+  translation={`The treaty which Ḭattušili, great king, king of the land of Ḭatti, the hero, made with Ramesses(‐Meryamun), great king, king of the land of Egypt, the hero.`}
+  provenance="Egyptian–Hittite Peace Treaty, c. 1259 BCE; Akkadian cuneiform tablet KBo 1.7 + KUB 3.121 (Hattuša); a hieroglyphic Egyptian version is preserved at Karnak and the Ramesseum; ed. Beckman 1996 (Hittite Diplomatic Texts)"
+  refId={9}
+/>
+
+<Cited status="green">
+The Akkadian-language treaty between Ḭattušili III and Ramesses II ending the Battle of Kadesh is the earliest extant international peace treaty whose text survives in both parties' archives — a tablet copy from the Hittite capital Hattuša (in Akkadian, the diplomatic lingua franca of the Late Bronze Age) and parallel hieroglyphic inscriptions at Karnak and the Ramesseum. A modern reproduction of the cuneiform tablet hangs at the entrance to the UN Security Council chamber in New York as a symbol of diplomacy.<Ref id={9} />
 </Cited>
 
 ## Religion
@@ -79,4 +94,5 @@ When Hugo Winckler's 1906 excavations at Boğazköy yielded thousands of cuneifo
   { id: 6, text: "Gary M. Beckman, Hittite Diplomatic Texts (SBL Writings from the Ancient World 7, 2nd ed. 1999) — Translations of treaties including the Ramesses–Hattusili peace" },
   { id: 7, text: "Craig Melchert (ed.), The Luwians (Brill, 2003) and 'Indo-European Origins of Anatolian Morphology', in Roland G. Kent Memorial Volume (1953) — Foundational comparative-Anatolian linguistics" },
   { id: 8, text: "Bedřich Hrozný, Die Sprache der Hethiter (Hinrichs, Leipzig, 1917) — Original decipherment monograph" },
+  { id: 9, text: "Gary Beckman, Hittite Diplomatic Texts (2nd ed., SBL Writings from the Ancient World 7, 1999) — Standard English edition of Hittite treaties" },
 ]} />

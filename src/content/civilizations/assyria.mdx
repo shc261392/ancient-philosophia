@@ -13,6 +13,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -41,6 +42,20 @@ The Neo-Assyrian Empire represents Assyria's apex. Key rulers include:
 - **Sargon II** — Built the new capital Dur-Sharrukin (Khorsabad) and conquered Samaria
 - **Sennacherib** — Made Nineveh the imperial capital; his siege of Jerusalem is recorded in both Assyrian and biblical sources
 - **Ashurbanipal** — The scholarly warrior-king who assembled the great **Library of Nineveh**, preserving thousands of cuneiform texts including the Epic of Gilgamesh
+</Cited>
+
+## The Standard Ashurbanipal Library Colophon (primary source)
+
+<PrimarySource
+  originalLang="akk"
+  transliteration={`ekal Aššur-bāni-apli šar kiššati šar māt Aššur ša Nabû u Tašmētum uznē rapašti išrukūšu ... ana ṭāb šumiya ana balāṭ napištiya ana šumud šanāti šarrūtiya ina libbi ekalliya ašṭur asniq abrēma`}
+  translation={`Palace of Ashurbanipal, king of the universe, king of the land of Assyria, to whom Nabû and Tašmētum granted wide-open ears … For the well-being of my name, the life of my soul, the length of the years of my reign, I had it copied, collated, and checked in my palace.`}
+  provenance="Standard Ashurbanipal colophon (Type 'c'), Nineveh, c. 668–627 BCE; multiple tablets in the British Museum; ed. Hunger 1968 (Babylonische und assyrische Kolophone)"
+  refId={10}
+/>
+
+<Cited status="green">
+Most tablets from Ashurbanipal's Nineveh library bear a standardised colophon in which the king claims personal authorship of the scholarly project. The colophons distinguish the king's own learning ('I learned the noble art of scribal skill, which no preceding king had ever learned') from the labour of his anonymous scholars, and they conclude with curse-formulae directed at anyone who would steal or efface the tablet. Hermann Hunger's 1968 catalogue remains the standard typology of the some 250 distinct colophon variants.<Ref id={10} />
 </Cited>
 
 ## Art & Architecture
@@ -85,4 +100,5 @@ The carved limestone wall slabs that lined Neo-Assyrian throne rooms (Ashurnasir
   { id: 7, text: "Jeanette C. Fincke, 'The Babylonian Texts of Nineveh: Report on the British Museum's Ashurbanipal Library Project', Archiv für Orientforschung 50 (2003–4), pp. 111–149" },
   { id: 8, text: "Ashurbanipal Library Project (British Museum / Mosul) — Digital transliterations", url: "https://www.britishmuseum.org/our-work/projects/ashurbanipal-library-project" },
   { id: 9, text: "A. K. Grayson & Jamie Novotny, The Royal Inscriptions of Sennacherib, King of Assyria (RINAP 3, Eisenbrauns, 2012–14) — Critical edition" },
+  { id: 10, text: "Hermann Hunger, Babylonische und assyrische Kolophone (AOAT 2, Neukirchen-Vluyn, 1968) — Standard catalogue of cuneiform colophons" },
 ]} />

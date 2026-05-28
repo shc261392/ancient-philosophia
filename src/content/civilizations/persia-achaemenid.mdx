@@ -11,6 +11,7 @@ sortOrder: 11
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -41,6 +42,21 @@ Darius was the empire's organizational genius. His achievements include:
 Darius's failed invasion of Greece (Marathon, 490 BCE) and his son **Xerxes'** massive but ultimately unsuccessful campaign (Thermopylae, Salamis, Plataea, 480–479 BCE) are defining events of both Persian and Greek history. The Persian perspective reveals these as minor frontier conflicts in a vast empire.
 </Cited>
 
+## The Behistun Inscription (primary source)
+
+<PrimarySource
+  original={`𐎠𐎭𐎶 𐏐 𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐏐 𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐏐 𐎺𐏀𐎼𐎣 𐏐 𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐏐 𐎧𐏁𐎠𐎹𐎰𐎡𐎹𐎠𐎴𐎠𐎶`}
+  originalLang="peo"
+  transliteration={`adam Dārayavauš xšāyaϑiya vazraka, xšāyaϑiya xšāyaϑiyānām`}
+  translation={`I am Darius, the great king, king of kings.`}
+  provenance="Behistun Inscription §1 (DB I.1–3), c. 520 BCE; trilingual rock relief (Old Persian, Elamite, Akkadian) on Mt. Behistun, Iran; ed. Schmitt 1991 (Corpus Inscriptionum Iranicarum I/I/I)"
+  refId={6}
+/>
+
+<Cited status="green">
+Darius I's monumental inscription at Behistun is both the founding charter of the Achaemenid state and the key that unlocked cuneiform itself. Cut sixty metres above the road from Babylon to Ecbatana, the trilingual text recounts the king's defeat of nine rebel pretenders during the first year of his reign and presents his legitimacy as the gift of the god Ahura Mazda. Henry Rawlinson's perilous copying of the cliff-face in 1835–47, followed by the comparative work of Edward Hincks and Jules Oppert, provided the bilingual key (Old Persian → Babylonian Akkadian) that made the decipherment of Mesopotamian cuneiform possible.<Ref id={6} />
+</Cited>
+
 ## Religion & Culture
 
 <Cited status="yellow">
@@ -67,4 +83,5 @@ Alexander the Great defeated the last Achaemenid king **Darius III** at Gaugamel
   { id: 3, text: "*Matt Waters, Ancient Persia: A Concise History*** — Excellent accessible overview" },
   { id: 4, text: "Achemenet — Digital project for Achaemenid studies", url: "http://www.achemenet.com/" },
   { id: 5, text: "Persepolis Fortification Archive Project (Oriental Institute) — Ongoing digitization of administrative tablets", url: "https://oi.uchicago.edu/research/projects/persepolis-fortification-archive" },
+  { id: 6, text: "Rüdiger Schmitt, The Bisitun Inscriptions of Darius the Great: Old Persian Text (Corpus Inscriptionum Iranicarum I/I/I, London, 1991) — Standard critical edition" },
 ]} />

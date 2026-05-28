@@ -14,6 +14,7 @@ relatedLanguages: ["classical-latin"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -36,6 +37,20 @@ The Republican constitution was unwritten and evolved over centuries:
 
 <Cited status="yellow">
 The long struggle between patricians (hereditary aristocracy) and plebeians (common citizens) resulted in the progressive opening of political offices to plebeians, the creation of the tribunate, and the establishment of written law.<Ref id={1} />
+</Cited>
+
+## The Twelve Tables (primary source)
+
+<PrimarySource
+  original={`SI MEMBRVM RVPSIT, NI CVM EO PACIT, TALIO ESTO`}
+  originalLang="la"
+  translation={`If a man breaks another's limb, and does not come to an agreement with him, let there be retaliation in kind.`}
+  provenance="Twelve Tables (Lex Duodecim Tabularum) VIII.2, c. 451–450 BCE; preserved in quotation by Festus, De verborum significatione p. 363 L; ed. Crawford, Roman Statutes II (London, 1996), pp. 555–721"
+  refId={11}
+/>
+
+<Cited status="green">
+The **Twelve Tables** were Rome's first written law-code, the product of a decade-long political struggle in which the plebs demanded that customary law be codified and made public. Although the original bronze tablets displayed in the Forum perished, perhaps in the Gallic sack of 390 BCE, hundreds of fragments survive as quotations in later Roman jurists, antiquarians, and grammarians; Michael Crawford's 1996 *Roman Statutes* II provides the definitive modern reconstruction with text, translation, and commentary. The provisions of Table VIII illustrate the archaic *lex talionis* — still negotiable for cash compensation — that would later be displaced by classical Roman private law.<Ref id={11} />
 </Cited>
 
 ## Expansion & the Punic Wars
@@ -92,4 +107,5 @@ The conquest of a Mediterranean empire strained Republican institutions beyond b
   { id: 8, text: "M. H. Crawford (ed.), Roman Statutes (Bulletin of the Institute of Classical Studies suppl. 64, 1996) — Critical edition with fragments of the Twelve Tables" },
   { id: 9, text: "Andrew Riggsby, Roman Law and the Legal World of the Romans (Cambridge, 2010) — Accessible legal-history introduction" },
   { id: 10, text: "Erich S. Gruen, The Last Generation of the Roman Republic (rev. ed. 1995) — Influential reinterpretation of the Republic's fall" },
+  { id: 11, text: "Michael H. Crawford (ed.), Roman Statutes, 2 vols. (BICS Supplement 64, London, 1996) — Definitive edition of the Twelve Tables and other Republican statutes" },
 ]} />

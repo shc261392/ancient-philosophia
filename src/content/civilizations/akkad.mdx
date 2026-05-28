@@ -14,6 +14,7 @@ relatedLanguages: ["akkadian", "sumerian"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -25,6 +26,20 @@ The Akkadian Empire, founded by Sargon of Akkad (r. c. 2334–2279 BCE), was the
 
 <Cited status="yellow">
 Sargon's rise was dramatic: he overthrew Lugalzagesi of Uruk and then conquered city after city. His daughter **Enheduanna** became the high priestess of the moon god Nanna at Ur and is the earliest author known by name — her hymns to Inanna are among the oldest signed literary works. Sargon's grandson **Naram-Sin** (r. c. 2254–2218 BCE) expanded the empire to its greatest extent and took the unprecedented title "King of the Four Quarters" and may have deified himself during his own lifetime.<Ref id={1} />
+</Cited>
+
+## The Victory Stele of Naram-Sîn (primary source)
+
+<PrimarySource
+  originalLang="akk"
+  transliteration={`Narām-Sîn dannum šar kibrātim arba'im`}
+  translation={`Narām-Sîn, the mighty, king of the four world-quarters.`}
+  provenance="Victory Stele of Narām-Sîn, c. 2254–2218 BCE; pink limestone, h. 200 cm; Louvre Sb 4; carried as war-booty from Sippar to Susa by the Elamite king Šutruk-Naḫḫunte (12th c. BCE)"
+  refId={11}
+/>
+
+<Cited status="green">
+The **Victory Stele of Narām-Sîn** is the iconic monument of Akkadian imperial art: the king, depicted at superhuman scale and wearing the horned crown reserved for gods, ascends a wooded mountain over the bodies of the defeated Lullubi while astral symbols look on. The accompanying Akkadian inscription is the earliest surviving royal use of the title *šar kibrātim arba'im* ('king of the four world-quarters'), which would dominate Mesopotamian royal ideology for the next two millennia. The stele was looted from Sippar by Šutruk-Naḫḫunte of Elam c. 1158 BCE and re-inscribed with a triumphal note in Elamite.<Ref id={11} />
 </Cited>
 
 ## Culture & Legacy
@@ -70,4 +85,5 @@ The empire collapsed around 2154 BCE under pressure from the **Gutians**, a moun
   { id: 8, text: "Sophus Helle, Enheduana: The Complete Poems of the World's First Author (Yale, 2023) — Modern annotated translation" },
   { id: 9, text: "Benjamin R. Foster, The Age of Agade: Inventing Empire in Ancient Mesopotamia (Routledge, 2016) — Definitive monograph on the Akkadian state" },
   { id: 10, text: "Harvey Weiss et al., 'The genesis and collapse of third millennium north Mesopotamian civilization', Science 261.5124 (1993), pp. 995–1004 — Climate-collapse hypothesis" },
+  { id: 11, text: "Irene J. Winter, 'Sex, rhetoric, and the public monument: the alluring body of Naram-Sîn of Agade', in N. B. Kampen ed., Sexuality in Ancient Art (Cambridge, 1996), pp. 11–26 — Standard art-historical study of the stele" },
 ]} />

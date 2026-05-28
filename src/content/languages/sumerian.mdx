@@ -16,6 +16,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -30,6 +31,20 @@ Sumerian is the earliest known written language, attested from around 3400 BCE i
 - **Ergative-absolutive** — The subject of a transitive verb is marked differently from the subject of an intransitive verb
 - **Verb chain** — The Sumerian verbal chain can encode subject, object, indirect object, and various other elements in a single complex form
 - **Emesal** — A special dialect used in literature by female characters and in certain liturgical contexts<Ref id={1} />
+</Cited>
+
+## The Instructions of Šuruppak (primary source)
+
+<PrimarySource
+  originalLang="sux"
+  transliteration={`u₄ ri-a u₄ sud-rá ri-a / ĝi₆ ri-a ĝi₆ ba₉-rá ri-a / mu ri-a mu sud-rá ri-a`}
+  translation={`In those days, in those far-off days, in those nights, in those long-ago nights, in those years, in those distant years…`}
+  provenance="Instructions of Šuruppak (ETCSL 5.6.1), Old Babylonian recension c. 1800 BCE; earliest witness Abu Salabikh tablets c. 2600 BCE — the oldest preserved wisdom text in any language"
+  refId={12}
+/>
+
+<Cited status="green">
+The **Instructions of Šuruppak** is the oldest surviving literary text — a wisdom poem in which the antediluvian king Šuruppak instructs his son Ziusudra (the Sumerian Noah) in proper conduct. The triple-incipit formula *u₄ ri-a / ĝi₆ ri-a / mu ri-a* ('in those days / in those nights / in those years') is a signature feature of Sumerian narrative openings, paralleled in *Gilgamesh, Enkidu and the Netherworld* and other Old Babylonian compositions. Fragments from Abu Salabikh push the text back to c. 2600 BCE, predating the canonical Old Babylonian recension by some eight centuries.<Ref id={12} />
 </Cited>
 
 ## Sample Text
@@ -82,4 +97,5 @@ By the end of the Ur III period (c. 2000 BCE), Sumerian had ceased to be a verna
   { id: 9, text: "Annette Zgoll, Der Rechtsfall der En-ḫedu-Ana im Lied nin-me-šara (AOAT 246, Ugarit-Verlag, 1997)" },
   { id: 10, text: "Jeremy Black, Graham Cunningham et al., The Literature of Ancient Sumer (Oxford, 2004)" },
   { id: 11, text: "Niek Veldhuis, History of the Cuneiform Lexical Tradition (GMTR 6, Ugarit-Verlag, 2014)" },
+  { id: 12, text: "Bendt Alster, Wisdom of Ancient Sumer (CDL Press, 2005) — Editions and translations of the Instructions of Šuruppak and other wisdom texts" },
 ]} />

@@ -14,6 +14,7 @@ pronunciation: "reconstructed"
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -29,6 +30,20 @@ Akkadian adopted the cuneiform script from the Sumerians and adapted it for a ve
 - **Logograms (Sumerograms)** — Many Sumerian word-signs were retained for their meaning: LUGAL for "king" (*šarrum*)
 - **Determinatives** — Semantic classifiers (similar to Egyptian determinatives): DINGIR for divinities, KUR for lands
 - The sign inventory runs to several hundred commonly used signs<Ref id={1} />
+</Cited>
+
+## The Incipit of Gilgamesh (primary source)
+
+<PrimarySource
+  originalLang="akk"
+  transliteration={`ša naqba īmuru išdi māti / [ša kullati] īdû kalama ḫassu`}
+  translation={`He who saw the Deep, the foundation of the land, / who knew … was wise in everything.`}
+  provenance="Standard Babylonian Gilgamesh, Tablet I.1–2; redaction attributed to Sîn-lēqi-unnenni, late 2nd millennium BCE; principal Nineveh manuscripts BM K 3375 + duplicates; ed. A. R. George, The Babylonian Gilgamesh Epic (Oxford, 2003)"
+  refId={9}
+/>
+
+<Cited status="green">
+The opening line of the Standard Babylonian *Gilgamesh* — *ša naqba īmuru* ('he who saw the Deep') — illustrates several characteristic features of literary Akkadian: a relative pronoun *ša* introducing a participial clause, the construct chain *išdi māti* ('foundation of the land'), and the dropped case-endings typical of poetic 1st-millennium prose. Andrew George's 2003 critical edition assembles the Late Babylonian and Neo-Assyrian witnesses into the canonical reading text used in all modern teaching.<Ref id={9} />
 </Cited>
 
 ## Grammar Highlights
@@ -124,4 +139,5 @@ This famous incipit introduces Gilgamesh as a figure of supreme wisdom — one w
   { id: 6, text: "CDLI — Cuneiform Digital Library Initiative", url: "https://cdli.mpiwg-berlin.mpg.de/" },
   { id: 7, text: "ePSD2 — Electronic Pennsylvania Sumerian/Akkadian Dictionary", url: "https://oracc.museum.upenn.edu/epsd2/" },
   { id: 8, text: "RINAP — Royal Inscriptions of the Neo-Assyrian Period", url: "https://oracc.museum.upenn.edu/rinap/" },
+  { id: 9, text: "A. R. George, The Babylonian Gilgamesh Epic: Introduction, Critical Edition and Cuneiform Texts, 2 vols. (Oxford University Press, 2003) — Definitive critical edition" },
 ]} />

@@ -13,6 +13,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -29,6 +30,20 @@ The New Kingdom (Dynasties 18–20) was ancient Egypt's imperial age and its mos
 - **Amenhotep III** — Presided over Egypt at its wealthiest; magnificent building program, Amarna Letters diplomacy
 - **Akhenaten** — Initiated a radical religious revolution promoting the sole worship of the Aten (sun-disc), founded a new capital at Amarna; his queen was Nefertiti
 - **Tutankhamun** — The boy-king whose intact tomb, discovered by Howard Carter in 1922, captivated the world<Ref id={1} />
+</Cited>
+
+## The Merneptah Stele (primary source)
+
+<PrimarySource
+  originalLang="egy"
+  transliteration={`ys.r˼ı͟r fk.t bn pr.t=f`}
+  translation={`Israel is laid waste — his seed is no more.`}
+  provenance="Merneptah ('Israel') Stele, year 5 of Merneptah (c. 1208 BCE); black granite, h. 318 cm; from Merneptah's mortuary temple at Thebes; Egyptian Museum Cairo JE 31408; ed. Kitchen, Ramesside Inscriptions IV, pp. 12–19"
+  refId={9}
+/>
+
+<Cited status="green">
+The **Merneptah Stele** — a triumphal hymn celebrating Merneptah's Libyan campaign discovered by Flinders Petrie at Thebes in 1896 — contains the earliest secure extra-biblical reference to **Israel**. The name is written with the determinative for *people* rather than *land*, suggesting that c. 1208 BCE Israel was understood by Egyptian scribes as a non-urbanised population group in Canaan rather than a settled kingdom. The text thus provides a *terminus ante quem* for the existence of an entity called Israel in the southern Levant.<Ref id={9} />
 </Cited>
 
 ## Ramesside Period (19th–20th Dynasties)
@@ -80,4 +95,5 @@ The **discovery of KV62** by Howard Carter on 4 November 1922 yielded the only n
   { id: 6, text: "William L. Moran, The Amarna Letters (Johns Hopkins, 1992) — Standard English translation of the corpus" },
   { id: 7, text: "Raymond Cohen & Raymond Westbrook (eds.), Amarna Diplomacy: The Beginnings of International Relations (Johns Hopkins, 2000) — Essays on Late Bronze Age diplomatic system" },
   { id: 8, text: "Griffith Institute, Tutankhamun: Anatomy of an Excavation — Howard Carter's archive online", url: "https://www.griffith.ox.ac.uk/discoveringTut" },
+  { id: 9, text: "Kenneth A. Kitchen, Ramesside Inscriptions: Historical and Biographical, vol. IV (Blackwell, 1982) — Standard hieroglyphic edition of Merneptah's monuments" },
 ]} />

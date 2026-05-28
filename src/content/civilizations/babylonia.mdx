@@ -13,6 +13,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -39,6 +40,20 @@ The Neo-Babylonian (Chaldean) Empire was Babylon's final period of independence 
 - **Nabopolassar** (r. 626–605 BCE) — Established the dynasty and helped destroy the Assyrian Empire
 - **Nebuchadnezzar II** (r. 605–562 BCE) — Rebuilt Babylon magnificently, constructing the Ishtar Gate, the Processional Way, and the legendary Hanging Gardens (one of the Seven Wonders). He also conquered Jerusalem and deported the Judean elite (the Babylonian Exile of 586 BCE)
 - The empire fell to **Cyrus the Great** of Persia in 539 BCE
+</Cited>
+
+## The Prologue of Hammurabi's Code (primary source)
+
+<PrimarySource
+  originalLang="akk"
+  transliteration={`inūma Anum ṣīrum šar Anunnakī, Enlil bēl šamê u erṣetim, šā'im šīmāt mātim, ana Marduk ... Bābilam šumšu ṣīram ibbiu`}
+  translation={`When lofty Anu, king of the Anunnaki, and Enlil, lord of heaven and earth — who decree the destinies of the land — assigned to Marduk … they named Babylon by its exalted name.`}
+  provenance="Code of Hammurabi, prologue I.1–28; basalt stele, c. 1755 BCE; Louvre Sb 8; found at Susa, originally erected at Sippar; ed. Roth 1995 (Law Collections from Mesopotamia and Asia Minor)"
+  refId={9}
+/>
+
+<Cited status="green">
+The **Code of Hammurabi** is the most complete surviving Mesopotamian law collection — 282 case-law paragraphs framed by a hymnic prologue and curse-laden epilogue, cut into a 2.25 m basalt stele crowned with a relief of Hammurabi receiving the rod and ring of justice from Šamaš, the sun-god and divine judge. Like Narām-Sîn's stele, it was carried as war-booty from Sippar to Susa by Šutruk-Naḫḫunte of Elam in the 12th century BCE; it was excavated by Jacques de Morgan in 1901 and has been on permanent display in the Louvre ever since.<Ref id={9} />
 </Cited>
 
 ## Astronomy & Mathematics
@@ -76,4 +91,5 @@ Late Babylonian astronomers of the Achaemenid and Seleucid periods (c. 500–50 
   { id: 6, text: "Jacques de Morgan, Délégation en Perse, Mémoires Tome IV (Leroux, Paris, 1902) — Original publication of the Hammurabi stele discovery" },
   { id: 7, text: "Martha T. Roth, Law Collections from Mesopotamia and Asia Minor (SBL Writings from the Ancient World 6, 2nd ed. 1997) — Standard English translations" },
   { id: 8, text: "Otto Neugebauer, Astronomical Cuneiform Texts (3 vols., Lund Humphries, 1955) — Foundational corpus of Late Babylonian mathematical astronomy" },
+  { id: 9, text: "Martha T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., SBL Writings from the Ancient World 6, 1997) — Standard English translation of the Code of Hammurabi" },
 ]} />

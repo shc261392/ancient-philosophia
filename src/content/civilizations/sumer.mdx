@@ -11,6 +11,7 @@ sortOrder: 1
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -47,6 +48,20 @@ Cuneiform began as a pictographic system on clay tablets and evolved into abstra
 - **Instructions of Shuruppak** — Among the world's oldest wisdom literature
 </Cited>
 
+## The Sumerian King List (primary source)
+
+<PrimarySource
+  originalLang="sux"
+  transliteration={`u₄ nam-lugal an-ta èd-dè-a-ba / eridugki nam-lugal-la`}
+  translation={`When kingship was lowered from heaven, kingship was first in Eridug.`}
+  provenance="Sumerian King List, Weld-Blundell Prism (WB 444), Ashmolean AN1923.444; Larsa, c. 1817 BCE; ed. Jacobsen 1939"
+  refId={7}
+/>
+
+<Cited status="green">
+The **Sumerian King List** survives in some twenty Old Babylonian copies — the most complete, the Weld-Blundell Prism, was excavated at Larsa and is now in the Ashmolean. It opens with kingship descending from heaven onto Eridu, then walks through the antediluvian kings (each ruling tens of thousands of years), the flood, and post-flood dynasties down to the early Old Babylonian period. The text is a key source for the Sumerian theological framework of legitimate kingship and for the Mesopotamian flood tradition.<Ref id={7} />
+</Cited>
+
 ## Religion & Mythology
 
 <Cited status="yellow">
@@ -69,4 +84,5 @@ The Sumerian pantheon was organized hierarchically: **An** (sky god), **Enlil** 
   { id: 4, text: "*Marc Van De Mieroop, A History of the Ancient Near East*** — The standard textbook for the entire region" },
   { id: 5, text: "*Thorkild Jacobsen, The Treasures of Darkness*** — Foundational study of Mesopotamian religion" },
   { id: 6, text: "ORACC — Open Richly Annotated Cuneiform Corpus", url: "https://oracc.museum.upenn.edu/" },
+  { id: 7, text: "Thorkild Jacobsen, The Sumerian King List (Assyriological Studies 11, University of Chicago Press, 1939) — Editio princeps" },
 ]} />

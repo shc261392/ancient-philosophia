@@ -4,11 +4,19 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 
 const civs = await getCollection('civilizations');
+const myths = await getCollection('myths');
+const poems = await getCollection('poems');
 
-function parseRange(s: string): { start: number; end: number } | null {
-  // Examples: "c. 4500–1900 BCE", "c. 480–323 BCE", "27 BCE–476 CE"
-  const cleaned = s.replace(/c\.?\s*/gi, '').trim();
-  const m = cleaned.match(/(\d+)\s*(BCE|CE)?\s*[–-]\s*(\d+)\s*(BCE|CE)?/i);
+function parseRange(s: string | undefined): { start: number; end: number } | null {
+  if (!s) return null;
+  const cleaned = s
+    .replace(/\([^)]*\)/g, '')
+    .replace(/c\.?\s*/gi, '')
+    .replace(/present/gi, '2025 CE')
+    .replace(/Roman period/gi, '400 CE')
+    .replace(/Late period/gi, '300 BCE')
+    .trim();
+  const m = cleaned.match(/(\d+)\s*(BCE|CE)?\s*[–\-—]\s*(\d+)\s*(BCE|CE)?/i);
   if (!m) return null;
   const era1 = (m[2] || m[4] || 'BCE').toUpperCase();
   const era2 = (m[4] || era1).toUpperCase();
@@ -19,19 +27,63 @@ function parseRange(s: string): { start: number; end: number } | null {
   return { start: Math.min(start, end), end: Math.max(start, end) };
 }
 
-const items = civs
-  .map(c => ({ ...c, range: parseRange(c.data.dateRange) }))
-  .filter(c => c.range)
-  .sort((a, b) => a.range!.start - b.range!.start);
+type Item = {
+  id: string;
+  href: string;
+  title: string;
+  range: { start: number; end: number };
+  region: string;
+  meta: string;
+};
 
-const minYear = Math.min(...items.map(i => i.range!.start));
-const maxYear = Math.max(...items.map(i => i.range!.end));
-const total = maxYear - minYear;
+const civItems: Item[] = civs
+  .map(c => ({ obj: c, range: parseRange(c.data.dateRange) }))
+  .filter((c): c is { obj: typeof c.obj; range: { start: number; end: number } } => c.range !== null)
+  .sort((a, b) => a.range.start - b.range.start)
+  .map(c => ({
+    id: c.obj.id,
+    href: `/civilizations/${c.obj.id}/`,
+    title: c.obj.data.title,
+    range: c.range,
+    region: c.obj.data.region,
+    meta: c.obj.data.dateRange,
+  }));
 
-function pct(n: number) { return ((n - minYear) / total) * 100; }
+const mythItems: Item[] = myths
+  .map(m => ({ obj: m, range: parseRange(m.data.period) }))
+  .filter((m): m is { obj: typeof m.obj; range: { start: number; end: number } } => m.range !== null)
+  .sort((a, b) => a.range.start - b.range.start)
+  .map(m => ({
+    id: m.obj.id,
+    href: `/myths/${m.obj.id}/`,
+    title: m.obj.data.title,
+    range: m.range,
+    region: m.obj.data.tradition,
+    meta: m.obj.data.period || '',
+  }));
 
-const regions = [...new Set(items.map(i => i.data.region))];
-const palette = ['#c1604e', '#c9a84c', '#2a6478', '#6d7c3e', '#8B3A2A', '#4aadca', '#d9806e', '#8fa052'];
+const poemItems: Item[] = poems
+  .map(p => ({ obj: p, range: parseRange(p.data.period) }))
+  .filter((p): p is { obj: typeof p.obj; range: { start: number; end: number } } => p.range !== null)
+  .sort((a, b) => a.range.start - b.range.start)
+  .map(p => ({
+    id: p.obj.id,
+    href: `/poems/${p.obj.id}/`,
+    title: p.obj.data.title,
+    range: p.range,
+    region: p.obj.data.tradition,
+    meta: p.obj.data.period || '',
+  }));
+
+const allItems = [...civItems, ...mythItems, ...poemItems];
+const minYear = Math.min(...allItems.map(i => i.range.start));
+const maxYear = Math.max(...allItems.map(i => i.range.end));
+const totalSpan = maxYear - minYear;
+
+function pct(n: number) { return ((n - minYear) / totalSpan) * 100; }
+
+const regions = [...new Set(allItems.map(i => i.region))];
+const palette = ['#c1604e', '#c9a84c', '#2a6478', '#6d7c3e', '#8B3A2A', '#4aadca', '#d9806e', '#8fa052', '#a47ec9', '#e0b06a'];
 const regionColor: Record<string, string> = {};
 regions.forEach((r, i) => { regionColor[r] = palette[i % palette.length]; });
 
@@ -39,10 +91,15 @@ function fmtYear(y: number) {
   return y < 0 ? `${-y} BCE` : `${y} CE`;
 }
 
-// Era ticks
 const ticks: number[] = [];
-const step = Math.ceil(total / 12 / 500) * 500;
+const step = Math.ceil(totalSpan / 12 / 500) * 500;
 for (let y = Math.ceil(minYear / step) * step; y <= maxYear; y += step) ticks.push(y);
+
+const tracks = [
+  { key: 'civ', label: 'Civilizations', items: civItems, accent: 'var(--color-gold-leaf)' },
+  { key: 'myth', label: 'Myths & Deities', items: mythItems, accent: 'var(--color-terracotta)' },
+  { key: 'poem', label: 'Poems & Epics', items: poemItems, accent: 'var(--color-aegean)' },
+];
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -51,8 +108,8 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="Timeline of Ancient Civilizations"
-  description="A horizontal visual timeline of the ancient civilizations covered on this site, from Sumer to the fall of Rome."
+  title="Timeline of Ancient Civilizations, Myths & Poems"
+  description="A horizontal visual timeline of ancient civilizations, deities and myths, and poems and epics — from Sumer to the fall of Rome — arranged along a shared chronological axis."
   breadcrumbs={breadcrumbs}
 >
   <Breadcrumbs trail={breadcrumbs} />
@@ -60,8 +117,8 @@ const breadcrumbs = [
   <header class="mb-8">
     <h1 class="text-4xl sm:text-5xl font-serif font-bold text-[var(--color-gold-leaf)] mb-3">Timeline</h1>
     <p class="text-[var(--color-fg-secondary)] max-w-3xl">
-      Every civilization on this site arranged along a single chronological axis. Bars are coloured
-      by region. Hover (or tap) for details; click to read.
+      Civilizations, myths, and poems on a shared chronological axis. Bars are coloured by region or tradition.
+      Use the controls to filter, zoom, and toggle whole tracks.
     </p>
   </header>
 
@@ -80,11 +137,23 @@ const breadcrumbs = [
       />
       <span id="timeline-zoom-readout" class="tabular-nums text-[var(--color-fg-muted)] min-w-[3ch]">1×</span>
     </div>
+    <div class="flex items-center gap-2 text-xs text-[var(--color-fg-secondary)]">
+      {tracks.map(t => (
+        <button
+          type="button"
+          class="tl-track px-2 py-1 rounded border border-[var(--color-bg-tertiary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)]"
+          data-track={t.key}
+          aria-pressed="true"
+        >
+          {t.label}
+        </button>
+      ))}
+    </div>
     <div class="flex items-center gap-2 text-xs text-[var(--color-fg-secondary)] ml-auto">
       <button type="button" data-tl-all class="px-2 py-1 rounded border border-[var(--color-bg-tertiary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)]">All regions</button>
       <button type="button" data-tl-none class="px-2 py-1 rounded border border-[var(--color-bg-tertiary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)]">None</button>
       <span class="text-[var(--color-fg-muted)]">·</span>
-      <span id="timeline-count" class="text-[var(--color-fg-secondary)] tabular-nums">{items.length} / {items.length}</span>
+      <span id="timeline-count" class="text-[var(--color-fg-secondary)] tabular-nums">{allItems.length} / {allItems.length}</span>
     </div>
   </div>
 
@@ -101,105 +170,134 @@ const breadcrumbs = [
     ))}
   </div>
 
-  <div id="timeline-scroll" class="timeline relative overflow-x-auto rounded-xl border border-[var(--color-bg-tertiary)] bg-[var(--color-bg-card)] p-4">
-    <div id="timeline-inner" class="relative" style={`min-width: 900px; height: ${items.length * 28 + 60}px`}>
-      <!-- Era ticks -->
-      <div class="absolute inset-x-0 top-0 bottom-6 pointer-events-none">
-        {ticks.map(y => (
-          <div class="absolute top-0 bottom-0 border-l border-[var(--color-bg-tertiary)]/60" style={`left: ${pct(y)}%`}>
-            <span class="absolute -top-1 -translate-x-1/2 text-[10px] text-[var(--color-fg-muted)] whitespace-nowrap">{fmtYear(y)}</span>
+  <div id="timeline-scroll" class="timeline relative overflow-x-auto rounded-xl border border-[var(--color-bg-tertiary)] bg-[var(--color-bg-card)] p-4 space-y-6">
+    {tracks.map(track => (
+      <section class="tl-track-section" data-track-section={track.key}>
+        <h2 class="text-sm font-semibold uppercase tracking-wide mb-2" style={`color: ${track.accent}`}>{track.label} <span class="text-[var(--color-fg-muted)] font-normal normal-case">· {track.items.length}</span></h2>
+        <div class="relative" style={`min-width: 900px; height: ${track.items.length * 26 + 40}px`} data-track-inner={track.key}>
+          <div class="absolute inset-x-0 top-0 bottom-4 pointer-events-none">
+            {ticks.map(y => (
+              <div class="absolute top-0 bottom-0 border-l border-[var(--color-bg-tertiary)]/60" style={`left: ${pct(y)}%`}>
+                <span class="absolute -top-1 -translate-x-1/2 text-[10px] text-[var(--color-fg-muted)] whitespace-nowrap">{fmtYear(y)}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      <!-- Bars -->
-      <div class="absolute inset-x-0 top-6">
-        {items.map((it, i) => {
-          const left = pct(it.range!.start);
-          const width = Math.max(0.4, pct(it.range!.end) - pct(it.range!.start));
-          return (
-            <a
-              href={`/civilizations/${it.id}/`}
-              class="tl-bar absolute h-6 rounded text-[10px] text-white px-2 flex items-center whitespace-nowrap overflow-hidden hover:ring-2 hover:ring-[var(--color-gold-leaf)] transition-all"
-              style={`top: ${i * 28}px; left: ${left}%; width: ${width}%; background-color: ${regionColor[it.data.region]}; min-width: 12px;`}
-              title={`${it.data.title} · ${it.data.dateRange} · ${it.data.region}`}
-              data-region={it.data.region}
-              data-civ={it.id}
-            >
-              <span class="truncate">{it.data.title}</span>
-            </a>
-          );
-        })}
-      </div>
-    </div>
+          <div class="absolute inset-x-0 top-6">
+            {track.items.map((it, i) => {
+              const left = pct(it.range.start);
+              const width = Math.max(0.4, pct(it.range.end) - pct(it.range.start));
+              return (
+                <a
+                  href={it.href}
+                  class="tl-bar absolute h-5 rounded text-[10px] text-white px-2 flex items-center whitespace-nowrap overflow-hidden hover:ring-2 hover:ring-[var(--color-gold-leaf)] transition-all"
+                  style={`top: ${i * 26}px; left: ${left}%; width: ${width}%; background-color: ${regionColor[it.region]}; min-width: 12px;`}
+                  title={`${it.title} · ${it.meta} · ${it.region}`}
+                  data-region={it.region}
+                  data-track={track.key}
+                >
+                  <span class="truncate">{it.title}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    ))}
   </div>
 
   <p class="text-xs text-[var(--color-fg-muted)] mt-3">
-    Date ranges are parsed from each article's <code>dateRange</code> field. Some boundaries are
-    conventional and contested — see individual articles for nuance.
+    Date ranges are parsed from each article's <code>dateRange</code> (civilizations) or <code>period</code> (myths, poems) field.
+    For myths and poems, the range typically reflects the span of active literary or cultic tradition, not a single composition date.
+    Some boundaries are conventional and contested — see individual articles for nuance.
   </p>
 </BaseLayout>
 
 <style>
-  .tl-region[aria-pressed="false"] {
+  .tl-region[aria-pressed="false"],
+  .tl-track[aria-pressed="false"] {
     opacity: 0.4;
     text-decoration: line-through;
   }
   .tl-bar[data-hidden="true"] {
     display: none;
   }
+  .tl-track-section[data-hidden="true"] {
+    display: none;
+  }
 </style>
 
 <script>
-  const inner = document.getElementById("timeline-inner") as HTMLDivElement | null;
   const zoom = document.getElementById("timeline-zoom") as HTMLInputElement | null;
   const readout = document.getElementById("timeline-zoom-readout");
   const count = document.getElementById("timeline-count");
   const bars = Array.from(document.querySelectorAll<HTMLAnchorElement>(".tl-bar"));
   const regionBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".tl-region"));
+  const trackBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".tl-track"));
+  const trackSections = Array.from(document.querySelectorAll<HTMLElement>(".tl-track-section"));
+  const trackInners = Array.from(document.querySelectorAll<HTMLDivElement>("[data-track-inner]"));
   const allBtn = document.querySelector<HTMLButtonElement>("[data-tl-all]");
   const noneBtn = document.querySelector<HTMLButtonElement>("[data-tl-none]");
   const total = bars.length;
 
-  const active = new Set<string>(regionBtns.map((b) => b.dataset.region!));
+  const activeRegions = new Set<string>(regionBtns.map((b) => b.dataset.region!));
+  const activeTracks = new Set<string>(trackBtns.map((b) => b.dataset.track!));
 
   function applyFilter() {
     let visible = 0;
     for (const bar of bars) {
       const r = bar.dataset.region!;
-      const show = active.has(r);
+      const t = bar.dataset.track!;
+      const show = activeRegions.has(r) && activeTracks.has(t);
       bar.dataset.hidden = String(!show);
       if (show) visible++;
     }
     if (count) count.textContent = `${visible} / ${total}`;
     for (const btn of regionBtns) {
-      btn.setAttribute("aria-pressed", String(active.has(btn.dataset.region!)));
+      btn.setAttribute("aria-pressed", String(activeRegions.has(btn.dataset.region!)));
+    }
+    for (const btn of trackBtns) {
+      btn.setAttribute("aria-pressed", String(activeTracks.has(btn.dataset.track!)));
+    }
+    for (const section of trackSections) {
+      const key = section.dataset.trackSection!;
+      section.dataset.hidden = String(!activeTracks.has(key));
     }
   }
 
   for (const btn of regionBtns) {
     btn.addEventListener("click", () => {
       const r = btn.dataset.region!;
-      if (active.has(r)) active.delete(r);
-      else active.add(r);
+      if (activeRegions.has(r)) activeRegions.delete(r);
+      else activeRegions.add(r);
+      applyFilter();
+    });
+  }
+
+  for (const btn of trackBtns) {
+    btn.addEventListener("click", () => {
+      const k = btn.dataset.track!;
+      if (activeTracks.has(k)) activeTracks.delete(k);
+      else activeTracks.add(k);
       applyFilter();
     });
   }
 
   allBtn?.addEventListener("click", () => {
-    for (const btn of regionBtns) active.add(btn.dataset.region!);
+    for (const btn of regionBtns) activeRegions.add(btn.dataset.region!);
     applyFilter();
   });
   noneBtn?.addEventListener("click", () => {
-    active.clear();
+    activeRegions.clear();
     applyFilter();
   });
 
-  if (zoom && inner) {
+  if (zoom) {
     const base = 900;
     zoom.addEventListener("input", () => {
       const factor = Number(zoom.value) / 100;
-      inner.style.minWidth = `${base * factor}px`;
+      for (const inner of trackInners) {
+        inner.style.minWidth = `${base * factor}px`;
+      }
       if (readout) readout.textContent = `${factor.toFixed(factor < 10 ? 1 : 0)}×`;
     });
   }

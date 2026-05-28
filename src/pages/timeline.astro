@@ -170,7 +170,25 @@ const breadcrumbs = [
     ))}
   </div>
 
-  <div id="timeline-scroll" class="timeline relative overflow-x-auto rounded-xl border border-[var(--color-bg-tertiary)] bg-[var(--color-bg-card)] p-4 space-y-6">
+  <div class="era-jump flex flex-wrap gap-2 mb-4 text-xs">
+    <span class="text-[var(--color-fg-muted)] uppercase tracking-wide font-medium py-1">Jump to era:</span>
+    {[
+      { label: 'Bronze Age', year: -2500 },
+      { label: 'Late Bronze', year: -1400 },
+      { label: 'Iron Age', year: -1000 },
+      { label: 'Archaic', year: -700 },
+      { label: 'Classical', year: -480 },
+      { label: 'Hellenistic', year: -323 },
+      { label: 'Roman', year: -100 },
+      { label: 'Late Antiquity', year: 300 },
+    ].filter(e => e.year >= minYear && e.year <= maxYear).map(e => (
+      <button type="button" class="era-btn px-2 py-1 rounded border border-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)]" data-era-year={e.year} aria-label={`Scroll timeline to ${e.label}`}>
+        {e.label}
+      </button>
+    ))}
+  </div>
+
+  <div id="timeline-scroll" data-min-year={minYear} data-total-span={totalSpan} class="timeline relative overflow-x-auto rounded-xl border border-[var(--color-bg-tertiary)] bg-[var(--color-bg-card)] p-4 space-y-6">
     {tracks.map(track => (
       <section class="tl-track-section" data-track-section={track.key}>
         <h2 class="text-sm font-semibold uppercase tracking-wide mb-2" style={`color: ${track.accent}`}>{track.label} <span class="text-[var(--color-fg-muted)] font-normal normal-case">· {track.items.length}</span></h2>
@@ -299,6 +317,24 @@ const breadcrumbs = [
         inner.style.minWidth = `${base * factor}px`;
       }
       if (readout) readout.textContent = `${factor.toFixed(factor < 10 ? 1 : 0)}×`;
+    });
+  }
+
+  const scrollEl = document.getElementById("timeline-scroll") as HTMLDivElement | null;
+  if (scrollEl) {
+    const tlMinYear = Number(scrollEl.dataset.minYear);
+    const tlSpan = Number(scrollEl.dataset.totalSpan);
+    document.querySelectorAll<HTMLButtonElement>("[data-era-year]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const y = Number(btn.dataset.eraYear);
+        if (!Number.isFinite(y) || !tlSpan) return;
+        const inner = scrollEl.querySelector<HTMLElement>("[data-track-inner]");
+        const innerWidth = inner ? inner.offsetWidth : scrollEl.scrollWidth;
+        const ratio = (y - tlMinYear) / tlSpan;
+        const targetCenter = ratio * innerWidth;
+        const targetScroll = Math.max(0, targetCenter - scrollEl.clientWidth / 2);
+        scrollEl.scrollTo({ left: targetScroll, behavior: "smooth" });
+      });
     });
   }
 </script>

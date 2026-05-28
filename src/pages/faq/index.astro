@@ -134,9 +134,15 @@ For larger contributions — such as adding a new section or significantly revis
     <!-- FAQ list -->
     <dl class="space-y-0 divide-y divide-[var(--color-bg-tertiary)]">
       {faqs.map((faq) => (
-        <div id={faq.id} class="py-7 scroll-mt-20">
-          <dt class="text-lg font-semibold text-[var(--color-fg-primary)] mb-3 leading-snug">
-            {faq.question}
+        <div id={faq.id} class="faq-item py-7 scroll-mt-20">
+          <dt class="text-lg font-semibold text-[var(--color-fg-primary)] mb-3 leading-snug flex items-start gap-2 group">
+            <a
+              href={`#${faq.id}`}
+              class="faq-anchor mt-1 shrink-0 text-[var(--color-fg-muted)] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 hover:text-[var(--color-gold-leaf)] transition-opacity text-base no-underline"
+              aria-label={`Link to: ${faq.question}`}
+              data-faq-anchor
+            >#</a>
+            <span>{faq.question}</span>
           </dt>
           <dd
             class="text-[var(--color-fg-secondary)] leading-relaxed [&_a]:text-[var(--color-link)] [&_a:hover]:underline"
@@ -145,6 +151,25 @@ For larger contributions — such as adding a new section or significantly revis
         </div>
       ))}
     </dl>
+
+    <script>
+      document.querySelectorAll<HTMLAnchorElement>("[data-faq-anchor]").forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          if (!href) return;
+          if (navigator.clipboard && location.origin) {
+            e.preventDefault();
+            const url = `${location.origin}${location.pathname}${href}`;
+            navigator.clipboard.writeText(url).then(() => {
+              history.replaceState(null, "", href);
+              const prev = a.textContent;
+              a.textContent = "\u2713";
+              setTimeout(() => { a.textContent = prev; }, 1200);
+            }).catch(() => { location.hash = href; });
+          }
+        });
+      });
+    </script>
 
     <!-- Contact CTA -->
     <div class="mt-12 p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)]">

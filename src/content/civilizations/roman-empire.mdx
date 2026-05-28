@@ -11,6 +11,7 @@ sortOrder: 23
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -72,6 +73,20 @@ The empire produced towering literary achievements:
 - **Livy** — *Ab Urbe Condita*, monumental history of Rome
 </Cited>
 
+## The Res Gestae of Augustus (primary source)
+
+<PrimarySource
+  original={`RERVM · GESTARVM · DIVI · AVGVSTI · QVIBVS · ORBEM · TERRA‐ / RVM · IMPERIO · POPVLI · ROMANI · SVBIECIT`}
+  originalLang="la"
+  translation={`The achievements of the deified Augustus by which he brought the whole world under the rule of the Roman people.`}
+  provenance="Res Gestae Divi Augusti, praefatio; composed by Augustus before his death in 14 CE, posthumously inscribed on bronze pillars at the entrance of his Mausoleum in Rome and circulated to provincial cult-centres. Most complete surviving copy: the bilingual Latin–Greek Monumentum Ancyranum on the cella walls of the Temple of Roma and Augustus at Ankara; ed. Alison E. Cooley, Res Gestae Divi Augusti (Cambridge, 2009)"
+  refId={7}
+/>
+
+<Cited status="green">
+The **Res Gestae** is the longest surviving Latin inscription and the closest thing antiquity has left us to an autobiographical political testament. Augustus dictates the terms of his own legacy in thirty-five sober paragraphs — offices held, monies disbursed, wars ended, peoples conquered — ostentatiously without naming the proscriptions, the murders of rivals, or the civil wars he provoked. Mommsen's 1865 *Editio princeps* of the Ankara copy founded the modern study of Augustan ideology; Cooley's 2009 critical edition is the current standard.<Ref id={7} />
+</Cited>
+
 ## Learning Resources
 
 - **Adrian Goldsworthy, *Pax Romana*** — Life and peace in the Roman Empire
@@ -88,4 +103,5 @@ The empire produced towering literary achievements:
   { id: 4, text: "The Digital Roman Forum (UCLA) — 3D reconstruction of the Roman Forum", url: "http://dlib.etc.ucla.edu/projects/Forum/" },
   { id: 5, text: "Pleiades — Gazetteer of ancient places", url: "https://pleiades.stoa.org/" },
   { id: 6, text: "LacusCurtius — Ancient texts on Roman history", url: "https://penelope.uchicago.edu/Thayer/E/Roman/home.html" },
+  { id: 7, text: "Alison E. Cooley, Res Gestae Divi Augusti: Text, Translation, and Commentary (Cambridge University Press, 2009) — Standard modern edition" },
 ]} />

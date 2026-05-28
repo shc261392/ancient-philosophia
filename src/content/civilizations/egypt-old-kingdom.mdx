@@ -14,6 +14,7 @@ relatedLanguages: ["old-egyptian"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -62,6 +63,20 @@ Mark Lehner and Zahi Hawass's three decades of excavation at Heit el-Ghurab ("th
 The Old Kingdom ended with the First Intermediate Period (c. 2181–2055 BCE), a time of political fragmentation, provincial autonomy, and possible climate stress associated with the **4.2-kiloyear aridification event** documented in Nile delta sediment cores.<Ref id={10} /> Power devolved to the nomarchs, and competing dynasties ruled from Heracleopolis and Thebes. The literary *Admonitions of Ipuwer* and the *Instructions for Merikare* — though composed later — preserve cultural memory of this collapse.<Ref id={1} />
 </Cited>
 
+## The Pyramid Texts of Unas (primary source)
+
+<PrimarySource
+  originalLang="egy"
+  transliteration={`ḏd-mdw: Wnjs pj sbā jsk ő / ʿḥʿ=k jm Wnjs m bā=k`}
+  translation={`Recitation: Unas is yon star … mayest thou shine forth, O Unas, as thy ba‐spirit.`}
+  provenance="Pyramid Texts, Utterance 217 (§§152–162); inscribed on the antechamber walls of the pyramid of Unas, Saqqara, c. 2350 BCE — the earliest surviving large corpus of Egyptian religious literature; ed. James P. Allen, The Ancient Egyptian Pyramid Texts (SBL Writings from the Ancient World 23, 2nd ed. 2015)"
+  refId={11}
+/>
+
+<Cited status="green">
+The **Pyramid Texts** were inscribed inside the burial chambers of the late Fifth- and Sixth-Dynasty pyramids to assist the deceased king in his ascent to the sky. They constitute the world's oldest substantial religious literature — several centuries older than the Mesopotamian Gilgamesh and over a millennium older than the Hebrew Bible. Utterance 217, addressed to the sun god Rēʿ, identifies the dead king Unas with the imperishable circumpolar stars; the same body of spells later evolved into the Coffin Texts of the Middle Kingdom and the Book of the Dead of the New Kingdom.<Ref id={11} />
+</Cited>
+
 ## Learning Resources
 
 - **Ian Shaw (ed.), *The Oxford History of Ancient Egypt*** — The standard one-volume reference
@@ -81,4 +96,5 @@ The Old Kingdom ended with the First Intermediate Period (c. 2181–2055 BCE), a
   { id: 8, text: "Mark Lehner & Zahi Hawass, Giza and the Pyramids: The Definitive History (University of Chicago Press, 2017) — Heit el-Ghurab workers' settlement and pyramid plateau synthesis" },
   { id: 9, text: "Pierre Tallet & Mark Lehner, The Red Sea Scrolls: How Ancient Papyri Reveal the Secrets of the Pyramids (Thames & Hudson, 2022) — Wadi al-Jarf and the Diary of Merer" },
   { id: 10, text: "Stanley, J.-D. et al., 'Nile flow failure at the end of the Old Kingdom', Geoarchaeology 18.3 (2003), pp. 395–402 — Sedimentary evidence for the 4.2 ka event" },
+  { id: 11, text: "James P. Allen, The Ancient Egyptian Pyramid Texts (SBL Writings from the Ancient World 23, 2nd ed., Atlanta, 2015) — Standard English translation with full apparatus" },
 ]} />

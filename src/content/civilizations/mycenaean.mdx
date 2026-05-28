@@ -13,6 +13,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -55,6 +56,20 @@ Linear B tablets mention many deities familiar from later Greek religion: Zeus (
 Around 1200 BCE, every major Mycenaean palace was destroyed or abandoned within approximately a generation. The causes remain debated: earthquake, drought, internal conflict, systems collapse, or invasion. Greece entered a "Dark Age" lasting several centuries, during which writing was lost and population plummeted.
 </Cited>
 
+## The Pylos Tripod Tablet, PY Ta 641 (primary source)
+
+<PrimarySource
+  originalLang="gmy"
+  transliteration={`ti-ri-po-de , ai-ke-u , ke-re-si-jo we-ke 2 / ti-ri-po , e-me po-de , o-wo-we 1 / ti-ri-po , ke-re-si-jo we-ke , a-pu , ke-ka-u-me-no , ke-re-a 1`}
+  translation={`Two tripods of Aigean type, of Cretan workmanship; one tripod with a single foot and one handle; one tripod of Cretan workmanship, with its legs burnt away.`}
+  provenance="Linear B tablet PY Ta 641, c. 1200 BCE; from the palace archive of Pylos (Ano Englianos); ed. Ventris & Chadwick, Documents in Mycenaean Greek (2nd ed., Cambridge, 1973), no. 236. Ventris' 1952 reading of this 'tripod tablet' — whose pictographic Linear B logograms matched the Greek words his sound-values predicted — was the decisive proof that Linear B encoded Greek."
+  refId={9}
+/>
+
+<Cited status="green">
+When Carl Blegen's excavation team unearthed PY Ta 641 at Pylos in 1952, Michael Ventris was already in correspondence with John Chadwick about his proposed phonetic grid for Linear B. The new tablet's logograms — unmistakable three-legged cauldrons and stemmed cups — sat next to syllabic spellings (*ti-ri-po-de*, *di-pa*) that exactly matched the Greek words *tripodes* and *depas* (δέπας). Chadwick called it 'a confirmation almost dramatic in its completeness,' and the decipherment was accepted within months.<Ref id={9} />
+</Cited>
+
 ## Learning Resources
 
 - **John Chadwick, *The Mycenaean World*** — Classic introduction by Ventris's collaborator
@@ -84,4 +99,5 @@ The University of Cincinnati team excavating the unplundered shaft grave of the 
   { id: 6, text: "Gary Beckman, Trevor Bryce & Eric Cline, The Ahhiyawa Texts (SBL Writings from the Ancient World 28, 2011) — Edition of all Hittite Ahhiyawa documents" },
   { id: 7, text: "Trevor Bryce, The Trojans and Their Neighbours (Routledge, 2006) — Hittite geography and the Mycenaean coast" },
   { id: 8, text: "Sharon R. Stocker & Jack L. Davis, 'The Combat Agate from the Grave of the Griffin Warrior at Pylos', Hesperia 86.4 (2017), pp. 583–605 — Publication of the 2015 find" },
+  { id: 9, text: "Michael Ventris & John Chadwick, Documents in Mycenaean Greek (2nd ed., Cambridge University Press, 1973) — Foundational edition with full commentary" },
 ]} />

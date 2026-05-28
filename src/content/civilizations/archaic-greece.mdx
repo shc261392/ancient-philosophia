@@ -11,6 +11,7 @@ sortOrder: 18
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -54,6 +55,21 @@ The development of **hoplite warfare** — citizens fighting as heavy infantry i
 The period ends with the dramatic conflict against the Achaemenid Persian Empire: the Ionian Revolt (499–494 BCE) and the Battle of **Marathon** (490 BCE), where Athenian hoplites decisively defeated Darius I's invasion force.
 </Cited>
 
+## The Dipylon Oinochoe Inscription (primary source)
+
+<PrimarySource
+  original={`ҊΟΣ ΝΥΝ ΟΡΧΕΣΤΟΝ ΠΑΝΤΟΝ ΑΤΑΛΟΤΑΤΑ ΠΑΙΖΕΙ ΤΟ ΤΟΔΕ ΚΛΜΙΝ…`}
+  originalLang="grc"
+  transliteration={`hòs nûn orkhēstôn pántōn atálōtata paízei, tô tóde…`}
+  translation={`Whoever of all the dancers now performs most gracefully, [shall have] this…`}
+  provenance="Dipylon Oinochoe inscription, c. 740 BCE; Late Geometric jug from the Kerameikos cemetery, Athens; National Archaeological Museum 192; one of the two earliest substantial Greek alphabetic inscriptions"
+  refId={6}
+/>
+
+<Cited status="green">
+The scratched verse-inscription on the Dipylon jug is, together with the Cup of Nestor from Pitecusae, our earliest evidence for the Greek adaptation of the Phoenician alphabet — already in 8th-century BCE Athens it is being used for hexameter verse, not just for marking ownership. The cup was a prize for a dance contest; the writing runs retrograde, right-to-left, in the manner of its Semitic parent.<Ref id={6} />
+</Cited>
+
 ## Learning Resources
 
 - **Robin Osborne, *Greece in the Making 1200–479 BC*** — Comprehensive textbook
@@ -68,4 +84,5 @@ The period ends with the dramatic conflict against the Achaemenid Persian Empire
   { id: 3, text: "*Anthony Snodgrass, Archaic Greece*** — Classic archaeological approach" },
   { id: 4, text: "Perseus Digital Library — Primary texts and encyclopedia", url: "https://www.perseus.tufts.edu/" },
   { id: 5, text: "Beazley Archive (Oxford) — Comprehensive database of Greek painted pottery", url: "https://www.beazley.ox.ac.uk/" },
+  { id: 6, text: "Lilian H. Jeffery, The Local Scripts of Archaic Greece (rev. ed., A. W. Johnston, Oxford, 1990) — Standard epigraphic survey" },
 ]} />

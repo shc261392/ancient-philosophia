@@ -11,6 +11,7 @@ sortOrder: 19
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -67,6 +68,21 @@ Athens became "the school of Greece":
 The great conflict between Athens and Sparta, chronicled by Thucydides, devastated Greece. Athens' defeat in 404 BCE ended its empire but not its cultural pre-eminence. The 4th century saw the rise of **Thebes** under Epaminondas and ultimately the conquest of Greece by **Philip II of Macedon** (Battle of Chaeronea, 338 BCE).
 </Cited>
 
+## Pericles' Funeral Oration (primary source)
+
+<PrimarySource
+  original={`ξυνελών τε λέγω τήν τε πᾶσαν πόλιν τῆς Ἑλλάδος παίδευσιν εἶναι`}
+  originalLang="grc"
+  transliteration={`xynelōn te legō tḗn te pâsan polin tếs Helládos paídeusin eînai`}
+  translation={`In sum, I say that our city as a whole is the school of Hellas.`}
+  provenance="Thucydides, Histories 2.41.1 (Pericles' Funeral Oration over the Athenian war dead, winter 431/430 BCE); ed. Stuart Jones & Powell, OCT 1942"
+  refId={6}
+/>
+
+<Cited status="green">
+Thucydides' version of Pericles' epitaphios is the canonical statement of fifth-century Athenian civic self-image. Whether Pericles actually spoke these words in winter 431/430 BCE is unknowable — Thucydides himself admits at 1.22 that he reproduces speeches "as I thought each speaker would have said what was demanded by the occasion." The phrase *tếs Helládos paídeusin* ('the school of Hellas') became one of the most quoted lines from antiquity and underwrites every later claim about classical Athens as a cultural ideal.<Ref id={6} />
+</Cited>
+
 ## Learning Resources
 
 - **Paul Cartledge, *The Cambridge Illustrated History of Ancient Greece*** — Beautiful survey
@@ -81,4 +97,5 @@ The great conflict between Athens and Sparta, chronicled by Thucydides, devastat
   { id: 3, text: "*Robin Waterfield, Athens: A History*** — Readable narrative of the city's golden age" },
   { id: 4, text: "Perseus Digital Library — Full Greek texts with translations", url: "https://www.perseus.tufts.edu/" },
   { id: 5, text: "Athenian Agora Excavations (ASCSA) — American School excavations in the heart of Athens", url: "https://www.agathe.gr/" },
+  { id: 6, text: "Thucydides, Historiae, ed. H. Stuart Jones & J. E. Powell, 2 vols. (OCT, Oxford, 1942) — Standard Greek text" },
 ]} />

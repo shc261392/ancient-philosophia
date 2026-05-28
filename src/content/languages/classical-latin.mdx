@@ -14,6 +14,7 @@ pronunciation: "consensus"
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -114,6 +115,20 @@ The pronunciation of Classical Latin reconstructed by W. Sidney Allen's *Vox Lat
 - **r/Latin** — Active Reddit community
 - YouTube: **Latin with Ørberg**, **Latinum Latin**, **ScorpioMartianus** (Latin spoken fluently)
 
+## Cicero's First Catilinarian (primary source)
+
+<PrimarySource
+  original={`Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet?`}
+  originalLang="la"
+  translation={`How long, Catiline, will you go on abusing our patience? How long is that frenzy of yours still to mock us?`}
+  provenance="Cicero, In Catilinam I.1, delivered before the Senate in the Temple of Jupiter Stator on 8 November 63 BCE; ed. T. Maslowski, Bibliotheca Teubneriana, 2003"
+  refId={12}
+/>
+
+<Cited status="green">
+The opening sentence of the **First Catilinarian** is the most-imitated Latin period in history — the very embodiment of the *prosa numerosa* that Cicero advocated in *Orator*. Note the rhetorical *quousque/quamdiu* anaphora, the deliberate elision of the verb *est* through ellipsis, the ablative of separation *patientia nostra*, and the climactic future-indicative *eludet* placed at the end of the colon for maximum suspense. Generations of Latin students have written first-day translations of this very passage.<Ref id={12} />
+</Cited>
+
 ## Reconstructed Pronunciation
 
 <Cited status="green">
@@ -132,4 +147,5 @@ The **Classical pronunciation** (*pronuntiatio restituta*) reconstructed by W. S
   { id: 9, text: "Renatus L. A. du Pontet (ed.), C. Iuli Caesaris commentariorum pars prior: De bello Gallico (OCT, Oxford, 1900) — Standard critical edition" },
   { id: 10, text: "W. Sidney Allen, Vox Latina: A Guide to the Pronunciation of Classical Latin (2nd ed. Cambridge, 1989) — Reconstruction of Classical pronunciation" },
   { id: 11, text: "James Clackson & Geoffrey Horrocks, The Blackwell History of the Latin Language (Wiley-Blackwell, 2007) — Diachronic linguistic history" },
+  { id: 12, text: "Tadeusz Maslowski (ed.), M. Tulli Ciceronis Scripta Quae Manserunt Omnia, fasc. 17: Orationes in Catilinam (Bibliotheca Teubneriana, K. G. Saur, 2003) — Standard critical edition" },
 ]} />

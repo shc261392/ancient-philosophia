@@ -16,6 +16,7 @@ reviewers: ["editorial-team"]
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -123,6 +124,21 @@ Opening of Homer's *Iliad* (in polytonic Greek):
 While Homer's epics are in the Ionic/Aeolic literary dialect rather than pure Attic, they form the foundation of the Greek literary tradition and are essential reading for all students of Ancient Greek.
 </Cited>
 
+## Sophocles, Antigone (primary source)
+
+<PrimarySource
+  original={`πολλὰ τὰ δεινὰ κοὐδὲν ἀνθρώπου δεινότερον πέλει`}
+  originalLang="grc"
+  transliteration={`pollà tà deinà kouden anthrōpou deinoteron pelei`}
+  translation={`Many things are awesome — yet nothing is more awesome than man.`}
+  provenance="Sophocles, Antigone 332–333 (first stasimon); first produced at the Greater Dionysia c. 441 BCE; ed. Hugh Lloyd-Jones & Nigel Wilson, Sophoclis Fabulae, OCT 1990"
+  refId={12}
+/>
+
+<Cited status="green">
+The opening of the *Antigone*'s 'Ode on Man' is a textbook example of fifth-century literary Attic. Note the characteristic Attic alpha-purum endings (δεινά, not Ionic-Homeric δεινή), the contracted form κοὐδέν (καί + οὐδέν by crasis), the lyric long-alpha ἀνθρώπου, and the pre-poetic 3rd-sg. present πέλει (‘is’) preserved in choral metre. The semantic doubleness of *deinos* — ‘terrible / wondrous / clever’ — powers the whole ode.<Ref id={12} />
+</Cited>
+
 ## Learning Resources
 
 ### Textbooks & Grammars
@@ -157,4 +173,5 @@ While Homer's epics are in the Ionic/Aeolic literary dialect rather than pure At
   { id: 9, text: "M. L. West (ed.), Homeri Ilias (Teubner, 1998–2000) — Critical edition" },
   { id: 10, text: "E. A. Duke et al. (eds.), Platonis Opera vol. I (OCT, 1995) — Critical text of the Apology" },
   { id: 11, text: "James J. Helm, Plato: Apology (Bolchazy-Carducci, 1997) — Student commentary" },
+  { id: 12, text: "Hugh Lloyd-Jones & Nigel G. Wilson, Sophoclis Fabulae (Oxford Classical Texts, Oxford University Press, 1990) — Standard critical text" },
 ]} />

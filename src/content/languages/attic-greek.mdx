@@ -9,6 +9,8 @@ tags: ["Athens", "philosophy", "drama", "democracy", "koine"]
 sortOrder: 3
 materialRichness: "rich"
 pronunciation: "reconstructed"
+lastReviewed: "2026-05-28"
+reviewers: ["editorial-team"]
 ---
 
 import Ref from '../../components/Ref.astro';
@@ -94,15 +96,27 @@ Attic Greek has a rich inflectional system:
 
 ## Sample Text
 
+<Cited status="green">
+The opening of Plato's *Apology* — traditionally the first extended Attic prose passage encountered by students — illustrates the dialect's characteristic rhetorical particles (*μὲν… δέ*) and pitch-accented prose rhythm:<Ref id={10} />
+</Cited>
+
+<Cited status="yellow">
+> ὅτι μὲν ὑμεῖς, ὦ ἄνδρες Ἀθηναῖοι, πεπόνθατε ὑπὸ τῶν ἐμῶν κατηγόρων, οὐκ οἶδα
+>
+> "What you, men of Athens, have felt under the influence of my accusers, I do not know." (Plato, *Apology* 17a)<Ref id={11} />
+</Cited>
+
+## Sample Text
+
 <Cited status="yellow">
 Opening of Homer's *Iliad* (in polytonic Greek):
 </Cited>
 
-<Cited status="red">
+<Cited status="yellow">
 > μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος
 > οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε
 >
-> "Sing, goddess, the wrath of Achilles, son of Peleus, the accursed wrath that brought countless sorrows upon the Achaeans"
+> "Sing, goddess, the wrath of Achilles, son of Peleus, the accursed wrath that brought countless sorrows upon the Achaeans" (*Iliad* 1.1–2, ed. M. L. West, Teubner 1998).<Ref id={9} />
 </Cited>
 
 <Cited status="yellow">
@@ -132,12 +146,15 @@ While Homer's epics are in the Ionic/Aeolic literary dialect rather than pure At
 - YouTube: **Ancient Greek with Athenaze**, **Pharr's Homer** walkthroughs
 
 <References references={[
-  { id: 1, text: "*Donald Mastronarde, Introduction to Attic Greek*** (2nd ed., UC Press) — The most widely adopted textbook in North American universities; thorough and systematic" },
-  { id: 2, text: "*Hansen & Quinn, Greek: An Intensive Course*** — Intensive approach; very popular at universities with accelerated programs" },
-  { id: 3, text: "*Herbert Weir Smyth, Greek Grammar*** — The comprehensive reference grammar (1920, still unsurpassed)" },
-  { id: 4, text: "*Anne Groton, From Alpha to Omega*** — Accessible alternative for self-study" },
-  { id: 5, text: "*Maurice Balme & Gilbert Lawall, Athenaze*** — Popular reading-based textbook that teaches Greek through a continuous narrative set in Classical Athens; excellent for self-study and university courses alike" },
-  { id: 6, text: "Perseus Digital Library — Greek texts with morphological analysis and dictionary lookup", url: "https://www.perseus.tufts.edu/" },
-  { id: 7, text: "Logeion — Fast dictionary lookup (LSJ, Middle Liddell, Autenrieth)", url: "https://logeion.uchicago.edu/" },
-  { id: 8, text: "Ancient Greek Tutorials (Berkeley) — Free online textbook companion", url: "https://ancientgreek.pressbooks.com/" },
+  { id: 1, text: "Donald Mastronarde, Introduction to Attic Greek (2nd ed., University of California Press, 2013) — The most widely adopted textbook in North American universities" },
+  { id: 2, text: "Hardy Hansen & Gerald Quinn, Greek: An Intensive Course (Fordham, 1992) — Intensive accelerated programme" },
+  { id: 3, text: "Herbert Weir Smyth, Greek Grammar (Harvard, 1920; rev. 1956) — The comprehensive reference grammar, still unsurpassed" },
+  { id: 4, text: "Anne Groton, From Alpha to Omega (4th ed., Focus, 2013) — Accessible self-study alternative" },
+  { id: 5, text: "Maurice Balme & Gilbert Lawall, Athenaze: An Introduction to Ancient Greek (3rd ed., Oxford, 2016) — Reading-based textbook" },
+  { id: 6, text: "Perseus Digital Library — Greek texts with morphological analysis", url: "https://www.perseus.tufts.edu/" },
+  { id: 7, text: "Logeion — Fast LSJ / Middle Liddell / Autenrieth dictionary lookup", url: "https://logeion.uchicago.edu/" },
+  { id: 8, text: "Geoffrey Horrocks, Greek: A History of the Language and its Speakers (2nd ed., Wiley-Blackwell, 2010) — Standard diachronic survey" },
+  { id: 9, text: "M. L. West (ed.), Homeri Ilias (Teubner, 1998–2000) — Critical edition" },
+  { id: 10, text: "E. A. Duke et al. (eds.), Platonis Opera vol. I (OCT, 1995) — Critical text of the Apology" },
+  { id: 11, text: "James J. Helm, Plato: Apology (Bolchazy-Carducci, 1997) — Student commentary" },
 ]} />

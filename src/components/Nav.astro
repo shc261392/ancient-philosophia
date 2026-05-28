@@ -49,7 +49,7 @@ const links = [
 
       <!-- Mobile menu button -->
       <div class="flex items-center gap-1">
-        <div class="hidden sm:block"><Search /></div>
+        <div class="nav-search-slot"><Search /></div>
         <ThemeToggle />
         <button
         id="mobile-menu-btn"
@@ -96,3 +96,17 @@ const links = [
     menu?.classList.toggle('hidden');
   });
 </script>
+
+<style>
+  /* On narrow screens, hide the "Search" label and "/" hint in the nav trigger,
+     leaving only the magnifying-glass icon. Keep the button itself accessible. */
+  @media (max-width: 640px) {
+    .nav-search-slot :global(.search-trigger span),
+    .nav-search-slot :global(.search-trigger kbd) {
+      display: none;
+    }
+    .nav-search-slot :global(.search-trigger) {
+      padding: 0.4rem 0.55rem;
+    }
+  }
+</style>

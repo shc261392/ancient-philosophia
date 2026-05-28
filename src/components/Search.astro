@@ -16,7 +16,7 @@
 			<path d="m14 14 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
 		</svg>
 		<span>Search</span>
-		<kbd>/</kbd>
+		<kbd data-search-kbd>/</kbd>
 	</button>
 
 	<dialog class="search-dialog" data-search-dialog aria-label="Site search">
@@ -148,10 +148,20 @@
 				e.preventDefault();
 				openDialog();
 			}
+			if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey) && !dialog.open) {
+				e.preventDefault();
+				openDialog();
+			}
 			if (e.key === "Escape" && dialog.open) {
 				dialog.close();
 			}
 		});
+
+		const kbdHint = root.querySelector<HTMLElement>("[data-search-kbd]");
+		if (kbdHint) {
+			const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.platform);
+			kbdHint.textContent = isMac ? "⌘K" : "Ctrl K";
+		}
 
 		dialog.addEventListener("click", (e) => {
 			if (e.target === dialog) dialog.close();

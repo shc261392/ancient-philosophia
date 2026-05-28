@@ -15,11 +15,21 @@ import Hero from '../../components/Hero.astro';
 
   <!-- Interactive tree mindmap rendered as nested HTML -->
   <section class="mb-16">
-    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8">Ancient History & Language Study Map</h2>
-    
+    <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-4">Ancient History & Language Study Map</h2>
+
+    <nav aria-label="Mindmap regions" class="mindmap-jump mb-8 flex flex-wrap gap-2 text-sm">
+      <a href="#region-mesopotamia" class="jump-chip">Mesopotamia</a>
+      <a href="#region-egypt" class="jump-chip">Egypt</a>
+      <a href="#region-levant" class="jump-chip">Levant &amp; Iran</a>
+      <a href="#region-aegean" class="jump-chip">Aegean &amp; Greece</a>
+      <a href="#region-rome" class="jump-chip">Italy &amp; Rome</a>
+      <a href="#study-paths" class="jump-chip">Study paths</a>
+      <a href="#chronology" class="jump-chip">Chronology</a>
+    </nav>
+
     <div class="space-y-8">
       <!-- MESOPOTAMIA -->
-      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+      <div id="region-mesopotamia" class="mindmap-region bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden scroll-mt-20">
         <div class="bg-[var(--color-terracotta)]/20 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
           <h3 class="text-xl font-serif text-[var(--color-terracotta-light)] flex items-center gap-3">
             <span class="text-2xl">𒀭</span> Mesopotamia
@@ -53,7 +63,7 @@ import Hero from '../../components/Hero.astro';
       </div>
 
       <!-- EGYPT -->
-      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+      <div id="region-egypt" class="mindmap-region bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden scroll-mt-20">
         <div class="bg-[var(--color-gold-leaf)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
           <h3 class="text-xl font-serif text-[var(--color-gold-light)] flex items-center gap-3">
             <span class="text-2xl">𓂀</span> Egypt
@@ -85,7 +95,7 @@ import Hero from '../../components/Hero.astro';
       </div>
 
       <!-- LEVANT & IRAN -->
-      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+      <div id="region-levant" class="mindmap-region bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden scroll-mt-20">
         <div class="bg-[var(--color-aegean)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
           <h3 class="text-xl font-serif text-[var(--color-aegean-light)] flex items-center gap-3">
             <span class="text-2xl">🏛</span> Levant, Iran & Anatolia
@@ -121,7 +131,7 @@ import Hero from '../../components/Hero.astro';
       </div>
 
       <!-- AEGEAN & GREECE -->
-      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+      <div id="region-aegean" class="mindmap-region bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden scroll-mt-20">
         <div class="bg-[var(--color-tyrian)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
           <h3 class="text-xl font-serif text-[var(--color-tyrian-light)] flex items-center gap-3">
             <span class="text-2xl">🏺</span> Aegean & Greece
@@ -158,7 +168,7 @@ import Hero from '../../components/Hero.astro';
       </div>
 
       <!-- ROME -->
-      <div class="bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden">
+      <div id="region-rome" class="mindmap-region bg-[var(--color-bg-card)] rounded-xl border border-[var(--color-bg-tertiary)] overflow-hidden scroll-mt-20">
         <div class="bg-[var(--color-bronze)]/15 px-6 py-4 border-b border-[var(--color-bg-tertiary)]">
           <h3 class="text-xl font-serif text-[var(--color-bronze-light)] flex items-center gap-3">
             <span class="text-2xl">🏛</span> Italy & Rome
@@ -193,7 +203,7 @@ import Hero from '../../components/Hero.astro';
   </section>
 
   <!-- Recommended Study Paths -->
-  <section class="mb-16">
+  <section id="study-paths" class="mb-16 scroll-mt-20">
     <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8">Recommended Study Paths</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -244,7 +254,7 @@ import Hero from '../../components/Hero.astro';
   </section>
 
   <!-- Timeline overview -->
-  <section class="mb-16">
+  <section id="chronology" class="mb-16 scroll-mt-20">
     <h2 class="text-2xl font-serif text-[var(--color-gold-leaf)] mb-8">Chronological Overview</h2>
     <div class="overflow-x-auto">
       <table class="w-full text-sm border-collapse">
@@ -344,3 +354,37 @@ import Hero from '../../components/Hero.astro';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .jump-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 9999px;
+    background: var(--color-bg-card);
+    border: 1px solid color-mix(in oklab, var(--color-fg-muted) 30%, transparent);
+    color: var(--color-fg-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .jump-chip:hover,
+  .jump-chip:focus-visible {
+    background: var(--color-bg-tertiary);
+    color: var(--color-gold-leaf);
+    border-color: var(--color-gold-leaf);
+  }
+
+  /* Visited-link feedback inside region cards: a small "read" mark and muted color
+     so learners can see at a glance which articles they have already opened.
+     Pure CSS — no tracking, no JS. */
+  .mindmap-region a:visited {
+    color: color-mix(in oklab, var(--color-link) 55%, var(--color-fg-muted));
+  }
+  .mindmap-region li a:visited::after {
+    content: " \2713";
+    color: var(--color-bronze);
+    font-weight: 600;
+    margin-left: 0.15rem;
+  }
+</style>

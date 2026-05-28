@@ -65,16 +65,44 @@ const breadcrumbs = [
     </p>
   </header>
 
-  <div class="legend flex flex-wrap gap-3 mb-6">
+  <div class="timeline-controls mb-4 flex flex-wrap items-center gap-3">
+    <div class="flex items-center gap-2 text-xs text-[var(--color-fg-secondary)]">
+      <label for="timeline-zoom" class="font-medium uppercase tracking-wide text-[var(--color-fg-muted)]">Zoom</label>
+      <input
+        id="timeline-zoom"
+        type="range"
+        min="100"
+        max="400"
+        step="10"
+        value="100"
+        class="w-32 accent-[var(--color-gold-leaf)]"
+        aria-label="Timeline zoom"
+      />
+      <span id="timeline-zoom-readout" class="tabular-nums text-[var(--color-fg-muted)] min-w-[3ch]">1×</span>
+    </div>
+    <div class="flex items-center gap-2 text-xs text-[var(--color-fg-secondary)] ml-auto">
+      <button type="button" data-tl-all class="px-2 py-1 rounded border border-[var(--color-bg-tertiary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)]">All regions</button>
+      <button type="button" data-tl-none class="px-2 py-1 rounded border border-[var(--color-bg-tertiary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)]">None</button>
+      <span class="text-[var(--color-fg-muted)]">·</span>
+      <span id="timeline-count" class="text-[var(--color-fg-secondary)] tabular-nums">{items.length} / {items.length}</span>
+    </div>
+  </div>
+
+  <div class="legend flex flex-wrap gap-2 mb-6">
     {regions.map(r => (
-      <span class="inline-flex items-center gap-1.5 text-xs text-[var(--color-fg-secondary)]">
+      <button
+        type="button"
+        class="tl-region inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded border border-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)] hover:border-[var(--color-gold-leaf)] hover:text-[var(--color-fg-primary)] transition-colors"
+        data-region={r}
+        aria-pressed="true"
+      >
         <span class="inline-block w-3 h-3 rounded-sm" style={`background:${regionColor[r]}`}></span>{r}
-      </span>
+      </button>
     ))}
   </div>
 
-  <div class="timeline relative overflow-x-auto rounded-xl border border-[var(--color-bg-tertiary)] bg-[var(--color-bg-card)] p-4">
-    <div class="relative" style={`min-width: 900px; height: ${items.length * 28 + 60}px`}>
+  <div id="timeline-scroll" class="timeline relative overflow-x-auto rounded-xl border border-[var(--color-bg-tertiary)] bg-[var(--color-bg-card)] p-4">
+    <div id="timeline-inner" class="relative" style={`min-width: 900px; height: ${items.length * 28 + 60}px`}>
       <!-- Era ticks -->
       <div class="absolute inset-x-0 top-0 bottom-6 pointer-events-none">
         {ticks.map(y => (
@@ -92,9 +120,11 @@ const breadcrumbs = [
           return (
             <a
               href={`/civilizations/${it.id}/`}
-              class="absolute h-6 rounded text-[10px] text-white px-2 flex items-center whitespace-nowrap overflow-hidden hover:ring-2 hover:ring-[var(--color-gold-leaf)] transition-all"
+              class="tl-bar absolute h-6 rounded text-[10px] text-white px-2 flex items-center whitespace-nowrap overflow-hidden hover:ring-2 hover:ring-[var(--color-gold-leaf)] transition-all"
               style={`top: ${i * 28}px; left: ${left}%; width: ${width}%; background-color: ${regionColor[it.data.region]}; min-width: 12px;`}
               title={`${it.data.title} · ${it.data.dateRange} · ${it.data.region}`}
+              data-region={it.data.region}
+              data-civ={it.id}
             >
               <span class="truncate">{it.data.title}</span>
             </a>
@@ -109,3 +139,68 @@ const breadcrumbs = [
     conventional and contested — see individual articles for nuance.
   </p>
 </BaseLayout>
+
+<style>
+  .tl-region[aria-pressed="false"] {
+    opacity: 0.4;
+    text-decoration: line-through;
+  }
+  .tl-bar[data-hidden="true"] {
+    display: none;
+  }
+</style>
+
+<script>
+  const inner = document.getElementById("timeline-inner") as HTMLDivElement | null;
+  const zoom = document.getElementById("timeline-zoom") as HTMLInputElement | null;
+  const readout = document.getElementById("timeline-zoom-readout");
+  const count = document.getElementById("timeline-count");
+  const bars = Array.from(document.querySelectorAll<HTMLAnchorElement>(".tl-bar"));
+  const regionBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".tl-region"));
+  const allBtn = document.querySelector<HTMLButtonElement>("[data-tl-all]");
+  const noneBtn = document.querySelector<HTMLButtonElement>("[data-tl-none]");
+  const total = bars.length;
+
+  const active = new Set<string>(regionBtns.map((b) => b.dataset.region!));
+
+  function applyFilter() {
+    let visible = 0;
+    for (const bar of bars) {
+      const r = bar.dataset.region!;
+      const show = active.has(r);
+      bar.dataset.hidden = String(!show);
+      if (show) visible++;
+    }
+    if (count) count.textContent = `${visible} / ${total}`;
+    for (const btn of regionBtns) {
+      btn.setAttribute("aria-pressed", String(active.has(btn.dataset.region!)));
+    }
+  }
+
+  for (const btn of regionBtns) {
+    btn.addEventListener("click", () => {
+      const r = btn.dataset.region!;
+      if (active.has(r)) active.delete(r);
+      else active.add(r);
+      applyFilter();
+    });
+  }
+
+  allBtn?.addEventListener("click", () => {
+    for (const btn of regionBtns) active.add(btn.dataset.region!);
+    applyFilter();
+  });
+  noneBtn?.addEventListener("click", () => {
+    active.clear();
+    applyFilter();
+  });
+
+  if (zoom && inner) {
+    const base = 900;
+    zoom.addEventListener("input", () => {
+      const factor = Number(zoom.value) / 100;
+      inner.style.minWidth = `${base * factor}px`;
+      if (readout) readout.textContent = `${factor.toFixed(factor < 10 ? 1 : 0)}×`;
+    });
+  }
+</script>

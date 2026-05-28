@@ -9,11 +9,15 @@ materialRichness: "moderate"
 pronunciation: "consensus"
 tags: ["Egyptian Christianity", "Nag Hammadi", "Gnostic", "liturgical"]
 sortOrder: 13
+lastReviewed: "2026-05-28"
+reviewers: ["editorial-team"]
+relatedCivilizations: ["ptolemaic-egypt", "roman-empire"]
 ---
 
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -40,20 +44,17 @@ Coptic is the latest stage of the ancient Egyptian language, written in the **Gr
 
 ## Sample Text
 
-<Cited status="yellow">
-Opening of the Gospel of Thomas (Nag Hammadi Codex II, 32.10–12, Sahidic Coptic):<Ref id={4} />
-</Cited>
+<PrimarySource
+  original={`ⲛⲁⲓ ⲛⲉ ⲛⲣⲋⲉ ⲉⴑⲏⲫ ⲛⲡⲁ ⲥ ⲉⲟⲁⲗ ⲃⲋⲗⲗ ⲁⲫ° ⲁⲱⲗ°ⲋⲟⲁⲓⲫⲗⲫ ⲗⲱⲓ ⲃⲓⲃⲱⲓⲫ ⲓⲟⲱⲃⲋⲫ ⲁⲗⲋⲁⲫ`}
+  originalLang="cop"
+  transliteration="nai ne nšaje ethēp nta is etonḥ joou auō afṣḥaisou nči didymos ioudas thōmas"
+  translation="These are the secret sayings which the living Jesus spoke, and Didymus Judas Thomas wrote them down."
+  provenance="Nag Hammadi Codex II, 32.10–12 (Gospel of Thomas, incipit), Sahidic Coptic, c. 350 CE; ed. Layton 1989; trans. Meyer 2007"
+  refId={8}
+/>
 
-<Cited status="yellow">
-> ⲛⲁⲓ ⲛⲉ ⲛϣⲁϫⲉ ⲉⲑⲏⲡ ⲛⲧⲁ ⲓⲥ ⲉⲧⲟⲛϩ ϫⲟⲟⲩ ⲁⲩⲱ ⲁϥⲥϩⲁⲓⲥⲟⲩ ⲛϭⲓ ⲇⲓⲇⲩⲙⲟⲥ ⲓⲟⲩⲇⲁⲥ ⲑⲱⲙⲁⲥ
-</Cited>
-
-<Cited status="red">
-*nai ne nšaje ethēp nta is etonḥ joou auō afsḥaisou nči didymos ioudas thōmas*
-</Cited>
-
-<Cited status="red">
-"These are the secret words which the living Jesus spoke, and Didymus Judas Thomas wrote them down."
+<Cited status="green">
+The Nag Hammadi codices, discovered in December 1945 near the Upper-Egyptian village of Hamra Dum and now in the Coptic Museum in Cairo, contain thirteen 4th-century books in Sahidic Coptic preserving fifty-two distinct texts, including the *Gospel of Thomas*, the *Gospel of Philip*, and the *Apocryphon of John*.<Ref id={9} /> James Robinson's 1977 *Nag Hammadi Library in English* and Marvin Meyer's 2007 *Nag Hammadi Scriptures* remain the standard English translations.<Ref id={10} />
 </Cited>
 
 ## Learning Resources
@@ -70,11 +71,14 @@ Opening of the Gospel of Thomas (Nag Hammadi Codex II, 32.10–12, Sahidic Copti
 - **[Coptic SCRIPTORIUM](https://copticscriptorium.org/)** — Digital research tools for Coptic texts
 
 <References references={[
-  { id: 1, text: "*Thomas Lambdin, Introduction to Sahidic Coptic*** — The standard English-language textbook" },
-  { id: 2, text: "*Bentley Layton, A Coptic Grammar*** — Comprehensive Sahidic grammar" },
-  { id: 3, text: "*Plumley, An Introductory Coptic Grammar*** — Concise alternative" },
+  { id: 1, text: "Thomas O. Lambdin, Introduction to Sahidic Coptic (Mercer, 1983) — Standard English textbook" },
+  { id: 2, text: "Bentley Layton, A Coptic Grammar (3rd ed., Harrassowitz, 2011) — Comprehensive Sahidic reference grammar" },
+  { id: 3, text: "J. Martin Plumley, An Introductory Coptic Grammar (Home & Van Thal, 1948) — Concise alternative" },
   { id: 4, text: "Coptic Dictionary Online — Searchable Coptic lexicon", url: "https://coptic-dictionary.org/" },
   { id: 5, text: "Marcion.de — Interlinear Coptic-English New Testament", url: "https://www.marcion.info/" },
-  { id: 6, text: "CMCL (Corpus of Manichaean Coptic Literature) — Digital corpus", url: "http://www.cmcl.it/" },
+  { id: 6, text: "CMCL — Corpus dei Manoscritti Copti Letterari", url: "http://www.cmcl.it/" },
   { id: 7, text: "Coptic SCRIPTORIUM — Digital research tools for Coptic texts", url: "https://copticscriptorium.org/" },
+  { id: 8, text: "Bentley Layton (ed.), Nag Hammadi Codex II,2–7 (Nag Hammadi Studies 20–21, Brill, 1989) — Critical edition of the Gospel of Thomas" },
+  { id: 9, text: "James M. Robinson (ed.), The Facsimile Edition of the Nag Hammadi Codices (Brill, 1972–1984) — Photographic edition" },
+  { id: 10, text: "Marvin Meyer (ed.), The Nag Hammadi Scriptures (HarperOne, 2007) — Annotated complete English translation" },
 ]} />

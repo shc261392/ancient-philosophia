@@ -6,11 +6,15 @@ region: "Levant"
 dateRange: "c. 1200–586 BCE"
 tags: ["Iron Age", "Hebrew Bible", "Jerusalem", "Tel Dan Stele", "Babylonian exile", "monotheism"]
 sortOrder: 30
+lastReviewed: "2026-05-28"
+reviewers: ["editorial-team"]
+relatedLanguages: ["biblical-hebrew", "aramaic"]
 ---
 
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -44,24 +48,43 @@ The northern kingdom of Israel, with its capital at **Samaria**, was the larger 
 
 ## The Kingdom of Judah (c. 930–586 BCE)
 
-<Cited status="yellow">
-The smaller southern kingdom, centered on **Jerusalem**, survived Assyrian expansion:
-</Cited>
-
 <Cited status="red">
 - **Hezekiah** (r. c. 715–687 BCE) — Built the **Siloam Tunnel** (confirmed by the Siloam Inscription) to secure Jerusalem's water supply; survived Sennacherib's siege of 701 BCE
 - **Josiah** (r. c. 640–609 BCE) — Credited with religious reform and the centralization of the cult in Jerusalem
 - **Destruction** — **Nebuchadnezzar II** of Babylon besieged and destroyed Jerusalem and the First Temple in **586 BCE**, deporting the elite to Babylon — the **Babylonian Exile**, a defining moment in Jewish history
 </Cited>
 
+## The Tel Dan Stele (primary source)
+
+<PrimarySource
+  original={`[בית]·דוד · ואק[תל·ית]`}
+  originalLang="arc"
+  transliteration="[byt]·dwd · wʾq[tl·yt]"
+  translation="…the [house] of David … and I [killed]…"
+  provenance="Aramaic basalt fragment, Tel Dan, late 9th c. BCE; Israel Museum IAA 1993-3162; ed. Biran & Naveh 1995"
+  refId={6}
+/>
+
+<Cited status="green">
+Discovered in 1993 and re-edited by Biran & Naveh in 1995, the Tel Dan stele preserves the first — and to date only — extra-biblical inscriptional reference to the **House of David** (*bytdwd*), almost certainly composed at the order of an Aramaean king (probably Hazael of Damascus) celebrating victory over an Israelite–Judahite coalition.<Ref id={6} />
+</Cited>
+
+## Hezekiah, Josiah, and the End of Judah
+
+<Cited status="yellow">
+- **Hezekiah** (r. c. 715–687 BCE) — Built the **Siloam Tunnel**, the construction of which is commemorated by the Old Hebrew **Siloam Inscription** (now in the Istanbul Archaeology Museums); withstood Sennacherib's siege of 701 BCE, documented from the Assyrian side on the Taylor Prism.<Ref id={7} />
+- **Josiah** (r. c. 640–609 BCE) — Credited with the religious reform tied to the discovery of a 'book of the Law' (2 Kings 22–23), which most scholars associate with an early Deuteronomic core.<Ref id={2} />
+- **Destruction (586 BCE)** — **Nebuchadnezzar II** besieged and destroyed Jerusalem and the First Temple; the Babylonian Chronicle (BM 21946) independently records the king's western campaigns of 597 BCE.<Ref id={8} />
+</Cited>
+
 ## Key Epigraphic Finds
 
-<Cited status="red">
-- **Merneptah Stele** (c. 1208 BCE) — Earliest mention of Israel
-- **Tel Dan Stele** (c. 840 BCE) — "House of David" reference
-- **Mesha Stele** (c. 840 BCE) — Moabite king's account of conflict with Israel; mentions Yahweh and Omri
-- **Siloam Inscription** — Records the construction of Hezekiah's tunnel
-- **Lachish Letters** — Military correspondence from the last days before Nebuchadnezzar's conquest
+<Cited status="yellow">
+- **Merneptah Stele** (c. 1208 BCE) — Earliest mention of Israel.<Ref id={9} />
+- **Tel Dan Stele** (c. 840 BCE) — "House of David" reference.<Ref id={6} />
+- **Mesha Stele** (c. 840 BCE) — Moabite king's account of conflict with Israel; mentions Yahweh and Omri.<Ref id={2} />
+- **Siloam Inscription** — Records the construction of Hezekiah's tunnel.<Ref id={7} />
+- **Lachish Letters** — Military correspondence from the last days before Nebuchadnezzar's conquest.<Ref id={10} />
 </Cited>
 
 ## Religion and the Development of Monotheism
@@ -79,9 +102,14 @@ Israelite religion evolved from a polytheistic/henotheistic context — the wors
 - **[Pleiades](https://pleiades.stoa.org/)** — Gazetteer for ancient Levantine sites
 
 <References references={[
-  { id: 1, text: "*Israel Finkelstein and Neil Asher Silberman, The Bible Unearthed*** (2001) — Influential archaeological reassessment" },
-  { id: 2, text: "*William G. Dever, Beyond the Texts: An Archaeological Portrait of Ancient Israel and Judah*** (2017) — Comprehensive material culture analysis" },
-  { id: 3, text: "*Amihai Mazar, Archaeology of the Land of the Bible, 10,000–586 BCE*** (1990) — Standard textbook" },
+  { id: 1, text: "Israel Finkelstein and Neil Asher Silberman, The Bible Unearthed: Archaeology's New Vision of Ancient Israel and the Origin of Its Sacred Texts (Free Press, 2001) — Influential archaeological reassessment" },
+  { id: 2, text: "William G. Dever, Beyond the Texts: An Archaeological Portrait of Ancient Israel and Judah (SBL Press, 2017) — Comprehensive material-culture analysis" },
+  { id: 3, text: "Amihai Mazar, Archaeology of the Land of the Bible, 10,000–586 BCE (Doubleday, 1990) — Standard textbook" },
   { id: 4, text: "The Israel Museum, Jerusalem — Houses the Dead Sea Scrolls and major Israelite artifacts", url: "https://www.imj.org.il/" },
   { id: 5, text: "Pleiades — Gazetteer for ancient Levantine sites", url: "https://pleiades.stoa.org/" },
+  { id: 6, text: "Avraham Biran & Joseph Naveh, 'The Tel Dan Inscription: A New Fragment', Israel Exploration Journal 45 (1995), pp. 1–18 — Edition with 'House of David'" },
+  { id: 7, text: "Frank Moore Cross & David Noel Freedman, 'The Siloam Inscription', BASOR 208 (1972) — Edition; cf. K. Lawson Younger, 'Hezekiah's Tunnel' in Context of Scripture II (Brill, 2000), no. 2.28" },
+  { id: 8, text: "A. K. Grayson, Assyrian and Babylonian Chronicles (Texts from Cuneiform Sources V, 1975) — Babylonian Chronicle on the 597 and 586 campaigns" },
+  { id: 9, text: "Michael G. Hasel, 'Israel in the Merneptah Stela', BASOR 296 (1994), pp. 45–61" },
+  { id: 10, text: "Harry Torczyner, The Lachish Letters (Lachish I, Oxford, 1938) — Editio princeps of the Lachish ostraca" },
 ]} />

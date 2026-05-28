@@ -9,11 +9,15 @@ materialRichness: "scarce"
 pronunciation: "reconstructed"
 tags: ["Achaemenid", "Behistun", "Persepolis", "cuneiform"]
 sortOrder: 16
+lastReviewed: "2026-05-28"
+reviewers: ["editorial-team"]
+relatedCivilizations: ["persia-achaemenid"]
 ---
 
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -41,20 +45,17 @@ Old Persian is the earliest attested Iranian language, known primarily from the 
 
 ## Sample Text
 
+<PrimarySource
+  original={`𒡍𒠶𒠶   𒠔𒡾𒡙𒡾𒡔𒠨𒡾𒠨   𒠠𒡽𒡳𒡾𒡣𒡁𒡾𒠨   𒡊𒡾𒡳𒡯𒠨`}
+  originalLang="peo"
+  transliteration="adam Dārayavauš xšāyaθiya vazraka xšāyaθiya xšāyaθiyānām"
+  translation="I am Darius, the Great King, King of Kings."
+  provenance="Behistun Inscription §1 (DB I.1–2), c. 520 BCE; ed. Schmitt 1991 (CII Texts I, Part I); trans. Kent 1953"
+  refId={6}
+/>
+
 <Cited status="green">
-From the Behistun Inscription of Darius I (DB §1):<Ref id={5} />
-</Cited>
-
-<Cited status="red">
-> adam Dārayavauš xšāyaθiya vazraka xšāyaθiya xšāyaθiyānām
-</Cited>
-
-<Cited status="red">
-*adam Dārayavauš xšāyaθiya vazraka xšāyaθiya xšāyaθiyānām*
-</Cited>
-
-<Cited status="red">
-"I am Darius, the Great King, King of Kings."
+The Behistun inscription is trilingual (Old Persian, Elamite, Akkadian); Henry Rawlinson copied it at extreme risk on a sheer cliff face in 1835–1847, and his identification of Old Persian proper-name forms within the Akkadian column was the decisive breakthrough in the decipherment of all three scripts.<Ref id={7} /> Rüdiger Schmitt's *Corpus Inscriptionum Iranicarum* edition (1991) is the modern reference text; Prods Oktor Skjærvø's free Harvard teaching grammar makes the language accessible to non-specialists.<Ref id={2} />
 </Cited>
 
 ## Learning Resources
@@ -66,9 +67,12 @@ From the Behistun Inscription of Darius I (DB §1):<Ref id={5} />
 - **[Livius.org — Behistun](https://www.livius.org/articles/place/behistun/)** — Text and translation
 
 <References references={[
-  { id: 1, text: "*Roland Kent, Old Persian: Grammar, Texts, Lexicon*** — The standard reference" },
-  { id: 2, text: "*Prods Oktor Skjærvø, An Introduction to Old Persian*** (Harvard) — Free online teaching grammar" },
-  { id: 3, text: "*Rüdiger Schmitt, The Old Persian Inscriptions of Naqsh-i Rustam and Persepolis*** — Scholarly edition" },
-  { id: 4, text: "TITUS (Thesaurus Indogermanischer Text- und Sprachmaterialien) — Digital texts", url: "https://titus.fkidg1.uni-frankfurt.de/" },
-  { id: 5, text: "Livius.org — Behistun — Text and translation", url: "https://www.livius.org/articles/place/behistun/" },
+  { id: 1, text: "Roland G. Kent, Old Persian: Grammar, Texts, Lexicon (2nd ed., American Oriental Society, 1953) — Foundational English-language reference" },
+  { id: 2, text: "Prods Oktor Skjærvø, An Introduction to Old Persian (2nd ed., Harvard, 2002) — Free online teaching grammar", url: "https://sites.fas.harvard.edu/~iranian/OldPersian/" },
+  { id: 3, text: "Rüdiger Schmitt, The Bisitun Inscriptions of Darius the Great: Old Persian Text (Corpus Inscriptionum Iranicarum I.I.I, London, 1991) — Modern critical edition" },
+  { id: 4, text: "TITUS — Thesaurus Indogermanischer Text- und Sprachmaterialien (digital texts)", url: "https://titus.fkidg1.uni-frankfurt.de/" },
+  { id: 5, text: "Livius.org — Behistun: text, photographs, and translation", url: "https://www.livius.org/articles/place/behistun/" },
+  { id: 6, text: "Rüdiger Schmitt, Wörterbuch der altpersischen Königinschriften (Reichert, 2014) — Comprehensive royal-inscription lexicon" },
+  { id: 7, text: "Henry C. Rawlinson, 'The Persian Cuneiform Inscription at Behistun, Decyphered and Translated', JRAS 10 (1846) and 11 (1849) — Original decipherment publications" },
+  { id: 8, text: "Matthew W. Stolper, 'The Achaemenid Languages', in Karen Radner et al. (eds.), The Oxford History of the Ancient Near East, vol. V (2023) — Modern linguistic overview" },
 ]} />

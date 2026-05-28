@@ -4,13 +4,17 @@ description: "Egypt's 'Classical Age' — a period of reunification, literary fl
 period: "Middle Kingdom"
 region: "Egypt"
 dateRange: "c. 2055–1650 BCE"
-tags: ["Thebes", "literature", "Middle Egyptian", "Sinuhe"]
+tags: ["Thebes", "literature", "Middle Egyptian", "Sinuhe", "Senusret III"]
 sortOrder: 6
+lastReviewed: "2026-05-28"
+reviewers: ["editorial-team"]
+relatedLanguages: ["middle-egyptian"]
 ---
 
 import Ref from '../../components/Ref.astro';
 import References from '../../components/References.astro';
 import Cited from '../../components/Cited.astro';
+import PrimarySource from '../../components/PrimarySource.astro';
 
 ## Overview
 
@@ -54,6 +58,27 @@ The 12th Dynasty pharaohs pursued an active expansionist policy, building massiv
 The Second Intermediate Period (c. 1650–1550 BCE) saw Egypt again fragment, with the **Hyksos** — rulers of foreign origin, likely from the Levant — establishing the 15th Dynasty in the Delta. Their introduction of the horse-drawn chariot and composite bow would transform Egyptian warfare in the New Kingdom.
 </Cited>
 
+## The Opening of Sinuhe (primary source)
+
+<PrimarySource
+  original={`𓆛𓆛… źA pat ʾi m-ḫtw Smnw m-Itj-tʒwj`}
+  originalLang="egy"
+  transliteration="jrj-paʽt ḥātj-ʽ … Sa-nehet"
+  translation="The hereditary noble, count, royal sealbearer, sole companion… Sinuhe (Sa-nehet) says: I was a follower who followed his lord, a servant of the royal harem."
+  provenance="Papyrus Berlin 3022 (B-version), copy of c. 1850 BCE; ed. Koch 1990; trans. Parkinson 1997"
+  refId={6}
+/>
+
+<Cited status="green">
+The *Tale of Sinuhe* survives in ten papyri and seventeen ostraca — the most-copied Egyptian literary text — and was used as a scribal training text well into the New Kingdom.<Ref id={4} /> The narrative of an Egyptian courtier exiled to the Levant after Amenemhat I's assassination, his life among the Asiatics, and his joyful return home is the founding work of Egyptian narrative prose; Allen and Parkinson both treat it as a sustained meditation on identity, loyalty, and the ideology of Egyptian kingship.<Ref id={2} />
+</Cited>
+
+## Senusret III's Nubian Fortresses
+
+<Cited status="green">
+The Twelfth-Dynasty mud-brick fortress system along the Second Cataract — **Buhen, Mirgissa, Semna, Kumma, Uronarti, Askut** — is the most ambitious surviving infrastructure project of the Middle Kingdom. The Semna boundary stelae explicitly forbid any Nubian ("Nehesy") from crossing northward except for trade or diplomacy, and report that the king's name was set on a *southern* boundary stele "that you may fight for it".<Ref id={9} /> The fortresses were largely destroyed by the Aswan High Dam reservoir but were systematically surveyed and partially relocated by the 1960s UNESCO Nubian rescue campaign — the archive of which is now digitised at the Oriental Institute.<Ref id={10} />
+</Cited>
+
 ## Learning Resources
 
 - **Gae Callender, "The Middle Kingdom Renaissance"** in *The Oxford History of Ancient Egypt*
@@ -63,9 +88,14 @@ The Second Intermediate Period (c. 1650–1550 BCE) saw Egypt again fragment, wi
 - **[Thesaurus Linguae Aegyptiae (TLA)](https://thesaurus-linguae-aegyptiae.de/)** — Digital corpus of Egyptian texts
 
 <References references={[
-  { id: 1, text: "Gae Callender, \"The Middle Kingdom Renaissance\" in The Oxford History of Ancient Egypt" },
-  { id: 2, text: "*James P. Allen, Middle Egyptian: An Introduction to the Language and Culture of Hieroglyphs*** — The standard grammar textbook" },
-  { id: 3, text: "*Antonio Loprieno, Ancient Egyptian: A Linguistic Introduction*** — Scholarly linguistic overview" },
-  { id: 4, text: "*Richard Parkinson, The Tale of Sinuhe and Other Ancient Egyptian Poems*** — Accessible translations" },
+  { id: 1, text: "Gae Callender, 'The Middle Kingdom Renaissance' in Ian Shaw (ed.), The Oxford History of Ancient Egypt (rev. ed. 2003), ch. 7" },
+  { id: 2, text: "James P. Allen, Middle Egyptian: An Introduction to the Language and Culture of Hieroglyphs (3rd ed. Cambridge, 2014) — Standard grammar with extensive Middle Kingdom readings" },
+  { id: 3, text: "Antonio Loprieno, Ancient Egyptian: A Linguistic Introduction (Cambridge, 1995) — Scholarly linguistic overview" },
+  { id: 4, text: "Richard B. Parkinson, The Tale of Sinuhe and Other Ancient Egyptian Poems, 1940–1640 BC (Oxford World's Classics, 1997) — Accessible translations with commentary" },
   { id: 5, text: "Thesaurus Linguae Aegyptiae (TLA) — Digital corpus of Egyptian texts", url: "https://thesaurus-linguae-aegyptiae.de/" },
+  { id: 6, text: "Roland Koch, Die Erzählung des Sinuhe (Bibliotheca Aegyptiaca 17, 1990) — Critical synoptic edition of Sinuhe witnesses" },
+  { id: 7, text: "Wolfram Grajetzki, The Middle Kingdom of Ancient Egypt: History, Archaeology and Society (Duckworth, 2006) — Modern monograph synthesis" },
+  { id: 8, text: "Richard B. Parkinson, Reading Ancient Egyptian Poetry: Among Other Histories (Wiley-Blackwell, 2009) — Literary criticism of Middle Kingdom poems" },
+  { id: 9, text: "Stuart Tyson Smith, Askut in Nubia: The Economics and Ideology of Egyptian Imperialism (Kegan Paul, 1995) — Standard fortress study" },
+  { id: 10, text: "Oriental Institute Nubian Expedition Archives, University of Chicago — Field reports and photography from the 1960s UNESCO campaign", url: "https://oi.uchicago.edu/research/projects/oriental-institute-nubian-expedition-oine" },
 ]} />

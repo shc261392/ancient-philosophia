@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import Search from './Search.astro';
 
 const currentPath = Astro.url.pathname;
 
@@ -48,6 +49,7 @@ const links = [
 
       <!-- Mobile menu button -->
       <div class="flex items-center gap-1">
+        <div class="hidden sm:block"><Search /></div>
         <ThemeToggle />
         <button
         id="mobile-menu-btn"

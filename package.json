@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist/client --output-subdir _pagefind",
     "preview": "astro preview",
     "check": "astro check",
     "deploy": "astro build && dotenvx run -f .env.production -- wrangler deploy",
@@ -29,6 +29,7 @@
     "@lhci/cli": "^0.15.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
+    "pagefind": "^1.5.2",
     "tailwindcss": "^4.2.2",
     "wrangler": "^4.0.0"
   }

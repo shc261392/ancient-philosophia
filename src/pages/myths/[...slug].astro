@@ -43,7 +43,7 @@ const categoryLabels: Record<string, string> = {
   description={myth.data.description}
   type="article"
 >
-  <article class="max-w-4xl mx-auto">
+  <article class="max-w-4xl mx-auto" data-pagefind-body data-pagefind-meta={`title:${myth.data.title}`}>
     <header class="mb-8">
       <div class="flex flex-wrap gap-2 mb-4 text-sm">
         <span class="bg-[var(--color-bg-tertiary)] px-3 py-1 rounded text-[var(--color-fg-secondary)]">

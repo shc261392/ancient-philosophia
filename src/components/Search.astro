@@ -1,0 +1,160 @@
+---
+// Full-text site search powered by Pagefind. Index is generated at build time
+// into /_pagefind and lazy-loaded on first interaction.
+---
+
+<div class="search-root" data-search-root>
+	<button
+		type="button"
+		class="search-trigger"
+		data-search-open
+		aria-label="Open site search"
+		aria-haspopup="dialog"
+	>
+		<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" width="16" height="16">
+			<circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"></circle>
+			<path d="m14 14 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+		</svg>
+		<span>Search</span>
+		<kbd>/</kbd>
+	</button>
+
+	<dialog class="search-dialog" data-search-dialog aria-label="Site search">
+		<div class="search-dialog-inner">
+			<div id="pagefind-container"></div>
+		</div>
+	</dialog>
+</div>
+
+<style>
+	.search-trigger {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.4rem 0.75rem;
+		background: var(--color-bg-tertiary);
+		color: var(--color-fg-secondary);
+		border: 1px solid color-mix(in oklab, var(--color-fg-muted) 30%, transparent);
+		border-radius: 0.5rem;
+		font: inherit;
+		font-size: 0.85rem;
+		cursor: pointer;
+		transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+	}
+	.search-trigger:hover,
+	.search-trigger:focus-visible {
+		background: var(--color-bg-card);
+		color: var(--color-fg-primary);
+		border-color: var(--color-gold-leaf);
+	}
+	.search-trigger kbd {
+		padding: 0 0.35rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.7rem;
+		background: color-mix(in oklab, var(--color-fg-muted) 25%, transparent);
+		border-radius: 0.25rem;
+		color: var(--color-fg-secondary);
+	}
+
+	.search-dialog {
+		width: min(640px, 92vw);
+		max-height: 80vh;
+		padding: 0;
+		border: 1px solid color-mix(in oklab, var(--color-gold-leaf) 35%, transparent);
+		border-radius: 0.75rem;
+		background: var(--color-bg-secondary);
+		color: var(--color-fg-primary);
+		box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+	}
+	.search-dialog::backdrop {
+		background: rgba(0, 0, 0, 0.55);
+		backdrop-filter: blur(2px);
+	}
+	.search-dialog-inner {
+		padding: 1rem;
+		max-height: 80vh;
+		overflow: auto;
+	}
+
+	/* Pagefind UI theming overrides */
+	#pagefind-container :global(.pagefind-ui) {
+		--pagefind-ui-scale: 0.9;
+		--pagefind-ui-primary: var(--color-gold-leaf);
+		--pagefind-ui-text: var(--color-fg-primary);
+		--pagefind-ui-background: var(--color-bg-secondary);
+		--pagefind-ui-border: color-mix(in oklab, var(--color-fg-muted) 30%, transparent);
+		--pagefind-ui-tag: var(--color-bg-tertiary);
+		--pagefind-ui-border-width: 1px;
+		--pagefind-ui-border-radius: 0.5rem;
+		--pagefind-ui-image-border-radius: 0.5rem;
+		--pagefind-ui-font: inherit;
+	}
+</style>
+
+<script>
+	const root = document.querySelector<HTMLElement>("[data-search-root]");
+	if (root) {
+		const trigger = root.querySelector<HTMLButtonElement>("[data-search-open]")!;
+		const dialog = root.querySelector<HTMLDialogElement>("[data-search-dialog]")!;
+		const container = dialog.querySelector<HTMLDivElement>("#pagefind-container")!;
+		let initialized = false;
+
+		async function ensurePagefind() {
+			if (initialized) return;
+			initialized = true;
+			try {
+				const link = document.createElement("link");
+				link.rel = "stylesheet";
+				link.href = "/_pagefind/pagefind-ui.css";
+				document.head.appendChild(link);
+				await new Promise<void>((resolve, reject) => {
+					const s = document.createElement("script");
+					s.src = "/_pagefind/pagefind-ui.js";
+					s.onload = () => resolve();
+					s.onerror = () => reject(new Error("Failed to load pagefind-ui.js"));
+					document.head.appendChild(s);
+				});
+				const PagefindUI = (window as any).PagefindUI;
+				if (!PagefindUI) throw new Error("PagefindUI global missing");
+				new PagefindUI({
+					element: "#pagefind-container",
+					showSubResults: true,
+					resetStyles: false,
+					showImages: false,
+					autofocus: true,
+				});
+			} catch (err) {
+				container.innerHTML =
+					'<p style="padding:1rem;color:var(--color-fg-secondary);">Search index not yet built. Run <code>pnpm build</code> to generate it.</p>';
+				console.warn("Pagefind not available:", err);
+			}
+		}
+
+		function openDialog() {
+			ensurePagefind();
+			if (!dialog.open) dialog.showModal();
+		}
+
+		trigger.addEventListener("click", openDialog);
+
+		document.addEventListener("keydown", (e) => {
+			const target = e.target as HTMLElement | null;
+			const isTyping =
+				target &&
+				(target.tagName === "INPUT" ||
+					target.tagName === "TEXTAREA" ||
+					target.isContentEditable);
+			if (e.key === "/" && !isTyping && !dialog.open) {
+				e.preventDefault();
+				openDialog();
+			}
+			if (e.key === "Escape" && dialog.open) {
+				dialog.close();
+			}
+		});
+
+		dialog.addEventListener("click", (e) => {
+			if (e.target === dialog) dialog.close();
+		});
+	}
+</script>

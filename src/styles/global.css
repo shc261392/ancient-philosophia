@@ -88,6 +88,12 @@ html[data-theme='light'] {
   --color-link: #8B3A2A;
   --color-link-hover: #5b6622;
   --color-heading: #8B3A2A;
+  /* AA-contrast overrides for accent colors on light cream backgrounds */
+  --color-gold-leaf: #7a5a00;
+  --color-terracotta: #9b3c2a;
+  --color-terracotta-light: #8b3a2a;
+  --color-aegean: #1f4f5e;
+  --color-bronze: #4d5a1e;
 }
 
 /* Scroll offset for sticky header when jumping to anchors */

@@ -18,8 +18,7 @@
 <script is:inline>
   (function() {
     const stored = localStorage.getItem('theme');
-    const sysLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    const theme = stored || (sysLight ? 'light' : 'dark');
+    const theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
     document.documentElement.dataset.theme = theme;
   })();
 </script>

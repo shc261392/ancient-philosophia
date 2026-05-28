@@ -20,7 +20,7 @@
         ticking = true;
       }
     }, { passive: true });
-    update();
+    requestAnimationFrame(update);
   }
   setup();
   document.addEventListener('astro:after-swap', setup);

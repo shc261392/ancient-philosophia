@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  forCivilization?: string;
+  forLanguage?: string;
+}
+
+const { forCivilization, forLanguage } = Astro.props;
+
+let relatedLangs: any[] = [];
+let relatedCivs: any[] = [];
+let relatedMyths: any[] = [];
+let relatedPoems: any[] = [];
+
+if (forCivilization) {
+  const langs = await getCollection('languages');
+  relatedLangs = langs.filter(l => (l.data as any).relatedCivilizations?.includes(forCivilization));
+  const myths = await getCollection('myths');
+  relatedMyths = myths.filter(m => m.data.relatedCivilizations?.includes(forCivilization));
+  const poems = await getCollection('poems');
+  relatedPoems = poems.filter(p => p.data.relatedCivilizations?.includes(forCivilization));
+}
+
+if (forLanguage) {
+  const civs = await getCollection('civilizations');
+  relatedCivs = civs.filter(c => (c.data as any).relatedLanguages?.includes(forLanguage));
+}
+
+const hasAny = relatedLangs.length + relatedCivs.length + relatedMyths.length + relatedPoems.length > 0;
+---
+
+{hasAny && (
+  <section class="mt-12 pt-8 border-t border-[var(--color-bg-tertiary)]">
+    <h2 class="text-xl font-serif text-[var(--color-gold-leaf)] mb-4">Related</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {relatedLangs.map(l => (
+        <a href={`/languages/${l.id}/`} class="block p-3 rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-colors">
+          <div class="text-xs text-[var(--color-fg-muted)]">Language</div>
+          <div class="text-[var(--color-gold-leaf)] font-serif">{l.data.title}</div>
+        </a>
+      ))}
+      {relatedCivs.map(c => (
+        <a href={`/civilizations/${c.id}/`} class="block p-3 rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-colors">
+          <div class="text-xs text-[var(--color-fg-muted)]">Civilization</div>
+          <div class="text-[var(--color-gold-leaf)] font-serif">{c.data.title}</div>
+        </a>
+      ))}
+      {relatedMyths.slice(0, 6).map(m => (
+        <a href={`/myths/${m.id}/`} class="block p-3 rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-colors">
+          <div class="text-xs text-[var(--color-fg-muted)]">Myth · {m.data.category}</div>
+          <div class="text-[var(--color-gold-leaf)] font-serif">{m.data.title}</div>
+        </a>
+      ))}
+      {relatedPoems.slice(0, 6).map(p => (
+        <a href={`/poems/${p.id}/`} class="block p-3 rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-colors">
+          <div class="text-xs text-[var(--color-fg-muted)]">Poem · {p.data.category}</div>
+          <div class="text-[var(--color-gold-leaf)] font-serif">{p.data.title}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

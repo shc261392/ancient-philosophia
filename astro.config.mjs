@@ -9,11 +9,25 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
 	site: "https://ancient-philosophia.org",
 	output: "static",
+	prefetch: {
+		prefetchAll: false,
+		defaultStrategy: "hover",
+	},
 	adapter: cloudflare({
 		imageService: "passthrough",
 	}),
-	integrations: [sitemap(), mdx()],
+	integrations: [
+		sitemap({
+			changefreq: "monthly",
+			priority: 0.7,
+			lastmod: new Date(),
+		}),
+		mdx(),
+	],
 	vite: {
 		plugins: [tailwindcss()],
+		build: {
+			cssCodeSplit: true,
+		},
 	},
 });

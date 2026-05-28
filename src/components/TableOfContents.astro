@@ -1,0 +1,73 @@
+---
+export interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+export interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+const filtered = headings.filter(h => h.depth >= 2 && h.depth <= 3);
+---
+
+{filtered.length > 0 && (
+  <aside class="toc-sidebar hidden xl:block fixed top-24 right-6 w-60 max-h-[calc(100vh-8rem)] overflow-y-auto text-sm">
+    <div class="text-xs font-semibold text-[var(--color-fg-muted)] uppercase tracking-wider mb-3">On this page</div>
+    <ul class="space-y-1.5 border-l border-[var(--color-bg-tertiary)] pl-3">
+      {filtered.map(h => (
+        <li style={`padding-left: ${(h.depth - 2) * 0.75}rem`}>
+          <a
+            href={`#${h.slug}`}
+            data-toc-link={h.slug}
+            class="block text-[var(--color-fg-muted)] hover:text-[var(--color-link)] transition-colors py-0.5 leading-snug"
+          >{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </aside>
+
+  <details class="xl:hidden bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] rounded-lg mb-6">
+    <summary class="cursor-pointer px-4 py-3 text-sm font-semibold text-[var(--color-fg-muted)] uppercase tracking-wider">On this page</summary>
+    <ul class="px-4 pb-4 space-y-1.5 text-sm">
+      {filtered.map(h => (
+        <li style={`padding-left: ${(h.depth - 2) * 0.75}rem`}>
+          <a href={`#${h.slug}`} class="block text-[var(--color-fg-secondary)] hover:text-[var(--color-link)]">{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </details>
+)}
+
+<script>
+  function setupTOC() {
+    const links = document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]');
+    if (!links.length) return;
+    const map = new Map<string, HTMLAnchorElement>();
+    links.forEach(a => map.set(a.dataset.tocLink!, a));
+    const headings = Array.from(map.keys())
+      .map(id => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (!headings.length) return;
+
+    const activate = (slug: string) => {
+      links.forEach(a => a.classList.remove('text-[var(--color-gold-leaf)]', 'font-semibold'));
+      const a = map.get(slug);
+      a?.classList.add('text-[var(--color-gold-leaf)]', 'font-semibold');
+    };
+
+    const io = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting);
+      if (visible.length) {
+        visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        activate(visible[0].target.id);
+      }
+    }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+
+    headings.forEach(h => io.observe(h));
+  }
+  setupTOC();
+  document.addEventListener('astro:after-swap', setupTOC);
+</script>

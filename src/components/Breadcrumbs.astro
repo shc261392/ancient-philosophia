@@ -1,0 +1,43 @@
+---
+export interface Crumb {
+  label: string;
+  href?: string;
+}
+
+export interface Props {
+  trail: Crumb[];
+}
+
+const { trail } = Astro.props;
+const site = Astro.site?.href.replace(/\/$/, '') ?? '';
+
+const itemListElement = trail.map((c, i) => ({
+  '@type': 'ListItem',
+  position: i + 1,
+  name: c.label,
+  ...(c.href ? { item: `${site}${c.href}` } : {}),
+}));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement,
+};
+---
+
+<nav aria-label="Breadcrumb" class="mb-6 text-sm text-[var(--color-fg-muted)]">
+  <ol class="flex flex-wrap items-center gap-1.5">
+    {trail.map((c, i) => (
+      <li class="flex items-center gap-1.5">
+        {i > 0 && <span aria-hidden="true" class="text-[var(--color-fg-muted)]/60">›</span>}
+        {c.href ? (
+          <a href={c.href} class="hover:text-[var(--color-link)] transition-colors">{c.label}</a>
+        ) : (
+          <span class="text-[var(--color-fg-secondary)]" aria-current="page">{c.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

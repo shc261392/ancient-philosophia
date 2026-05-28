@@ -1,0 +1,35 @@
+---
+/**
+ * Displays a primary-source quotation with provenance: original script,
+ * transliteration, translation, and source citation.
+ */
+export interface Props {
+  original?: string;
+  originalLang?: string;
+  transliteration?: string;
+  translation: string;
+  provenance: string;
+  refId?: number;
+}
+
+const { original, originalLang, transliteration, translation, provenance, refId } = Astro.props;
+---
+
+<figure class="primary-source my-6 rounded-lg border border-[var(--color-bronze)]/40 bg-[var(--color-bg-card)] p-5">
+  <div class="text-xs uppercase tracking-wider text-[var(--color-bronze-light)] mb-3">Primary source</div>
+  {original && (
+    <p
+      lang={originalLang}
+      class="ancient-text text-xl leading-relaxed mb-2 text-[var(--color-marble)]"
+    >{original}</p>
+  )}
+  {transliteration && (
+    <p class="italic text-[var(--color-fg-secondary)] mb-2">{transliteration}</p>
+  )}
+  <blockquote class="text-[var(--color-fg-primary)] border-l-2 border-[var(--color-terracotta)]/60 pl-3 my-2">
+    {translation}
+  </blockquote>
+  <figcaption class="text-xs text-[var(--color-fg-muted)] mt-3">
+    — {provenance}{refId !== undefined && <a href={`#ref-${refId}`} class="citation-ref ml-1">[{refId}]</a>}
+  </figcaption>
+</figure>

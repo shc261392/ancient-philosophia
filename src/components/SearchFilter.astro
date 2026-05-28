@@ -1,0 +1,96 @@
+---
+export interface Props {
+  facets: { key: string; label: string; values: string[] }[];
+  placeholder?: string;
+}
+
+const { facets, placeholder = 'Filter…' } = Astro.props;
+---
+
+<div class="search-filter mb-8 sticky top-16 z-30 bg-[var(--color-bg-primary)]/95 backdrop-blur-sm py-3 -mx-2 px-2">
+  <label class="block">
+    <span class="sr-only">Search</span>
+    <input
+      type="search"
+      id="filter-input"
+      placeholder={placeholder}
+      class="w-full rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-bg-tertiary)] focus:border-[var(--color-gold-leaf)] focus:outline-none px-4 py-2.5 text-[var(--color-fg-primary)] placeholder:text-[var(--color-fg-muted)]"
+    />
+  </label>
+  {facets.length > 0 && (
+    <div class="flex flex-wrap gap-2 mt-3">
+      {facets.map(f => (
+        <div class="flex flex-wrap gap-1.5 items-center">
+          <span class="text-xs uppercase tracking-wider text-[var(--color-fg-muted)] mr-1">{f.label}:</span>
+          {f.values.map(v => (
+            <button
+              type="button"
+              data-facet={f.key}
+              data-value={v}
+              class="text-xs px-2.5 py-1 rounded-full bg-[var(--color-bg-tertiary)] text-[var(--color-fg-secondary)] hover:bg-[var(--color-attic-red)]/30 transition-colors filter-chip"
+            >{v}</button>
+          ))}
+        </div>
+      ))}
+    </div>
+  )}
+  <div id="filter-count" class="text-xs text-[var(--color-fg-muted)] mt-2"></div>
+</div>
+
+<script>
+  function setupFilter() {
+    const input = document.getElementById('filter-input') as HTMLInputElement | null;
+    const chips = document.querySelectorAll<HTMLButtonElement>('.filter-chip');
+    const counter = document.getElementById('filter-count');
+    if (!input) return;
+
+    const active: Record<string, Set<string>> = {};
+    const cards = () => document.querySelectorAll<HTMLElement>('[data-filterable]');
+
+    function apply() {
+      const q = input?.value.trim().toLowerCase() ?? '';
+      let shown = 0, total = 0;
+      cards().forEach(card => {
+        total++;
+        const haystack = (card.dataset.haystack || card.textContent || '').toLowerCase();
+        const matchesQuery = !q || haystack.includes(q);
+        let matchesFacets = true;
+        for (const [key, vals] of Object.entries(active)) {
+          if (vals.size === 0) continue;
+          const cardVals = (card.dataset[key] || '').split('|').filter(Boolean);
+          if (!cardVals.some(v => vals.has(v))) matchesFacets = false;
+        }
+        const visible = matchesQuery && matchesFacets;
+        card.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+      document.querySelectorAll<HTMLElement>('[data-filter-section]').forEach(sec => {
+        const any = sec.querySelectorAll<HTMLElement>('[data-filterable]:not([style*="display: none"])').length;
+        sec.style.display = any ? '' : 'none';
+      });
+      if (counter) counter.textContent = shown === total ? '' : `${shown} of ${total} shown`;
+    }
+
+    input.addEventListener('input', apply);
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const key = chip.dataset.facet!;
+        const val = chip.dataset.value!;
+        active[key] ||= new Set();
+        if (active[key].has(val)) {
+          active[key].delete(val);
+          chip.classList.remove('bg-[var(--color-terracotta)]', 'text-white');
+          chip.classList.add('bg-[var(--color-bg-tertiary)]');
+        } else {
+          active[key].add(val);
+          chip.classList.add('bg-[var(--color-terracotta)]', 'text-white');
+          chip.classList.remove('bg-[var(--color-bg-tertiary)]');
+        }
+        apply();
+      });
+    });
+    apply();
+  }
+  setupFilter();
+  document.addEventListener('astro:after-swap', setupFilter);
+</script>

@@ -16,6 +16,9 @@ const civilizations = defineCollection({
 		image: z.string().optional(),
 		tags: z.array(z.string()).default([]),
 		sortOrder: z.number().default(0),
+		lastReviewed: z.string().optional(),
+		reviewers: z.array(z.string()).default([]),
+		relatedLanguages: z.array(z.string()).default([]),
 	}),
 });
 
@@ -38,6 +41,9 @@ const languages = defineCollection({
 			.default("reconstructed"),
 		tags: z.array(z.string()).default([]),
 		sortOrder: z.number().default(0),
+		lastReviewed: z.string().optional(),
+		reviewers: z.array(z.string()).default([]),
+		relatedCivilizations: z.array(z.string()).default([]),
 	}),
 });
 
@@ -71,6 +77,8 @@ const myths = defineCollection({
 		relatedCivilizations: z.array(z.string()).default([]),
 		tags: z.array(z.string()).default([]),
 		sortOrder: z.number().default(0),
+		lastReviewed: z.string().optional(),
+		reviewers: z.array(z.string()).default([]),
 	}),
 });
 

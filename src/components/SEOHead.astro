@@ -1,4 +1,9 @@
 ---
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
 export interface Props {
   title: string;
   description: string;
@@ -7,6 +12,9 @@ export interface Props {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  author?: string;
+  section?: string;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const {
@@ -17,11 +25,68 @@ const {
   type = 'website',
   publishedTime,
   modifiedTime,
+  author,
+  section,
+  breadcrumbs,
 } = Astro.props;
 
 const siteName = 'Ancient Philosophia';
 const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
 const imageUrl = new URL(image, Astro.site).href;
+const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteName,
+  url: Astro.site?.href,
+  description: 'Open educational resource for ancient history and language learning: from Sumer to Rome.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: siteName,
+  url: Astro.site?.href,
+  logo: new URL('/favicon.svg', Astro.site).href,
+};
+
+const articleSchema = type === 'article' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: imageUrl,
+  url: canonical,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
+  ...(publishedTime ? { datePublished: publishedTime } : {}),
+  ...(modifiedTime ? { dateModified: modifiedTime } : {}),
+  ...(author ? { author: { '@type': 'Person', name: author } } : { author: { '@type': 'Organization', name: siteName } }),
+  ...(section ? { articleSection: section } : {}),
+  publisher: {
+    '@type': 'EducationalOrganization',
+    name: siteName,
+    logo: { '@type': 'ImageObject', url: new URL('/favicon.svg', Astro.site).href },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+} : null;
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.label,
+    ...(c.href ? { item: `${siteUrl}${c.href}` } : {}),
+  })),
+} : null;
 ---
 
 <!-- Primary Meta Tags -->
@@ -30,28 +95,42 @@ const imageUrl = new URL(image, Astro.site).href;
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+{author && <meta name="author" content={author} />}
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#0f0f14" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f7f3ea" media="(prefers-color-scheme: light)" />
 <link rel="canonical" href={canonical} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- Google Fonts: Noto families for ancient scripts -->
+<!-- Fonts: preconnect + critical fonts synchronous, ancient scripts async -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans+Cuneiform&family=Noto+Sans+Cypriot&family=Noto+Sans+Linear+A&family=Noto+Sans+Linear+B&family=Noto+Sans+Phoenician&family=Noto+Sans+Old+Persian&family=Noto+Sans+Imperial+Aramaic&family=Noto+Sans+Coptic&family=Noto+Sans+Old+Italic&family=Noto+Sans+Anatolian+Hieroglyphs&family=Noto+Sans+Lycian&family=Noto+Sans+Lydian&family=Noto+Sans+Carian&display=swap"
   rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;500;700&display=swap"
 />
+<link
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans+Cuneiform&family=Noto+Sans+Cypriot&family=Noto+Sans+Linear+A&family=Noto+Sans+Linear+B&family=Noto+Sans+Phoenician&family=Noto+Sans+Old+Persian&family=Noto+Sans+Imperial+Aramaic&family=Noto+Sans+Coptic&family=Noto+Sans+Old+Italic&family=Noto+Sans+Anatolian+Hieroglyphs&family=Noto+Sans+Lycian&family=Noto+Sans+Lydian&family=Noto+Sans+Carian&display=swap"
+/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans+Cuneiform&display=swap" /></noscript>
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageUrl} />
+<meta property="og:image:alt" content={title} />
 <meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_US" />
 {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+{section && <meta property="article:section" content={section} />}
+{author && <meta property="article:author" content={author} />}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -59,12 +138,10 @@ const imageUrl = new URL(image, Astro.site).href;
 <meta property="twitter:title" content={fullTitle} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageUrl} />
+<meta property="twitter:image:alt" content={title} />
 
-<!-- Structured Data: WebSite -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": siteName,
-  "url": Astro.site?.href,
-  "description": "Open educational resource for ancient history and language learning: from Sumer to Rome.",
-})} />
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}

@@ -1,0 +1,44 @@
+---
+import healthReport from '../../scripts/citation-health-report.json';
+
+export interface Props {
+  collection: string;
+  slug: string;
+}
+
+const { collection, slug } = Astro.props;
+const key = `${collection}/${slug}.mdx`;
+const entry = (healthReport as any).files.find((f: any) => f.file === key);
+
+const score = entry?.health_score ?? null;
+const level = score === null ? null
+  : score >= 80 ? 'strong'
+  : score >= 60 ? 'moderate'
+  : 'weak';
+
+const labels: Record<string, string> = {
+  strong: 'Sources verified',
+  moderate: 'Sources partial',
+  weak: 'Needs sourcing',
+};
+
+const colors: Record<string, string> = {
+  strong: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40',
+  moderate: 'bg-amber-500/15 text-amber-300 border-amber-500/40',
+  weak: 'bg-red-500/15 text-red-300 border-red-500/40',
+};
+---
+
+{level && (
+  <a
+    href="/methodology/"
+    class:list={[
+      'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border transition-opacity hover:opacity-90',
+      colors[level],
+    ]}
+    title={`${entry.green_paragraphs} green + ${entry.yellow_paragraphs} yellow + ${entry.red_paragraphs} red blocks, ${entry.references_count} references. See methodology.`}
+  >
+    <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+    <span>{labels[level]}: {Math.round(score)}%</span>
+  </a>
+)}

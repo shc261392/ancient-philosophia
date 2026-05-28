@@ -74,6 +74,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Light theme override (manual toggle) */
+html[data-theme='light'] {
+  color-scheme: light;
+  --color-bg-primary: #f7f3ea;
+  --color-bg-secondary: #efe7d4;
+  --color-bg-tertiary: #e1d6bd;
+  --color-bg-card: #fbf6e8;
+  --color-fg-primary: #2a1f12;
+  --color-fg-secondary: #4a3c2a;
+  --color-fg-muted: #6a5a45;
+  --color-marble: #2a1f12;
+  --color-link: #8B3A2A;
+  --color-link-hover: #5b6622;
+  --color-heading: #8B3A2A;
+}
+
+/* Scroll offset for sticky header when jumping to anchors */
+:target,
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+  scroll-margin-top: 5rem;
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-fg-primary);

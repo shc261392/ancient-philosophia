@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import healthReport from '../../scripts/citation-health-report.json';
+
+const summary = (healthReport as any).summary;
+const meta = (healthReport as any).meta;
+const files = (healthReport as any).files as any[];
+
+const top = [...files].sort((a, b) => b.health_score - a.health_score).slice(0, 10);
+const bottom = [...files].sort((a, b) => a.health_score - b.health_score).slice(0, 10);
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Methodology' },
+];
+---
+
+<BaseLayout
+  title="Methodology & Citation Quality"
+  description="How Ancient Philosophia evaluates and tracks the citation quality of every article using a cross-encoder semantic similarity model."
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumbs trail={breadcrumbs} />
+
+  <article class="max-w-4xl mx-auto prose prose-lg">
+    <h1>Methodology</h1>
+    <p>
+      Every paragraph on this site is wrapped in a <code>&lt;Cited&gt;</code> block with one of three
+      status colours. After each writing pass, an automated evaluator scores how well the cited
+      references actually support the text.
+    </p>
+
+    <h2 id="the-three-colours">The three colours</h2>
+    <ul>
+      <li><strong style="color:#22c55e">Green — Well-cited.</strong> Directly sourced from credible academic works. Phrasing changes only; no semantic drift.</li>
+      <li><strong style="color:#eab308">Yellow — Derived from sources.</strong> Synthesised or interpreted from references; may not be fully accurate.</li>
+      <li><strong style="color:#ef4444">Red — Needs citation.</strong> Poor or missing citation. Treat with caution.</li>
+    </ul>
+
+    <h2 id="how-we-verify">How we verify</h2>
+    <p>
+      A <a href="https://huggingface.co/cross-encoder/stsb-roberta-base">cross-encoder STS model</a>
+      (<code>{meta.model}</code>, {meta.sts_accuracy} STSbenchmark accuracy) scores semantic similarity
+      between each paragraph and every reference in the file. The script lives at
+      <code><a href="https://github.com/ancientphilosophia/ancient-philosophia/blob/main/scripts/citation-health-evaluator.py">scripts/citation-health-evaluator.py</a></code>
+      and runs as a CI quality gate.
+    </p>
+
+    <h3 id="thresholds">Thresholds</h3>
+    <table>
+      <thead><tr><th>Band</th><th>Score</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Strong</strong></td><td>≥ {meta.strong_threshold}</td><td>Clear semantic connection</td></tr>
+        <tr><td><strong>Moderate</strong></td><td>≥ {meta.green_pass_threshold}</td><td>Sufficient topical overlap to validate a green block</td></tr>
+        <tr><td><strong>Weak</strong></td><td>≥ {meta.weak_threshold}</td><td>Marginal — yellow at best</td></tr>
+        <tr><td><strong>Invalid</strong></td><td>&lt; {meta.weak_threshold}</td><td>No meaningful connection; downgraded</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="current-snapshot">Current snapshot</h2>
+    <p>
+      Last run: {new Date(meta.timestamp).toLocaleString()}.
+    </p>
+    <ul>
+      <li><strong>{summary.files_evaluated}</strong> articles evaluated</li>
+      <li>Average health: <strong>{summary.average_health}%</strong> · median <strong>{summary.median_health}%</strong></li>
+      <li>Green blocks: <strong>{summary.total_green}</strong> ({summary.green_pass} pass, {summary.green_fail} fail)</li>
+      <li>Yellow blocks: <strong>{summary.total_yellow}</strong> ({summary.yellow_covered} covered, {summary.yellow_uncovered} uncovered)</li>
+      <li><strong>{summary.passing_files}</strong> files at ≥80% · <strong>{summary.weak_files}</strong> weak · <strong>{summary.failing_files}</strong> failing</li>
+    </ul>
+
+    <h3 id="strongest">Strongest articles</h3>
+    <ol>
+      {top.map(f => <li>{f.file} — <strong>{Math.round(f.health_score)}%</strong></li>)}
+    </ol>
+
+    <h3 id="weakest">Most in need of help</h3>
+    <ol>
+      {bottom.map(f => <li>{f.file} — <strong>{Math.round(f.health_score)}%</strong></li>)}
+    </ol>
+
+    <h2 id="sourcing-policy">Sourcing policy</h2>
+    <ul>
+      <li>Prefer peer-reviewed monographs and major digital projects (ORACC, CDLI, Perseus, Logeion, Hethitologie Portal, ETCSL, Pleiades, TLA).</li>
+      <li>Primary-source quotations include the original script, transliteration, translation, and a publication reference.</li>
+      <li>Every link in <code>&lt;References&gt;</code> is checked for HTTP health by a separate CI step.</li>
+      <li>External content is attributed and retains its original licence; site code is GPL-3.0.</li>
+    </ul>
+
+    <h2 id="contribute">Contribute</h2>
+    <p>
+      Found a paragraph that should be downgraded, or a reference that better supports an existing
+      claim? Every article has an <em>Edit on GitHub</em> link. Pull requests run the same
+      cross-encoder evaluator and must keep the file at 60% or higher.
+    </p>
+  </article>
+</BaseLayout>

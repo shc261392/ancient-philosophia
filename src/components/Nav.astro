@@ -1,16 +1,18 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 const currentPath = Astro.url.pathname;
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/civilizations/', label: 'Civilizations' },
   { href: '/languages/', label: 'Languages' },
+  { href: '/timeline/', label: 'Timeline' },
   { href: '/artifacts/', label: 'Artifacts' },
   { href: '/myths/', label: 'Myths' },
   { href: '/poems/', label: 'Poems' },
-  { href: '/mindmap/', label: 'Mindmap' },
   { href: '/resources/', label: 'Resources' },
-  { href: '/roadmap/', label: 'Roadmap' },
+  { href: '/methodology/', label: 'Methodology' },
   { href: '/faq/', label: 'FAQ' },
 ];
 ---
@@ -45,7 +47,9 @@ const links = [
       </ul>
 
       <!-- Mobile menu button -->
-      <button
+      <div class="flex items-center gap-1">
+        <ThemeToggle />
+        <button
         id="mobile-menu-btn"
         class="md:hidden p-2 rounded-md text-[var(--color-fg-secondary)] hover:text-[var(--color-fg-primary)] hover:bg-[var(--color-bg-tertiary)]"
         aria-label="Toggle menu"
@@ -55,6 +59,7 @@ const links = [
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+      </div>
     </div>
 
     <!-- Mobile nav -->

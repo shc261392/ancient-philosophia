@@ -6,12 +6,24 @@ export interface Props {
   period?: string;
   region?: string;
   tags?: string[];
+  filter?: Record<string, string | string[]>;
 }
 
-const { title, description, href, period, region, tags = [] } = Astro.props;
+const { title, description, href, period, region, tags = [], filter = {} } = Astro.props;
+const haystack = [title, description, period, region, ...tags].filter(Boolean).join(' ');
+const filterAttrs: Record<string, string> = {};
+for (const [k, v] of Object.entries(filter)) {
+  filterAttrs[`data-${k}`] = Array.isArray(v) ? v.join('|') : v;
+}
 ---
 
-<a href={href} class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-all hover:glow-accent">
+<a
+  href={href}
+  data-filterable
+  data-haystack={haystack}
+  {...filterAttrs}
+  class="group block bg-[var(--color-bg-card)] rounded-xl p-6 border border-[var(--color-bg-tertiary)] hover:border-[var(--color-terracotta)]/40 transition-all hover:glow-accent"
+>
   <h3 class="font-serif text-lg text-[var(--color-gold-leaf)] group-hover:text-[var(--color-gold-light)] transition-colors mb-2">
     {title}
   </h3>

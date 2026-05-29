@@ -474,6 +474,31 @@ def main():
     report_path = Path(__file__).resolve().parent / "citation-health-report.json"
     report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\nDetailed report saved to: {report_path}")
+
+    # Also emit a compact, repo-committed summary (per-file health, no per-paragraph dump).
+    summary_files = sorted(
+        (
+            {
+                "file": f["file"],
+                "health_score": f["health_score"],
+                "paragraphs": {
+                    "total": f["total_paragraphs"],
+                    "green": f["green_paragraphs"],
+                    "yellow": f["yellow_paragraphs"],
+                    "red": f["red_paragraphs"],
+                },
+                "green": {"pass": f["green_pass"], "fail": f["green_fail"]},
+                "yellow": {"covered": f["yellow_covered"], "uncovered": f["yellow_uncovered"]},
+                "references": f["references_count"],
+            }
+            for f in all_results
+        ),
+        key=lambda x: (x["health_score"], x["file"]),
+    )
+    summary_doc = {"meta": report["meta"], "summary": report["summary"], "files": summary_files}
+    summary_path = Path(__file__).resolve().parent / "citation-health-summary.json"
+    summary_path.write_text(json.dumps(summary_doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Compact summary saved to:  {summary_path}")
     print("=" * 72)
 
 

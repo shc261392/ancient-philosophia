@@ -1,0 +1,2328 @@
+{
+  "meta": {
+    "model": "cross-encoder/stsb-roberta-base",
+    "sts_accuracy": "90.17%",
+    "green_pass_threshold": 0.25,
+    "yellow_coverage_threshold": 0.2,
+    "strong_threshold": 0.4,
+    "weak_threshold": 0.12,
+    "timestamp": "2026-05-29T02:54:08"
+  },
+  "summary": {
+    "files_evaluated": 121,
+    "average_health": 95.1,
+    "median_health": 100,
+    "min_health": 71.4,
+    "max_health": 100,
+    "total_green": 547,
+    "green_pass": 538,
+    "green_fail": 9,
+    "total_yellow": 853,
+    "yellow_covered": 792,
+    "yellow_uncovered": 61,
+    "failing_files": 0,
+    "weak_files": 1,
+    "passing_files": 120
+  },
+  "files": [
+    {
+      "file": "civilizations/akkad.mdx",
+      "health_score": 71.4,
+      "paragraphs": {
+        "total": 7,
+        "green": 4,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 1
+      },
+      "references": 11
+    },
+    {
+      "file": "myths/tiamat.mdx",
+      "health_score": 78.9,
+      "paragraphs": {
+        "total": 19,
+        "green": 1,
+        "yellow": 18,
+        "red": 0
+      },
+      "green": {
+        "pass": 1,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 14,
+        "uncovered": 4
+      },
+      "references": 11
+    },
+    {
+      "file": "languages/elamite.mdx",
+      "health_score": 80,
+      "paragraphs": {
+        "total": 6,
+        "green": 2,
+        "yellow": 3,
+        "red": 1
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 1
+      },
+      "references": 4
+    },
+    {
+      "file": "languages/linear-b.mdx",
+      "health_score": 80,
+      "paragraphs": {
+        "total": 10,
+        "green": 3,
+        "yellow": 7,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 2
+      },
+      "references": 10
+    },
+    {
+      "file": "myths/ahura-mazda.mdx",
+      "health_score": 80,
+      "paragraphs": {
+        "total": 12,
+        "green": 4,
+        "yellow": 6,
+        "red": 2
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 2
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/hittite-hurrian-religion.mdx",
+      "health_score": 80,
+      "paragraphs": {
+        "total": 18,
+        "green": 3,
+        "yellow": 12,
+        "red": 3
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 3
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/greek-pantheon.mdx",
+      "health_score": 81.2,
+      "paragraphs": {
+        "total": 18,
+        "green": 2,
+        "yellow": 14,
+        "red": 2
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 11,
+        "uncovered": 3
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/zoroastrianism.mdx",
+      "health_score": 81.2,
+      "paragraphs": {
+        "total": 17,
+        "green": 5,
+        "yellow": 11,
+        "red": 1
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 3
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/vulgar-latin.mdx",
+      "health_score": 81.8,
+      "paragraphs": {
+        "total": 11,
+        "green": 4,
+        "yellow": 7,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 2
+      },
+      "references": 8
+    },
+    {
+      "file": "civilizations/hellenistic-greece.mdx",
+      "health_score": 82.4,
+      "paragraphs": {
+        "total": 17,
+        "green": 4,
+        "yellow": 13,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 3
+      },
+      "references": 9
+    },
+    {
+      "file": "civilizations/archaic-greece.mdx",
+      "health_score": 83.3,
+      "paragraphs": {
+        "total": 7,
+        "green": 4,
+        "yellow": 2,
+        "red": 1
+      },
+      "green": {
+        "pass": 3,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 6
+    },
+    {
+      "file": "myths/heracles.mdx",
+      "health_score": 83.3,
+      "paragraphs": {
+        "total": 6,
+        "green": 1,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 1,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/attic-greek.mdx",
+      "health_score": 84.6,
+      "paragraphs": {
+        "total": 13,
+        "green": 4,
+        "yellow": 9,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 1
+      },
+      "references": 12
+    },
+    {
+      "file": "languages/classical-latin.mdx",
+      "health_score": 84.6,
+      "paragraphs": {
+        "total": 13,
+        "green": 5,
+        "yellow": 8,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 2
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 0
+      },
+      "references": 12
+    },
+    {
+      "file": "civilizations/levant.mdx",
+      "health_score": 85.7,
+      "paragraphs": {
+        "total": 7,
+        "green": 4,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/koine-greek.mdx",
+      "health_score": 85.7,
+      "paragraphs": {
+        "total": 7,
+        "green": 2,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/sumerian.mdx",
+      "health_score": 85.7,
+      "paragraphs": {
+        "total": 7,
+        "green": 5,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 12
+    },
+    {
+      "file": "myths/baal-hammon.mdx",
+      "health_score": 85.7,
+      "paragraphs": {
+        "total": 15,
+        "green": 6,
+        "yellow": 8,
+        "red": 1
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 2
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/roman-pantheon.mdx",
+      "health_score": 85.7,
+      "paragraphs": {
+        "total": 21,
+        "green": 3,
+        "yellow": 18,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 15,
+        "uncovered": 3
+      },
+      "references": 10
+    },
+    {
+      "file": "myths/mesopotamian-pantheon.mdx",
+      "health_score": 86.7,
+      "paragraphs": {
+        "total": 17,
+        "green": 5,
+        "yellow": 10,
+        "red": 2
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 2
+      },
+      "references": 8
+    },
+    {
+      "file": "civilizations/egypt-old-kingdom.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 8,
+        "green": 4,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 11
+    },
+    {
+      "file": "civilizations/nabataeans.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 17,
+        "green": 5,
+        "yellow": 11,
+        "red": 1
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 2
+      },
+      "references": 7
+    },
+    {
+      "file": "civilizations/nuragic-sardinia.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 8,
+        "green": 3,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 1
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/roman-republic.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 8,
+        "green": 4,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 11
+    },
+    {
+      "file": "languages/luwian.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 9,
+        "green": 4,
+        "yellow": 4,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 1
+      },
+      "references": 4
+    },
+    {
+      "file": "languages/lydian.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 16,
+        "green": 4,
+        "yellow": 12,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 2
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/theseus.mdx",
+      "health_score": 87.5,
+      "paragraphs": {
+        "total": 9,
+        "green": 2,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "civilizations/ancient-israel.mdx",
+      "health_score": 88.9,
+      "paragraphs": {
+        "total": 10,
+        "green": 4,
+        "yellow": 5,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 1
+      },
+      "references": 10
+    },
+    {
+      "file": "civilizations/numidia.mdx",
+      "health_score": 88.9,
+      "paragraphs": {
+        "total": 9,
+        "green": 4,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 1
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/aeneid.mdx",
+      "health_score": 88.9,
+      "paragraphs": {
+        "total": 10,
+        "green": 3,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/inanna-ishtar.mdx",
+      "health_score": 90,
+      "paragraphs": {
+        "total": 11,
+        "green": 4,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/odyssey.mdx",
+      "health_score": 90,
+      "paragraphs": {
+        "total": 10,
+        "green": 2,
+        "yellow": 8,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/thoth.mdx",
+      "health_score": 90,
+      "paragraphs": {
+        "total": 12,
+        "green": 5,
+        "yellow": 5,
+        "red": 2
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 1
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/horus-set-origins.mdx",
+      "health_score": 90.3,
+      "paragraphs": {
+        "total": 32,
+        "green": 6,
+        "yellow": 25,
+        "red": 1
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 22,
+        "uncovered": 3
+      },
+      "references": 19
+    },
+    {
+      "file": "civilizations/ptolemaic-egypt.mdx",
+      "health_score": 90.9,
+      "paragraphs": {
+        "total": 11,
+        "green": 5,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 1
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 6
+    },
+    {
+      "file": "civilizations/nubia-kush.mdx",
+      "health_score": 92.3,
+      "paragraphs": {
+        "total": 13,
+        "green": 3,
+        "yellow": 10,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 1
+      },
+      "references": 10
+    },
+    {
+      "file": "myths/artemis.mdx",
+      "health_score": 92.3,
+      "paragraphs": {
+        "total": 14,
+        "green": 6,
+        "yellow": 7,
+        "red": 1
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 1
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/sekhmet.mdx",
+      "health_score": 92.3,
+      "paragraphs": {
+        "total": 14,
+        "green": 6,
+        "yellow": 7,
+        "red": 1
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 1
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/theogony.mdx",
+      "health_score": 92.3,
+      "paragraphs": {
+        "total": 14,
+        "green": 2,
+        "yellow": 11,
+        "red": 1
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/cybele.mdx",
+      "health_score": 93.3,
+      "paragraphs": {
+        "total": 15,
+        "green": 4,
+        "yellow": 11,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 1
+      },
+      "references": 10
+    },
+    {
+      "file": "myths/enuma-elish.mdx",
+      "health_score": 93.3,
+      "paragraphs": {
+        "total": 15,
+        "green": 1,
+        "yellow": 14,
+        "red": 0
+      },
+      "green": {
+        "pass": 1,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 13,
+        "uncovered": 1
+      },
+      "references": 10
+    },
+    {
+      "file": "myths/sacred-kingship.mdx",
+      "health_score": 93.3,
+      "paragraphs": {
+        "total": 17,
+        "green": 5,
+        "yellow": 10,
+        "red": 2
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 1
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/urartu.mdx",
+      "health_score": 93.8,
+      "paragraphs": {
+        "total": 18,
+        "green": 4,
+        "yellow": 12,
+        "red": 2
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 11,
+        "uncovered": 1
+      },
+      "references": 6
+    },
+    {
+      "file": "languages/urartian.mdx",
+      "health_score": 93.8,
+      "paragraphs": {
+        "total": 16,
+        "green": 5,
+        "yellow": 11,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 1
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/magna-mater-cybele.mdx",
+      "health_score": 95.5,
+      "paragraphs": {
+        "total": 23,
+        "green": 11,
+        "yellow": 11,
+        "red": 1
+      },
+      "green": {
+        "pass": 11,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 1
+      },
+      "references": 18
+    },
+    {
+      "file": "civilizations/alexander-successors.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 4,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 10
+    },
+    {
+      "file": "civilizations/assyria.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 5,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 10
+    },
+    {
+      "file": "civilizations/babylonia.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 6,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "civilizations/carthage.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 3,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/classical-greece.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 2,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 6
+    },
+    {
+      "file": "civilizations/cycladic.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 7,
+        "green": 4,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "civilizations/cyprus-ancient.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 10,
+        "green": 4,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "civilizations/egypt-middle-kingdom.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 2,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 10
+    },
+    {
+      "file": "civilizations/egypt-new-kingdom.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 6,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "civilizations/elam.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 4,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "civilizations/etruscan-rome-kings.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 3,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/gandhara.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 11,
+        "green": 4,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/geometric-greece.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 2,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/hittites.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 6,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "civilizations/hurrians.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 7,
+        "green": 5,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "civilizations/iberian.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 4,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/lydia.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 18,
+        "green": 4,
+        "yellow": 13,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 13,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "civilizations/minoan-crete.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 3,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 11
+    },
+    {
+      "file": "civilizations/mycenaean.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 6,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "civilizations/persia-achaemenid.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 7,
+        "green": 3,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 6
+    },
+    {
+      "file": "civilizations/roman-empire.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 4,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "civilizations/scythians.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 12,
+        "green": 5,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/seleucid-empire.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 4,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "civilizations/sumer.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 7,
+        "green": 2,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "civilizations/troy-wilusa.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 4,
+        "yellow": 2,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/akkadian.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 11,
+        "green": 4,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "languages/aramaic.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 10,
+        "green": 5,
+        "yellow": 4,
+        "red": 1
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "languages/coptic.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 5,
+        "green": 5,
+        "yellow": 0,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 0,
+        "uncovered": 0
+      },
+      "references": 10
+    },
+    {
+      "file": "languages/doric-greek.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 3,
+        "yellow": 2,
+        "red": 1
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 2,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "languages/etruscan.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 3,
+        "yellow": 3,
+        "red": 2
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "languages/hittite.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 5,
+        "green": 2,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 6
+    },
+    {
+      "file": "languages/homeric-greek.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 5,
+        "green": 2,
+        "yellow": 3,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/ionic-greek.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 2,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "languages/linear-a.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 8,
+        "green": 4,
+        "yellow": 3,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 3,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "languages/middle-egyptian.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 9,
+        "green": 3,
+        "yellow": 5,
+        "red": 1
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/mycenaean-greek.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 19,
+        "green": 10,
+        "yellow": 5,
+        "red": 4
+      },
+      "green": {
+        "pass": 10,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "languages/old-egyptian.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 6,
+        "green": 2,
+        "yellow": 4,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "languages/old-persian.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 5,
+        "green": 4,
+        "yellow": 1,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 1,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "languages/phoenician.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 11,
+        "green": 4,
+        "yellow": 7,
+        "red": 0
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "myths/amun.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 3,
+        "yellow": 11,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 11,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/ancient-oracles.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 5,
+        "yellow": 8,
+        "red": 1
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/anubis.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 13,
+        "green": 7,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/aphrodite-astarte-ishtar.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 23,
+        "green": 9,
+        "yellow": 13,
+        "red": 1
+      },
+      "green": {
+        "pass": 9,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 13,
+        "uncovered": 0
+      },
+      "references": 14
+    },
+    {
+      "file": "myths/aphrodite.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 16,
+        "green": 5,
+        "yellow": 11,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 11,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/apollo.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 15,
+        "green": 7,
+        "yellow": 8,
+        "red": 0
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/athena.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 15,
+        "green": 7,
+        "yellow": 7,
+        "red": 1
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/baal.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 15,
+        "green": 7,
+        "yellow": 8,
+        "red": 0
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/bastet.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 5,
+        "yellow": 9,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/canaanite-phoenician-gods.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 17,
+        "green": 7,
+        "yellow": 7,
+        "red": 3
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/demeter-persephone.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 12,
+        "green": 5,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/descent-of-inanna.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 12,
+        "green": 6,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/dionysus.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 15,
+        "green": 2,
+        "yellow": 13,
+        "red": 0
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 13,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "myths/egyptian-pantheon.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 18,
+        "green": 2,
+        "yellow": 14,
+        "red": 2
+      },
+      "green": {
+        "pass": 2,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 14,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/enki.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 13,
+        "green": 7,
+        "yellow": 4,
+        "red": 2
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/enlil.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 12,
+        "green": 6,
+        "yellow": 5,
+        "red": 1
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/gilgamesh.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 5,
+        "yellow": 9,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/greek-mystery-religions.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 21,
+        "green": 11,
+        "yellow": 10,
+        "red": 0
+      },
+      "green": {
+        "pass": 11,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 0
+      },
+      "references": 15
+    },
+    {
+      "file": "myths/heracles-melqart.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 17,
+        "green": 6,
+        "yellow": 10,
+        "red": 1
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 0
+      },
+      "references": 15
+    },
+    {
+      "file": "myths/horus.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 12,
+        "green": 5,
+        "yellow": 7,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/iliad.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 13,
+        "green": 4,
+        "yellow": 8,
+        "red": 1
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/isis.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 17,
+        "green": 5,
+        "yellow": 10,
+        "red": 2
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/marduk.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 11,
+        "green": 6,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/mars.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 15,
+        "green": 6,
+        "yellow": 9,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/melqart.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 7,
+        "yellow": 6,
+        "red": 1
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/mithras-sol-invictus.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 16,
+        "green": 7,
+        "yellow": 7,
+        "red": 2
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "myths/osiris-dionysus.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 20,
+        "green": 13,
+        "yellow": 7,
+        "red": 0
+      },
+      "green": {
+        "pass": 13,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 7,
+        "uncovered": 0
+      },
+      "references": 19
+    },
+    {
+      "file": "myths/osiris-myth.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 10,
+        "green": 5,
+        "yellow": 5,
+        "red": 0
+      },
+      "green": {
+        "pass": 5,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 5,
+        "uncovered": 0
+      },
+      "references": 8
+    },
+    {
+      "file": "myths/pantheon-construction.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 28,
+        "green": 10,
+        "yellow": 17,
+        "red": 1
+      },
+      "green": {
+        "pass": 10,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 17,
+        "uncovered": 0
+      },
+      "references": 16
+    },
+    {
+      "file": "myths/poseidon.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 13,
+        "green": 7,
+        "yellow": 6,
+        "red": 0
+      },
+      "green": {
+        "pass": 7,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/ptah.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 3,
+        "yellow": 10,
+        "red": 1
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/ra.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 17,
+        "green": 3,
+        "yellow": 14,
+        "red": 0
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 14,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/set.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 14,
+        "green": 6,
+        "yellow": 8,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 8,
+        "uncovered": 0
+      },
+      "references": 4
+    },
+    {
+      "file": "myths/tanit.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 13,
+        "green": 4,
+        "yellow": 6,
+        "red": 3
+      },
+      "green": {
+        "pass": 4,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 6,
+        "uncovered": 0
+      },
+      "references": 9
+    },
+    {
+      "file": "myths/teshub-kumarbi.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 15,
+        "green": 6,
+        "yellow": 9,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 9,
+        "uncovered": 0
+      },
+      "references": 5
+    },
+    {
+      "file": "myths/trojan-war-cycle.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 10,
+        "green": 3,
+        "yellow": 4,
+        "red": 3
+      },
+      "green": {
+        "pass": 3,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 4,
+        "uncovered": 0
+      },
+      "references": 7
+    },
+    {
+      "file": "myths/underworld-geography.mdx",
+      "health_score": 100,
+      "paragraphs": {
+        "total": 16,
+        "green": 6,
+        "yellow": 10,
+        "red": 0
+      },
+      "green": {
+        "pass": 6,
+        "fail": 0
+      },
+      "yellow": {
+        "covered": 10,
+        "uncovered": 0
+      },
+      "references": 5
+    }
+  ]
+}

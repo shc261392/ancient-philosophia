@@ -113,8 +113,15 @@ def parse_references(content: str) -> dict[int, str]:
         return refs
 
     block = ref_match.group(1)
-    # Parse individual reference entries
-    for m in re.finditer(r'id:\s*(\d+)\s*,\s*text:\s*["\'](.+?)["\']', block):
+    # Parse individual reference entries. The text field is always wrapped in double
+    # quotes in our MDX refs and may legitimately contain single quotes (e.g. essay
+    # titles like 'Sex, rhetoric, and the public monument'). Use a balanced-quote
+    # pattern that allows backslash-escaped double quotes inside.
+    entry_re = re.compile(
+        r'id:\s*(\d+)\s*,\s*text:\s*"((?:\\.|[^"\\])*)"',
+        re.DOTALL,
+    )
+    for m in entry_re.finditer(block):
         ref_id = int(m.group(1))
         ref_text = m.group(2)
         # Unescape
